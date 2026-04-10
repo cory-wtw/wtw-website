@@ -614,6 +614,206 @@
 
     .footer-right a:hover { opacity: 1; color: var(--gold-light); }
 
+    /* TRANSPARENCY DASHBOARD */
+    .transparency-section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .transparency-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .transparency-header h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--gold-pale);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .transparency-header h2 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .transparency-header p {
+      font-size: 1.05rem;
+      color: var(--gold-pale);
+      opacity: 0.65;
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .dash-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--gold-line);
+      margin-bottom: 3.5rem;
+    }
+
+    .dash-stat-card {
+      background: var(--near-black);
+      padding: 2rem 1.75rem;
+      position: relative;
+    }
+
+    .dash-stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .dash-stat-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-pale);
+      opacity: 0.55;
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .dash-stat-value {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: var(--gold-pale);
+      line-height: 1;
+      display: block;
+    }
+
+    .dash-stat-value.accent {
+      color: var(--gold);
+    }
+
+    .dash-stat-sub {
+      font-size: 0.8rem;
+      color: var(--gold-pale);
+      opacity: 0.5;
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    .dash-spend {
+      margin-bottom: 3rem;
+    }
+
+    .dash-spend-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .dash-spend-header h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .dash-spend-header .dash-spend-total {
+      font-size: 0.8rem;
+      color: var(--gold-pale);
+      opacity: 0.55;
+    }
+
+    .dash-spend-row {
+      display: grid;
+      grid-template-columns: 220px 1fr 90px;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(196,154,0,0.1);
+    }
+
+    .dash-spend-row:last-child { border-bottom: none; }
+
+    .dash-spend-label {
+      font-size: 0.9rem;
+      color: var(--gold-pale);
+      opacity: 0.85;
+    }
+
+    .dash-bar-track {
+      height: 6px;
+      background: rgba(196,154,0,0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .dash-bar-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 3px;
+      transition: width 0.8s ease;
+    }
+
+    .dash-spend-amt {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gold-pale);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .dash-coming-soon {
+      background: var(--gold-dim);
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .dash-coming-soon strong {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .dash-coming-soon p {
+      font-size: 0.95rem;
+      color: var(--gold-pale);
+      opacity: 0.8;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .dash-updated {
+      font-size: 0.72rem;
+      color: var(--gold-pale);
+      opacity: 0.4;
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .transparency-section { padding: 4rem 1.25rem; }
+      .dash-stat-grid { grid-template-columns: 1fr; }
+      .dash-spend-row { grid-template-columns: 1fr 60px; gap: 0.5rem 0.75rem; }
+      .dash-spend-label { grid-column: 1 / -1; font-size: 0.85rem; }
+      .dash-spend-amt { grid-row: 1; grid-column: 2; }
+      .dash-bar-track { grid-column: 1 / -1; }
+    }
+
     /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -703,6 +903,7 @@
       <li><a href="#mission">Mission</a></li>
       <li><a href="#programs">Programs</a></li>
       <li><a href="#founder">Our Story</a></li>
+      <li><a href="#transparency">Transparency</a></li>
       <li><a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a></li>
     </ul>
   </nav>
@@ -852,6 +1053,96 @@
       </div>
     </div>
   </section>
+
+  <div class="gold-rule"></div>
+
+  <!-- ============================================================
+       DASHBOARD DATA — UPDATE HERE
+       Claude Code: replace only the values inside this block.
+       Do not change HTML structure, class names, or comments.
+       See update-dashboard.md for the full workflow.
+       ============================================================ -->
+  <script>
+  const DASHBOARD = {
+    // Manual values (edit by hand)
+    totalDonated:     250,
+    lastUpdated:      "April 10, 2026",
+
+    // Auto-updated from Transactions-Export.xls by Claude Code
+    totalSpent:       2345,
+    transactionCount: 14,
+
+    // Spend breakdown — dynamic categories from the export.
+    // pct = round((amount / totalSpent) * 100)
+    spend: [
+      { label: "Equipment",              amount: "$1,042", pct: 44 },
+      { label: "Startup & legal fees",   amount: "$761",   pct: 32 },
+      { label: "Materials & supplies",   amount: "$362",   pct: 15 },
+      { label: "Contract labor",         amount: "$165",   pct: 7  },
+      { label: "Software",               amount: "$13",    pct: 1  },
+      { label: "Telephone",              amount: "$3",     pct: 0  }
+    ]
+  };
+  </script>
+  <!-- ============================================================
+       END DASHBOARD DATA
+       ============================================================ -->
+
+  <!-- TRANSPARENCY -->
+  <section id="transparency" class="transparency-section">
+    <div class="transparency-header reveal">
+      <span class="section-eyebrow">Transparency</span>
+      <h2>Every dollar,<br/><em>publicly tracked.</em></h2>
+      <p>The veterans we serve have already dealt with systems that weren't transparent with them. This one will be. Pulled directly from our books.</p>
+    </div>
+
+    <div class="dash-stat-grid reveal" style="transition-delay:0.1s">
+      <div class="dash-stat-card">
+        <span class="dash-stat-label">Total donated</span>
+        <span class="dash-stat-value accent" id="dash-donated"></span>
+        <span class="dash-stat-sub">From our generous supporters</span>
+      </div>
+      <div class="dash-stat-card">
+        <span class="dash-stat-label">Total spent</span>
+        <span class="dash-stat-value" id="dash-spent"></span>
+        <span class="dash-stat-sub"><span id="dash-txcount"></span> transactions to date</span>
+      </div>
+    </div>
+
+    <div class="dash-spend reveal" style="transition-delay:0.15s">
+      <div class="dash-spend-header">
+        <h3>Where the money goes</h3>
+        <span class="dash-spend-total" id="dash-spend-total"></span>
+      </div>
+      <div id="dash-spend-rows"></div>
+    </div>
+
+    <div class="dash-coming-soon reveal" style="transition-delay:0.2s">
+      <strong>Case outcomes — coming soon</strong>
+      <p>Our first cases are opening now. As we close them, we'll share anonymized stories here: who we helped, what changed, and what it cost. The numbers above will have names behind them.</p>
+    </div>
+
+    <p class="dash-updated reveal" style="transition-delay:0.25s">Last updated <span id="dash-updated"></span> — pulled from live books</p>
+  </section>
+
+  <script>
+    (function() {
+      const d = DASHBOARD;
+      const fmt = n => typeof n === 'number' ? '$' + n.toLocaleString() : n;
+      document.getElementById('dash-donated').textContent = fmt(d.totalDonated);
+      document.getElementById('dash-spent').textContent = fmt(d.totalSpent);
+      document.getElementById('dash-txcount').textContent = d.transactionCount;
+      document.getElementById('dash-spend-total').textContent = fmt(d.totalSpent) + ' total';
+      document.getElementById('dash-updated').textContent = d.lastUpdated;
+      document.getElementById('dash-spend-rows').innerHTML = d.spend.map(s => `
+        <div class="dash-spend-row">
+          <span class="dash-spend-label">${s.label}</span>
+          <div class="dash-bar-track"><div class="dash-bar-fill" style="width:${s.pct}%"></div></div>
+          <span class="dash-spend-amt">${s.amount}</span>
+        </div>
+      `).join('');
+    })();
+  </script>
 
   <div class="gold-rule"></div>
 
