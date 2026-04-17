@@ -68,6 +68,7 @@ Your bookkeeping app uses verbose category names. Map them to clean display labe
 | `Telephone` | `Telephone` |
 | `Transportation` | `Transportation` |
 | `Printing & supplies` | `Printing & supplies` |
+| `Legal and professional services` | `Legal & professional` |
 
 **If you encounter a category not in this table**, use the bookkeeping category name as-is but:
 - Replace ` and ` with ` & `

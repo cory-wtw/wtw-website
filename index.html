@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Worth Their Weight — Fighting for Veterans' Benefits</title>
+  <title>Worth Their Weight — Connecting Veterans to Benefits</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
@@ -89,6 +89,25 @@
     }
 
     .nav-links a:hover { opacity: 1; color: var(--gold-light); }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: 1.5rem;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .social-icon:hover { opacity: 1; }
+
+    .social-icon svg { width: 20px; height: 20px; }
 
     /* HERO */
     .hero {
@@ -574,6 +593,130 @@
       line-height: 1.5;
     }
 
+    /* TEAM */
+    .team-section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .team-card {
+      width: 240px;
+      text-align: center;
+    }
+
+    .team-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 1.25rem;
+      border: 2px solid var(--gold-line);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold-dim);
+    }
+
+    .team-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .team-photo-initials {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+
+    .team-name {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--gold-pale);
+      margin-bottom: 0.25rem;
+    }
+
+    .team-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .team-bio {
+      font-size: 0.88rem;
+      color: var(--gold-pale);
+      opacity: 0.65;
+      line-height: 1.6;
+    }
+
+    /* PARTNERS */
+    .partners-section {
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      border-top: 1px solid var(--gold-line);
+    }
+
+    .partners-section h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      color: var(--gold-pale);
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .partners-section > p {
+      font-size: 1rem;
+      color: var(--gold-pale);
+      opacity: 0.65;
+      max-width: 560px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    .partners-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .partner-item {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--gold-pale);
+      text-decoration: none;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .partner-item:hover {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold-line);
+    }
+
     footer {
       border-top: 1px solid var(--gold-line);
       padding: 2rem 2.5rem;
@@ -613,6 +756,18 @@
     }
 
     .footer-right a:hover { opacity: 1; color: var(--gold-light); }
+
+    .footer-disclaimer {
+      width: 100%;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gold-line);
+      font-size: 0.72rem;
+      color: var(--gold-pale);
+      opacity: 0.4;
+      line-height: 1.5;
+      text-align: center;
+    }
 
     /* TRANSPARENCY DASHBOARD */
     .transparency-section {
@@ -845,6 +1000,8 @@
       body { font-size: 16px; }
       nav { padding: 0.6rem 1.25rem; }
       .nav-links { display: none; }
+      .social-icons { margin-left: auto; }
+      .social-icon svg { width: 18px; height: 18px; }
       .nav-wordmark { font-size: 0.7rem; }
 
       .hero { padding: 7rem 1.25rem 4rem; }
@@ -879,6 +1036,12 @@
       .donate-note { font-size: 0.72rem; }
 
       .donation-breakdown { grid-template-columns: repeat(2, 1fr); }
+
+      .partners-section { padding: 4rem 1.25rem 3rem; }
+      .partners-list { flex-direction: column; gap: 0.25rem; }
+
+      .team-section { padding: 4rem 1.25rem; }
+
       footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.25rem; }
       .footer-right { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
     }
@@ -902,10 +1065,22 @@
     <ul class="nav-links">
       <li><a href="#mission">Mission</a></li>
       <li><a href="#programs">Programs</a></li>
-      <li><a href="#founder">Our Story</a></li>
+      <li><a href="#founder">Our Story</a>
+      <a href="#team">Team</a></li>
       <li><a href="#transparency">Transparency</a></li>
       <li><a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a></li>
     </ul>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/worththeirweightorg" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#FDFAF0" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="#FDFAF0" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="#FDFAF0"/></svg>
+      </a>
+      <a href="https://www.facebook.com/people/Worth-Their-Weight/61574304388792/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="#FDFAF0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@worththeirweight" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 3 4 5 4" stroke="#FDFAF0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -920,21 +1095,21 @@
 
     <h1>Worth Their<br/><span>Weight.</span></h1>
 
-    <p class="hero-tagline">We find unsheltered veterans where they are and fight for the benefits they've earned.</p>
+    <p class="hero-tagline">We find unsheltered veterans where they are and connect them to the people who can help.</p>
 
     <div class="hero-stat-row">
       <div class="hero-stat">
-        <span class="hero-stat-number">80–110</span>
-        <span class="hero-stat-label">Veterans unsheltered in our region tonight</span>
+        <span class="hero-stat-number">570</span>
+        <span class="hero-stat-label">Veterans homeless in Tennessee</span>
       </div>
       <div class="hero-stat-divider"></div>
       <div class="hero-stat">
-        <span class="hero-stat-number">$3,737</span>
+        <span class="hero-stat-number">$3,939</span>
         <span class="hero-stat-label">Max monthly benefit, tax-free</span>
       </div>
       <div class="hero-stat-divider"></div>
       <div class="hero-stat">
-        <span class="hero-stat-number">$500K+</span>
+        <span class="hero-stat-number">$1M+</span>
         <span class="hero-stat-label">Lifetime claim value</span>
       </div>
     </div>
@@ -952,9 +1127,9 @@
     <div class="mission-grid">
       <div class="mission-text reveal">
         <span class="section-eyebrow">The Mission</span>
-        <h2>They earned it.<br/><em>We help them claim it.</em></h2>
-        <p>VA disability benefits aren't charity. They're compensation — earned through service and sacrifice. Most unsheltered veterans don't know what they're owed, and the VA process is designed to frustrate anyone who tries to navigate it alone.</p>
-        <p>Worth Their Weight walks the streets of Chattanooga to find veterans where they are. When we find one, we personally navigate their VA claim from start to finish — staying in their corner until benefits are secured.</p>
+        <h2>They earned it.<br/><em>We help them access it.</em></h2>
+        <p>VA disability benefits aren't charity. They're compensation — earned through service and sacrifice. Most unsheltered veterans don't know what they're owed, and the VA process can easily frustrate anyone who tries to navigate it alone.</p>
+        <p>Worth Their Weight embeds in the Chattanooga community to find veterans where they are. When we find one, we connect them with a VSO partner who handles the VA claims process — because no veteran should have to navigate it alone.</p>
         <div class="mission-callout">
           <p>"Chattanooga ended veteran homelessness once in 2019. The numbers crept back up. Worth Their Weight exists to finish what this community started — and this time make it permanent."</p>
         </div>
@@ -968,7 +1143,7 @@
           </div>
           <div style="background:var(--near-black);padding:2rem;">
             <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.6;display:block;margin-bottom:0.5rem;">The Solution</span>
-            <p style="font-size:1rem;color:var(--gold-pale);opacity:0.75;line-height:1.6;">Street outreach finds veterans. Benefits navigation connects them to monthly tax-free income and free VA healthcare for life.</p>
+            <p style="font-size:1rem;color:var(--gold-pale);opacity:0.75;line-height:1.6;">Street outreach finds veterans. VSO referral connects them to monthly tax-free income and access to VA healthcare, which may include long-term coverage depending on eligibility and disability rating.</p>
           </div>
           <div style="background:var(--near-black);padding:2rem;">
             <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.6;display:block;margin-bottom:0.5rem;">The Goal</span>
@@ -984,23 +1159,23 @@
     <div class="impact-inner">
       <div class="impact-header reveal">
         <span class="section-eyebrow">The Stakes</span>
-        <h2>This is what a single claim is worth.</h2>
+        <h2>This is what a single claim could be worth.</h2>
       </div>
       <div class="impact-cards reveal" style="transition-delay:0.1s">
         <div class="impact-card">
-          <span class="impact-card-number">$171–$3,737</span>
+          <span class="impact-card-number">$180–$3,939</span>
           <span class="impact-card-label">Monthly, tax-free</span>
-          <p class="impact-card-desc">VA disability compensation ranges from 10% to 100% rating. We pursue the highest defensible rating — every condition, every dollar.</p>
+          <p class="impact-card-desc">VA disability compensation ranges from 10% to 100% rating. We help ensure veterans are connected with the people who can evaluate and pursue all eligible benefits.</p>
         </div>
         <div class="impact-card">
-          <span class="impact-card-number">$500K+</span>
+          <span class="impact-card-number">$1M+</span>
           <span class="impact-card-label">Lifetime value</span>
-          <p class="impact-card-desc">For a veteran in their 40s, a fully secured claim can exceed half a million dollars in lifetime tax-free income — plus healthcare.</p>
+          <p class="impact-card-desc">In some cases, particularly for younger veterans with high disability ratings, lifetime tax-free income can exceed one million dollars — plus access to VA healthcare.</p>
         </div>
         <div class="impact-card">
-          <span class="impact-card-number">Free</span>
-          <span class="impact-card-label">VA Healthcare for life</span>
-          <p class="impact-card-desc">Every successful claim unlocks free VA healthcare for life — including mental health care, addiction treatment, and primary care.</p>
+          <span class="impact-card-number">Access</span>
+          <span class="impact-card-label">VA Healthcare</span>
+          <p class="impact-card-desc">A successful claim can unlock access to VA healthcare, which may include long-term coverage depending on eligibility and disability rating — including mental health care, addiction treatment, and primary care.</p>
         </div>
       </div>
     </div>
@@ -1010,19 +1185,20 @@
   <section id="programs">
     <span class="section-eyebrow reveal">How We Work</span>
     <h2 class="reveal" style="font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:var(--gold-pale);letter-spacing:-0.02em;margin-bottom:0.5rem;">Two programs.<br/>One mission.</h2>
-    <p class="reveal" style="font-size:1.05rem;color:var(--gold-pale);opacity:0.65;max-width:560px;line-height:1.7;margin-bottom:0;transition-delay:0.1s;">We find veterans on the street, and we stay in their corner until the VA has paid what it owes.</p>
+    <p class="reveal" style="font-size:1.05rem;color:var(--gold-pale);opacity:0.65;max-width:560px;line-height:1.7;margin-bottom:0;transition-delay:0.1s;">We find veterans in the community and connect them with the accredited representatives who can help.</p>
     <div class="programs-grid reveal" style="transition-delay:0.15s">
       <div class="program-card">
         <span class="program-number">Program 01</span>
-        <h3>The Welcome Wagon</h3>
-        <p>Community ambassadors walk Chattanooga with a wagon stocked with supplies — socks, hygiene kits, water, resource cards. No clipboard. No intake form. No clinical lens. Just genuine human contact. The primary function: identify veterans and build the trust that makes everything else possible.</p>
+        <h3>Veteran Recon</h3>
+        <p>Veteran Recon is our street outreach program. Field Scouts embed in the community — visiting shelters, attending community events, and building relationships with local organizations to identify veterans. No clipboard. No intake form. No clinical lens. Just genuine human contact and the primary mission: find veterans and build the trust that makes everything else possible.</p>
       </div>
       <div class="program-card">
         <span class="program-number">Program 02</span>
-        <h3>Benefits Navigation</h3>
-        <p>When we identify a veteran, we personally navigate their VA claim from start to finish. We connect them to the Hamilton County VSO, pursue the highest defensible disability rating, and stay in their corner until monthly tax-free benefits and free VA healthcare are secured. We do not stop at the first number the VA offers.</p>
+        <h3>Benefits Support &amp; Referral</h3>
+        <p>When our Field Scouts identify a veteran, we connect them with a VSO partner who handles the VA claims process. Worth Their Weight's role is identification and connection — we find the veterans, then ensure they reach the accredited representatives who can pursue their claims.</p>
       </div>
     </div>
+    <p style="font-size:0.72rem;color:var(--gold-pale);opacity:0.4;text-align:center;margin-top:2.5rem;line-height:1.5;">Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.</p>
   </section>
 
   <div class="gold-rule"></div>
@@ -1036,7 +1212,7 @@
         </div>
         <div class="founder-name-block">
           <span class="founder-name">Cory Gold</span>
-          <span class="founder-title">Founder & Executive Director</span>
+          <span class="founder-title">Founder & Commander</span>
         </div>
         <div class="founder-meta">
           <span class="founder-meta-item">Disabled veteran</span>
@@ -1048,8 +1224,24 @@
         <span class="section-eyebrow">Our Story</span>
         <h2>Built from a backpack<br/>and a walk <em>downtown.</em></h2>
         <p>In 2021, Cory Gold lived on Riverfront Parkway. Every day he walked downtown with a backpack full of supplies — handing them out to unsheltered neighbors because it was the right thing to do. No org. No funding. No plan. Just a person who decided to show up.</p>
-        <p>Worth Their Weight is the infrastructure Cory built around that original instinct. As a disabled veteran, Cory navigated the same system these veterans face. He knows what it takes to get what you've earned. And he decided to share that with every veteran who needs it.</p>
-        <p>The approach comes straight from his background as a software engineer: pay top dollar for exceptional people, move fast, document everything, and build something that can be handed off and replicated city by city. The competition is homelessness — and homelessness does not take days off.</p>
+        <p>Worth Their Weight is the infrastructure Cory built around that original instinct. As a disabled veteran, Cory navigated the same system these veterans face. He knows how hard it is — and he decided to make sure no veteran has to do it alone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="team-section">
+    <span class="section-eyebrow reveal">The Team</span>
+    <h2 class="reveal" style="font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:var(--gold-pale);letter-spacing:-0.02em;transition-delay:0.1s;">The people behind<br/>the mission.</h2>
+    <div class="team-grid">
+      <div class="team-card reveal" style="transition-delay:0.15s">
+        <div class="team-photo">
+          <span class="team-photo-initials">UH</span>
+          <img src="uriel-henderson.JPEG" alt="Uriel Henderson" onerror="this.remove()">
+        </div>
+        <div class="team-name">Uriel Henderson</div>
+        <div class="team-title">Field Scout</div>
+        <p class="team-bio">Chattanooga native and UTC social work student. Uriel embeds in the community, builds trust with unsheltered veterans, and connects them to the benefits they've earned.</p>
       </div>
     </div>
   </section>
@@ -1065,22 +1257,26 @@
   <script>
   const DASHBOARD = {
     // Manual values (edit by hand)
-    totalDonated:     250,
-    lastUpdated:      "April 10, 2026",
+    totalDonated:     1250,
+    lastUpdated:      "April 17, 2026",
 
-    // Auto-updated from Transactions-Export.xls by Claude Code
-    totalSpent:       2345,
-    transactionCount: 14,
+    // Auto-updated from P&L report by Claude Code
+    totalSpent:       6513,
+    transactionCount: 20,
 
-    // Spend breakdown — dynamic categories from the export.
+    // Spend breakdown — from P&L report (Jan 1 – Apr 17, 2026)
     // pct = round((amount / totalSpent) * 100)
     spend: [
-      { label: "Equipment",              amount: "$1,042", pct: 44 },
-      { label: "Startup & legal fees",   amount: "$761",   pct: 32 },
-      { label: "Materials & supplies",   amount: "$362",   pct: 15 },
-      { label: "Contract labor",         amount: "$165",   pct: 7  },
-      { label: "Software",               amount: "$13",    pct: 1  },
-      { label: "Telephone",              amount: "$3",     pct: 0  }
+      { label: "Advertising & marketing",      amount: "$3,053", pct: 47 },
+      { label: "Legal fees",                   amount: "$1,656", pct: 25 },
+      { label: "Small tools & equipment",      amount: "$721",   pct: 11 },
+      { label: "Contract & professional",      amount: "$693",   pct: 11 },
+      { label: "Supplies & materials",         amount: "$222",   pct: 3  },
+      { label: "Printing & photocopying",      amount: "$70",    pct: 1  },
+      { label: "Software & apps",              amount: "$43",    pct: 1  },
+      { label: "Travel",                       amount: "$24",    pct: 0  },
+      { label: "Office expenses",              amount: "$23",    pct: 0  },
+      { label: "Bank fees",                    amount: "$9",     pct: 0  }
     ]
   };
   </script>
@@ -1151,28 +1347,28 @@
     <div class="donate-glow"></div>
     <span class="section-eyebrow reveal">Support the Mission</span>
     <h2 class="reveal" style="transition-delay:0.1s">One claim.<br/><span>One life changed.</span></h2>
-    <p class="reveal" style="transition-delay:0.2s">Your donation funds the outreach that finds veterans and the navigation that connects them to what they've already earned. There are 80–110 veterans sleeping unsheltered in this region tonight. We know how to help them.</p>
+    <p class="reveal" style="transition-delay:0.2s">Your donation funds the outreach that finds veterans and connects them to what they've already earned. There are 570 veterans experiencing homelessness in Tennessee. We know how to help them.</p>
 
     <div class="donation-breakdown reveal" style="transition-delay:0.25s">
       <div class="donation-tier">
         <span class="donation-amount">$20</span>
-        <span class="donation-label">Stocks the wagon</span>
-        <p class="donation-desc">Covers socks, hygiene kits, water, and a resource card for one person on the street.</p>
+        <span class="donation-label">Supplies a scout</span>
+        <p class="donation-desc">Covers supplies and resource cards for a Field Scout's outreach in the community.</p>
       </div>
       <div class="donation-tier">
         <span class="donation-amount">$100</span>
         <span class="donation-label">Funds a full shift</span>
-        <p class="donation-desc">Sends an ambassador into the field for a full day — supplies, contacts, and veteran identification.</p>
+        <p class="donation-desc">Sends a Field Scout into the community for a full day — shelters, events, and veteran identification.</p>
       </div>
       <div class="donation-tier">
         <span class="donation-amount">$500</span>
         <span class="donation-label">Opens a claim</span>
-        <p class="donation-desc">Covers the outreach, phone, and navigator time to get a veteran into the benefits pipeline.</p>
+        <p class="donation-desc">Covers the outreach and coordination to get a veteran connected with a VSO partner.</p>
       </div>
       <div class="donation-tier donation-tier--gold">
         <span class="donation-amount">$1,000+</span>
-        <span class="donation-label">Changes a life</span>
-        <p class="donation-desc">Funds a veteran through the full benefits navigation process — potentially unlocking $500K+ in lifetime income.</p>
+        <span class="donation-label">Supports a veteran</span>
+        <p class="donation-desc">Can support a veteran through the outreach and claim-support process — potentially supporting access to significant lifetime benefits.</p>
       </div>
     </div>
 
@@ -1182,6 +1378,16 @@
     </a>
     <div style="margin-bottom:2rem;"></div>
     <p class="donate-note reveal" style="transition-delay:0.4s">Questions? <a href="mailto:cory@worththeirweight.org" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">cory@worththeirweight.org</a> · <a href="tel:4234144948" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">(423) 414-4948</a></p>
+  </section>
+
+  <!-- COMMUNITY PARTNERS -->
+  <section id="partners" class="partners-section">
+    <span class="section-eyebrow reveal">With Gratitude</span>
+    <h2 class="reveal" style="transition-delay:0.1s">Our Community Partners</h2>
+    <p class="reveal" style="transition-delay:0.2s">Local businesses standing behind our veterans. We're grateful for every partner who helps us get supplies, experiences, and resources to the people who've earned them.</p>
+    <div class="partners-list reveal" style="transition-delay:0.3s">
+      <a href="https://www.mohhc.org/" target="_blank" rel="noopener" class="partner-item">National Medal of Honor Heritage Center</a>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -1200,7 +1406,26 @@
       <a href="tel:4234144948">(423) 414-4948</a>
       <a href="#mission">Mission</a>
       <a href="#programs">Programs</a>
+      <a href="#founder">Our Story</a>
+      <a href="#team">Team</a>
+      <a href="#transparency">Transparency</a>
       <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a>
+    </div>
+    <div class="social-icons" style="margin-left:0;width:100%;justify-content:center;padding-top:1rem;">
+      <a href="https://www.instagram.com/worththeirweightorg" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#FDFAF0" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="#FDFAF0" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="#FDFAF0"/></svg>
+      </a>
+      <a href="https://www.facebook.com/people/Worth-Their-Weight/61574304388792/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="#FDFAF0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@worththeirweight" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 3 4 5 4" stroke="#FDFAF0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="footer-disclaimer">
+      Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.<br/>
+      <sup>1</sup> <a href="https://www.va.gov/tennessee-valley-health-care/news-releases/veterans-homelessness-reaches-record-low-nationwide-down-249-in-tennessee/" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">VA Tennessee Valley Health Care, 2024 Point-in-Time Count</a>&ensp;
+      <sup>2</sup> <a href="https://www.va.gov/disability/compensation-rates/veteran-rates/" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">2026 VA Disability Compensation Rates</a>
     </div>
   </footer>
 
