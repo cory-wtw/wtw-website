@@ -1101,18 +1101,18 @@
 
     <div class="hero-stat-row">
       <div class="hero-stat">
-        <span class="hero-stat-number">$2.4M</span>
-        <span class="hero-stat-label">Lifetime benefits unlocked</span>
-      </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-number">308x</span>
-        <span class="hero-stat-label">Return on every dollar spent</span>
-      </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
         <span class="hero-stat-number">570</span>
         <span class="hero-stat-label">Veterans homeless in Tennessee</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">$3,939</span>
+        <span class="hero-stat-label">Max monthly benefit, tax-free</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">$1M+</span>
+        <span class="hero-stat-label">Lifetime claim value</span>
       </div>
     </div>
 
@@ -1280,10 +1280,6 @@
     totalDonated:     1350,
     lastUpdated:      "April 28, 2026",
 
-    // Impact stats
-    benefitsUnlocked: 2400000,
-    returnPerDollar:  308,
-
     // Auto-updated from Statement of Activity by Claude Code
     totalSpent:       7784,
     transactionCount: 30,
@@ -1319,18 +1315,8 @@
 
     <div class="dash-stat-grid reveal" style="transition-delay:0.1s">
       <div class="dash-stat-card">
-        <span class="dash-stat-label">Lifetime benefits unlocked</span>
-        <span class="dash-stat-value accent" id="dash-benefits"></span>
-        <span class="dash-stat-sub">For veterans in our system</span>
-      </div>
-      <div class="dash-stat-card">
-        <span class="dash-stat-label">Return on investment</span>
-        <span class="dash-stat-value accent" id="dash-roi"></span>
-        <span class="dash-stat-sub">For every $1 we spend, veterans receive $308 in lifetime benefits</span>
-      </div>
-      <div class="dash-stat-card">
         <span class="dash-stat-label">Total donated</span>
-        <span class="dash-stat-value" id="dash-donated"></span>
+        <span class="dash-stat-value accent" id="dash-donated"></span>
         <span class="dash-stat-sub">From our generous supporters</span>
       </div>
       <div class="dash-stat-card">
@@ -1348,16 +1334,13 @@
       <div id="dash-spend-rows"></div>
     </div>
 
-    <p class="dash-updated reveal" style="transition-delay:0.25s">Last updated <span id="dash-updated"></span> — pulled from live books<br/><span style="opacity:0.6;font-size:0.85em;">Lifetime benefits are estimated based on anticipated VA disability ratings for veterans currently in the claims process.</span></p>
+    <p class="dash-updated reveal" style="transition-delay:0.25s">Last updated <span id="dash-updated"></span> — pulled from live books</p>
   </section>
 
   <script>
     (function() {
       const d = DASHBOARD;
       const fmt = n => typeof n === 'number' ? '$' + n.toLocaleString() : n;
-      const fmtM = n => n >= 1000000 ? '$' + (n / 1000000).toFixed(1) + 'M' : fmt(n);
-      document.getElementById('dash-benefits').textContent = fmtM(d.benefitsUnlocked);
-      document.getElementById('dash-roi').textContent = d.returnPerDollar + 'x';
       document.getElementById('dash-donated').textContent = fmt(d.totalDonated);
       document.getElementById('dash-spent').textContent = fmt(d.totalSpent);
       document.getElementById('dash-txcount').textContent = d.transactionCount;
