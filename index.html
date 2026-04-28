@@ -1324,9 +1324,9 @@
         <span class="dash-stat-sub">For veterans in our system</span>
       </div>
       <div class="dash-stat-card">
-        <span class="dash-stat-label">Return on every $1 spent</span>
+        <span class="dash-stat-label">Return on investment</span>
         <span class="dash-stat-value accent" id="dash-roi"></span>
-        <span class="dash-stat-sub">In veteran benefits generated</span>
+        <span class="dash-stat-sub">For every $1 we spend, veterans receive $308 in lifetime benefits</span>
       </div>
       <div class="dash-stat-card">
         <span class="dash-stat-label">Total donated</span>
@@ -1357,7 +1357,7 @@
       const fmt = n => typeof n === 'number' ? '$' + n.toLocaleString() : n;
       const fmtM = n => n >= 1000000 ? '$' + (n / 1000000).toFixed(1) + 'M' : fmt(n);
       document.getElementById('dash-benefits').textContent = fmtM(d.benefitsUnlocked);
-      document.getElementById('dash-roi').textContent = '$' + d.returnPerDollar;
+      document.getElementById('dash-roi').textContent = d.returnPerDollar + 'x';
       document.getElementById('dash-donated').textContent = fmt(d.totalDonated);
       document.getElementById('dash-spent').textContent = fmt(d.totalSpent);
       document.getElementById('dash-txcount').textContent = d.transactionCount;
