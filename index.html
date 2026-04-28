@@ -293,143 +293,6 @@
       line-height: 1.5;
     }
 
-    /* IMPACT CALCULATOR */
-    .calc-section {
-      padding: 5rem 2rem;
-      text-align: center;
-      background: linear-gradient(135deg, rgba(196,154,0,0.08) 0%, transparent 60%);
-      border-top: 1px solid var(--gold-line);
-      border-bottom: 1px solid var(--gold-line);
-    }
-
-    .calc-inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .calc-section h2 {
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      font-weight: 900;
-      color: var(--gold-pale);
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-    }
-
-    .calc-section h2 em { font-style: normal; color: var(--gold); }
-
-    .calc-subtitle {
-      font-size: 1rem;
-      color: var(--gold-pale);
-      opacity: 0.6;
-      margin-bottom: 2.5rem;
-      line-height: 1.6;
-    }
-
-    .calc-amount {
-      font-size: clamp(3rem, 8vw, 5rem);
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 0.25rem;
-    }
-
-    .calc-amount-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold-pale);
-      opacity: 0.5;
-      margin-bottom: 2rem;
-    }
-
-    .calc-slider-wrap {
-      padding: 0 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .calc-slider {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%;
-      height: 6px;
-      border-radius: 3px;
-      background: var(--gold-line);
-      outline: none;
-      cursor: pointer;
-    }
-
-    .calc-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--gold);
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    }
-
-    .calc-slider::-moz-range-thumb {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--gold);
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    }
-
-    .calc-donation-display {
-      font-size: 1.1rem;
-      color: var(--gold-pale);
-      opacity: 0.7;
-      margin-bottom: 2rem;
-    }
-
-    .calc-donation-display strong {
-      color: var(--gold-light);
-      font-weight: 700;
-    }
-
-    .calc-result {
-      font-size: clamp(3.5rem, 10vw, 6rem);
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 0.25rem;
-      transition: transform 0.15s;
-    }
-
-    .calc-result-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold-pale);
-      opacity: 0.5;
-      margin-bottom: 2rem;
-    }
-
-    .calc-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--gold);
-      color: var(--near-black);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 1rem 2.5rem;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .calc-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
-
     /* IMPACT */
     .impact-section {
       padding: 5rem 2rem;
@@ -1155,7 +1018,6 @@
       .mission-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .mission-text h2 { font-size: clamp(1.7rem, 7vw, 2.5rem); }
 
-      .calc-section { padding: 3.5rem 1.25rem; }
       .impact-section { padding: 4rem 1.25rem; }
       .impact-cards { grid-template-columns: 1fr; gap: 2px; }
       .impact-card { padding: 2rem 1.5rem; }
@@ -1293,45 +1155,6 @@
       </div>
     </div>
   </section>
-
-  <!-- IMPACT CALCULATOR -->
-  <div class="calc-section">
-    <div class="calc-inner reveal">
-      <span class="section-eyebrow">Your Impact</span>
-      <h2>See what your donation <em>unlocks.</em></h2>
-      <p class="calc-subtitle">For every $1 we spend, veterans receive $308 in lifetime benefits. Drag the slider to see your impact.</p>
-
-      <div class="calc-donation-display">Your donation: <strong id="calc-input-display">$50</strong></div>
-      <div class="calc-slider-wrap">
-        <input type="range" class="calc-slider" id="calc-slider" min="50" max="5000" step="50" value="50">
-      </div>
-
-      <div class="calc-result" id="calc-result">$15,400</div>
-      <div class="calc-result-label">In lifetime veteran benefits</div>
-
-      <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="calc-cta">
-        Donate Now
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#1A1400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
-
-  <script>
-    (function() {
-      const slider = document.getElementById('calc-slider');
-      const display = document.getElementById('calc-input-display');
-      const result = document.getElementById('calc-result');
-      const multiplier = 308;
-      function update() {
-        const val = parseInt(slider.value);
-        display.textContent = '$' + val.toLocaleString();
-        const impact = val * multiplier;
-        result.textContent = '$' + impact.toLocaleString();
-      }
-      slider.addEventListener('input', update);
-      update();
-    })();
-  </script>
 
   <!-- IMPACT -->
   <div class="impact-section">
