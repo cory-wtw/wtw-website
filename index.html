@@ -1527,8 +1527,8 @@
 
       <div class="giveback-result" id="giveback-result" style="display:none;">
         <span class="giveback-monthly">Your monthly 1% giveback</span>
-        <div class="giveback-amount" id="giveback-amount"></div>
-        <div class="giveback-amount-label">per month</div>
+        <div class="giveback-amount" id="giveback-amount" style="cursor:pointer;" onclick="navigator.clipboard.writeText(this.textContent.replace('$','')).then(function(){var el=document.getElementById('giveback-copied');el.style.opacity='1';setTimeout(function(){el.style.opacity='0'},1500)})"></div>
+        <div class="giveback-amount-label">per month · <span id="giveback-copied" style="color:var(--gold);opacity:0;transition:opacity 0.3s;">copied!</span> <span style="opacity:0.6;">tap amount to copy</span></div>
         <div class="giveback-benefit" id="giveback-benefit"></div>
       </div>
 
