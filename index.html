@@ -477,6 +477,148 @@
       margin-bottom: 1.25rem;
     }
 
+    /* GIVEBACK CALCULATOR */
+    .giveback-section {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(196,154,0,0.06) 0%, transparent 60%);
+      border-top: 1px solid var(--gold-line);
+    }
+
+    .giveback-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .giveback-section h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      color: var(--gold-pale);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .giveback-section h2 em { font-style: normal; color: var(--gold); }
+
+    .giveback-subtitle {
+      font-size: 1rem;
+      color: var(--gold-pale);
+      opacity: 0.6;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+
+    .giveback-select-wrap {
+      margin-bottom: 2rem;
+    }
+
+    .giveback-select-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .giveback-select {
+      background: rgba(196,154,0,0.08);
+      border: 1px solid var(--gold-line);
+      color: var(--gold-pale);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0.9rem 1.25rem;
+      border-radius: 0;
+      width: 100%;
+      max-width: 320px;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23C49A00' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+    }
+
+    .giveback-select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .giveback-select option {
+      background: var(--near-black);
+      color: var(--gold-pale);
+    }
+
+    .giveback-result {
+      margin-bottom: 2rem;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .giveback-monthly {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-pale);
+      opacity: 0.5;
+      margin-bottom: 0.5rem;
+    }
+
+    .giveback-amount {
+      font-size: clamp(3rem, 10vw, 5rem);
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .giveback-amount-label {
+      font-size: 0.85rem;
+      color: var(--gold-pale);
+      opacity: 0.55;
+      margin-bottom: 0.5rem;
+    }
+
+    .giveback-benefit {
+      font-size: 0.85rem;
+      color: var(--gold-pale);
+      opacity: 0.45;
+    }
+
+    .giveback-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--gold);
+      color: var(--near-black);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .giveback-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .giveback-note {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: var(--gold-pale);
+      opacity: 0.35;
+      line-height: 1.5;
+    }
+
     /* DONATE */
     .donate-section {
       padding: 7rem 2rem;
@@ -1032,6 +1174,7 @@
       .founder-name { font-size: 1.6rem; }
       .founder-body h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
 
+      .giveback-section { padding: 3.5rem 1.25rem; }
       .donate-section { padding: 5rem 1.25rem; }
       .donate-section h2 { font-size: clamp(2rem, 9vw, 3rem); }
       .donate-btn { width: 100%; justify-content: center; padding: 1.1rem 1.5rem; }
@@ -1357,6 +1500,70 @@
   </script>
 
   <div class="gold-rule"></div>
+
+  <!-- GIVEBACK CALCULATOR -->
+  <section id="giveback" class="giveback-section">
+    <div class="giveback-inner reveal">
+      <span class="section-eyebrow">The 1% Pledge</span>
+      <h2>Give back <em>one percent.</em></h2>
+      <p class="giveback-subtitle">You earned your benefits. Now help another veteran earn theirs. Select your VA disability rating to see your 1% monthly giveback amount.</p>
+
+      <div class="giveback-select-wrap">
+        <label class="giveback-select-label" for="giveback-rating">Your VA Disability Rating</label>
+        <select class="giveback-select" id="giveback-rating">
+          <option value="">Select your rating</option>
+          <option value="10">10%</option>
+          <option value="20">20%</option>
+          <option value="30">30%</option>
+          <option value="40">40%</option>
+          <option value="50">50%</option>
+          <option value="60">60%</option>
+          <option value="70">70%</option>
+          <option value="80">80%</option>
+          <option value="90">90%</option>
+          <option value="100">100%</option>
+        </select>
+      </div>
+
+      <div class="giveback-result" id="giveback-result" style="display:none;">
+        <span class="giveback-monthly">Your monthly 1% giveback</span>
+        <div class="giveback-amount" id="giveback-amount"></div>
+        <div class="giveback-amount-label">per month</div>
+        <div class="giveback-benefit" id="giveback-benefit"></div>
+      </div>
+
+      <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="giveback-cta" id="giveback-cta" style="display:none;">
+        Set Up Monthly Gift
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#1A1400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <p class="giveback-note">Based on 2026 VA disability compensation rates for single veterans with no dependents. Enter the suggested amount as a recurring monthly donation on Zeffy.</p>
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      var rates = {
+        10: 180.42, 20: 356.66, 30: 552.47, 40: 795.84, 50: 1132.90,
+        60: 1435.01, 70: 1808.44, 80: 2102.14, 90: 2362.30, 100: 3938.57
+      };
+      var sel = document.getElementById('giveback-rating');
+      var result = document.getElementById('giveback-result');
+      var amount = document.getElementById('giveback-amount');
+      var benefit = document.getElementById('giveback-benefit');
+      var cta = document.getElementById('giveback-cta');
+      sel.addEventListener('change', function() {
+        var r = parseInt(sel.value);
+        if (!r || !rates[r]) { result.style.display = 'none'; cta.style.display = 'none'; return; }
+        var monthly = rates[r];
+        var giveback = (monthly * 0.01).toFixed(2);
+        amount.textContent = '$' + giveback;
+        benefit.textContent = 'from your $' + monthly.toLocaleString(undefined, {minimumFractionDigits:2}) + '/mo benefit at ' + r + '%';
+        result.style.display = 'flex';
+        cta.style.display = 'inline-flex';
+      });
+    })();
+  </script>
 
   <!-- DONATE -->
   <section id="donate" class="donate-section">
