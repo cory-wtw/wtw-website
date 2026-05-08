@@ -818,53 +818,94 @@
       line-height: 1.6;
     }
 
-    /* PARTNERS */
-    .partners-section {
+    /* GENERAL'S WALL */
+    .generals-section {
       padding: 6rem 2rem 5rem;
       text-align: center;
       border-top: 1px solid var(--gold-line);
+      position: relative;
     }
 
-    .partners-section h2 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
+    .generals-section h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       font-weight: 900;
-      color: var(--gold-pale);
+      color: var(--gold);
       letter-spacing: -0.01em;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
-    .partners-section > p {
+    .generals-subtitle {
       font-size: 1rem;
       color: var(--gold-pale);
-      opacity: 0.65;
-      max-width: 560px;
+      opacity: 0.55;
+      max-width: 480px;
       margin: 0 auto 3rem;
       line-height: 1.7;
     }
 
-    .partners-list {
+    .generals-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem 3rem;
-      max-width: 900px;
-      margin: 0 auto;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 3rem;
     }
 
-    .partner-item {
-      font-size: 1.05rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
+    .general-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--gold-line);
+      background: var(--gold-dim);
+    }
+
+    .generals-empty {
+      max-width: 400px;
+      margin: 0 auto 2.5rem;
+      padding: 2.5rem 2rem;
+      border: 1px dashed var(--gold-line);
+    }
+
+    .generals-empty p {
+      font-size: 0.95rem;
       color: var(--gold-pale);
-      text-decoration: none;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
+      opacity: 0.5;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
     }
 
-    .partner-item:hover {
-      color: var(--gold-light);
-      border-bottom-color: var(--gold-line);
+    .generals-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      color: var(--gold);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.8rem 2rem;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .generals-cta:hover {
+      background: var(--gold);
+      color: var(--near-black);
+    }
+
+    .generals-star {
+      display: block;
+      margin: 0 auto 1.5rem;
+      width: 32px;
+      height: 32px;
+      opacity: 0.3;
     }
 
     footer {
@@ -1182,8 +1223,7 @@
 
       .donation-breakdown { grid-template-columns: repeat(2, 1fr); }
 
-      .partners-section { padding: 4rem 1.25rem 3rem; }
-      .partners-list { flex-direction: column; gap: 0.25rem; }
+      .generals-section { padding: 4rem 1.25rem 3rem; }
 
       .team-section { padding: 4rem 1.25rem; }
 
@@ -1545,14 +1585,19 @@
     <p class="donate-note reveal" style="transition-delay:0.4s">Questions? <a href="mailto:cory@worththeirweight.org" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">cory@worththeirweight.org</a> · <a href="tel:8339898387" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">833-WTW-VETS</a></p>
   </section>
 
-  <!-- COMMUNITY PARTNERS -->
-  <section id="partners" class="partners-section">
-    <span class="section-eyebrow reveal">With Gratitude</span>
-    <h2 class="reveal" style="transition-delay:0.1s">Our Community Partners</h2>
-    <p class="reveal" style="transition-delay:0.2s">Local businesses standing behind our veterans. We're grateful for every partner who helps us get supplies, experiences, and resources to the people who've earned them.</p>
-    <div class="partners-list reveal" style="transition-delay:0.3s">
-      <a href="https://www.mohhc.org/" target="_blank" rel="noopener" class="partner-item">National Medal of Honor Heritage Center</a>
-      <a href="https://www.heartharaculinary.com/" target="_blank" rel="noopener" class="partner-item">Hearthara Culinary</a>
+  <!-- GENERAL'S WALL -->
+  <section id="generals" class="generals-section">
+    <svg class="generals-star reveal" viewBox="0 0 24 24" fill="var(--gold)" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+    <span class="section-eyebrow reveal" style="transition-delay:0.05s;">Carry the Weight</span>
+    <h2 class="reveal" style="transition-delay:0.1s">The General's Wall</h2>
+    <p class="generals-subtitle reveal" style="transition-delay:0.15s">Our highest-level supporters who carry the weight with us.</p>
+
+    <div class="generals-empty reveal" style="transition-delay:0.2s">
+      <p>This wall is waiting for its first name. A $5,000 gift earns your place here — and the Founder's Package to prove it.</p>
+      <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="generals-cta">
+        Become a General
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </section>
 
