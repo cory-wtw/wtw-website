@@ -934,16 +934,15 @@
 
     .signup-form {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 0.75rem;
-      justify-content: center;
-      max-width: 640px;
+      max-width: 380px;
       margin: 0 auto;
     }
 
     .signup-form input[type="text"],
     .signup-form input[type="email"] {
-      flex: 1 1 200px;
+      width: 100%;
       background: transparent;
       border: 1px solid var(--gold-line);
       color: var(--gold-pale);
@@ -968,6 +967,7 @@
     }
 
     .signup-form button {
+      width: 100%;
       background: var(--gold);
       color: var(--near-black);
       font-family: 'Source Sans 3', sans-serif;
@@ -976,7 +976,8 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       border: 1px solid var(--gold);
-      padding: 0.85rem 1.75rem;
+      padding: 0.95rem 1.75rem;
+      margin-top: 0.25rem;
       cursor: pointer;
       transition: background 0.2s, color 0.2s, transform 0.15s;
     }
@@ -1328,8 +1329,6 @@
       .generals-section { padding: 4rem 1.25rem 3rem; }
 
       .signup-section { padding: 4rem 1.25rem 3rem; }
-      .signup-form { flex-direction: column; }
-      .signup-form button { width: 100%; }
 
       .team-section { padding: 4rem 1.25rem; }
 
@@ -1824,13 +1823,6 @@
       return false;
     }
   </script>
-
-  <!-- Hidden static form so Netlify's build-time form detector registers this form -->
-  <form name="stay-in-touch" netlify netlify-honeypot="bot-field" hidden>
-    <input type="text" name="name" />
-    <input type="email" name="email" />
-    <input name="bot-field" />
-  </form>
 
 </body>
 </html>
