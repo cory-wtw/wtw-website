@@ -181,7 +181,43 @@
       flex-wrap: wrap;
       margin-bottom: 3.5rem;
       opacity: 0;
-      animation: fadeUp 0.9s ease 0.65s forwards;
+      animation: fadeUp 0.9s ease 0.75s forwards;
+    }
+
+    /* THE STAMP — "Free for veterans. Always." */
+    .hero-stamp {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.55rem;
+      padding: 0.85rem 1.75rem;
+      border: 1.5px solid var(--gold);
+      background: rgba(210,166,60,0.08);
+      margin: 0 0 3rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.6s forwards;
+    }
+
+    .hero-stamp-line { color: var(--gold-pale); }
+    .hero-stamp-always { color: var(--gold); font-weight: 900; }
+
+    .stamp-inline {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .stamp-inline em {
+      font-style: normal;
+      color: var(--gold);
+      font-weight: 900;
     }
 
     .hero-stat { text-align: center; }
@@ -405,6 +441,130 @@
       line-height: 1.7;
       color: var(--gold-pale);
       opacity: 0.7;
+    }
+
+    /* COST / TRUST SECTION — "What's the catch?" */
+    .cost-section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cost-section h2 {
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 900;
+      color: var(--gold-pale);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+
+    .cost-section h2 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .cost-answer {
+      max-width: 680px;
+      margin: 0 auto 3rem;
+      padding: 2rem 2.25rem;
+      background: var(--gold-dim);
+      border-left: 3px solid var(--gold);
+      text-align: left;
+    }
+
+    .cost-answer p {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: var(--gold-pale);
+      opacity: 0.92;
+      margin: 0;
+    }
+
+    .cost-answer p + p { margin-top: 1rem; }
+
+    .cost-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--gold-line);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cost-pillar {
+      background: var(--near-black);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      border-top: 3px solid var(--gold);
+    }
+
+    .cost-pillar-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .cost-pillar-text {
+      font-size: 0.95rem;
+      color: var(--gold-pale);
+      opacity: 0.75;
+      line-height: 1.55;
+    }
+
+    /* DONOR FRAMING */
+    .donor-framing {
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      padding: 1.75rem 2rem;
+      background: rgba(210,166,60,0.08);
+      border-left: 3px solid var(--gold);
+      text-align: left;
+      position: relative;
+    }
+
+    .donor-framing-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .donor-framing-line {
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--gold-light);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* FOOTER STAMP */
+    .footer-stamp {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--gold);
+      background: rgba(210,166,60,0.1);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .footer-stamp em {
+      font-style: normal;
+      color: var(--gold-light);
+      font-weight: 900;
     }
 
     /* FOUNDER */
@@ -1312,6 +1472,15 @@
       .programs-grid { grid-template-columns: 1fr; gap: 2px; }
       .program-card { padding: 2rem 1.5rem; }
 
+      .cost-section { padding: 4rem 1.25rem; }
+      .cost-answer { padding: 1.5rem 1.25rem; }
+      .cost-answer p { font-size: 1rem; }
+      .cost-pillars { grid-template-columns: 1fr; gap: 2px; }
+      .cost-pillar { padding: 1.5rem 1.25rem; }
+
+      .hero-stamp { font-size: 0.78rem; padding: 0.7rem 1.25rem; margin-bottom: 2rem; }
+      .donor-framing { padding: 1.25rem 1.25rem; }
+
       .founder-section { padding: 4rem 1.25rem; }
       .founder-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .founder-aside { position: static; }
@@ -1382,6 +1551,11 @@
     <h1>Worth Their<br/><span>Weight.</span></h1>
 
     <p class="hero-tagline">We find the veterans the system missed and connect them to the people who can help.</p>
+
+    <div class="hero-stamp" aria-label="Free for veterans. Always.">
+      <span class="hero-stamp-line">Free for veterans.</span>
+      <span class="hero-stamp-always">Always.</span>
+    </div>
 
     <div class="hero-stat-row">
       <div class="hero-stat">
@@ -1468,6 +1642,33 @@
 
   <div class="gold-rule"></div>
 
+  <!-- COST / TRUST — "What's the catch?" -->
+  <section id="cost" class="cost-section">
+    <span class="section-eyebrow reveal">"What's the catch?"</span>
+    <h2 class="reveal" style="transition-delay:0.05s">There isn't one.<br/><em>Free for veterans. Always.</em></h2>
+
+    <div class="cost-answer reveal" style="transition-delay:0.1s">
+      <p>Worth Their Weight is free to every veteran we serve. No fees, no dues, no catch — ever. We're a 501(c)(3) nonprofit funded by donors, sponsors, and grants. Donors pay so veterans don't have to. That's the whole model.</p>
+    </div>
+
+    <div class="cost-pillars reveal" style="transition-delay:0.15s">
+      <div class="cost-pillar">
+        <span class="cost-pillar-label">No fees</span>
+        <p class="cost-pillar-text">Not when we find you. Not at intake. Not at any point.</p>
+      </div>
+      <div class="cost-pillar">
+        <span class="cost-pillar-label">No dues</span>
+        <p class="cost-pillar-text">No membership. No subscription. No sliding scale.</p>
+      </div>
+      <div class="cost-pillar">
+        <span class="cost-pillar-label">No catch — ever</span>
+        <p class="cost-pillar-text">Not when we connect you to a VSO. Not when your claim is approved. Not ever.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule"></div>
+
   <!-- FOUNDER -->
   <section id="founder" class="founder-section">
     <div class="founder-grid">
@@ -1477,7 +1678,7 @@
         </div>
         <div class="founder-name-block">
           <span class="founder-name">Cory Gold</span>
-          <span class="founder-title">Founder</span>
+          <span class="founder-title">Founder &amp; Executive Director</span>
         </div>
         <div class="founder-meta">
           <span class="founder-meta-item">Disabled veteran</span>
@@ -1599,7 +1800,7 @@
     <div class="giveback-inner reveal">
       <span class="section-eyebrow">The 1% Pledge</span>
       <h2>Give back <em>one percent.</em></h2>
-      <p class="giveback-subtitle">You earned your benefits. Now help another veteran earn theirs. Select your VA disability rating to see your 1% monthly giveback amount.</p>
+      <p class="giveback-subtitle">Our services are free to every veteran — no fees, no dues, no catch, ever. The 1% Pledge is a fully optional way for veterans who've already been connected to their benefits to help another veteran earn theirs. Select your VA disability rating to see your suggested 1% monthly giveback.</p>
 
       <div class="giveback-select-wrap">
         <label class="giveback-select-label" for="giveback-rating">Your VA Disability Rating</label>
@@ -1665,6 +1866,11 @@
     <span class="section-eyebrow reveal">Support the Mission</span>
     <h2 class="reveal" style="transition-delay:0.1s">One claim.<br/><span>One life changed.</span></h2>
     <p class="reveal" style="transition-delay:0.2s">Your donation funds the outreach that finds veterans and connects them to what they've already earned. There are 570 veterans experiencing homelessness in Tennessee. We know how to help them.</p>
+
+    <div class="donor-framing reveal" style="transition-delay:0.22s">
+      <span class="donor-framing-label">Donors pay so veterans don't.</span>
+      <p class="donor-framing-line">"Every dollar you give means a veteran pays nothing."</p>
+    </div>
 
     <div class="donation-breakdown reveal" style="transition-delay:0.25s">
       <div class="donation-tier">
@@ -1770,6 +1976,8 @@
       </a>
     </div>
     <div class="footer-disclaimer">
+      <span class="footer-stamp">Free for veterans. <em>Always.</em></span><br/>
+      Worth Their Weight is free to every veteran we serve. No fees, no dues, no catch — ever. Funded by donors, sponsors, and grants.<br/>
       Worth Their Weight is a 501(c)(3) tax-exempt organization. EIN: 41-5275144. All donations are tax-deductible to the extent allowed by law.<br/>
       Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.<br/>
       <sup>1</sup> <a href="https://www.va.gov/tennessee-valley-health-care/news-releases/veterans-homelessness-reaches-record-low-nationwide-down-249-in-tennessee/" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">VA Tennessee Valley Health Care, 2024 Point-in-Time Count</a>&ensp;
