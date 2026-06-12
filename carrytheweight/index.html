@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carry the Weight 2026 — Worth Their Weight</title>
+  <meta name="description" content="Register free, declare your distance, and get pledged by the mile. Carry the Weight is Worth Their Weight's annual ruck march on the Tennessee Riverwalk in Chattanooga — Saturday, September 19, 2026. Veterans march free. Always." />
+  <meta property="og:title" content="Carry the Weight 2026 — Worth Their Weight" />
+  <meta property="og:description" content="Register free, declare your distance, and get pledged by the mile. Worth Their Weight's annual ruck march on the Tennessee Riverwalk — September 19, 2026. Veterans march free. Always." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://worththeirweight.org/carrytheweight" />
+  <meta property="og:image" content="https://worththeirweight.org/public/og-carrytheweight.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Carry the Weight 2026 — Saturday, September 19, 2026. Annual ruck march on the Tennessee Riverwalk, Chattanooga." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Carry the Weight 2026 — Worth Their Weight" />
+  <meta name="twitter:description" content="Register free, declare your distance, and get pledged by the mile. September 19, 2026 on the Tennessee Riverwalk. Veterans march free. Always." />
+  <meta name="twitter:image" content="https://worththeirweight.org/public/og-carrytheweight.png" />
+  <link rel="icon" type="image/png" href="../public/WTW Logo Main.png" />
+  <link rel="apple-touch-icon" href="../public/WTW Logo Main.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --near-black: #1D1912;
+      --gold: #D2A63C;
+      --gold-light: #EECD5C;
+      --gold-pale: #F3F3E6;
+      --deep-gold: #BB8525;
+      --gold-dim: rgba(210,166,60,0.12);
+      --gold-line: rgba(210,166,60,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--near-black);
+      color: var(--gold-pale);
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    /* Accessible focus state — visible across the whole page */
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible,
+    iframe:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 2000;
+      background: var(--gold);
+      color: var(--near-black);
+      padding: 0.75rem 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+    .skip-link:focus { left: 1rem; top: 1rem; }
+
+    /* NAV (reused from main site) */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0.6rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(29,25,18,0.97);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-wordmark {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gold-pale);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; color: var(--gold-light); }
+    .nav-links a[aria-current="page"] { opacity: 1; color: var(--gold-light); }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: 1.5rem;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .social-icon:hover { opacity: 1; }
+    .social-icon svg { width: 20px; height: 20px; }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .gold-rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-line), transparent);
+    }
+
+    /* HERO — Near Black background, Gold Light accent text */
+    .cw-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 9rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cw-hero-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -55%);
+      width: 760px; height: 760px;
+      max-width: 120vw;
+      background: radial-gradient(ellipse at center, rgba(210,166,60,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cw-hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .cw-hero h1 {
+      font-size: clamp(2rem, 5.5vw, 4.4rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--gold-pale);
+      max-width: 16ch;
+      margin: 0 auto 1.5rem;
+      position: relative;
+    }
+
+    .cw-hero h1 span { color: var(--gold-light); }
+
+    .cw-hero-subhead {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      font-weight: 300;
+      color: var(--gold-light);
+      letter-spacing: 0.02em;
+      max-width: 40ch;
+      margin: 0 auto 2.5rem;
+      position: relative;
+    }
+
+    .cw-hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .cw-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--gold);
+      color: var(--near-black);
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .cw-btn:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
+
+    .cw-btn--ghost {
+      background: transparent;
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+    }
+    .cw-btn--ghost:hover { background: var(--gold-dim); color: var(--gold-light); transform: translateY(-2px); }
+
+    /* Event facts row */
+    .cw-facts {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem 1.1rem;
+      max-width: 920px;
+      position: relative;
+      border-top: 1px solid var(--gold-line);
+      border-bottom: 1px solid var(--gold-line);
+      padding: 1.1rem 0.5rem;
+    }
+
+    .cw-fact {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold-pale);
+      opacity: 0.85;
+      white-space: nowrap;
+    }
+
+    .cw-fact.cw-fact--accent { color: var(--gold-light); opacity: 1; }
+
+    .cw-fact-sep {
+      color: var(--gold);
+      opacity: 0.5;
+      font-weight: 700;
+    }
+
+    /* Generic section heading */
+    .cw-section-head { text-align: center; margin-bottom: 3rem; }
+    .cw-section-head h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--gold-pale);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .cw-section-head h2 em { font-style: normal; color: var(--gold); }
+    .cw-section-head p {
+      font-size: 1.05rem;
+      color: var(--gold-pale);
+      opacity: 0.7;
+      max-width: 620px;
+      margin: 1rem auto 0;
+      line-height: 1.7;
+    }
+
+    /* HOW IT WORKS — cream cards, gold rules */
+    .cw-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cw-step {
+      background: var(--gold-pale);
+      color: var(--near-black);
+      padding: 2.5rem 2rem;
+      border-top: 4px solid var(--gold);
+      position: relative;
+    }
+
+    .cw-step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      background: var(--near-black);
+      color: var(--gold-light);
+      font-size: 1.4rem;
+      font-weight: 900;
+      line-height: 1;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .cw-step-rule {
+      width: 40px;
+      height: 3px;
+      background: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .cw-step h3 {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--near-black);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .cw-step p {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: var(--near-black);
+      opacity: 0.82;
+    }
+
+    .cw-step p .cw-quote {
+      display: block;
+      margin-top: 0.75rem;
+      padding-left: 0.9rem;
+      border-left: 3px solid var(--gold);
+      font-style: italic;
+      color: var(--near-black);
+      font-weight: 600;
+      opacity: 1;
+    }
+
+    /* REGISTRATION EMBED */
+    .cw-register {
+      border-top: 1px solid var(--gold-line);
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .cw-embed-frame {
+      width: 100%;
+      min-height: 780px;
+      margin: 0 auto;
+      border: 1px solid var(--gold-line);
+      background: var(--gold-dim);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .cw-embed-frame iframe {
+      width: 100% !important;
+      min-height: 780px;
+      border: 0;
+      display: block;
+    }
+
+    /* Visible placeholder until the Zeffy embed is pasted in */
+    .cw-embed-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 360px;
+      padding: 3rem 1.5rem;
+      gap: 1rem;
+    }
+    .cw-embed-placeholder .cw-ph-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .cw-embed-placeholder p {
+      max-width: 46ch;
+      color: var(--gold-pale);
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+
+    /* RUCK ANYWHERE */
+    .cw-anywhere {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.25rem 2.25rem;
+      background: var(--gold-dim);
+      border-left: 3px solid var(--gold);
+    }
+    .cw-anywhere h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 900;
+      color: var(--gold-light);
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+    .cw-anywhere p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: var(--gold-pale);
+      opacity: 0.9;
+    }
+
+    /* RAISE & EARN — five-tier ladder */
+    .cw-ladder {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+      background: var(--gold-line);
+    }
+
+    .cw-tier {
+      background: var(--near-black);
+      padding: 2rem 1.25rem;
+      text-align: center;
+      border-top: 3px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .cw-tier:hover { border-top-color: var(--gold); }
+    .cw-tier--top { border-top-color: var(--gold) !important; }
+
+    .cw-tier-amount {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .cw-tier-raised {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-pale);
+      opacity: 0.5;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .cw-tier-reward {
+      font-size: 0.92rem;
+      color: var(--gold-pale);
+      opacity: 0.82;
+      line-height: 1.55;
+    }
+    .cw-tier-reward strong { color: var(--gold-light); font-weight: 700; }
+
+    .cw-ladder-note {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--gold-pale);
+      opacity: 0.55;
+      line-height: 1.6;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* LIVE PROGRESS */
+    .cw-progress-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .cw-progress-grid .cw-embed-frame { min-height: 480px; }
+    .cw-progress-grid .cw-embed-frame iframe { min-height: 480px; }
+
+    /* SPONSORS */
+    .cw-presenting {
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-line);
+      border-top: 3px solid var(--gold);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .cw-slot-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .cw-slot-hint {
+      font-size: 0.9rem;
+      color: var(--gold-pale);
+      opacity: 0.55;
+    }
+
+    .cw-sponsor-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .cw-sponsor-slot {
+      border: 1px dashed var(--gold-line);
+      border-radius: 4px;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      color: var(--gold-pale);
+      opacity: 0.45;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .cw-sponsor-cta { text-align: center; }
+
+    /* FAQ */
+    .cw-faq { max-width: 760px; margin: 0 auto; }
+    .cw-faq details {
+      border-bottom: 1px solid var(--gold-line);
+    }
+    .cw-faq summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 1.4rem 2.5rem 1.4rem 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold-pale);
+      position: relative;
+      transition: color 0.2s;
+    }
+    .cw-faq summary::-webkit-details-marker { display: none; }
+    .cw-faq summary:hover { color: var(--gold-light); }
+    .cw-faq summary::after {
+      content: '+';
+      position: absolute;
+      right: 0.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--gold);
+      transition: transform 0.2s;
+    }
+    .cw-faq details[open] summary::after { content: '\2212'; }
+    .cw-faq-answer {
+      padding: 0 0 1.5rem;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--gold-pale);
+      opacity: 0.8;
+      max-width: 64ch;
+    }
+
+    /* FOOTER (reused from main site) */
+    footer {
+      border-top: 1px solid var(--gold-line);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .footer-left { display: flex; align-items: center; gap: 1rem; }
+    .footer-wordmark {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .footer-tagline {
+      font-size: 0.78rem;
+      color: var(--gold-pale);
+      opacity: 0.4;
+      font-style: italic;
+    }
+    .footer-right { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-right a {
+      font-size: 0.78rem;
+      color: var(--gold-pale);
+      opacity: 0.45;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: opacity 0.2s;
+    }
+    .footer-right a:hover { opacity: 1; color: var(--gold-light); }
+    .footer-disclaimer {
+      width: 100%;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gold-line);
+      font-size: 0.72rem;
+      color: var(--gold-pale);
+      opacity: 0.5;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .footer-disclaimer .footer-stamp {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .footer-disclaimer .footer-stamp em { font-style: normal; color: var(--gold-light); }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* RESPONSIVE — mobile-first traffic */
+    @media (max-width: 900px) {
+      .cw-steps { grid-template-columns: 1fr; }
+      .cw-ladder { grid-template-columns: 1fr 1fr; }
+      .cw-progress-grid { grid-template-columns: 1fr; }
+      .cw-sponsor-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+      nav { padding: 0.6rem 1.25rem; }
+      .nav-links { display: none; }
+      .social-icons { margin-left: auto; }
+      .social-icon svg { width: 18px; height: 18px; }
+      .nav-wordmark { font-size: 0.7rem; }
+
+      section { padding: 4rem 1.25rem; }
+      .cw-hero { padding: 7.5rem 1.25rem 4rem; min-height: auto; }
+      .cw-hero-cta-row { flex-direction: column; align-items: stretch; }
+      .cw-btn { width: 100%; justify-content: center; padding: 1.1rem 1.5rem; }
+      .cw-facts { flex-direction: column; gap: 0.4rem; }
+      .cw-fact-sep { display: none; }
+      .cw-fact { white-space: normal; }
+
+      .cw-embed-frame, .cw-embed-frame iframe { min-height: 700px; }
+      .cw-progress-grid .cw-embed-frame, .cw-progress-grid .cw-embed-frame iframe { min-height: 440px; }
+      .cw-anywhere { padding: 1.75rem 1.5rem; }
+
+      footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.25rem; }
+      .footer-right { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .cw-ladder { grid-template-columns: 1fr; }
+      .cw-sponsor-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#register" class="skip-link">Skip to registration</a>
+
+  <!-- NAV (reused from main site) -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="../public/WTW Logo Main.png" alt="Worth Their Weight home" style="height:36px;width:auto;">
+      <span class="nav-wordmark">Worth Their Weight</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#mission">Mission</a></li>
+      <li><a href="/#programs">Programs</a></li>
+      <li><a href="/#founder">Our Story</a></li>
+      <li><a href="/carrytheweight" aria-current="page">Carry the Weight</a></li>
+      <li><a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/worththeirweightorg" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#F3F3E6" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="#F3F3E6" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="#F3F3E6"/></svg>
+      </a>
+      <a href="https://www.facebook.com/people/Worth-Their-Weight/61574304388792/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="#F3F3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@worththeirweight" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 3 4 5 4" stroke="#F3F3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- 1. HERO -->
+    <section class="cw-hero" aria-labelledby="cw-hero-title">
+      <div class="cw-hero-glow" aria-hidden="true"></div>
+      <p class="cw-hero-eyebrow">Carry the Weight · 2026</p>
+      <h1 id="cw-hero-title">They carried a ruck. A rifle. Their whole unit.<br/><span>This fall, we carry them.</span></h1>
+      <p class="cw-hero-subhead">Carry the Weight — Worth Their Weight's annual ruck march on the Tennessee Riverwalk.</p>
+      <div class="cw-hero-cta-row">
+        <a href="#register" class="cw-btn">Register Free</a>
+        <a href="#how" class="cw-btn cw-btn--ghost">How It Works</a>
+      </div>
+      <div class="cw-facts">
+        <span class="cw-fact">Saturday, September 19, 2026</span>
+        <span class="cw-fact-sep" aria-hidden="true">·</span>
+        <span class="cw-fact">8 AM–1 PM</span>
+        <span class="cw-fact-sep" aria-hidden="true">·</span>
+        <span class="cw-fact">Blue Goose Hollow Trailhead, Chattanooga</span>
+        <span class="cw-fact-sep" aria-hidden="true">·</span>
+        <span class="cw-fact">Free registration</span>
+        <span class="cw-fact-sep" aria-hidden="true">·</span>
+        <span class="cw-fact cw-fact--accent">Veterans march free. Always.</span>
+      </div>
+    </section>
+
+    <!-- 2. HOW IT WORKS -->
+    <section id="how" aria-labelledby="cw-how-title">
+      <div class="cw-section-head reveal">
+        <span class="section-eyebrow">How It Works</span>
+        <h2 id="cw-how-title">Three steps to the start line</h2>
+      </div>
+      <div class="cw-steps">
+        <div class="cw-step reveal">
+          <span class="cw-step-number">01</span>
+          <div class="cw-step-rule" aria-hidden="true"></div>
+          <h3>Register free</h3>
+          <p>Sign up in about a minute and declare your distance: 2, 6, or 10 miles.</p>
+        </div>
+        <div class="cw-step reveal" style="transition-delay:0.1s">
+          <span class="cw-step-number">02</span>
+          <div class="cw-step-rule" aria-hidden="true"></div>
+          <h3>Get pledged by the mile</h3>
+          <p>Share your personal page with your people.<span class="cw-quote">"I'm carrying 10 miles. Pledge me $5 a mile."</span></p>
+        </div>
+        <div class="cw-step reveal" style="transition-delay:0.2s">
+          <span class="cw-step-number">03</span>
+          <div class="cw-step-rule" aria-hidden="true"></div>
+          <h3>Carry it</h3>
+          <p>Out-and-back from Blue Goose Hollow, turn at your mile marker, finish at base camp. Ceremony at noon.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="gold-rule" aria-hidden="true"></div>
+
+    <!-- 3. REGISTRATION EMBED -->
+    <section id="register" class="cw-register" aria-labelledby="cw-register-title">
+      <div class="cw-section-head reveal">
+        <span class="section-eyebrow">Register</span>
+        <h2 id="cw-register-title">Sign up and claim your <em>pledge page</em></h2>
+        <p>Free registration through our Carry the Weight campaign. Declare your distance, get your personal page, and start collecting pledges by the mile.</p>
+      </div>
+
+      <div class="cw-embed-frame reveal">
+        <!-- ZEFFY_CAMPAIGN_EMBED: paste embed code from Zeffy dashboard > Share my form > Embed on your website -->
+        <div class="cw-embed-placeholder" data-embed-placeholder>
+          <span class="cw-ph-label">Zeffy Registration Embed</span>
+          <p>The peer-to-peer registration form loads here once the Zeffy campaign embed code is pasted in. Until then, registration opens through our Zeffy campaign.</p>
+          <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="cw-btn">Register on Zeffy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. RUCK ANYWHERE -->
+    <section aria-labelledby="cw-anywhere-title">
+      <div class="cw-anywhere reveal">
+        <h2 id="cw-anywhere-title">Ruck Anywhere</h2>
+        <p>Not in Chattanooga? Register, declare your miles, and ruck them where you are during event week. Share your page, post your finish photo. Same mission, any city.</p>
+      </div>
+    </section>
+
+    <!-- 5. RAISE & EARN -->
+    <section id="rewards" aria-labelledby="cw-rewards-title">
+      <div class="cw-section-head reveal">
+        <span class="section-eyebrow">Raise &amp; Earn</span>
+        <h2 id="cw-rewards-title">The more you carry, the more you earn</h2>
+      </div>
+      <div class="cw-ladder">
+        <div class="cw-tier reveal">
+          <span class="cw-tier-amount">$50</span>
+          <span class="cw-tier-raised">Raised</span>
+          <p class="cw-tier-reward"><strong>Event shirt</strong></p>
+        </div>
+        <div class="cw-tier reveal" style="transition-delay:0.05s">
+          <span class="cw-tier-amount">$100</span>
+          <span class="cw-tier-raised">Raised</span>
+          <p class="cw-tier-reward">+ <strong>Embroidered WTW patch</strong></p>
+        </div>
+        <div class="cw-tier reveal" style="transition-delay:0.1s">
+          <span class="cw-tier-amount">$250</span>
+          <span class="cw-tier-raised">Raised</span>
+          <p class="cw-tier-reward">+ <strong>WTW boonie hat</strong></p>
+        </div>
+        <div class="cw-tier reveal" style="transition-delay:0.15s">
+          <span class="cw-tier-amount">$1,000</span>
+          <span class="cw-tier-raised">Raised</span>
+          <p class="cw-tier-reward">+ <strong>GORUCK Rucker rucksack</strong></p>
+        </div>
+        <div class="cw-tier cw-tier--top reveal" style="transition-delay:0.2s">
+          <span class="cw-tier-amount">$5,000</span>
+          <span class="cw-tier-raised">Raised</span>
+          <p class="cw-tier-reward">+ <strong>20 lb Ruck Plate</strong>, a 30-minute call with our Executive Director, and your name on the wall</p>
+        </div>
+      </div>
+      <p class="cw-ladder-note reveal">Totals from your pledge page on event day. Ruck Anywhere finishers earn the same rewards — we mail them.</p>
+    </section>
+
+    <div class="gold-rule" aria-hidden="true"></div>
+
+    <!-- 6. LIVE PROGRESS -->
+    <section aria-labelledby="cw-progress-title">
+      <div class="cw-section-head reveal">
+        <span class="section-eyebrow">Live Progress</span>
+        <h2 id="cw-progress-title">Watch the miles add up</h2>
+      </div>
+      <div class="cw-progress-grid">
+        <div class="cw-embed-frame reveal">
+          <!-- ZEFFY_THERMOMETER_EMBED -->
+          <div class="cw-embed-placeholder" data-embed-placeholder>
+            <span class="cw-ph-label">Zeffy Thermometer</span>
+            <p>Live fundraising total loads here once the Zeffy thermometer embed code is pasted in.</p>
+          </div>
+        </div>
+        <div class="cw-embed-frame reveal" style="transition-delay:0.1s">
+          <!-- ZEFFY_LEADERBOARD_EMBED -->
+          <div class="cw-embed-placeholder" data-embed-placeholder>
+            <span class="cw-ph-label">Zeffy Leaderboard</span>
+            <p>Top ruckers and teams load here once the Zeffy leaderboard embed code is pasted in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. SPONSORS -->
+    <section aria-labelledby="cw-sponsors-title">
+      <div class="cw-section-head reveal">
+        <span class="section-eyebrow">Sponsors</span>
+        <h2 id="cw-sponsors-title">They carry with us.</h2>
+      </div>
+
+      <div class="cw-presenting reveal">
+        <span class="cw-slot-label">Presenting Sponsor</span>
+        <span class="cw-slot-hint">Wide logo slot — reserved for our presenting partner.</span>
+      </div>
+
+      <div class="cw-sponsor-grid reveal">
+        <div class="cw-sponsor-slot">Sponsor logo</div>
+        <div class="cw-sponsor-slot">Sponsor logo</div>
+        <div class="cw-sponsor-slot">Sponsor logo</div>
+        <div class="cw-sponsor-slot">Sponsor logo</div>
+        <div class="cw-sponsor-slot">Sponsor logo</div>
+        <div class="cw-sponsor-slot">Sponsor logo</div>
+        <div class="cw-sponsor-slot">Sponsor logo</div>
+        <div class="cw-sponsor-slot">Sponsor logo</div>
+      </div>
+
+      <div class="cw-sponsor-cta reveal">
+        <a href="mailto:cory@worththeirweight.org?subject=Sponsor%20Carry%20the%20Weight" class="cw-btn cw-btn--ghost">Sponsor Carry the Weight</a>
+      </div>
+    </section>
+
+    <div class="gold-rule" aria-hidden="true"></div>
+
+    <!-- 8. FAQ -->
+    <section aria-labelledby="cw-faq-title">
+      <div class="cw-section-head reveal">
+        <span class="section-eyebrow">FAQ</span>
+        <h2 id="cw-faq-title">Before you lace up</h2>
+      </div>
+      <div class="cw-faq reveal">
+        <details>
+          <summary>What do I carry?</summary>
+          <div class="cw-faq-answer">Any backpack. Weight optional. This is non-competitive.</div>
+        </details>
+        <details>
+          <summary>Where do I park?</summary>
+          <div class="cw-faq-answer">Limited parking at Blue Goose Hollow — use Ross's Landing or downtown lots, a short walk up the Riverwalk.</div>
+        </details>
+        <details>
+          <summary>Is it really free?</summary>
+          <div class="cw-faq-answer">Yes. Registration is free. Pledges from your supporters power the mission. Veterans never pay anything, ever.</div>
+        </details>
+        <details>
+          <summary>Can my family register together?</summary>
+          <div class="cw-faq-answer">Each person registers individually — takes about 60 seconds each.</div>
+        </details>
+        <details>
+          <summary>Where does the money go?</summary>
+          <div class="cw-faq-answer">Every dollar helps us find unsheltered veterans and connect them to the benefits they've earned — starting right here in Chattanooga.</div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (reused from main site) -->
+  <footer>
+    <div class="footer-left">
+      <img src="../public/WTW Logo Main.png" alt="Worth Their Weight" style="height:36px;width:auto;">
+      <div>
+        <div class="footer-wordmark">Worth Their Weight</div>
+        <div class="footer-tagline">We find the veterans the system missed.</div>
+      </div>
+    </div>
+    <div class="footer-right">
+      <a href="mailto:cory@worththeirweight.org">cory@worththeirweight.org</a>
+      <a href="tel:+18339898387">833-WTW-VETS</a>
+      <a href="/#mission">Mission</a>
+      <a href="/#programs">Programs</a>
+      <a href="/#founder">Our Story</a>
+      <a href="/carrytheweight">Carry the Weight</a>
+      <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a>
+    </div>
+    <div class="social-icons" style="margin-left:0;width:100%;justify-content:center;padding-top:1rem;">
+      <a href="https://www.instagram.com/worththeirweightorg" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#F3F3E6" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="#F3F3E6" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="#F3F3E6"/></svg>
+      </a>
+      <a href="https://www.facebook.com/people/Worth-Their-Weight/61574304388792/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="#F3F3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@worththeirweight" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 3 4 5 4" stroke="#F3F3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="footer-disclaimer">
+      <span class="footer-stamp">Free for veterans. <em>Always.</em></span><br/>
+      Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.<br/>
+      Worth Their Weight is a 501(c)(3) nonprofit organization, EIN 41-5275144. Donations are tax-deductible.<br/>
+      808 Chestnut St, Chattanooga, TN 37402 · 833-WTW-VETS · (833) 989-8387
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal — matches main site behavior
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
