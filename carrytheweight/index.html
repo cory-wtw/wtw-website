@@ -385,46 +385,12 @@
       border-bottom: 1px solid var(--gold-line);
     }
 
-    .cw-embed-frame {
-      width: 100%;
-      min-height: 780px;
-      margin: 0 auto;
-      border: 1px solid var(--gold-line);
-      background: var(--gold-dim);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .cw-embed-frame iframe {
-      width: 100% !important;
-      min-height: 780px;
-      border: 0;
-      display: block;
-    }
-
-    /* Visible placeholder until the Zeffy embed is pasted in */
-    .cw-embed-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 360px;
-      padding: 3rem 1.5rem;
-      gap: 1rem;
-    }
-    .cw-embed-placeholder .cw-ph-label {
+    .cw-ph-label {
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-    }
-    .cw-embed-placeholder p {
-      max-width: 46ch;
-      color: var(--gold-pale);
-      opacity: 0.8;
-      line-height: 1.6;
     }
 
     /* Live Zeffy script embed — let Zeffy manage its own height; reserve space to avoid layout shift */
@@ -531,9 +497,17 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
+      align-items: start;
     }
-    .cw-progress-grid .cw-embed-frame { min-height: 480px; }
-    .cw-progress-grid .cw-embed-frame iframe { min-height: 480px; }
+    .cw-progress-card {
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-line);
+      border-radius: 4px;
+      padding: 1.5rem;
+    }
+    .cw-progress-card .cw-ph-label { display: block; margin-bottom: 1rem; }
+    .cw-progress-card iframe { display: block; }
+    .cw-progress-cta { text-align: center; margin-top: 1.75rem; }
 
     /* SPONSORS */
     .cw-presenting {
@@ -714,8 +688,6 @@
       .cw-fact-sep { display: none; }
       .cw-fact { white-space: normal; }
 
-      .cw-embed-frame, .cw-embed-frame iframe { min-height: 700px; }
-      .cw-progress-grid .cw-embed-frame, .cw-progress-grid .cw-embed-frame iframe { min-height: 440px; }
       .cw-anywhere { padding: 1.75rem 1.5rem; }
 
       footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.25rem; }
@@ -890,22 +862,19 @@
         <h2 id="cw-progress-title">Watch the miles add up</h2>
       </div>
       <div class="cw-progress-grid">
-        <div class="cw-embed-frame reveal">
+        <div class="cw-progress-card reveal">
+          <span class="cw-ph-label">Raised so far</span>
           <!-- ZEFFY_THERMOMETER_EMBED -->
-          <div class="cw-embed-placeholder" data-embed-placeholder>
-            <span class="cw-ph-label">Zeffy Thermometer</span>
-            <p>Live fundraising total loads here once the Zeffy thermometer embed code is pasted in.</p>
-            <a href="https://www.zeffy.com/en-US/peer-to-peer/carry-the-weight--2026" target="_blank" rel="noopener" class="cw-btn cw-btn--ghost">View live total</a>
-          </div>
+          <div style="position:relative;overflow:hidden;width:100%;padding-top:120px;"><iframe title='Carry the Weight 2026 — amount raised, powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px' src='https://www.zeffy.com/embed/thermometer/carry-the-weight--2026' allowTransparency="true"></iframe></div>
         </div>
-        <div class="cw-embed-frame reveal" style="transition-delay:0.1s">
+        <div class="cw-progress-card reveal" style="transition-delay:0.1s">
+          <span class="cw-ph-label">Top ruckers</span>
           <!-- ZEFFY_LEADERBOARD_EMBED -->
-          <div class="cw-embed-placeholder" data-embed-placeholder>
-            <span class="cw-ph-label">Zeffy Leaderboard</span>
-            <p>Top ruckers and teams load here once the Zeffy leaderboard embed code is pasted in.</p>
-            <a href="https://www.zeffy.com/en-US/peer-to-peer/carry-the-weight--2026" target="_blank" rel="noopener" class="cw-btn cw-btn--ghost">View leaderboard</a>
-          </div>
+          <div style="position:relative;overflow:hidden;width:100%;padding-top:240px;"><iframe title='Carry the Weight 2026 — fundraising leaderboard, powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' src='https://www.zeffy.com/embed/leaderboard/carry-the-weight--2026' allowTransparency="true"></iframe></div>
         </div>
+      </div>
+      <div class="cw-progress-cta reveal">
+        <a href="https://www.zeffy.com/en-US/peer-to-peer/carry-the-weight--2026" target="_blank" rel="noopener" class="cw-btn cw-btn--ghost">View the full campaign on Zeffy&nbsp;&#8599;</a>
       </div>
     </section>
 
