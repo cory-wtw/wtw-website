@@ -427,6 +427,19 @@
       line-height: 1.6;
     }
 
+    .cw-embed-fallback {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--gold-pale);
+      opacity: 0.6;
+    }
+    .cw-embed-fallback a {
+      color: var(--gold-light);
+      text-decoration: underline;
+      white-space: nowrap;
+    }
+
     /* RUCK ANYWHERE */
     .cw-anywhere {
       max-width: 760px;
@@ -801,13 +814,17 @@
       </div>
 
       <div class="cw-embed-frame reveal">
-        <!-- ZEFFY_CAMPAIGN_EMBED: paste embed code from Zeffy dashboard > Share my form > Embed on your website -->
-        <div class="cw-embed-placeholder" data-embed-placeholder>
-          <span class="cw-ph-label">Zeffy Registration Embed</span>
-          <p>The peer-to-peer registration form loads here once the Zeffy campaign embed code is pasted in. Until then, registration opens through our Zeffy campaign.</p>
-          <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="cw-btn">Register on Zeffy</a>
-        </div>
+        <!-- ZEFFY_CAMPAIGN_EMBED — Carry the Weight 2026 peer-to-peer campaign -->
+        <iframe
+          title="Carry the Weight 2026 — free registration and pledge page (Zeffy)"
+          src="https://www.zeffy.com/embed/peer-to-peer/carry-the-weight--2026"
+          loading="lazy"
+          allow="payment"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
+      <p class="cw-embed-fallback reveal">
+        Form not loading? <a href="https://www.zeffy.com/en-US/peer-to-peer/carry-the-weight--2026" target="_blank" rel="noopener">Open registration on Zeffy&nbsp;&#8599;</a>
+      </p>
     </section>
 
     <!-- 4. RUCK ANYWHERE -->
@@ -868,6 +885,7 @@
           <div class="cw-embed-placeholder" data-embed-placeholder>
             <span class="cw-ph-label">Zeffy Thermometer</span>
             <p>Live fundraising total loads here once the Zeffy thermometer embed code is pasted in.</p>
+            <a href="https://www.zeffy.com/en-US/peer-to-peer/carry-the-weight--2026" target="_blank" rel="noopener" class="cw-btn cw-btn--ghost">View live total</a>
           </div>
         </div>
         <div class="cw-embed-frame reveal" style="transition-delay:0.1s">
@@ -875,6 +893,7 @@
           <div class="cw-embed-placeholder" data-embed-placeholder>
             <span class="cw-ph-label">Zeffy Leaderboard</span>
             <p>Top ruckers and teams load here once the Zeffy leaderboard embed code is pasted in.</p>
+            <a href="https://www.zeffy.com/en-US/peer-to-peer/carry-the-weight--2026" target="_blank" rel="noopener" class="cw-btn cw-btn--ghost">View leaderboard</a>
           </div>
         </div>
       </div>
