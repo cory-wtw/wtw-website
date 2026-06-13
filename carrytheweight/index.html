@@ -856,6 +856,14 @@
 
     <div class="gold-rule" aria-hidden="true"></div>
 
+    <!--
+      Hidden until the event has participants. Keeps the wired-up Zeffy
+      thermometer/leaderboard embeds and the sponsor markup ready to bring
+      back later: just remove the surrounding <template> tags (and re-add a
+      divider between sections).
+    -->
+    <template id="cw-hidden-until-launch">
+
     <!-- 6. LIVE PROGRESS -->
     <section aria-labelledby="cw-progress-title">
       <div class="cw-section-head reveal">
@@ -907,7 +915,8 @@
       </div>
     </section>
 
-    <div class="gold-rule" aria-hidden="true"></div>
+    </template>
+    <!-- end hidden-until-launch -->
 
     <!-- 8. FAQ -->
     <section aria-labelledby="cw-faq-title">
