@@ -26,9 +26,11 @@
       --deep-gold: #BB8525;
       --gold-dim: rgba(210,166,60,0.12);
       --gold-line: rgba(210,166,60,0.25);
+      --banner-red: #8E2B26;
+      --banner-red-deep: #6F211D;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6.5rem; }
 
     body {
       background: var(--near-black);
@@ -49,11 +51,51 @@
       opacity: 0.4;
     }
 
-    /* NAV */
-    nav {
+    /* ANNOUNCEMENT BANNER + NAV */
+    .topbar {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
+    }
+
+    .promo-banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.5rem 1.25rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gold-pale);
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.35;
+      background: linear-gradient(180deg, var(--banner-red) 0%, var(--banner-red-deep) 100%);
+      border-bottom: 1px solid var(--gold-line);
+      box-shadow: inset 0 1px 0 rgba(238,205,92,0.18);
+      transition: filter 0.2s;
+    }
+    .promo-banner:hover { filter: brightness(1.08); }
+    .promo-banner strong { color: var(--gold-light); font-weight: 800; letter-spacing: 0.03em; }
+    .promo-banner .promo-sep { color: var(--gold); opacity: 0.55; }
+    .promo-banner .promo-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--gold);
+      color: var(--near-black);
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .promo-banner:hover .promo-cta { background: var(--gold-light); }
+
+    nav {
       padding: 0.6rem 2.5rem;
       display: flex;
       align-items: center;
@@ -1452,6 +1494,10 @@
       .social-icon svg { width: 18px; height: 18px; }
       .nav-wordmark { font-size: 0.7rem; }
 
+      .promo-banner { font-size: 0.78rem; padding: 0.45rem 1rem; gap: 0.4rem; }
+      .promo-banner .promo-detail, .promo-banner .promo-sep { display: none; }
+      .promo-banner .promo-cta { font-size: 0.68rem; padding: 0.18rem 0.6rem; }
+
       .hero { padding: 7rem 1.25rem 4rem; }
       .hero h1 { font-size: clamp(2.6rem, 12vw, 4rem); }
       .hero-tagline { font-size: 1rem; margin: 1.25rem 0 2rem; }
@@ -1513,6 +1559,18 @@
 </head>
 <body>
 
+  <!-- TOP BAR: announcement banner + nav -->
+  <div class="topbar">
+
+  <!-- CARRY THE WEIGHT BANNER -->
+  <a class="promo-banner" href="/carrytheweight">
+    <span class="promo-flag" aria-hidden="true">🎗️</span>
+    <strong>Carry the Weight 2026</strong>
+    <span class="promo-sep">·</span>
+    <span class="promo-detail">Our annual ruck march on the Riverwalk — Sat, Sept 19. Veterans march free.</span>
+    <span class="promo-cta">Register Free →</span>
+  </a>
+
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
@@ -1540,6 +1598,9 @@
       </a>
     </div>
   </nav>
+
+  </div>
+  <!-- /TOP BAR -->
 
   <!-- HERO -->
   <section class="hero">
