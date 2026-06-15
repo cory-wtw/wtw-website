@@ -1,0 +1,19 @@
+# Netlify configuration for Worth Their Weight
+#
+# Domain redirects: forward the wtwvets.org alias (apex + www) to the
+# canonical primary domain, worththeirweight.org. Path and query string are
+# preserved via :splat, so deep links like /carrytheweight redirect correctly.
+# force = true ensures the redirect wins even though the site is also served
+# at these aliases.
+
+[[redirects]]
+  from = "https://wtwvets.org/*"
+  to = "https://worththeirweight.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.wtwvets.org/*"
+  to = "https://worththeirweight.org/:splat"
+  status = 301
+  force = true
