@@ -393,15 +393,13 @@
       color: var(--gold);
     }
 
-    /* Live Zeffy script embed — give it a tall floor so the form isn't
-       cramped with an inner scrollbar; Zeffy's resize script can still grow
-       it taller for longer forms. */
+    /* Zeffy registration iframe — explicit tall height so the entire form
+       is visible and the page (not a cramped inner frame) does the scrolling. */
     .cw-zeffy-embed {
       width: 100%;
-      min-height: 1200px;
       margin: 0 auto;
     }
-    .cw-zeffy-embed iframe { width: 100%; min-height: 1200px; border: 0; display: block; }
+    .cw-zeffy-embed iframe { width: 100%; height: 1500px; border: 0; display: block; }
 
     .cw-embed-fallback {
       margin-top: 1rem;
@@ -692,7 +690,7 @@
       .cw-fact { white-space: normal; }
 
       .cw-anywhere { padding: 1.75rem 1.5rem; }
-      .cw-zeffy-embed, .cw-zeffy-embed iframe { min-height: 1500px; }
+      .cw-zeffy-embed iframe { height: 1900px; }
 
       footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.25rem; }
       .footer-right { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
@@ -798,15 +796,13 @@
       </div>
 
       <div class="cw-zeffy-embed reveal">
-        <!-- ZEFFY_CAMPAIGN_EMBED — Carry the Weight 2026 (official Zeffy embed snippet) -->
-        <div data-zeffy-embed data-form-url="/embed/donation-form/carry-the-weight--2026"></div>
-        <div data-zeffy-embed-fallback style="display:none;">
-          <div style="position:relative;overflow:hidden;height:450px;width:100%;"><iframe title='Carry the Weight 2026 — registration and pledge form, powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' data-zeffy-embed-src='https://www.zeffy.com/embed/donation-form/carry-the-weight--2026' allowpaymentrequest allowTransparency="true"></iframe></div>
-        </div>
-        <script
-          src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
-          onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';el.querySelectorAll('iframe[data-zeffy-embed-src]').forEach(function(f){f.src=f.getAttribute('data-zeffy-embed-src');});});">
-        </script>
+        <!-- ZEFFY_CAMPAIGN_EMBED — Carry the Weight 2026 registration form (direct iframe, tall fixed height so the whole form is visible and the page scrolls normally) -->
+        <iframe
+          title="Carry the Weight 2026 — registration and pledge form, powered by Zeffy"
+          src="https://www.zeffy.com/embed/donation-form/carry-the-weight--2026"
+          allow="payment"
+          allowtransparency="true"
+          loading="lazy"></iframe>
       </div>
       <p class="cw-embed-fallback reveal">
         Form not loading? <a href="https://www.zeffy.com/en-US/peer-to-peer/carry-the-weight--2026" target="_blank" rel="noopener">Open registration on Zeffy&nbsp;&#8599;</a>
