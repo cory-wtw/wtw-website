@@ -379,6 +379,82 @@
       opacity: 1;
     }
 
+    /* START TIMES — gold-pale cards, gold rules (mirrors How It Works) */
+    .cw-times {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .cw-time {
+      background: var(--gold-pale);
+      color: var(--near-black);
+      padding: 2.25rem 2rem;
+      border-top: 4px solid var(--gold);
+      text-align: center;
+    }
+    .cw-time-distance {
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: var(--near-black);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .cw-time-rule {
+      width: 40px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0 auto 1rem;
+    }
+    .cw-time-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--near-black);
+      opacity: 0.55;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .cw-time-stepoff {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--deep-gold);
+      letter-spacing: -0.01em;
+    }
+    .cw-finish {
+      margin-top: 1.5rem;
+      padding: 1.75rem 2rem;
+      background: var(--gold-dim);
+      border-left: 3px solid var(--gold);
+      text-align: center;
+    }
+    .cw-finish strong {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.35rem;
+    }
+    .cw-finish span {
+      font-size: 1rem;
+      color: var(--gold-pale);
+      opacity: 0.9;
+    }
+    .cw-times-note {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--gold-pale);
+      opacity: 0.55;
+      line-height: 1.6;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* REGISTRATION EMBED */
     .cw-register {
       border-top: 1px solid var(--gold-line);
@@ -657,6 +733,7 @@
     /* RESPONSIVE — mobile-first traffic */
     @media (max-width: 900px) {
       .cw-steps { grid-template-columns: 1fr; }
+      .cw-times { grid-template-columns: 1fr; }
       .cw-ladder { grid-template-columns: 1fr 1fr; }
       .cw-progress-grid { grid-template-columns: 1fr; }
       .cw-sponsor-grid { grid-template-columns: repeat(2, 1fr); }
@@ -742,7 +819,7 @@
         <span class="cw-fact-sep" aria-hidden="true">·</span>
         <span class="cw-fact">Free registration</span>
         <span class="cw-fact-sep" aria-hidden="true">·</span>
-        <span class="cw-fact cw-fact--accent">Veterans march free. Always.</span>
+        <span class="cw-fact cw-fact--accent">Everyone marches free — we just ask you to fundraise.</span>
       </div>
     </section>
 
@@ -769,9 +846,44 @@
           <span class="cw-step-number">03</span>
           <div class="cw-step-rule" aria-hidden="true"></div>
           <h3>Carry it</h3>
-          <p>Out-and-back from Blue Goose Hollow, turn at your mile marker, finish at base camp. Ceremony at noon.</p>
+          <p>Start times are staggered by distance so we all finish together. Out-and-back from Blue Goose Hollow, turn at your mile marker, finish at base camp around 11 AM. Awards ceremony follows.</p>
         </div>
       </div>
+    </section>
+
+    <div class="gold-rule" aria-hidden="true"></div>
+
+    <!-- 2b. START TIMES -->
+    <section id="start-times" aria-labelledby="cw-times-title">
+      <div class="cw-section-head reveal">
+        <span class="section-eyebrow">Start Times</span>
+        <h2 id="cw-times-title">Staggered starts, one <em>finish line</em></h2>
+      </div>
+      <div class="cw-times">
+        <div class="cw-time reveal">
+          <span class="cw-time-distance">10 Miles</span>
+          <div class="cw-time-rule" aria-hidden="true"></div>
+          <span class="cw-time-label">Step off</span>
+          <span class="cw-time-stepoff">8:00 AM</span>
+        </div>
+        <div class="cw-time reveal" style="transition-delay:0.1s">
+          <span class="cw-time-distance">6 Miles</span>
+          <div class="cw-time-rule" aria-hidden="true"></div>
+          <span class="cw-time-label">Step off</span>
+          <span class="cw-time-stepoff">9:30 AM</span>
+        </div>
+        <div class="cw-time reveal" style="transition-delay:0.2s">
+          <span class="cw-time-distance">2 Miles</span>
+          <div class="cw-time-rule" aria-hidden="true"></div>
+          <span class="cw-time-label">Step off</span>
+          <span class="cw-time-stepoff">10:45 AM</span>
+        </div>
+      </div>
+      <div class="cw-finish reveal">
+        <strong>Finish: together at base camp ~11 AM</strong>
+        <span>Awards to follow.</span>
+      </div>
+      <p class="cw-times-note reveal">Staggered starts mean every distance finishes around the same time — we cross together.</p>
     </section>
 
     <div class="gold-rule" aria-hidden="true"></div>
@@ -798,7 +910,16 @@
     <section aria-labelledby="cw-anywhere-title">
       <div class="cw-anywhere reveal">
         <h2 id="cw-anywhere-title">Ruck Anywhere</h2>
-        <p>Not in Chattanooga? Register, declare your miles, and ruck them where you are during event week. Share your page, post your finish photo. Same mission, any city.</p>
+        <p>Not in Chattanooga? Register, declare your miles, and ruck them where you are over event weekend — Saturday, September 12 or Sunday, September 13. Share your page, post your finish photo. Same mission, any city.</p>
+        <p style="margin-top:1rem;">Six awards — bronze, silver, and gold — for our top individual and team fundraisers, announced live at the finish.</p>
+      </div>
+    </section>
+
+    <!-- 4b. TEAMS -->
+    <section aria-labelledby="cw-teams-title">
+      <div class="cw-anywhere reveal">
+        <h2 id="cw-teams-title">Bring a team</h2>
+        <p>Rally your workplace, gym, church group, or family. Start or join a team when you register, fundraise together, and climb the team leaderboard. Top individual and top team fundraisers take home awards on event day.</p>
       </div>
     </section>
 
@@ -919,11 +1040,11 @@
         </details>
         <details>
           <summary>Is it really free?</summary>
-          <div class="cw-faq-answer">Yes. Registration is free. Pledges from your supporters power the mission. Veterans never pay anything, ever.</div>
+          <div class="cw-faq-answer">Yes. Registration is free for everyone. Instead of an entry fee, we ask each participant to fundraise — gather pledges by the mile from friends and family. Every dollar goes to finding veterans the system missed.</div>
         </details>
         <details>
-          <summary>Can my family register together?</summary>
-          <div class="cw-faq-answer">Each person registers individually — takes about 60 seconds each.</div>
+          <summary>Can we participate as a team?</summary>
+          <div class="cw-faq-answer">Yes — start or join a team when you register. Families, workplaces, gyms, and veteran groups all fundraise better together, and there's a team leaderboard and team award.</div>
         </details>
         <details>
           <summary>Where does the money go?</summary>
@@ -964,7 +1085,6 @@
       </a>
     </div>
     <div class="footer-disclaimer">
-      <span class="footer-stamp">Free for veterans. <em>Always.</em></span><br/>
       Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.<br/>
       Worth Their Weight is a 501(c)(3) nonprofit organization, EIN 41-5275144. Donations are tax-deductible.<br/>
       808 Chestnut St, Chattanooga, TN 37402 · 833-WTW-VETS · (833) 989-8387
