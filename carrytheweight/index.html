@@ -393,13 +393,15 @@
       color: var(--gold);
     }
 
-    /* Live Zeffy script embed — let Zeffy manage its own height; reserve space to avoid layout shift */
+    /* Live Zeffy script embed — give it a tall floor so the form isn't
+       cramped with an inner scrollbar; Zeffy's resize script can still grow
+       it taller for longer forms. */
     .cw-zeffy-embed {
       width: 100%;
-      min-height: 480px;
+      min-height: 1200px;
       margin: 0 auto;
     }
-    .cw-zeffy-embed iframe { width: 100%; border: 0; display: block; }
+    .cw-zeffy-embed iframe { width: 100%; min-height: 1200px; border: 0; display: block; }
 
     .cw-embed-fallback {
       margin-top: 1rem;
@@ -690,6 +692,7 @@
       .cw-fact { white-space: normal; }
 
       .cw-anywhere { padding: 1.75rem 1.5rem; }
+      .cw-zeffy-embed, .cw-zeffy-embed iframe { min-height: 1500px; }
 
       footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.25rem; }
       .footer-right { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
