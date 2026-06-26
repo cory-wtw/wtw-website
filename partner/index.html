@@ -583,36 +583,76 @@
     .inquiry-confirm p { font-size: 1.08rem; color: var(--near-black); line-height: 1.6; max-width: 58ch; }
     .inquiry-confirm p a { color: var(--deep-gold); }
 
-    /* FOOTER */
+    /* SOCIAL ICONS (matches main site) */
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: 1.5rem;
+    }
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    .social-icon:hover { opacity: 1; }
+    .social-icon svg { width: 20px; height: 20px; }
+
+    /* FOOTER (matches main site) */
     footer {
       border-top: 1px solid var(--gold-line);
-      padding: 2.5rem 2.5rem;
-      max-width: 1080px;
-      margin: 0 auto;
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
     }
-    .footer-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+
+    .footer-left { display: flex; align-items: center; gap: 1rem; }
+
     .footer-wordmark {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
     }
-    .footer-tagline { font-size: 0.78rem; color: var(--gold-pale); opacity: 0.5; font-style: italic; }
 
-    .footer-contact {
-      font-size: 0.9rem; color: var(--gold-pale); opacity: 0.8;
-      margin-bottom: 1.5rem; line-height: 1.6;
-    }
-    .footer-contact a { color: var(--gold-light); text-decoration: none; }
-    .footer-contact a:hover { text-decoration: underline; }
-
-    .footer-legal {
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--gold-line);
+    .footer-tagline {
       font-size: 0.78rem;
       color: var(--gold-pale);
-      opacity: 0.5;
-      line-height: 1.6;
-      max-width: 90ch;
+      opacity: 0.4;
+      font-style: italic;
     }
+
+    .footer-right { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+    .footer-right a {
+      font-size: 0.78rem;
+      color: var(--gold-pale);
+      opacity: 0.45;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: opacity 0.2s;
+    }
+
+    .footer-right a:hover { opacity: 1; color: var(--gold-light); }
+
+    .footer-disclaimer {
+      width: 100%;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gold-line);
+      font-size: 0.72rem;
+      color: var(--gold-pale);
+      opacity: 0.4;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .footer-disclaimer a { color: var(--gold-pale); }
 
     /* REVEAL */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -918,19 +958,38 @@
 
   </main>
 
-  <!-- 9. FOOTER -->
+  <!-- 9. FOOTER (matches main site) -->
   <footer>
-    <div class="footer-top">
+    <div class="footer-left">
       <img src="../public/WTW Logo Main.png" alt="Worth Their Weight" style="height:36px;width:auto;">
       <div>
         <div class="footer-wordmark">Worth Their Weight</div>
         <div class="footer-tagline">We find the veterans the system missed.</div>
       </div>
     </div>
-    <div class="footer-contact">
-      Partnerships — <a href="mailto:partners@worththeirweight.org">partners@worththeirweight.org</a> · <a href="tel:+18339898387">833-WTW-VETS</a> · <a href="/">worththeirweight.org</a>
+    <div class="footer-right">
+      <a href="mailto:partners@worththeirweight.org">partners@worththeirweight.org</a>
+      <a href="tel:+18339898387">833-WTW-VETS</a>
+      <a href="/#mission">Mission</a>
+      <a href="/#programs">Programs</a>
+      <a href="/#founder">Our Story</a>
+      <a href="/carrytheweight">Carry the Weight</a>
+      <a href="/partner" aria-current="page">Partner With Us</a>
+      <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a>
     </div>
-    <div class="footer-legal">
+    <div class="social-icons" style="margin-left:0;width:100%;justify-content:center;padding-top:1rem;">
+      <a href="https://www.instagram.com/worththeirweightorg" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#F3F3E6" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="#F3F3E6" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="#F3F3E6"/></svg>
+      </a>
+      <a href="https://www.facebook.com/people/Worth-Their-Weight/61574304388792/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="#F3F3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@worththeirweight" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 3 4 5 4" stroke="#F3F3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="footer-disclaimer">
+      Partnerships — <a href="mailto:partners@worththeirweight.org">partners@worththeirweight.org</a> · 833-WTW-VETS · worththeirweight.org<br/>
       Worth Their Weight is a 501(c)(3) tax-exempt organization. EIN 41-5275144. Registered with the Tennessee Secretary of State (No. CO54883). Donations are tax-deductible to the extent allowed by law. Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs.
     </div>
   </footer>
