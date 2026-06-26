@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partner With Us — Worth Their Weight</title>
+  <meta name="description" content="Your sponsorship funds the outreach that finds veterans and connects them to the benefits they've already earned. Free for veterans, always, because partners like you carry the weight." />
+  <meta property="og:title" content="Partner With Worth Their Weight" />
+  <meta property="og:description" content="Help us find the veterans the system missed. Your sponsorship funds the outreach that finds veterans and connects them to the benefits they've already earned." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://worththeirweight.org/partner" />
+  <meta property="og:image" content="https://worththeirweight.org/public/WTW Logo Main.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Partner With Worth Their Weight" />
+  <meta name="twitter:description" content="Help us find the veterans the system missed. Free for veterans, always, because partners like you carry the weight." />
+  <link rel="icon" type="image/png" href="../public/WTW Logo Main.png" />
+  <link rel="apple-touch-icon" href="../public/WTW Logo Main.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --near-black: #1D1912;
+      --gold: #D2A63C;
+      --gold-light: #EECD5C;
+      --gold-pale: #F3F3E6;
+      --cream: #F3F3E6;
+      --deep-gold: #BB8525;
+      --gold-dim: rgba(210,166,60,0.12);
+      --gold-line: rgba(210,166,60,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--near-black);
+      color: var(--gold-pale);
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 2000;
+      background: var(--gold);
+      color: var(--near-black);
+      padding: 0.75rem 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+    .skip-link:focus { left: 1rem; top: 1rem; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0.6rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(29,25,18,0.97);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+
+    .nav-wordmark {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .nav-donate {
+      display: inline-flex;
+      align-items: center;
+      background: var(--gold);
+      color: var(--near-black);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.55rem 1.4rem;
+      border: 1px solid var(--gold);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-donate:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
+
+    /* SECTIONS */
+    section {
+      padding: 5.5rem 2rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--deep-gold);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .gold-rule {
+      max-width: 1080px;
+      margin: 0 auto;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-line), transparent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--gold);
+      color: var(--near-black);
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.25rem;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, border-color 0.2s;
+    }
+    .btn:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+    }
+    .btn--ghost:hover { background: var(--gold-dim); color: var(--gold-light); }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 9rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+      max-width: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -55%);
+      width: 760px; height: 760px;
+      max-width: 120vw;
+      background: radial-gradient(ellipse at center, rgba(210,166,60,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 5.5vw, 4.4rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--gold-pale);
+      max-width: 18ch;
+      margin: 0 auto 1.5rem;
+      position: relative;
+    }
+
+    .hero-subhead {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      font-weight: 300;
+      color: var(--gold-light);
+      letter-spacing: 0.01em;
+      max-width: 48ch;
+      margin: 0 auto 2.5rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* GENERIC SECTION HEAD */
+    .section-head { margin-bottom: 2.5rem; }
+    .section-head h2 {
+      font-size: clamp(1.8rem, 4vw, 2.9rem);
+      font-weight: 700;
+      color: var(--gold-pale);
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+    }
+    .section-head h2 em { font-style: normal; color: var(--gold); }
+
+    .body-copy {
+      font-size: 1.1rem;
+      color: var(--gold-pale);
+      opacity: 0.85;
+      max-width: 64ch;
+      line-height: 1.6;
+    }
+    .body-copy strong { color: var(--gold-light); font-weight: 600; }
+
+    /* STAT STRIP */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--gold-line);
+      border: 1px solid var(--gold-line);
+      margin-top: 3rem;
+    }
+
+    .stat {
+      background: var(--near-black);
+      padding: 2.25rem 1.5rem;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      margin-top: 0.75rem;
+      font-size: 0.92rem;
+      color: var(--gold-pale);
+      opacity: 0.8;
+      line-height: 1.4;
+    }
+
+    .stat-source {
+      margin-top: 1.25rem;
+      font-size: 0.75rem;
+      color: var(--gold-pale);
+      opacity: 0.45;
+      letter-spacing: 0.02em;
+    }
+
+    /* OUR MODEL — cream callout */
+    .model-card {
+      background: var(--cream);
+      color: var(--near-black);
+      padding: 3rem 2.75rem;
+      border-left: 4px solid var(--gold);
+    }
+    .model-card h2 {
+      font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+      font-weight: 900;
+      color: var(--near-black);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      line-height: 1.1;
+    }
+    .model-card p {
+      font-size: 1.1rem;
+      color: var(--near-black);
+      max-width: 66ch;
+      line-height: 1.6;
+    }
+    .model-card p strong { color: var(--deep-gold); }
+
+    /* WAYS TO PARTNER — two cards */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .partner-card {
+      background: rgba(243,243,230,0.03);
+      border: 1px solid var(--gold-line);
+      padding: 2.5rem 2rem;
+    }
+
+    .partner-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .partner-card .partner-kicker {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--deep-gold);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .tier-list { list-style: none; }
+
+    .tier-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--gold-line);
+    }
+    .tier-list li:last-child { border-bottom: none; }
+
+    .tier-name { font-weight: 600; color: var(--gold-pale); }
+    .tier-amount {
+      font-weight: 700;
+      color: var(--gold);
+      white-space: nowrap;
+      text-align: right;
+      font-size: 0.95rem;
+    }
+
+    .partner-caption {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.98rem;
+      color: var(--gold-pale);
+      opacity: 0.75;
+      max-width: 70ch;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* RECOGNITION */
+    .recognition-placeholder {
+      margin-top: 2.5rem;
+      border: 1px dashed var(--gold-line);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      color: var(--gold-pale);
+      opacity: 0.45;
+      text-transform: uppercase;
+    }
+
+    /* HOW IT WORKS — cream step cards */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .step {
+      background: var(--cream);
+      color: var(--near-black);
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+
+    .step-number {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--deep-gold);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .step h3 {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--near-black);
+      margin-bottom: 0.75rem;
+    }
+
+    .step p { font-size: 0.98rem; color: var(--near-black); opacity: 0.85; line-height: 1.55; }
+
+    /* CTA BAND */
+    .cta-band {
+      text-align: center;
+      padding: 5.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 500px;
+      max-width: 120vw;
+      background: radial-gradient(ellipse at center, rgba(210,166,60,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-band h2 {
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      font-weight: 900;
+      color: var(--gold-pale);
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      position: relative;
+      line-height: 1.1;
+    }
+    .cta-band .hero-cta-row { margin-bottom: 0; }
+
+    /* INQUIRY FORM */
+    .inquiry-section { max-width: 760px; }
+
+    .inquiry-intro { margin-bottom: 2.5rem; }
+    .inquiry-intro h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .inquiry-intro p {
+      font-size: 1.08rem;
+      color: var(--gold-pale);
+      opacity: 0.85;
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+    .inquiry-intro p a { color: var(--gold-light); }
+
+    .inquiry-form { display: grid; gap: 1.5rem; }
+
+    .field { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .field label, .fieldset-legend {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--gold-pale);
+    }
+    .req { color: var(--gold); margin-left: 0.15rem; }
+
+    .field input[type="text"],
+    .field input[type="email"],
+    .field input[type="tel"],
+    .field input[type="url"],
+    .field select,
+    .field textarea {
+      width: 100%;
+      background: rgba(243,243,230,0.04);
+      border: 1px solid var(--gold-line);
+      color: var(--gold-pale);
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 2px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .field textarea { resize: vertical; min-height: 120px; }
+    .field input::placeholder, .field textarea::placeholder { color: var(--gold-pale); opacity: 0.4; }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--gold);
+      background: rgba(243,243,230,0.07);
+    }
+    .field select { appearance: none; cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D2A63C' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem;
+    }
+    .field select option { background: var(--near-black); color: var(--gold-pale); }
+    .field-hint { font-size: 0.8rem; color: var(--gold-pale); opacity: 0.5; }
+
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    fieldset { border: none; }
+    .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 0.75rem; }
+    .check-line { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.98rem; color: var(--gold-pale); font-weight: 400; cursor: pointer; }
+    .check-line input { margin-top: 0.25rem; width: 1.05rem; height: 1.05rem; accent-color: var(--gold); flex-shrink: 0; }
+
+    .consent-line {
+      display: flex; align-items: flex-start; gap: 0.65rem;
+      font-size: 0.98rem; color: var(--gold-pale); line-height: 1.5; cursor: pointer;
+      padding: 1.1rem 1.25rem; border: 1px solid var(--gold-line); border-radius: 2px;
+      background: rgba(243,243,230,0.03);
+    }
+    .consent-line input { margin-top: 0.2rem; width: 1.15rem; height: 1.15rem; accent-color: var(--gold); flex-shrink: 0; }
+
+    .inquiry-honeypot { position: absolute; left: -5000px; width: 1px; height: 1px; opacity: 0; }
+
+    .privacy-note {
+      font-size: 0.85rem;
+      color: var(--gold-pale);
+      opacity: 0.6;
+      line-height: 1.5;
+    }
+    .privacy-note a { color: var(--gold-light); }
+
+    .inquiry-form button[type="submit"] {
+      justify-self: start;
+      background: var(--gold);
+      color: var(--near-black);
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1.05rem 2.75rem;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .inquiry-form button[type="submit"]:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
+    .inquiry-form button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .form-error {
+      font-size: 0.9rem;
+      color: #E89A8A;
+      min-height: 1.2rem;
+    }
+
+    /* CONFIRMATION */
+    .inquiry-confirm {
+      display: none;
+      background: var(--cream);
+      color: var(--near-black);
+      border-left: 4px solid var(--gold);
+      padding: 3rem 2.75rem;
+    }
+    .inquiry-confirm.show { display: block; }
+    .inquiry-confirm h2 {
+      font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+      font-weight: 900;
+      color: var(--near-black);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .inquiry-confirm p { font-size: 1.08rem; color: var(--near-black); line-height: 1.6; max-width: 58ch; }
+    .inquiry-confirm p a { color: var(--deep-gold); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--gold-line);
+      padding: 2.5rem 2.5rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .footer-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .footer-wordmark {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .footer-tagline { font-size: 0.78rem; color: var(--gold-pale); opacity: 0.5; font-style: italic; }
+
+    .footer-contact {
+      font-size: 0.9rem; color: var(--gold-pale); opacity: 0.8;
+      margin-bottom: 1.5rem; line-height: 1.6;
+    }
+    .footer-contact a { color: var(--gold-light); text-decoration: none; }
+    .footer-contact a:hover { text-decoration: underline; }
+
+    .footer-legal {
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gold-line);
+      font-size: 0.78rem;
+      color: var(--gold-pale);
+      opacity: 0.5;
+      line-height: 1.6;
+      max-width: 90ch;
+    }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    @media (max-width: 820px) {
+      nav { padding: 0.6rem 1.25rem; }
+      section { padding: 4rem 1.25rem; }
+      .partner-grid, .steps, .stat-strip { grid-template-columns: 1fr; }
+      .field-row, .check-grid { grid-template-columns: 1fr; }
+      .model-card, .inquiry-confirm { padding: 2rem 1.5rem; }
+      .hero-cta-row .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#inquiry" class="skip-link">Skip to inquiry form</a>
+
+  <!-- 1. HEADER / NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="../public/WTW Logo Main.png" alt="Worth Their Weight home" style="height:36px;width:auto;">
+      <span class="nav-wordmark">Worth Their Weight</span>
+    </a>
+    <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="nav-donate">Donate</a>
+  </nav>
+
+  <main id="top">
+
+    <!-- 2. HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <p class="hero-eyebrow">Partner With Worth Their Weight</p>
+      <h1 id="hero-title">Help us find the veterans the system missed.</h1>
+      <p class="hero-subhead">Your sponsorship funds the outreach that finds veterans and connects them to the benefits they've already earned. Free for veterans, always, because partners like you carry the weight.</p>
+      <div class="hero-cta-row">
+        <a href="#inquiry" class="btn">Become a Sponsor &rarr;</a>
+        <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="btn btn--ghost">Give Now &rarr;</a>
+      </div>
+    </section>
+
+    <div class="gold-rule" aria-hidden="true"></div>
+
+    <!-- 3. THE OPPORTUNITY -->
+    <section aria-labelledby="why-title">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Why this matters</span>
+        <h2 id="why-title">The stakes</h2>
+      </div>
+      <p class="body-copy reveal">In Tennessee tonight, an estimated 570 veterans will sleep without a home. Many earned VA disability benefits they've never received, monthly tax-free compensation that can exceed $1 million in lifetime value. No one ever showed them how to claim it. We find them, and connect them to the people who can help.</p>
+
+      <div class="stat-strip reveal">
+        <div class="stat">
+          <div class="stat-num">570</div>
+          <div class="stat-label">veterans homeless in Tennessee</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">$3,939</div>
+          <div class="stat-label">max monthly benefit, tax-free</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">$1M+</div>
+          <div class="stat-label">lifetime claim value</div>
+        </div>
+      </div>
+      <p class="stat-source reveal">VA 2024 Point-in-Time Count; 2026 VA compensation rates</p>
+    </section>
+
+    <div class="gold-rule" aria-hidden="true"></div>
+
+    <!-- 4. OUR MODEL -->
+    <section aria-labelledby="model-title">
+      <div class="model-card reveal">
+        <h2 id="model-title">Donors pay so veterans don't.</h2>
+        <p>Worth Their Weight is a 501(c)(3) nonprofit funded entirely by donors, sponsors, and grants. Field Scouts go out and find veterans; we connect each one to a VA-accredited VSO partner who handles the claim. We are not a law firm and we don't charge veterans a cent. Your partnership is what makes that possible.</p>
+      </div>
+    </section>
+
+    <div class="gold-rule" aria-hidden="true"></div>
+
+    <!-- 5. WAYS TO PARTNER -->
+    <section aria-labelledby="ways-title">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Ways to Partner</span>
+        <h2 id="ways-title">Two ways to <em>carry the weight</em></h2>
+      </div>
+      <div class="partner-grid">
+        <div class="partner-card reveal">
+          <span class="partner-kicker">Column A</span>
+          <h3>Year-Round Giving Circles</h3>
+          <ul class="tier-list">
+            <li><span class="tier-name">Founders' Circle</span><span class="tier-amount">$25,000+ (by invitation)</span></li>
+            <li><span class="tier-name">Commander's Circle</span><span class="tier-amount">$10,000</span></li>
+            <li><span class="tier-name">Field Officer</span><span class="tier-amount">$5,000</span></li>
+            <li><span class="tier-name">Frontline Supporter</span><span class="tier-amount">$1,000</span></li>
+            <li><span class="tier-name">Battle Buddy</span><span class="tier-amount">$250 / $25 mo</span></li>
+          </ul>
+        </div>
+        <div class="partner-card reveal" style="transition-delay:0.1s">
+          <span class="partner-kicker">Column B</span>
+          <h3>Carry the Weight Event</h3>
+          <ul class="tier-list">
+            <li><span class="tier-name">Command Sponsor</span><span class="tier-amount">$10,000</span></li>
+            <li><span class="tier-name">Squad Leader</span><span class="tier-amount">$5,000</span></li>
+            <li><span class="tier-name">Ruck Master</span><span class="tier-amount">$2,500</span></li>
+            <li><span class="tier-name">Range Partner</span><span class="tier-amount">$1,000</span></li>
+            <li><span class="tier-name">In-Kind</span><span class="tier-amount">credited at matching cash tier</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="partner-caption reveal">All partnerships are recognition-based: your name and logo are acknowledged, never sold, so your full gift stays tax-deductible.</p>
+    </section>
+
+    <div class="gold-rule" aria-hidden="true"></div>
+
+    <!-- 6. RECOGNITION -->
+    <section aria-labelledby="recognition-title">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Recognition</span>
+        <h2 id="recognition-title">You'll be in <em>good company.</em></h2>
+      </div>
+      <p class="body-copy reveal">Every partner is honored on the Worth Their Weight donor wall, featured on our website and displayed at events. Recognition is acknowledgment of your support, not advertising, and never an endorsement of any product or service.</p>
+      <!-- Placeholder: embed live donor wall / sponsor logos here once approved. -->
+      <div class="recognition-placeholder reveal" aria-hidden="true">Donor wall &amp; sponsor logos &mdash; coming soon</div>
+    </section>
+
+    <div class="gold-rule" aria-hidden="true"></div>
+
+    <!-- 7. HOW IT WORKS -->
+    <section aria-labelledby="how-title">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">How It Works</span>
+        <h2 id="how-title">Three steps to <em>carry the weight</em></h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-number">Step 1</span>
+          <h3>Inquire.</h3>
+          <p>Tell us how you'd like to help using the form below. It takes two minutes.</p>
+        </div>
+        <div class="step reveal" style="transition-delay:0.1s">
+          <span class="step-number">Step 2</span>
+          <h3>Talk.</h3>
+          <p>A WTW team member reaches out to find the right fit and answer questions.</p>
+        </div>
+        <div class="step reveal" style="transition-delay:0.2s">
+          <span class="step-number">Step 3</span>
+          <h3>Carry the weight.</h3>
+          <p>We confirm your sponsorship, send a simple agreement and invoice, and put your support to work finding veterans.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PRIMARY CTA BAND -->
+    <section class="cta-band" style="max-width:none;" aria-labelledby="cta-title">
+      <div class="cta-band-glow" aria-hidden="true"></div>
+      <h2 id="cta-title">Ready to carry the weight with us?</h2>
+      <div class="hero-cta-row">
+        <a href="#inquiry" class="btn">Become a Sponsor &rarr;</a>
+        <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="btn btn--ghost">Make a one-time gift &rarr;</a>
+      </div>
+    </section>
+
+    <div class="gold-rule" aria-hidden="true"></div>
+
+    <!-- PART B — CORPORATE SPONSOR INQUIRY FORM -->
+    <section id="inquiry" class="inquiry-section" aria-labelledby="inquiry-title">
+      <div class="inquiry-intro reveal">
+        <h2 id="inquiry-title">Become a Sponsor</h2>
+        <p>Tell us a little about your organization and how you'd like to help. A member of our team will reach out personally, usually within two business days. Prefer to talk now? Call <a href="tel:+18339898387">833-WTW-VETS</a>.</p>
+      </div>
+
+      <!--
+        SUBMISSIONS — handled by Netlify Forms (form name: "sponsor-inquiry").
+        Required Netlify dashboard config (Site settings → Forms → Form notifications):
+          1. Email notification → To: partners@worththeirweight.org · CC: cory@worththeirweight.org
+             (Fallback if partners@ is not live yet: send to cory@worththeirweight.org.)
+             Routes to Brian Dixon, Head of Partnerships & Fundraising.
+          2. Auto-acknowledgment to submitter → reply field: "email" → use the confirmation copy below.
+        No payment is collected here — inquiries only.
+      -->
+      <form
+        name="sponsor-inquiry"
+        id="sponsor-inquiry"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/partner/inquiry/thank-you/"
+        class="inquiry-form reveal"
+        onsubmit="return submitInquiry(event)"
+      >
+        <input type="hidden" name="form-name" value="sponsor-inquiry" />
+        <p class="inquiry-honeypot" aria-hidden="true">
+          <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </p>
+
+        <div class="field">
+          <label for="company">Company / Organization <span class="req" aria-hidden="true">&#9733;</span></label>
+          <input type="text" id="company" name="company" required autocomplete="organization" />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="contact-name">Primary contact name <span class="req" aria-hidden="true">&#9733;</span></label>
+            <input type="text" id="contact-name" name="contact-name" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="title-role">Title / Role</label>
+            <input type="text" id="title-role" name="title-role" autocomplete="organization-title" />
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Work email <span class="req" aria-hidden="true">&#9733;</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="website">Company website</label>
+          <input type="url" id="website" name="website" placeholder="https://" autocomplete="url" />
+        </div>
+
+        <div class="field">
+          <label for="interest">Partnership interest <span class="req" aria-hidden="true">&#9733;</span></label>
+          <select id="interest" name="partnership-interest" required>
+            <option value="" disabled selected>Select one…</option>
+            <option>Founders' Circle ($25,000+)</option>
+            <option>Commander's Circle ($10,000)</option>
+            <option>Field Officer ($5,000)</option>
+            <option>Frontline Supporter ($1,000)</option>
+            <option>Not sure — let's talk</option>
+          </select>
+        </div>
+
+        <fieldset class="field">
+          <legend class="fieldset-legend">Type of support</legend>
+          <div class="check-grid">
+            <label class="check-line"><input type="checkbox" name="type-of-support" value="Carry the Weight event" /> Carry the Weight event</label>
+            <label class="check-line"><input type="checkbox" name="type-of-support" value="Year-round partnership" /> Year-round partnership</label>
+            <label class="check-line"><input type="checkbox" name="type-of-support" value="Both" /> Both</label>
+            <label class="check-line"><input type="checkbox" name="type-of-support" value="In-kind donation" /> In-kind donation</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="budget">Estimated budget range</label>
+          <select id="budget" name="budget-range">
+            <option value="" disabled selected>Select one…</option>
+            <option>Under $1,000</option>
+            <option>$1,000–$2,499</option>
+            <option>$2,500–$4,999</option>
+            <option>$5,000–$9,999</option>
+            <option>$10,000–$24,999</option>
+            <option>$25,000+</option>
+            <option>Prefer to discuss</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="recognition">How you'd like to be recognized</label>
+          <input type="text" id="recognition" name="recognition" placeholder="e.g., company name as it should appear, logo to follow" />
+        </div>
+
+        <div class="field">
+          <label for="message">Anything else / message</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="referral">How did you hear about us?</label>
+          <input type="text" id="referral" name="referral" />
+        </div>
+
+        <label class="consent-line">
+          <input type="checkbox" name="consent" value="yes" required />
+          <span>I'd like a Worth Their Weight team member to contact me about partnership. <span class="req" aria-hidden="true">&#9733;</span></span>
+        </label>
+
+        <p class="privacy-note">We use the information you submit only to follow up on this inquiry — never sold or shared. No payment is collected here; sponsorships are confirmed later by agreement and invoice. See our <a href="/#mission">privacy practices</a>.</p>
+
+        <div class="form-error" id="inquiry-error" role="status" aria-live="polite"></div>
+
+        <button type="submit">Send My Inquiry</button>
+      </form>
+
+      <!-- CONFIRMATION (shown after successful submit) -->
+      <div class="inquiry-confirm" id="inquiry-confirm" role="status" aria-live="polite" tabindex="-1">
+        <h2>Thank you — we've got it.</h2>
+        <p>Someone from our team will be in touch within two business days. In the meantime, you're welcome to explore our work at <a href="/">worththeirweight.org</a> or call us at <a href="tel:+18339898387">833-WTW-VETS</a>. Thank you for helping us find the veterans the system missed.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 9. FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <img src="../public/WTW Logo Main.png" alt="Worth Their Weight" style="height:36px;width:auto;">
+      <div>
+        <div class="footer-wordmark">Worth Their Weight</div>
+        <div class="footer-tagline">We find the veterans the system missed.</div>
+      </div>
+    </div>
+    <div class="footer-contact">
+      Partnerships — <a href="mailto:partners@worththeirweight.org">partners@worththeirweight.org</a> · <a href="tel:+18339898387">833-WTW-VETS</a> · <a href="/">worththeirweight.org</a>
+    </div>
+    <div class="footer-legal">
+      Worth Their Weight is a 501(c)(3) tax-exempt organization. EIN 41-5275144. Registered with the Tennessee Secretary of State (No. CO54883). Donations are tax-deductible to the extent allowed by law. Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs.
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal — matches main site behavior
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // AJAX submit → swap form for the on-page confirmation. No-JS users fall
+    // back to the form's action="/partner/inquiry/thank-you/" redirect.
+    function submitInquiry(event) {
+      event.preventDefault();
+      const form = event.target;
+      const errorEl = document.getElementById('inquiry-error');
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      errorEl.textContent = '';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      const formData = new FormData(form);
+      const body = new URLSearchParams(formData).toString();
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body,
+      })
+        .then((response) => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          const confirm = document.getElementById('inquiry-confirm');
+          form.style.display = 'none';
+          confirm.classList.add('show');
+          confirm.focus();
+          confirm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch(() => {
+          errorEl.textContent = 'Something went wrong. Please email partners@worththeirweight.org instead.';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send My Inquiry';
+        });
+
+      return false;
+    }
+  </script>
+
+</body>
+</html>
