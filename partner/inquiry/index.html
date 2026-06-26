@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Become a Sponsor — Worth Their Weight</title>
+  <meta name="description" content="Tell us about your organization and how you'd like to help. A member of our team will reach out personally, usually within two business days." />
+  <meta property="og:title" content="Become a Sponsor — Worth Their Weight" />
+  <meta property="og:description" content="Tell us about your organization and how you'd like to help. A member of our team will reach out personally, usually within two business days." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://worththeirweight.org/partner/inquiry" />
+  <link rel="icon" type="image/png" href="../../public/WTW Logo Main.png" />
+  <link rel="apple-touch-icon" href="../../public/WTW Logo Main.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --near-black: #1D1912;
+      --gold: #D2A63C;
+      --gold-light: #EECD5C;
+      --gold-pale: #F3F3E6;
+      --cream: #F3F3E6;
+      --deep-gold: #BB8525;
+      --gold-dim: rgba(210,166,60,0.12);
+      --gold-line: rgba(210,166,60,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--near-black);
+      color: var(--gold-pale);
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0.6rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(29,25,18,0.97);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gold-line);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-wordmark {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .nav-donate {
+      display: inline-flex; align-items: center;
+      background: var(--gold); color: var(--near-black);
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.55rem 1.4rem; border: 1px solid var(--gold);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-donate:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
+
+    main { max-width: 760px; margin: 0 auto; padding: 8rem 2rem 5rem; }
+
+    .inquiry-intro { margin-bottom: 2.5rem; }
+    .back-link {
+      display: inline-block; margin-bottom: 1.5rem;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold-pale); opacity: 0.6;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 1; color: var(--gold-light); }
+    .inquiry-intro h1 {
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 900; color: var(--gold); letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .inquiry-intro p {
+      font-size: 1.08rem; color: var(--gold-pale); opacity: 0.85; line-height: 1.6; max-width: 60ch;
+    }
+    .inquiry-intro p a { color: var(--gold-light); }
+
+    .inquiry-form { display: grid; gap: 1.5rem; }
+    .field { display: flex; flex-direction: column; gap: 0.5rem; }
+    .field label, .fieldset-legend {
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; color: var(--gold-pale);
+    }
+    .req { color: var(--gold); margin-left: 0.15rem; }
+
+    .field input[type="text"], .field input[type="email"], .field input[type="tel"],
+    .field input[type="url"], .field select, .field textarea {
+      width: 100%;
+      background: rgba(243,243,230,0.04);
+      border: 1px solid var(--gold-line);
+      color: var(--gold-pale);
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 2px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .field textarea { resize: vertical; min-height: 120px; }
+    .field input::placeholder, .field textarea::placeholder { color: var(--gold-pale); opacity: 0.4; }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--gold); background: rgba(243,243,230,0.07);
+    }
+    .field select { appearance: none; cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D2A63C' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem;
+    }
+    .field select option { background: var(--near-black); color: var(--gold-pale); }
+
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    fieldset { border: none; }
+    .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 0.75rem; }
+    .check-line { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.98rem; color: var(--gold-pale); font-weight: 400; cursor: pointer; }
+    .check-line input { margin-top: 0.25rem; width: 1.05rem; height: 1.05rem; accent-color: var(--gold); flex-shrink: 0; }
+
+    .consent-line {
+      display: flex; align-items: flex-start; gap: 0.65rem;
+      font-size: 0.98rem; color: var(--gold-pale); line-height: 1.5; cursor: pointer;
+      padding: 1.1rem 1.25rem; border: 1px solid var(--gold-line); border-radius: 2px;
+      background: rgba(243,243,230,0.03);
+    }
+    .consent-line input { margin-top: 0.2rem; width: 1.15rem; height: 1.15rem; accent-color: var(--gold); flex-shrink: 0; }
+
+    .inquiry-honeypot { position: absolute; left: -5000px; width: 1px; height: 1px; opacity: 0; }
+
+    .privacy-note { font-size: 0.85rem; color: var(--gold-pale); opacity: 0.6; line-height: 1.5; }
+    .privacy-note a { color: var(--gold-light); }
+
+    .inquiry-form button[type="submit"] {
+      justify-self: start;
+      background: var(--gold); color: var(--near-black);
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.9rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 1.05rem 2.75rem; border: 1px solid var(--gold); cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .inquiry-form button[type="submit"]:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
+    .inquiry-form button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .form-error { font-size: 0.9rem; color: #E89A8A; min-height: 1.2rem; }
+
+    .inquiry-confirm {
+      display: none;
+      background: var(--cream); color: var(--near-black);
+      border-left: 4px solid var(--gold); padding: 3rem 2.75rem;
+    }
+    .inquiry-confirm.show { display: block; }
+    .inquiry-confirm h2 {
+      font-size: clamp(1.7rem, 3.6vw, 2.4rem); font-weight: 900; color: var(--near-black);
+      letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .inquiry-confirm p { font-size: 1.08rem; color: var(--near-black); line-height: 1.6; max-width: 58ch; }
+    .inquiry-confirm p a { color: var(--deep-gold); }
+
+    footer {
+      border-top: 1px solid var(--gold-line);
+      padding: 2.5rem; max-width: 760px; margin: 0 auto;
+      font-size: 0.78rem; color: var(--gold-pale); opacity: 0.55; line-height: 1.6;
+    }
+    footer a { color: var(--gold-light); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0.6rem 1.25rem; }
+      main { padding: 7rem 1.25rem 4rem; }
+      .field-row, .check-grid { grid-template-columns: 1fr; }
+      .inquiry-confirm { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="../../public/WTW Logo Main.png" alt="Worth Their Weight home" style="height:36px;width:auto;">
+      <span class="nav-wordmark">Worth Their Weight</span>
+    </a>
+    <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="nav-donate">Donate</a>
+  </nav>
+
+  <main>
+    <div class="inquiry-intro">
+      <a href="/partner" class="back-link">← Partner With Us</a>
+      <h1>Become a Sponsor</h1>
+      <p>Tell us a little about your organization and how you'd like to help. A member of our team will reach out personally, usually within two business days. Prefer to talk now? Call <a href="tel:+18339898387">833-WTW-VETS</a>.</p>
+    </div>
+
+    <!--
+      SUBMISSIONS — handled by Netlify Forms (form name: "sponsor-inquiry").
+      Required Netlify dashboard config (Site settings → Forms → Form notifications):
+        1. Email notification → To: partners@worththeirweight.org · CC: cory@worththeirweight.org
+           (Fallback if partners@ is not live yet: send to cory@worththeirweight.org.)
+           Routes to Brian Dixon, Head of Partnerships & Fundraising.
+        2. Auto-acknowledgment to submitter → reply field: "email" → use the confirmation copy below.
+      No payment is collected here — inquiries only.
+    -->
+    <form
+      name="sponsor-inquiry"
+      id="sponsor-inquiry"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="thank-you/"
+      class="inquiry-form"
+      onsubmit="return submitInquiry(event)"
+    >
+      <input type="hidden" name="form-name" value="sponsor-inquiry" />
+      <p class="inquiry-honeypot" aria-hidden="true">
+        <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+      </p>
+
+      <div class="field">
+        <label for="company">Company / Organization <span class="req" aria-hidden="true">&#9733;</span></label>
+        <input type="text" id="company" name="company" required autocomplete="organization" />
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="contact-name">Primary contact name <span class="req" aria-hidden="true">&#9733;</span></label>
+          <input type="text" id="contact-name" name="contact-name" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="title-role">Title / Role</label>
+          <input type="text" id="title-role" name="title-role" autocomplete="organization-title" />
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="email">Work email <span class="req" aria-hidden="true">&#9733;</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="website">Company website</label>
+        <input type="url" id="website" name="website" placeholder="https://" autocomplete="url" />
+      </div>
+
+      <div class="field">
+        <label for="interest">Partnership interest <span class="req" aria-hidden="true">&#9733;</span></label>
+        <select id="interest" name="partnership-interest" required>
+          <option value="" disabled selected>Select one…</option>
+          <option>Founders' Circle ($25,000+)</option>
+          <option>Commander's Circle ($10,000)</option>
+          <option>Field Officer ($5,000)</option>
+          <option>Frontline Supporter ($1,000)</option>
+          <option>Not sure — let's talk</option>
+        </select>
+      </div>
+
+      <fieldset class="field">
+        <legend class="fieldset-legend">Type of support</legend>
+        <div class="check-grid">
+          <label class="check-line"><input type="checkbox" name="type-of-support" value="Carry the Weight event" /> Carry the Weight event</label>
+          <label class="check-line"><input type="checkbox" name="type-of-support" value="Year-round partnership" /> Year-round partnership</label>
+          <label class="check-line"><input type="checkbox" name="type-of-support" value="Both" /> Both</label>
+          <label class="check-line"><input type="checkbox" name="type-of-support" value="In-kind donation" /> In-kind donation</label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="budget">Estimated budget range</label>
+        <select id="budget" name="budget-range">
+          <option value="" disabled selected>Select one…</option>
+          <option>Under $1,000</option>
+          <option>$1,000–$2,499</option>
+          <option>$2,500–$4,999</option>
+          <option>$5,000–$9,999</option>
+          <option>$10,000–$24,999</option>
+          <option>$25,000+</option>
+          <option>Prefer to discuss</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="recognition">How you'd like to be recognized</label>
+        <input type="text" id="recognition" name="recognition" placeholder="e.g., company name as it should appear, logo to follow" />
+      </div>
+
+      <div class="field">
+        <label for="message">Anything else / message</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="referral">How did you hear about us?</label>
+        <input type="text" id="referral" name="referral" />
+      </div>
+
+      <label class="consent-line">
+        <input type="checkbox" name="consent" value="yes" required />
+        <span>I'd like a Worth Their Weight team member to contact me about partnership. <span class="req" aria-hidden="true">&#9733;</span></span>
+      </label>
+
+      <p class="privacy-note">We use the information you submit only to follow up on this inquiry — never sold or shared. No payment is collected here; sponsorships are confirmed later by agreement and invoice. See our <a href="/#mission">privacy practices</a>.</p>
+
+      <div class="form-error" id="inquiry-error" role="status" aria-live="polite"></div>
+
+      <button type="submit">Send My Inquiry</button>
+    </form>
+
+    <!-- CONFIRMATION (shown after successful submit) -->
+    <div class="inquiry-confirm" id="inquiry-confirm" role="status" aria-live="polite" tabindex="-1">
+      <h2>Thank you — we've got it.</h2>
+      <p>Someone from our team will be in touch within two business days. In the meantime, you're welcome to explore our work at <a href="/">worththeirweight.org</a> or call us at <a href="tel:+18339898387">833-WTW-VETS</a>. Thank you for helping us find the veterans the system missed.</p>
+    </div>
+  </main>
+
+  <footer>
+    Partnerships — <a href="mailto:partners@worththeirweight.org">partners@worththeirweight.org</a> · <a href="tel:+18339898387">833-WTW-VETS</a> · <a href="/">worththeirweight.org</a><br/>
+    Worth Their Weight is a 501(c)(3) tax-exempt organization. EIN 41-5275144. Registered with the Tennessee Secretary of State (No. CO54883). Donations are tax-deductible to the extent allowed by law. Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs.
+  </footer>
+
+  <script>
+    function submitInquiry(event) {
+      event.preventDefault();
+      const form = event.target;
+      const errorEl = document.getElementById('inquiry-error');
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      errorEl.textContent = '';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      const formData = new FormData(form);
+      const body = new URLSearchParams(formData).toString();
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body,
+      })
+        .then((response) => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          const confirm = document.getElementById('inquiry-confirm');
+          form.style.display = 'none';
+          confirm.classList.add('show');
+          confirm.focus();
+          confirm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch(() => {
+          errorEl.textContent = 'Something went wrong. Please email partners@worththeirweight.org instead.';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send My Inquiry';
+        });
+
+      return false;
+    }
+  </script>
+
+</body>
+</html>
