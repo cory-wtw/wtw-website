@@ -663,16 +663,17 @@
     }
 
     /* FOOTER (reused from main site) */
+    /* ===== FOOTER (shared template) ===== */
     footer {
       border-top: 1px solid var(--gold-line);
-      padding: 2rem 2.5rem;
+      padding: 2.5rem 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      max-width: 1400px;
-      margin: 0 auto;
+      gap: 1.5rem 2rem;
     }
     .footer-left { display: flex; align-items: center; gap: 1rem; }
     .footer-wordmark {
@@ -688,34 +689,59 @@
       opacity: 0.4;
       font-style: italic;
     }
-    .footer-right { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-right { display: flex; align-items: center; gap: 1.25rem 2rem; flex-wrap: wrap; }
     .footer-right a {
       font-size: 0.78rem;
       color: var(--gold-pale);
       opacity: 0.45;
       text-decoration: none;
       letter-spacing: 0.05em;
-      transition: opacity 0.2s;
+      transition: opacity 0.2s, color 0.2s;
     }
     .footer-right a:hover { opacity: 1; color: var(--gold-light); }
+    footer .social-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      width: 100%;
+      margin: 0;
+      padding-top: 0.5rem;
+    }
+    footer .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    footer .social-icon:hover { opacity: 1; }
+    footer .social-icon svg { width: 20px; height: 20px; }
     .footer-disclaimer {
       width: 100%;
       margin-top: 1rem;
-      padding-top: 1rem;
+      padding-top: 1.5rem;
       border-top: 1px solid var(--gold-line);
       font-size: 0.72rem;
       color: var(--gold-pale);
-      opacity: 0.5;
+      opacity: 0.45;
       line-height: 1.6;
       text-align: center;
     }
-    .footer-disclaimer .footer-stamp {
+    .footer-disclaimer a { color: var(--gold-pale); opacity: 0.7; text-decoration: underline; }
+    .footer-stamp {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--gold);
+      background: rgba(210,166,60,0.1);
       color: var(--gold);
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
+      margin-bottom: 0.85rem;
     }
-    .footer-disclaimer .footer-stamp em { font-style: normal; color: var(--gold-light); }
+    .footer-stamp em { font-style: normal; color: var(--gold-light); font-weight: 900; }
 
     /* SCROLL REVEAL */
     .reveal {
@@ -1105,8 +1131,10 @@
       </a>
     </div>
     <div class="footer-disclaimer">
+      <span class="footer-stamp">Free for veterans. <em>Always.</em></span><br/>
+      Worth Their Weight is free to every veteran we serve. No fees, no dues, no catch, ever. Funded by donors, sponsors, and grants.<br/>
+      Worth Their Weight is a 501(c)(3) tax-exempt organization. EIN 41-5275144. Registered with the Tennessee Secretary of State (No. CO54883). Donations are tax-deductible to the extent allowed by law.<br/>
       Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.<br/>
-      Worth Their Weight is a 501(c)(3) nonprofit organization, EIN 41-5275144. Donations are tax-deductible.<br/>
       808 Chestnut St, Chattanooga, TN 37402 · 833-WTW-VETS · (833) 989-8387
     </div>
   </footer>
