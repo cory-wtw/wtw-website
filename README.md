@@ -1,6 +1,6 @@
 # Worth Their Weight — Website
 
-Public website and transparency dashboard for Worth Their Weight, a Chattanooga, TN veterans nonprofit helping homeless veterans navigate VA claims.
+Public website and transparency dashboard for Worth Their Weight, a Chattanooga, TN veterans nonprofit helping unsheltered veterans connect to accredited help with VA claims.
 
 **Live site:** https://worththeirweight.org
 
