@@ -10,6 +10,17 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://worththeirweight.org" />
   <meta property="og:image" content="https://worththeirweight.org/public/WTW Circle Avatar Gold.png" />
+  <meta property="og:image:alt" content="Worth Their Weight — a Chattanooga veterans nonprofit" />
+  <meta property="og:site_name" content="Worth Their Weight" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Worth Their Weight · We Find the Veterans the System Missed" />
+  <meta name="twitter:description" content="We find the veterans the system missed and connect them to the people who can help. A Chattanooga nonprofit serving veterans." />
+  <meta name="twitter:image" content="https://worththeirweight.org/public/WTW Circle Avatar Gold.png" />
+  <link rel="canonical" href="https://worththeirweight.org/" />
+  <meta name="theme-color" content="#1D1912" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Worth Their Weight" />
   <link rel="icon" type="image/png" href="public/WTW Logo Main.png" />
   <link rel="apple-touch-icon" href="public/WTW Logo Main.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,6 +42,35 @@
     }
 
     html { scroll-behavior: smooth; scroll-padding-top: 6.5rem; }
+
+    /* Accessible skip link */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 200;
+      background: var(--gold);
+      color: var(--near-black);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.75rem 1.25rem;
+    }
+    .skip-link:focus { left: 1rem; top: 1rem; }
+
+    /* Accessible focus state — visible across the whole page */
+    a:focus-visible,
+    button:focus-visible,
+    select:focus-visible,
+    input:focus-visible,
+    summary:focus-visible,
+    iframe:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
 
     body {
       background: var(--near-black);
@@ -96,6 +136,7 @@
     .promo-banner:hover .promo-cta { background: var(--gold-light); }
 
     nav {
+      position: relative;
       padding: 0.6rem 2.5rem;
       display: flex;
       align-items: center;
@@ -104,7 +145,30 @@
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--gold-line);
+      transition: box-shadow 0.25s ease;
     }
+
+    /* Subtle elevation once the page is scrolled */
+    .topbar.is-scrolled nav {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+    }
+
+    /* Mobile menu toggle — hidden on desktop */
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: 0;
+      padding: 0.4rem;
+      margin-left: 1rem;
+      color: var(--gold-pale);
+      cursor: pointer;
+    }
+    .nav-toggle svg { display: block; }
+    .nav-toggle .icon-close { display: none; }
+    nav.nav-open .nav-toggle .icon-open { display: none; }
+    nav.nav-open .nav-toggle .icon-close { display: block; }
 
     .nav-logo {
       display: flex;
@@ -1562,12 +1626,61 @@
 
     .reveal.visible { opacity: 1; transform: none; }
 
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-delay: 0s !important;
+        transition-duration: 0.001ms !important;
+      }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       body { font-size: 16px; }
       nav { padding: 0.6rem 1.25rem; }
-      .nav-links { display: none; }
-      .social-icons { margin-left: auto; }
+
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(29,25,18,0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--gold-line);
+        padding: 0 1.25rem;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+        transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+      }
+      nav.nav-open .nav-links {
+        max-height: 75vh;
+        opacity: 1;
+        pointer-events: auto;
+        padding: 0.25rem 1.25rem 1rem;
+      }
+      .nav-links li { width: 100%; }
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 0.9rem 0;
+        opacity: 0.85;
+        border-bottom: 1px solid rgba(210,166,60,0.12);
+      }
+      .nav-links li:last-child a { border-bottom: none; }
+
+      nav .social-icons { display: none; }
+      .nav-toggle { margin-left: auto; }
       .social-icon svg { width: 18px; height: 18px; }
       .nav-wordmark { font-size: 0.7rem; }
 
@@ -1652,8 +1765,43 @@
   src="https://www.facebook.com/tr?id=3559884450840257&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Worth Their Weight",
+    "alternateName": "WTW",
+    "url": "https://worththeirweight.org",
+    "logo": "https://worththeirweight.org/public/WTW Logo Main.png",
+    "description": "Worth Their Weight is a Chattanooga, TN 501(c)(3) nonprofit that finds unsheltered and overlooked veterans and connects them to VA-accredited representatives who help them claim the benefits they have already earned.",
+    "email": "cory@worththeirweight.org",
+    "telephone": "+1-833-989-8387",
+    "foundingDate": "2026",
+    "taxID": "41-5275144",
+    "areaServed": { "@type": "Place", "name": "Chattanooga, Hamilton County, Tennessee" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chattanooga",
+      "addressRegion": "TN",
+      "addressCountry": "US"
+    },
+    "founder": { "@type": "Person", "name": "Cory Gold", "jobTitle": "Executive Director" },
+    "sameAs": [
+      "https://www.instagram.com/worththeirweightorg",
+      "https://www.facebook.com/people/Worth-Their-Weight/61574304388792/",
+      "https://www.tiktok.com/@worththeirweight"
+    ]
+  }
+  </script>
+
+  <!-- If JavaScript is disabled, reveal all content that would otherwise animate in -->
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- TOP BAR: announcement banner + nav -->
   <div class="topbar">
@@ -1670,10 +1818,10 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
-      <img src="public/WTW Logo Main.png" alt="Worth Their Weight" style="height:36px;width:auto;">
+      <img src="public/WTW Logo Main.png" alt="Worth Their Weight" decoding="async" style="height:36px;width:auto;">
       <span class="nav-wordmark">Worth Their Weight</span>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#watch">Watch</a></li>
       <li><a href="#mission">Mission</a></li>
       <li><a href="#programs">Programs</a></li>
@@ -1695,16 +1843,20 @@
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 3 4 5 4" stroke="#F3F3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
+    <button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
   </nav>
 
   </div>
   <!-- /TOP BAR -->
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="main" tabindex="-1">
     <div class="hero-glow"></div>
 
-    <img src="public/WTW Logo Main.png" alt="Worth Their Weight" style="height:120px;width:auto;margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s ease 0.1s forwards;">
+    <img src="public/WTW Logo Main.png" alt="Worth Their Weight" decoding="async" fetchpriority="high" style="height:120px;width:auto;margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s ease 0.1s forwards;">
 
     <p class="hero-eyebrow">Chattanooga, TN · Est. 2026</p>
 
@@ -1855,7 +2007,7 @@
     <div class="founder-grid">
       <div class="founder-aside reveal">
         <div style="width:160px;height:160px;border-radius:50%;border:3px solid #D2A63C;overflow:hidden;margin-bottom:1.5rem;box-shadow:0 0 0 6px rgba(210,166,60,0.15);flex-shrink:0;">
-          <img src="public/headshot.JPEG" alt="Cory Gold, Executive Director of Worth Their Weight" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+          <img src="public/headshot.JPEG" alt="Cory Gold, Executive Director of Worth Their Weight" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
         </div>
         <div class="founder-name-block">
           <span class="founder-name">Cory Gold</span>
@@ -2130,7 +2282,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-left">
-      <img src="public/WTW Logo Main.png" alt="Worth Their Weight" style="height:36px;width:auto;">
+      <img src="public/WTW Logo Main.png" alt="Worth Their Weight" decoding="async" style="height:36px;width:auto;">
       <div>
         <div class="footer-wordmark">Worth Their Weight</div>
         <div class="footer-tagline">We find the veterans the system missed.</div>
@@ -2169,6 +2321,42 @@
   </footer>
 
   <script>
+    // Mobile navigation toggle
+    (function() {
+      const navEl = document.querySelector('nav');
+      const toggle = document.querySelector('.nav-toggle');
+      if (!navEl || !toggle) return;
+      function closeMenu() {
+        navEl.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+      toggle.addEventListener('click', function() {
+        const open = navEl.classList.toggle('nav-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navEl.querySelectorAll('.nav-links a').forEach(function(a) {
+        a.addEventListener('click', closeMenu);
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
+
+    // Subtle nav elevation once the page scrolls
+    (function() {
+      const topbar = document.querySelector('.topbar');
+      if (!topbar) return;
+      let ticking = false;
+      function update() {
+        topbar.classList.toggle('is-scrolled', window.scrollY > 8);
+        ticking = false;
+      }
+      window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+      }, { passive: true });
+      update();
+    })();
+
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
