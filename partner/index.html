@@ -6,13 +6,13 @@
   <title>Partner With Us · Worth Their Weight</title>
   <meta name="description" content="Your sponsorship funds the outreach that finds veterans and connects them to the benefits they've already earned. Free for veterans, always, because partners like you carry the weight." />
   <meta property="og:title" content="Partner With Worth Their Weight" />
-  <meta property="og:description" content="Help us find the veterans the system missed. Your sponsorship funds the outreach that finds veterans and connects them to the benefits they've already earned." />
+  <meta property="og:description" content="Help us find veterans the system missed. Your sponsorship funds the outreach that finds veterans and connects them to the benefits they've already earned." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://worththeirweight.org/partner" />
   <meta property="og:image" content="https://worththeirweight.org/public/WTW Logo Main.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Partner With Worth Their Weight" />
-  <meta name="twitter:description" content="Help us find the veterans the system missed. Free for veterans, always, because partners like you carry the weight." />
+  <meta name="twitter:description" content="Help us find veterans the system missed. Free for veterans, always, because partners like you carry the weight." />
   <link rel="icon" type="image/png" href="../public/WTW Logo Main.png" />
   <link rel="apple-touch-icon" href="../public/WTW Logo Main.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -120,6 +120,15 @@
       transition: background 0.2s, transform 0.15s;
     }
     .nav-donate:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
+    .nav-actions { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-refer {
+      color: var(--gold-pale); text-decoration: none;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; opacity: 0.8; transition: opacity 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-refer:hover { opacity: 1; color: var(--gold-light); }
+    @media (max-width: 520px) { .nav-refer { display: none; } }
 
     /* SECTIONS */
     section {
@@ -353,14 +362,15 @@
     .tier-list li {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: flex-start;
       gap: 1rem;
       padding: 0.85rem 0;
       border-bottom: 1px solid var(--gold-line);
     }
     .tier-list li:last-child { border-bottom: none; }
 
-    .tier-name { font-weight: 600; color: var(--gold-pale); }
+    .tier-name { font-weight: 600; color: var(--gold-pale); display: flex; flex-direction: column; gap: 0.2rem; }
+    .tier-desc { font-weight: 400; font-size: 0.82rem; color: var(--gold-pale); opacity: 0.6; line-height: 1.35; }
     .tier-amount {
       font-weight: 700;
       color: var(--gold);
@@ -642,7 +652,10 @@
       <img src="../public/WTW Logo Main.png" alt="Worth Their Weight home" style="height:36px;width:auto;">
       <span class="nav-wordmark">Worth Their Weight</span>
     </a>
-    <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="nav-donate">Donate</a>
+    <div class="nav-actions">
+      <a href="/refer" class="nav-refer">Refer a Veteran</a>
+      <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="nav-donate">Donate</a>
+    </div>
   </nav>
 
   <main id="top">
@@ -651,7 +664,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-glow" aria-hidden="true"></div>
       <p class="hero-eyebrow">Partner With Worth Their Weight</p>
-      <h1 id="hero-title">Help us find the veterans the system missed.</h1>
+      <h1 id="hero-title">Help us find veterans the system missed.</h1>
       <p class="hero-subhead">Your sponsorship funds the outreach that finds veterans and connects them to the benefits they've already earned. Free for veterans, always, because partners like you carry the weight.</p>
       <div class="hero-cta-row">
         <a href="#inquiry" class="btn">Become a Sponsor &rarr;</a>
@@ -683,7 +696,7 @@
           <div class="stat-label">lifetime claim value</div>
         </div>
       </div>
-      <p class="stat-source reveal">VA 2024 Point-in-Time Count; 2026 VA compensation rates</p>
+      <p class="stat-source reveal">570: HUD 2024 Annual Homelessness Assessment Report (AHAR) to Congress, Part 1, veterans experiencing homelessness on a single night in January 2024. Benefit figures from 2026 VA compensation rates. The lifetime value is illustrative. It reflects the maximum monthly benefit sustained over an assumed number of years, and actual benefits vary by rating, dependents, eligibility, and how long the award runs.</p>
     </section>
 
     <div class="gold-rule" aria-hidden="true"></div>
@@ -709,22 +722,22 @@
           <span class="partner-kicker">Column A</span>
           <h3>Year-Round Giving Circles</h3>
           <ul class="tier-list">
-            <li><span class="tier-name">Founders' Circle</span><span class="tier-amount">$25,000+ (by invitation)</span></li>
-            <li><span class="tier-name">Commander's Circle</span><span class="tier-amount">$10,000</span></li>
-            <li><span class="tier-name">Field Officer</span><span class="tier-amount">$5,000</span></li>
-            <li><span class="tier-name">Frontline Supporter</span><span class="tier-amount">$1,000</span></li>
-            <li><span class="tier-name">Battle Buddy</span><span class="tier-amount">$250 / $25 mo</span></li>
+            <li><span class="tier-name">Founders' Circle<span class="tier-desc">Our founding backers. By invitation.</span></span><span class="tier-amount">$25,000+ (by invitation)</span></li>
+            <li><span class="tier-name">Commander's Circle<span class="tier-desc">Our largest annual sponsors.</span></span><span class="tier-amount">$10,000</span></li>
+            <li><span class="tier-name">Field Officer<span class="tier-desc">Mid-level annual sponsor.</span></span><span class="tier-amount">$5,000</span></li>
+            <li><span class="tier-name">Frontline Supporter<span class="tier-desc">Small business or individual sponsor.</span></span><span class="tier-amount">$1,000</span></li>
+            <li><span class="tier-name">Battle Buddy<span class="tier-desc">A recurring or one-time gift that keeps outreach running.</span></span><span class="tier-amount">$250 / $25 mo</span></li>
           </ul>
         </div>
         <div class="partner-card reveal" style="transition-delay:0.1s">
           <span class="partner-kicker">Column B</span>
           <h3>Carry the Weight Event</h3>
           <ul class="tier-list">
-            <li><span class="tier-name">Command Sponsor</span><span class="tier-amount">$10,000</span></li>
-            <li><span class="tier-name">Squad Leader</span><span class="tier-amount">$5,000</span></li>
-            <li><span class="tier-name">Ruck Master</span><span class="tier-amount">$2,500</span></li>
-            <li><span class="tier-name">Range Partner</span><span class="tier-amount">$1,000</span></li>
-            <li><span class="tier-name">In-Kind</span><span class="tier-amount">credited at matching cash tier</span></li>
+            <li><span class="tier-name">Command Sponsor<span class="tier-desc">Presenting sponsor of the event.</span></span><span class="tier-amount">$10,000</span></li>
+            <li><span class="tier-name">Squad Leader<span class="tier-desc">Major event sponsor.</span></span><span class="tier-amount">$5,000</span></li>
+            <li><span class="tier-name">Ruck Master<span class="tier-desc">Mid-level event sponsor.</span></span><span class="tier-amount">$2,500</span></li>
+            <li><span class="tier-name">Range Partner<span class="tier-desc">Supporting event sponsor.</span></span><span class="tier-amount">$1,000</span></li>
+            <li><span class="tier-name">In-Kind<span class="tier-desc">Donated goods or services instead of cash.</span></span><span class="tier-amount">credited at matching cash tier</span></li>
           </ul>
         </div>
       </div>
@@ -912,7 +925,7 @@
       <!-- CONFIRMATION (shown after successful submit) -->
       <div class="inquiry-confirm" id="inquiry-confirm" role="status" aria-live="polite" tabindex="-1">
         <h2>Thank you, we've got it.</h2>
-        <p>Someone from our team will be in touch within two business days. In the meantime, you're welcome to explore our work at <a href="/">worththeirweight.org</a> or call us at <a href="tel:+18339898387">833-WTW-VETS</a>. Thank you for helping us find the veterans the system missed.</p>
+        <p>Someone from our team will be in touch within two business days. In the meantime, you're welcome to explore our work at <a href="/">worththeirweight.org</a> or call us at <a href="tel:+18339898387">833-WTW-VETS</a>. Thank you for helping us find veterans the system missed.</p>
       </div>
     </section>
 
@@ -924,7 +937,7 @@
       <img src="../public/WTW Logo Main.png" alt="Worth Their Weight" style="height:36px;width:auto;">
       <div>
         <div class="footer-wordmark">Worth Their Weight</div>
-        <div class="footer-tagline">We find the veterans the system missed.</div>
+        <div class="footer-tagline">We find veterans the system missed.</div>
       </div>
     </div>
     <div class="footer-contact">

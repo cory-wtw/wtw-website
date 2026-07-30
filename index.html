@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Worth Their Weight · We Find the Veterans the System Missed</title>
-  <meta name="description" content="Worth Their Weight finds the veterans the system missed and connects them to the people who can help. A Chattanooga nonprofit serving veterans who've earned benefits but never received them." />
-  <meta property="og:title" content="Worth Their Weight · We Find the Veterans the System Missed" />
-  <meta property="og:description" content="We find the veterans the system missed and connect them to the people who can help. A Chattanooga nonprofit serving veterans." />
+  <title>Worth Their Weight · We Find Veterans the System Missed</title>
+  <meta name="description" content="Worth Their Weight finds veterans the system missed and connects them to the people who can help. A Chattanooga nonprofit serving veterans who've earned benefits but never received them." />
+  <meta property="og:title" content="Worth Their Weight · We Find Veterans the System Missed" />
+  <meta property="og:description" content="We find veterans the system missed and connect them to the people who can help. A Chattanooga nonprofit serving veterans." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://worththeirweight.org" />
   <meta property="og:image" content="https://worththeirweight.org/public/WTW Circle Avatar Gold.png" />
@@ -309,6 +309,21 @@
     }
 
     .hero-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .hero-cta--outline {
+      background: transparent;
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      animation-delay: 0.95s;
+    }
+    .hero-cta--outline:hover { background: rgba(210,166,60,0.1); color: var(--gold-light); transform: translateY(-2px); }
+    .hero-cta--outline svg path { stroke: var(--gold-light); }
 
     /* DIVIDER */
     .gold-rule {
@@ -1582,6 +1597,7 @@
       .hero-stat-divider { display: none; }
       .hero-stat-number { font-size: 2.2rem; }
       .hero-cta { width: 100%; justify-content: center; padding: 1rem 1.5rem; }
+      .hero-cta-row { width: 100%; flex-direction: column; }
 
       section { padding: 4rem 1.25rem; }
       .video-section { padding: 3.5rem 1.25rem 4rem; }
@@ -1682,6 +1698,7 @@
       <li><a href="/partner">Partner With Us</a></li>
       <!-- Transparency link hidden until dashboard reflects a longer track record -->
       <!-- <li><a href="#transparency">Transparency</a></li> -->
+      <li><a href="/refer">Refer a Veteran</a></li>
       <li><a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a></li>
     </ul>
     <div class="social-icons">
@@ -1710,7 +1727,7 @@
 
     <h1>Worth Their<br/><span>Weight.</span></h1>
 
-    <p class="hero-tagline">We find the veterans the system missed and connect them to the people who can help.</p>
+    <p class="hero-tagline">We find veterans the system missed and connect them to the people who can help.</p>
 
     <div class="hero-stamp" aria-label="Free for veterans. Always.">
       <span class="hero-stamp-line">Free for veterans.</span>
@@ -1734,10 +1751,18 @@
       </div>
     </div>
 
-    <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="hero-cta">
-      Support the Mission
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#1D1912" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+    <p style="font-size:0.72rem;color:var(--gold-pale);opacity:0.5;max-width:640px;margin:1.4rem auto 0;line-height:1.5;text-align:center;">The lifetime figure is illustrative. It reflects the maximum monthly VA disability benefit sustained over an assumed number of years. Actual benefits vary by rating, dependents, eligibility, and how long the award runs.</p>
+
+    <div class="hero-cta-row">
+      <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="hero-cta">
+        Support the Mission
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#1D1912" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/refer" class="hero-cta hero-cta--outline">
+        Refer a Veteran
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#1D1912" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </section>
 
   <div class="gold-rule"></div>
@@ -1746,7 +1771,7 @@
   <section id="watch" class="video-section">
     <span class="section-eyebrow reveal">Watch</span>
     <h2 class="reveal" style="transition-delay:0.05s">Meet Worth Their Weight.<br/><em>In the founder's words.</em></h2>
-    <p class="video-subtitle reveal" style="transition-delay:0.1s">Two minutes on who we are, the veterans the system missed, and why we go find them.</p>
+    <p class="video-subtitle reveal" style="transition-delay:0.1s">Two minutes on who we are, veterans the system missed, and why we go find them.</p>
     <div class="video-frame reveal" style="transition-delay:0.15s">
       <iframe
         src="https://www.youtube-nocookie.com/embed/B-HfMsPM1PM?rel=0"
@@ -1768,9 +1793,10 @@
         <span class="section-eyebrow">The Mission</span>
         <h2>They earned it.<br/><em>We help them access it.</em></h2>
         <p>VA disability benefits aren't charity. They're compensation, earned through service and sacrifice. Many veterans don't know what they're owed, and the VA process can easily frustrate anyone who tries to do it alone.</p>
-        <p>Worth Their Weight finds the veterans the system missed. When we find one, we connect them with a VSO partner who handles the VA claims process, because no veteran should have to do it alone.</p>
+        <p>Worth Their Weight finds veterans the system missed. When we find one, we connect them with a VSO partner who handles the VA claims process, because no veteran should have to do it alone.</p>
+        <p>An approved claim can change everything. Monthly income, stable housing, healthcare, and treatment that keeps going long after the paperwork. We stay with the veteran through approval and after.</p>
         <div class="mission-callout">
-          <p>"The veterans least likely to file are those who need their benefits most."</p>
+          <p>The veterans least likely to file are the ones who need their benefits most.</p>
         </div>
       </div>
 
@@ -1786,7 +1812,7 @@
           </div>
           <div style="background:var(--near-black);padding:2rem;">
             <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.6;display:block;margin-bottom:0.5rem;">The Goal</span>
-            <p style="font-size:1rem;color:var(--gold-pale);opacity:0.75;line-height:1.6;">Functional zero veteran homelessness in Hamilton County, 15 to 20 veterans connected to benefits in year one.</p>
+            <p style="font-size:1rem;color:var(--gold-pale);opacity:0.75;line-height:1.6;">Our commitment is direct. Connect 15 to 20 veterans to the benefits they earned in year one. Functional zero for unsheltered veterans in Hamilton County is a county-level benchmark no single group owns. We push it forward alongside the other organizations working the same problem.</p>
           </div>
         </div>
       </div>
@@ -1808,7 +1834,8 @@
         <span class="program-number">Program 01</span>
         <span class="program-status is-active">Now active</span>
         <h3>Search &amp; Rescue</h3>
-        <p>Search &amp; Rescue is our outreach program. Field Scouts embed in the community, visiting shelters and local events and building the relationships that lead us to veterans the system missed. No clipboard, no clinical lens. Real human contact first. Once we find a veteran, we handle the practical gaps first, things like shelter, a ride, or a phone, then connect them to a VA-accredited VSO partner who pursues the claim. We stay with them through approval and beyond.</p>
+        <span style="display:block;font-size:0.9rem;font-weight:400;color:var(--gold-pale);opacity:0.6;margin:-0.25rem 0 0.75rem;line-height:1.4;">Street outreach. We go find veterans where they are.</span>
+        <p>Search &amp; Rescue is our outreach program. Field Scouts, our people on the ground, embed in the community, visiting shelters and local events and building the relationships that lead us to veterans the system missed. Relationship first, paperwork second. Our field outreach complements the case managers, clinicians, housing specialists, and benefits counselors a veteran may need next. Once we find a veteran, we handle the practical gaps first, things like shelter, a ride, or a phone, then connect them to a VA-accredited VSO partner who pursues the claim. We stay with them through approval and beyond.</p>
       </div>
       <div class="program-card">
         <span class="program-number">Program 02</span>
@@ -1817,7 +1844,7 @@
         <p>Vet Connect closes the digital gap. A lot of veterans miss out on benefits and services for one simple reason: they can't get online or were never shown how. Vet Connect will put an easy-to-use tablet in their hands and pair it with real training, in person or virtual, so they can reach the applications and resources that help them. Launching soon.</p>
       </div>
     </div>
-    <p class="reveal" style="font-size:0.92rem;color:var(--gold-pale);opacity:0.55;max-width:560px;margin:2.5rem auto 2rem;line-height:1.7;text-align:center;transition-delay:0.2s;">Worth Their Weight prioritizes unsheltered veterans first, the population the desk-based referral model cannot reach. We do not turn away veterans who walk in or are referred to us. Triage is based on need.</p>
+    <p class="reveal" style="font-size:0.92rem;color:var(--gold-pale);opacity:0.55;max-width:560px;margin:2.5rem auto 2rem;line-height:1.7;text-align:center;transition-delay:0.2s;">Worth Their Weight prioritizes unsheltered veterans first, the ones who won't be reached until someone goes out and finds them. That is the gap we fill. We go to them, and we work alongside the shelters and case workers who take it from there. We do not turn away veterans who walk in or are referred to us. Triage is based on need.</p>
     <p style="font-size:0.72rem;color:var(--gold-pale);opacity:0.4;text-align:center;margin-top:2.5rem;line-height:1.5;">Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.</p>
   </section>
 
@@ -2133,7 +2160,7 @@
       <img src="public/WTW Logo Main.png" alt="Worth Their Weight" style="height:36px;width:auto;">
       <div>
         <div class="footer-wordmark">Worth Their Weight</div>
-        <div class="footer-tagline">We find the veterans the system missed.</div>
+        <div class="footer-tagline">We find veterans the system missed.</div>
       </div>
     </div>
     <div class="footer-right">
@@ -2163,7 +2190,7 @@
       Worth Their Weight is free to every veteran we serve. No fees, no dues, no catch, ever. Funded by donors, sponsors, and grants.<br/>
       Worth Their Weight is a 501(c)(3) tax-exempt organization. EIN: 41-5275144. All donations are tax-deductible to the extent allowed by law.<br/>
       Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.<br/>
-      <sup>1</sup> <a href="https://www.va.gov/tennessee-valley-health-care/news-releases/veterans-homelessness-reaches-record-low-nationwide-down-249-in-tennessee/" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">VA Tennessee Valley Health Care, 2024 Point-in-Time Count</a>&ensp;
+      <sup>1</sup> 570 veterans experiencing homelessness in Tennessee on a single night in January 2024. <a href="https://www.huduser.gov/portal/datasets/ahar.html" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">HUD 2024 Annual Homelessness Assessment Report (AHAR) to Congress, Part 1</a>&ensp;
       <sup>2</sup> <a href="https://www.va.gov/disability/compensation-rates/veteran-rates/" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">2026 VA Disability Compensation Rates</a>
     </div>
   </footer>
