@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Partner With Us · Worth Their Weight</title>
   <meta name="description" content="Your sponsorship funds the outreach that finds veterans and the follow-through that gets them connected. Free for veterans, always, because partners like you carry the weight." />
   <meta property="og:title" content="Partner With Worth Their Weight" />
@@ -93,6 +93,7 @@
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--gold-line);
+      padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
     }
 
     .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
@@ -623,7 +624,7 @@
     }
 
     @media (max-width: 820px) {
-      nav { padding: 0.6rem 1.25rem; }
+      nav { padding: 0.6rem 1.25rem; padding-top: calc(0.6rem + env(safe-area-inset-top, 0px)); }
       section { padding: 4rem 1.25rem; }
       .partner-grid, .steps, .stat-strip { grid-template-columns: 1fr; }
       .field-row, .check-grid { grid-template-columns: 1fr; }

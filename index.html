@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Worth Their Weight · We Find Veterans the System Missed</title>
   <meta name="description" content="Worth Their Weight finds veterans the system missed and connects them to the people who can help. A Chattanooga nonprofit connecting veterans to the organizations that can actually help." />
   <meta property="og:title" content="Worth Their Weight · We Find Veterans the System Missed" />
@@ -56,6 +56,9 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
+      /* Solid backing so scrolled content never shows through the nav's
+         translucent background. */
+      background: var(--near-black);
     }
 
     .promo-banner {
@@ -64,7 +67,9 @@
       align-items: center;
       justify-content: center;
       gap: 0.55rem;
-      padding: 0.5rem 1.25rem;
+      /* Extra top padding fills the notch / status-bar safe area with the
+         banner's red, so nothing shows through above it on scroll. */
+      padding: calc(0.5rem + env(safe-area-inset-top, 0px)) 1.25rem 0.5rem;
       text-align: center;
       text-decoration: none;
       color: var(--gold-pale);
@@ -1571,7 +1576,7 @@
       .social-icon svg { width: 18px; height: 18px; }
       .nav-wordmark { font-size: 0.7rem; }
 
-      .promo-banner { font-size: 0.78rem; padding: 0.45rem 1rem; gap: 0.4rem; }
+      .promo-banner { font-size: 0.78rem; padding: calc(0.45rem + env(safe-area-inset-top, 0px)) 1rem 0.45rem; gap: 0.4rem; }
       .promo-banner .promo-detail, .promo-banner .promo-sep { display: none; }
       .promo-banner .promo-cta { font-size: 0.68rem; padding: 0.18rem 0.6rem; }
 

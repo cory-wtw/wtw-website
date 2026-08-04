@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Carry the Weight 2026 · Worth Their Weight</title>
   <meta name="description" content="Register free, declare your distance, and get pledged by the mile. Carry the Weight is Worth Their Weight's annual ruck march on the Tennessee Riverwalk in Chattanooga. Saturday, September 12, 2026." />
   <meta property="og:title" content="Carry the Weight 2026 · Worth Their Weight" />
@@ -95,6 +95,7 @@
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--gold-line);
+      padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
     }
 
     .nav-logo {
@@ -741,7 +742,7 @@
 
     @media (max-width: 768px) {
       body { font-size: 16px; }
-      nav { padding: 0.6rem 1.25rem; }
+      nav { padding: 0.6rem 1.25rem; padding-top: calc(0.6rem + env(safe-area-inset-top, 0px)); }
       .nav-links { display: none; }
       .social-icons { margin-left: auto; }
       .social-icon svg { width: 18px; height: 18px; }

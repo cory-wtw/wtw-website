@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Become a Sponsor · Worth Their Weight</title>
   <meta name="description" content="Tell us about your organization and how you'd like to help. A member of our team will reach out personally, usually within two business days." />
   <meta property="og:title" content="Become a Sponsor · Worth Their Weight" />
@@ -68,6 +68,7 @@
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--gold-line);
+      padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
     }
     .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
     .nav-wordmark {
@@ -187,7 +188,7 @@
     footer a { color: var(--gold-light); text-decoration: none; }
 
     @media (max-width: 600px) {
-      nav { padding: 0.6rem 1.25rem; }
+      nav { padding: 0.6rem 1.25rem; padding-top: calc(0.6rem + env(safe-area-inset-top, 0px)); }
       main { padding: 7rem 1.25rem 4rem; }
       .field-row, .check-grid { grid-template-columns: 1fr; }
       .inquiry-confirm { padding: 2rem 1.5rem; }
