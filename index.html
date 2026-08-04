@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Worth Their Weight · We Find Veterans the System Missed</title>
   <meta name="description" content="Worth Their Weight finds veterans the system missed and connects them to the people who can help. A Chattanooga nonprofit connecting veterans to the organizations that can actually help." />
   <meta property="og:title" content="Worth Their Weight · We Find Veterans the System Missed" />
@@ -56,6 +56,9 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
+      /* Solid backing so scrolled content never shows through the nav's
+         translucent background. */
+      background: var(--near-black);
     }
 
     .promo-banner {
@@ -64,7 +67,9 @@
       align-items: center;
       justify-content: center;
       gap: 0.55rem;
-      padding: 0.5rem 1.25rem;
+      /* Extra top padding fills the notch / status-bar safe area with the
+         banner's red, so nothing shows through above it on scroll. */
+      padding: calc(0.5rem + env(safe-area-inset-top, 0px)) 1.25rem 0.5rem;
       text-align: center;
       text-decoration: none;
       color: var(--gold-pale);
@@ -1571,7 +1576,7 @@
       .social-icon svg { width: 18px; height: 18px; }
       .nav-wordmark { font-size: 0.7rem; }
 
-      .promo-banner { font-size: 0.78rem; padding: 0.45rem 1rem; gap: 0.4rem; }
+      .promo-banner { font-size: 0.78rem; padding: calc(0.45rem + env(safe-area-inset-top, 0px)) 1rem 0.45rem; gap: 0.4rem; }
       .promo-banner .promo-detail, .promo-banner .promo-sep { display: none; }
       .promo-banner .promo-cta { font-size: 0.68rem; padding: 0.18rem 0.6rem; }
 
@@ -1803,24 +1808,24 @@
   <section id="programs">
     <span class="section-eyebrow reveal">How We Work</span>
     <h2 class="reveal" style="font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:var(--gold-pale);letter-spacing:-0.02em;margin-bottom:0.5rem;">Two programs.<br/>One mission.</h2>
-    <p class="reveal" style="font-size:1.05rem;color:var(--gold-pale);opacity:0.65;max-width:560px;line-height:1.7;margin-bottom:0;transition-delay:0.1s;">We find veterans in the community and connect them with the accredited representatives who can help.</p>
+    <p class="reveal" style="font-size:1.05rem;color:var(--gold-pale);opacity:0.65;max-width:560px;line-height:1.7;margin-bottom:0;transition-delay:0.1s;">One conversation connects a veteran to the organizations that can help. For the ones who will never call, we go find them.</p>
     <div class="programs-grid reveal" style="transition-delay:0.15s">
       <div class="program-card">
         <span class="program-number">Program 01</span>
-        <span class="program-status is-active">Now active</span>
-        <h3>Search &amp; Rescue</h3>
-        <p>Some veterans are never going to call. So we go find them.</p>
-        <p style="margin-top:1rem;">We embed in the community, visiting shelters and local events and building the relationships that lead us to veterans the system missed. No clipboard, no clinical lens. Real human contact first.</p>
-        <p style="margin-top:1rem;">Once we find someone, the practical barriers come down before anything else. A ride to an appointment. A phone and a way to get online. A week somewhere safe while things get sorted. Then the work of connecting them begins.</p>
-      </div>
-      <div class="program-card">
-        <span class="program-number">Program 02</span>
         <span class="program-status is-active">Now active</span>
         <h3>Concierge</h3>
         <p>You should not have to become an expert in the system to use it.</p>
         <p style="margin-top:1rem;">Tell us what is going on. Fifteen minutes is usually enough. We work out what you need across housing, health care, mental health, benefits, income, work, school, legal and records, and family support. Then we send you the organizations that fit, with a name and a number for each.</p>
         <p style="margin-top:1rem;">Two weeks later we check in. If a door did not open, we find the next one.</p>
         <p style="margin-top:1rem;">Any veteran. Any era. Any discharge. No cost.</p>
+      </div>
+      <div class="program-card">
+        <span class="program-number">Program 02</span>
+        <span class="program-status is-active">Now active</span>
+        <h3>Search &amp; Rescue</h3>
+        <p>Some veterans are never going to call. So we go find them.</p>
+        <p style="margin-top:1rem;">We embed in the community, visiting shelters and local events and building the relationships that lead us to veterans the system missed. No clipboard, no clinical lens. Real human contact first.</p>
+        <p style="margin-top:1rem;">Once we find someone, the practical barriers come down before anything else. A ride to an appointment. A phone and a way to get online. A week somewhere safe while things get sorted. Then the work of connecting them begins.</p>
       </div>
     </div>
     <p class="reveal" style="font-size:0.92rem;color:var(--gold-pale);opacity:0.55;max-width:560px;margin:2.5rem auto 2rem;line-height:1.7;text-align:center;transition-delay:0.2s;">Worth Their Weight prioritizes unsheltered veterans first, the population the desk-based referral model cannot reach. We do not turn away veterans who walk in or are referred to us. Triage is based on need.</p>
