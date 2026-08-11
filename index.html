@@ -511,76 +511,55 @@
       line-height: 1.5;
     }
 
-    /* PROGRAMS */
-    .programs-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-      background: var(--gold-line);
-      margin-top: 3rem;
+    /* OPERATION SEARCH & RESCUE */
+    .sar-section {
+      padding: 6rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    .program-card {
-      background: var(--near-black);
-      padding: 3rem 2.5rem;
-      position: relative;
-    }
-
-    .program-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 3px;
-      background: var(--gold);
-    }
-
-    .program-number {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0.6;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .program-status {
-      display: inline-block;
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 1.1rem;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-    }
-
-    .program-status.is-active {
-      color: var(--gold-light);
-      background: var(--gold-dim);
-      border: 1px solid var(--gold-line);
-    }
-
-    .program-status.is-soon {
-      color: var(--near-black);
-      background: var(--gold);
-      border: 1px solid var(--gold-light);
-    }
-
-    .program-card h3 {
-      font-size: 1.6rem;
+    .sar-section h2 {
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
       font-weight: 900;
       color: var(--gold-pale);
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
     }
 
-    .program-card p {
-      font-size: 0.95rem;
+    .sar-lead {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--gold-light);
+      max-width: 640px;
+      margin: 0 auto 2.75rem;
+      line-height: 1.4;
+    }
+
+    .sar-body {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .sar-body p {
+      font-size: 1.05rem;
       line-height: 1.7;
       color: var(--gold-pale);
-      opacity: 0.7;
+      opacity: 0.8;
+    }
+
+    .sar-note {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--gold-pale);
+      opacity: 0.55;
+      max-width: 640px;
+      margin: 2.75rem auto 0;
     }
 
     /* FOOTER STAMP */
@@ -1309,8 +1288,7 @@
       .impact-card { padding: 2rem 1.5rem; }
       .impact-card-number { font-size: 2.8rem; }
 
-      .programs-grid { grid-template-columns: 1fr; gap: 2px; }
-      .program-card { padding: 2rem 1.5rem; }
+      .sar-section { padding: 4rem 1.25rem; }
 
       .hero-stamp { font-size: 0.78rem; padding: 0.7rem 1.25rem; margin-bottom: 2rem; }
       .donate-section { padding: 5rem 1.25rem; }
@@ -1377,7 +1355,7 @@
     <ul class="nav-links">
       <li><a href="#watch">Watch</a></li>
       <li><a href="#mission">Mission</a></li>
-      <li><a href="#programs">Programs</a></li>
+      <li><a href="#search-rescue">Search &amp; Rescue</a></li>
       <li><a href="/partner">Partner With Us</a></li>
       <!-- Transparency link hidden until dashboard reflects a longer track record -->
       <!-- <li><a href="#transparency">Transparency</a></li> -->
@@ -1468,6 +1446,8 @@
         <span class="section-eyebrow">The Mission</span>
         <h2>They earned it.<br/><em>We help them get to it.</em></h2>
         <p>A veteran rarely shows up with one problem. Housing, a job, an ID, benefits, and somewhere to sleep tonight, all at once. Most organizations solve one of those well and hand over a list for the rest. We do the sorting.</p>
+        <p>Tell us what's going on — fifteen minutes is usually enough. We work out what you need across housing, health care, mental health, VA benefits and claims, work, legal, family, whatever it is. Then we email you the organizations that actually fit, with a name and a number for each. Two weeks later we check in, and if a door didn't open, we find the next one.</p>
+        <p style="font-weight:700;color:var(--gold-light);">Any veteran. Any era. Any discharge. No cost.</p>
         <div class="mission-callout">
           <p>"The veterans least likely to ask are the ones who need the most."</p>
         </div>
@@ -1494,32 +1474,16 @@
 
   <div class="gold-rule"></div>
 
-  <!-- PROGRAMS -->
-  <section id="programs">
-    <span class="section-eyebrow reveal">How We Work</span>
-    <h2 class="reveal" style="font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:var(--gold-pale);letter-spacing:-0.02em;margin-bottom:0.5rem;">Two programs.<br/>One mission.</h2>
-    <p class="reveal" style="font-size:1.05rem;color:var(--gold-pale);opacity:0.65;max-width:560px;line-height:1.7;margin-bottom:0;transition-delay:0.1s;">One conversation connects a veteran to the organizations that can help. For the ones who will never call, we go find them.</p>
-    <div class="programs-grid reveal" style="transition-delay:0.15s">
-      <div class="program-card">
-        <span class="program-number">Program 01</span>
-        <span class="program-status is-active">Now active</span>
-        <h3>Concierge</h3>
-        <p>You should not have to become an expert in the system to use it.</p>
-        <p style="margin-top:1rem;">Tell us what is going on. Fifteen minutes is usually enough. We work out what you need across crisis and immediate safety, housing and essentials, health care, mental health and recovery, VA benefits and claims, income and assistance, work and school, legal and records, family and caregiving, and transportation and connectivity. Then we send you the organizations that fit, with a name and a number for each.</p>
-        <p style="margin-top:1rem;">Two weeks later we check in. If a door did not open, we find the next one.</p>
-        <p style="margin-top:1rem;">Any veteran. Any era. Any discharge. No cost.</p>
-      </div>
-      <div class="program-card">
-        <span class="program-number">Program 02</span>
-        <span class="program-status is-active">Now active</span>
-        <h3>Search &amp; Rescue</h3>
-        <p>Some veterans are never going to call. So we go find them.</p>
-        <p style="margin-top:1rem;">We embed in the community, visiting shelters and local events and building the relationships that lead us to veterans the system missed. No clipboard, no clinical lens. Real human contact first.</p>
-        <p style="margin-top:1rem;">Once we find someone, the practical barriers come down before anything else. A ride to an appointment. A phone and a way to get online. A week somewhere safe while things get sorted. Then the work of connecting them begins.</p>
-      </div>
+  <!-- OPERATION SEARCH & RESCUE -->
+  <section id="search-rescue" class="sar-section">
+    <span class="section-eyebrow reveal">In the Field</span>
+    <h2 class="reveal" style="transition-delay:0.05s">Operation Search &amp; Rescue</h2>
+    <p class="sar-lead reveal" style="transition-delay:0.1s">Some veterans are never going to call. So we go find them.</p>
+    <div class="sar-body reveal" style="transition-delay:0.15s">
+      <p>We embed in the community — shelters, local events, and the relationships that lead us to the veterans the system missed. No clipboard, no clinical lens. Real human contact first.</p>
+      <p>Once we find someone, the practical barriers come down before anything else. A ride to an appointment. A phone and a way to get online. A week somewhere safe while things get sorted. Then the work of connecting them begins.</p>
     </div>
-    <p class="reveal" style="font-size:0.92rem;color:var(--gold-pale);opacity:0.55;max-width:560px;margin:2.5rem auto 2rem;line-height:1.7;text-align:center;transition-delay:0.2s;">Worth Their Weight prioritizes unsheltered veterans first, the population the desk-based referral model cannot reach. We do not turn away veterans who walk in or are referred to us. Triage is based on need.</p>
-    <p style="font-size:0.72rem;color:var(--gold-pale);opacity:0.4;text-align:center;margin-top:2.5rem;line-height:1.5;">Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.</p>
+    <p class="sar-note reveal" style="transition-delay:0.2s">Worth Their Weight prioritizes unsheltered veterans first, the population the desk-based referral model cannot reach. We do not turn away veterans who walk in or are referred to us. Triage is based on need.</p>
   </section>
 
 
@@ -1722,7 +1686,7 @@
       <a href="mailto:cory@worththeirweight.org">cory@worththeirweight.org</a>
       <a href="tel:8339898387">833-WTW-VETS</a>
       <a href="#mission">Mission</a>
-      <a href="#programs">Programs</a>
+      <a href="#search-rescue">Search &amp; Rescue</a>
       <a href="/partner">Partner With Us</a>
       <!-- <a href="#transparency">Transparency</a> -->
       <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a>
