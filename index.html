@@ -583,110 +583,6 @@
       opacity: 0.7;
     }
 
-    /* COST / TRUST SECTION — "What's the catch?" */
-    .cost-section {
-      padding: 6rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .cost-section h2 {
-      font-size: clamp(2rem, 4.5vw, 3.4rem);
-      font-weight: 900;
-      color: var(--gold-pale);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 2rem;
-    }
-
-    .cost-section h2 em {
-      font-style: normal;
-      color: var(--gold);
-    }
-
-    .cost-answer {
-      max-width: 680px;
-      margin: 0 auto 3rem;
-      padding: 2rem 2.25rem;
-      background: var(--gold-dim);
-      border-left: 3px solid var(--gold);
-      text-align: left;
-    }
-
-    .cost-answer p {
-      font-size: 1.1rem;
-      line-height: 1.75;
-      color: var(--gold-pale);
-      opacity: 0.92;
-      margin: 0;
-    }
-
-    .cost-answer p + p { margin-top: 1rem; }
-
-    .cost-pillars {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: var(--gold-line);
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .cost-pillar {
-      background: var(--near-black);
-      padding: 1.75rem 1.5rem;
-      text-align: center;
-      border-top: 3px solid var(--gold);
-    }
-
-    .cost-pillar-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .cost-pillar-text {
-      font-size: 0.95rem;
-      color: var(--gold-pale);
-      opacity: 0.75;
-      line-height: 1.55;
-    }
-
-    /* DONOR FRAMING */
-    .donor-framing {
-      max-width: 700px;
-      margin: 0 auto 2.5rem;
-      padding: 1.75rem 2rem;
-      background: rgba(210,166,60,0.08);
-      border-left: 3px solid var(--gold);
-      text-align: left;
-      position: relative;
-    }
-
-    .donor-framing-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.6rem;
-    }
-
-    .donor-framing-line {
-      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-      font-weight: 700;
-      font-style: italic;
-      color: var(--gold-light);
-      line-height: 1.4;
-      margin: 0;
-    }
-
     /* FOOTER STAMP */
     .footer-stamp {
       display: inline-block;
@@ -705,224 +601,6 @@
       font-style: normal;
       color: var(--gold-light);
       font-weight: 900;
-    }
-
-    /* FOUNDER */
-    .founder-section {
-      padding: 6rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .founder-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    .founder-aside { position: sticky; top: 5rem; }
-
-    .founder-name-block {
-      border-left: 3px solid var(--gold);
-      padding-left: 1.25rem;
-    }
-
-    .founder-name {
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--gold-pale);
-      line-height: 1.1;
-      display: block;
-    }
-
-    .founder-title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-top: 0.5rem;
-    }
-
-    .founder-meta {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .founder-meta-item {
-      font-size: 0.82rem;
-      color: var(--gold-pale);
-      opacity: 0.5;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .founder-meta-item::before { content: '·'; color: var(--gold); opacity: 0.6; }
-
-    .founder-body h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 900;
-      color: var(--gold-pale);
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 2rem;
-    }
-
-    .founder-body h2 em { font-style: normal; color: var(--gold); }
-
-    .founder-body p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--gold-pale);
-      opacity: 0.8;
-      margin-bottom: 1.25rem;
-    }
-
-    /* GIVEBACK CALCULATOR */
-    .giveback-section {
-      padding: 5rem 2rem;
-      text-align: center;
-      background: linear-gradient(135deg, rgba(210,166,60,0.06) 0%, transparent 60%);
-      border-top: 1px solid var(--gold-line);
-    }
-
-    .giveback-inner {
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    .giveback-section h2 {
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      font-weight: 900;
-      color: var(--gold-pale);
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-    }
-
-    .giveback-section h2 em { font-style: normal; color: var(--gold); }
-
-    .giveback-subtitle {
-      font-size: 1rem;
-      color: var(--gold-pale);
-      opacity: 0.6;
-      margin-bottom: 2.5rem;
-      line-height: 1.6;
-    }
-
-    .giveback-select-wrap {
-      margin-bottom: 2rem;
-    }
-
-    .giveback-select-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0.7;
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-
-    .giveback-select {
-      background: rgba(210,166,60,0.08);
-      border: 1px solid var(--gold-line);
-      color: var(--gold-pale);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      padding: 0.9rem 1.25rem;
-      border-radius: 0;
-      width: 100%;
-      max-width: 320px;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23C49A00' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-    }
-
-    .giveback-select:focus {
-      outline: none;
-      border-color: var(--gold);
-    }
-
-    .giveback-select option {
-      background: var(--near-black);
-      color: var(--gold-pale);
-    }
-
-    .giveback-result {
-      margin-bottom: 2rem;
-      min-height: 120px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .giveback-monthly {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold-pale);
-      opacity: 0.5;
-      margin-bottom: 0.5rem;
-    }
-
-    .giveback-amount {
-      font-size: clamp(3rem, 10vw, 5rem);
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 0.25rem;
-    }
-
-    .giveback-amount-label {
-      font-size: 0.85rem;
-      color: var(--gold-pale);
-      opacity: 0.55;
-      margin-bottom: 0.5rem;
-    }
-
-    .giveback-benefit {
-      font-size: 0.85rem;
-      color: var(--gold-pale);
-      opacity: 0.45;
-    }
-
-    .giveback-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--gold);
-      color: var(--near-black);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 1rem 2.5rem;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .giveback-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-    .giveback-note {
-      margin-top: 2rem;
-      font-size: 0.75rem;
-      color: var(--gold-pale);
-      opacity: 0.35;
-      line-height: 1.5;
     }
 
     /* DONATE */
@@ -1634,22 +1312,7 @@
       .programs-grid { grid-template-columns: 1fr; gap: 2px; }
       .program-card { padding: 2rem 1.5rem; }
 
-      .cost-section { padding: 4rem 1.25rem; }
-      .cost-answer { padding: 1.5rem 1.25rem; }
-      .cost-answer p { font-size: 1rem; }
-      .cost-pillars { grid-template-columns: 1fr; gap: 2px; }
-      .cost-pillar { padding: 1.5rem 1.25rem; }
-
       .hero-stamp { font-size: 0.78rem; padding: 0.7rem 1.25rem; margin-bottom: 2rem; }
-      .donor-framing { padding: 1.25rem 1.25rem; }
-
-      .founder-section { padding: 4rem 1.25rem; }
-      .founder-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .founder-aside { position: static; }
-      .founder-name { font-size: 1.6rem; }
-      .founder-body h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
-
-      .giveback-section { padding: 3.5rem 1.25rem; }
       .donate-section { padding: 5rem 1.25rem; }
       .donate-section h2 { font-size: clamp(2rem, 9vw, 3rem); }
       .donate-btn { width: 100%; justify-content: center; padding: 1.1rem 1.5rem; }
@@ -1715,12 +1378,11 @@
       <li><a href="#watch">Watch</a></li>
       <li><a href="#mission">Mission</a></li>
       <li><a href="#programs">Programs</a></li>
-      <li><a href="#founder">Our Story</a></li>
       <li><a href="/partner">Partner With Us</a></li>
-      <li class="nav-shop-li"><a href="https://wtw.bonfire.com" target="_blank" rel="noopener" class="nav-shop">Shop</a></li>
       <!-- Transparency link hidden until dashboard reflects a longer track record -->
       <!-- <li><a href="#transparency">Transparency</a></li> -->
       <li><a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a></li>
+      <li class="nav-shop-li"><a href="https://wtw.bonfire.com" target="_blank" rel="noopener" class="nav-shop">Shop</a></li>
     </ul>
     <div class="social-icons">
       <a href="https://www.instagram.com/worththeirweightorg" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
@@ -1860,34 +1522,6 @@
     <p style="font-size:0.72rem;color:var(--gold-pale);opacity:0.4;text-align:center;margin-top:2.5rem;line-height:1.5;">Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.</p>
   </section>
 
-  <div class="gold-rule"></div>
-
-  <!-- FOUNDER -->
-  <section id="founder" class="founder-section">
-    <div class="founder-grid">
-      <div class="founder-aside reveal">
-        <div style="width:160px;height:160px;border-radius:50%;border:3px solid #D2A63C;overflow:hidden;margin-bottom:1.5rem;box-shadow:0 0 0 6px rgba(210,166,60,0.15);flex-shrink:0;">
-          <img src="public/headshot.JPEG" alt="Cory Gold, Executive Director of Worth Their Weight" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
-        </div>
-        <div class="founder-name-block">
-          <span class="founder-name">Cory Gold</span>
-          <span class="founder-title">Executive Director</span>
-        </div>
-        <div class="founder-meta">
-          <span class="founder-meta-item">Disabled veteran</span>
-          <span class="founder-meta-item">Chattanooga, TN</span>
-          <span class="founder-meta-item">Est. 2026</span>
-        </div>
-      </div>
-      <div class="founder-body reveal" style="transition-delay:0.15s">
-        <span class="section-eyebrow">Our Story</span>
-        <h2>From the ground up.<br/><em>Literally.</em></h2>
-        <p>In 2015, Cory Gold joined the Army with a contract (and a dream) to serve in the 75th Ranger Regiment. He excelled through basic training, AIT, and Airborne School. Then, right before Ranger selection, his parachute failed to open fully. He hit the ground with a broken back and a traumatic brain injury.</p>
-        <p>After an honorable discharge, Cory spent four years in excruciating physical and psychological pain, not knowing how to get help, or that help even existed. In 2020, a fellow servicemember told him about VA benefits. He filed his claim. Today, Cory is 100% disabled by the VA, gets the treatment he needs, and lives a happy life with his wife and daughter.</p>
-        <p>Worth Their Weight exists because Cory knows what it's like to be a veteran who doesn't know when to ask for help. He started Worth Their Weight in March 2026 so that no veteran has to wait four years to learn what they have already earned.</p>
-      </div>
-    </div>
-  </section>
 
 
   <!-- ============================================================
@@ -2089,11 +1723,10 @@
       <a href="tel:8339898387">833-WTW-VETS</a>
       <a href="#mission">Mission</a>
       <a href="#programs">Programs</a>
-      <a href="#founder">Our Story</a>
       <a href="/partner">Partner With Us</a>
-      <a href="https://wtw.bonfire.com" target="_blank" rel="noopener">Shop</a>
       <!-- <a href="#transparency">Transparency</a> -->
       <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a>
+      <a href="https://wtw.bonfire.com" target="_blank" rel="noopener">Shop</a>
     </div>
     <div class="social-icons" style="margin-left:0;width:100%;justify-content:center;padding-top:1rem;">
       <a href="https://www.instagram.com/worththeirweightorg" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
