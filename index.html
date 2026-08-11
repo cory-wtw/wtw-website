@@ -411,10 +411,8 @@
 
     /* MISSION */
     .mission-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
     .mission-text h2 {
@@ -1280,7 +1278,6 @@
 
       section { padding: 4rem 1.25rem; }
       .video-section { padding: 3.5rem 1.25rem 4rem; }
-      .mission-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .mission-text h2 { font-size: clamp(1.7rem, 7vw, 2.5rem); }
 
       .impact-section { padding: 4rem 1.25rem; }
@@ -1424,7 +1421,7 @@
   <section id="watch" class="video-section">
     <span class="section-eyebrow reveal">Watch</span>
     <h2 class="reveal" style="transition-delay:0.05s">Meet Worth Their Weight.<br/><em>In his own words.</em></h2>
-    <p class="video-subtitle reveal" style="transition-delay:0.1s">Two minutes with Cory Gold, our Executive Director. He didn't know the VA benefits he'd earned existed, or who to ask. It's the same gap every veteran hits, whatever they need, and it's the one we close.</p>
+    <p class="video-subtitle reveal" style="transition-delay:0.1s">Two minutes with our Executive Director, Cory Gold. He didn't know the benefits he'd earned existed, or who to ask — the same gap every veteran hits, and the one we close.</p>
     <div class="video-frame reveal" style="transition-delay:0.15s">
       <iframe
         src="https://www.youtube-nocookie.com/embed/B-HfMsPM1PM?rel=0"
@@ -1445,28 +1442,11 @@
       <div class="mission-text reveal">
         <span class="section-eyebrow">The Mission</span>
         <h2>They earned it.<br/><em>We help them get to it.</em></h2>
-        <p>A veteran rarely shows up with one problem. Housing, a job, an ID, benefits, and somewhere to sleep tonight, all at once. Most organizations solve one of those well and hand over a list for the rest. We do the sorting.</p>
-        <p>Tell us what's going on — fifteen minutes is usually enough. We work out what you need across housing, health care, mental health, VA benefits and claims, work, legal, family, whatever it is. Then we email you the organizations that actually fit, with a name and a number for each. Two weeks later we check in, and if a door didn't open, we find the next one.</p>
+        <p>A veteran rarely shows up with one problem — housing, a job, an ID, benefits, somewhere to sleep tonight, all at once. Most organizations solve one and hand over a list for the rest. We do the sorting.</p>
+        <p>Tell us what's going on; fifteen minutes is usually enough. We work out what you need — from housing and health care to benefits, work, and legal — then email you the organizations that fit, each with a name and a number. Two weeks later we check in, and if a door didn't open, we find the next one.</p>
         <p style="font-weight:700;color:var(--gold-light);">Any veteran. Any era. Any discharge. No cost.</p>
         <div class="mission-callout">
           <p>"The veterans least likely to ask are the ones who need the most."</p>
-        </div>
-      </div>
-
-      <div class="reveal" style="transition-delay:0.15s">
-        <div style="display:flex;flex-direction:column;gap:1.5px;background:var(--gold-line);">
-          <div style="background:var(--near-black);padding:2rem;">
-            <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.6;display:block;margin-bottom:0.5rem;">The Problem</span>
-            <p style="font-size:1rem;color:var(--gold-pale);opacity:0.75;line-height:1.6;">The help exists. It is scattered across thousands of organizations, and no one is pointing veterans to the right ones.</p>
-          </div>
-          <div style="background:var(--near-black);padding:2rem;">
-            <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.6;display:block;margin-bottom:0.5rem;">The Solution</span>
-            <p style="font-size:1rem;color:var(--gold-pale);opacity:0.75;line-height:1.6;">One conversation. We identify what a veteran actually needs, match it to organizations that handle it, make the introduction, and follow up.</p>
-          </div>
-          <div style="background:var(--near-black);padding:2rem;">
-            <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.6;display:block;margin-bottom:0.5rem;">The Goal</span>
-            <p style="font-size:1rem;color:var(--gold-pale);opacity:0.75;line-height:1.6;">Every veteran who reaches us walks away with names and numbers, not a website.</p>
-          </div>
         </div>
       </div>
     </div>
@@ -1612,7 +1592,7 @@
       <div class="donation-tier donation-tier--gold">
         <span class="donation-amount">$1,000+</span>
         <span class="donation-label">First contact to approval</span>
-        <p class="donation-desc">Funds the outreach and follow-through that carries a veteran from first contact to approval.</p>
+        <p class="donation-desc">Funds the outreach and follow-through, from the first knock to an approved claim.</p>
       </div>
     </div>
 
@@ -1713,8 +1693,7 @@
       Registered with the Tennessee Secretary of State as required by law. (No. CO54883)<br/>
       Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.<br/>
       <sup>1</sup> <a href="https://nrd.gov" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">National Resource Directory (nrd.gov)</a>, U.S. Departments of Veterans Affairs, Labor, and Defense&ensp;
-      <sup>2</sup> Approximate count of registered 501(c)(19) veterans' organizations, <a href="https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">IRS Exempt Organizations data</a>&ensp;
-      <sup>3</sup> <a href="https://www.va.gov/disability/compensation-rates/veteran-rates/" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">2026 VA Disability Compensation Rates</a>
+      <sup>2</sup> Approximate count of registered 501(c)(19) veterans' organizations, <a href="https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">IRS Exempt Organizations data</a>
     </div>
   </footer>
 
