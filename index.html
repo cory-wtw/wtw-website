@@ -560,6 +560,55 @@
       margin: 2.75rem auto 0;
     }
 
+    /* TESTIMONIAL */
+    .testimonial-section {
+      padding: 5.5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .testimonial-mark {
+      display: block;
+      font-size: 4rem;
+      line-height: 1;
+      font-weight: 900;
+      color: var(--gold);
+      opacity: 0.35;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial-quote {
+      font-size: clamp(1.35rem, 3vw, 2.1rem);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      color: var(--gold-pale);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .testimonial-attribution {
+      display: block;
+      margin-top: 1.75rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .testimonial-attribution span {
+      display: block;
+      margin-top: 0.4rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--gold-pale);
+      opacity: 0.55;
+    }
+
     /* FOOTER STAMP */
     .footer-stamp {
       display: inline-block;
@@ -1286,6 +1335,7 @@
       .impact-card-number { font-size: 2.8rem; }
 
       .sar-section { padding: 4rem 1.25rem; }
+      .testimonial-section { padding: 3.5rem 1.25rem; }
 
       .hero-stamp { font-size: 0.78rem; padding: 0.7rem 1.25rem; margin-bottom: 2rem; }
       .donate-section { padding: 5rem 1.25rem; }
@@ -1563,6 +1613,24 @@
     })();
   </script>
   -->
+
+  <div class="gold-rule"></div>
+
+  <!-- TESTIMONIAL -->
+  <!-- Attribution per written consent on file. Swap to full name if preferred. -->
+  <section id="testimonial" class="testimonial-section">
+    <span class="section-eyebrow reveal">In Their Words</span>
+    <figure class="reveal" style="transition-delay:0.05s;margin:0;">
+      <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
+      <blockquote class="testimonial-quote">
+        Worth Their Weight, they put me in touch with the people I needed to get us what we need to keep our life going.
+      </blockquote>
+      <figcaption class="testimonial-attribution">
+        John L.
+        <span>Veteran &middot; Chattanooga, TN</span>
+      </figcaption>
+    </figure>
+  </section>
 
   <div class="gold-rule"></div>
 
