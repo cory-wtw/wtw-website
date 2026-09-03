@@ -699,6 +699,37 @@
       position: relative;
     }
 
+    /* TOTAL RAISED COUNTER */
+    .donate-raised {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      margin: 0 auto 3rem;
+      padding: 1.5rem 3rem;
+      border: 1px solid rgba(210,166,60,0.25);
+      background: rgba(210,166,60,0.05);
+    }
+
+    .donate-raised-label {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-pale);
+      opacity: 0.6;
+    }
+
+    .donate-raised-value {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
     /* DONATION BREAKDOWN */
     .donation-breakdown {
       display: grid;
@@ -1641,6 +1672,12 @@
     <span class="section-eyebrow reveal">Support the Mission</span>
     <h2 class="reveal" style="transition-delay:0.1s">One call.<br/><span>Everything it opens.</span></h2>
     <p class="reveal" style="transition-delay:0.2s">Your donation funds the outreach that finds veterans and the follow-through that connects them to what they have already earned. Donors pay so veterans don't. Every dollar you give means a veteran pays nothing.</p>
+
+    <!-- Total raised so far — update this value by hand as donations come in -->
+    <div class="donate-raised reveal" style="transition-delay:0.22s">
+      <span class="donate-raised-label">Total raised so far</span>
+      <span class="donate-raised-value">$58,242.43</span>
+    </div>
 
     <div class="donation-breakdown reveal" style="transition-delay:0.25s">
       <div class="donation-tier">
