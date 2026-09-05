@@ -502,62 +502,6 @@
       opacity: 0.9;
     }
 
-    /* RAISE & EARN — five-tier ladder */
-    .cw-ladder {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2px;
-      background: var(--gold-line);
-    }
-
-    .cw-tier {
-      background: var(--near-black);
-      padding: 2rem 1.25rem;
-      text-align: center;
-      border-top: 3px solid transparent;
-      transition: border-color 0.2s;
-    }
-    .cw-tier:hover { border-top-color: var(--gold); }
-    .cw-tier--top { border-top-color: var(--gold) !important; }
-
-    .cw-tier-amount {
-      font-size: 1.7rem;
-      font-weight: 900;
-      color: var(--gold);
-      display: block;
-      line-height: 1;
-      margin-bottom: 0.25rem;
-    }
-    .cw-tier-raised {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold-pale);
-      opacity: 0.5;
-      display: block;
-      margin-bottom: 1rem;
-    }
-    .cw-tier-reward {
-      font-size: 0.92rem;
-      color: var(--gold-pale);
-      opacity: 0.82;
-      line-height: 1.55;
-    }
-    .cw-tier-reward strong { color: var(--gold-light); font-weight: 700; }
-
-    .cw-ladder-note {
-      margin-top: 1.5rem;
-      text-align: center;
-      font-size: 0.82rem;
-      color: var(--gold-pale);
-      opacity: 0.55;
-      line-height: 1.6;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
     /* LIVE PROGRESS */
     .cw-progress-grid {
       display: grid;
@@ -735,7 +679,6 @@
     @media (max-width: 900px) {
       .cw-steps { grid-template-columns: 1fr; }
       .cw-times { grid-template-columns: 1fr; }
-      .cw-ladder { grid-template-columns: 1fr 1fr; }
       .cw-progress-grid { grid-template-columns: 1fr; }
       .cw-sponsor-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -764,7 +707,6 @@
     }
 
     @media (max-width: 480px) {
-      .cw-ladder { grid-template-columns: 1fr; }
       .cw-sponsor-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -950,44 +892,6 @@
         <p>Rally your workplace, gym, church group, or family. Start or join a team when you register, fundraise together, and climb the team leaderboard. Top individual and top team fundraisers take home awards on event day.</p>
       </div>
     </section>
-
-    <!-- 5. RAISE & EARN -->
-    <section id="rewards" aria-labelledby="cw-rewards-title">
-      <div class="cw-section-head reveal">
-        <span class="section-eyebrow">Raise &amp; Earn</span>
-        <h2 id="cw-rewards-title">The more you carry, the more you earn</h2>
-      </div>
-      <div class="cw-ladder">
-        <div class="cw-tier reveal">
-          <span class="cw-tier-amount">$50</span>
-          <span class="cw-tier-raised">Raised</span>
-          <p class="cw-tier-reward"><strong>Event shirt</strong></p>
-        </div>
-        <div class="cw-tier reveal" style="transition-delay:0.05s">
-          <span class="cw-tier-amount">$100</span>
-          <span class="cw-tier-raised">Raised</span>
-          <p class="cw-tier-reward">+ <strong>Embroidered WTW patch</strong></p>
-        </div>
-        <div class="cw-tier reveal" style="transition-delay:0.1s">
-          <span class="cw-tier-amount">$250</span>
-          <span class="cw-tier-raised">Raised</span>
-          <p class="cw-tier-reward">+ <strong>WTW boonie hat</strong></p>
-        </div>
-        <div class="cw-tier reveal" style="transition-delay:0.15s">
-          <span class="cw-tier-amount">$1,000</span>
-          <span class="cw-tier-raised">Raised</span>
-          <p class="cw-tier-reward">+ <strong>GORUCK Rucker rucksack</strong></p>
-        </div>
-        <div class="cw-tier cw-tier--top reveal" style="transition-delay:0.2s">
-          <span class="cw-tier-amount">$5,000</span>
-          <span class="cw-tier-raised">Raised</span>
-          <p class="cw-tier-reward">+ <strong>20 lb Ruck Plate</strong>, a 30-minute call with our Executive Director, and your name on the wall</p>
-        </div>
-      </div>
-      <p class="cw-ladder-note reveal">Totals from your pledge page on event day. Ruck Anywhere finishers earn the same rewards. We mail them.</p>
-    </section>
-
-    <div class="gold-rule" aria-hidden="true"></div>
 
     <!--
       Hidden until the event has participants. Keeps the wired-up Zeffy
