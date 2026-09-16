@@ -92,8 +92,8 @@ nav {
 .nav-links a:hover { opacity: 1; color: var(--gold-light); }
 .nav-links a[aria-current="page"] { opacity: 1; color: var(--gold-light); }
 
-/* Shop button — stands out from the plain text nav links */
-.nav-links a.nav-shop {
+/* Pill buttons (Shop, Call Now) — stand out from the plain text nav links */
+.nav-links a.nav-btn {
   opacity: 1;
   color: var(--near-black);
   background: var(--gold);
@@ -102,7 +102,7 @@ nav {
   font-weight: 800;
   transition: background 0.2s, transform 0.15s;
 }
-.nav-links a.nav-shop:hover {
+.nav-links a.nav-btn:hover {
   color: var(--near-black);
   background: var(--gold-light);
   transform: translateY(-1px);
@@ -156,9 +156,9 @@ nav {
   }
   .nav-links li { border-top: 1px solid var(--gold-line); }
   .nav-links a { display: block; padding: 0.9rem 0.25rem; }
-  .nav-links a.nav-shop {
+  .nav-links a.nav-btn {
     display: inline-flex;
-    margin: 1rem 0.25rem;
+    margin: 0.5rem 0.25rem;
   }
 
   .social-icons {
@@ -209,6 +209,25 @@ footer {
 }
 
 .footer-right a:hover { opacity: 1; color: var(--gold-light); }
+
+/* Call Now button — matches the nav's pill-button treatment */
+.footer-right a.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  opacity: 1;
+  color: var(--near-black);
+  background: var(--gold);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  transition: background 0.2s, transform 0.15s;
+}
+.footer-right a.footer-btn:hover {
+  color: var(--near-black);
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
 
 .footer-disclaimer {
   width: 100%;
