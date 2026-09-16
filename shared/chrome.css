@@ -224,7 +224,7 @@ footer {
 
 .footer-right a:hover { opacity: 1; color: var(--gold-light); }
 
-/* Call Now button — matches the nav's pill-button treatment */
+/* Shop / Call Now buttons — match the nav's pill-button treatment */
 .footer-right a.footer-btn {
   display: inline-flex;
   align-items: center;
@@ -233,14 +233,28 @@ footer {
   background: var(--gold);
   padding: 0.4rem 1.1rem;
   border-radius: 999px;
+  border: 1px solid var(--gold);
   font-weight: 800;
   letter-spacing: 0.05em;
-  transition: background 0.2s, transform 0.15s;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
 }
 .footer-right a.footer-btn:hover {
   color: var(--near-black);
   background: var(--gold-light);
   transform: translateY(-1px);
+}
+
+/* Alt variant — a different solid color, so two pills side by side
+   (Shop, Call Now) read as visually distinct */
+.footer-right a.footer-btn--alt {
+  color: var(--near-black);
+  background: var(--gold-pale);
+  border-color: var(--gold-pale);
+}
+.footer-right a.footer-btn--alt:hover {
+  color: var(--near-black);
+  background: #fff;
+  border-color: #fff;
 }
 
 .footer-disclaimer {
