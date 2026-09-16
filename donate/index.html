@@ -192,6 +192,78 @@
       position: relative;
     }
 
+    /* PATH CHOOSER — the fork every visitor sees first */
+    .path-chooser {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .path-chooser-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      opacity: 0.85;
+      margin-bottom: 0.75rem;
+    }
+    .path-fork {
+      display: block;
+      width: 180px;
+      height: 36px;
+      margin: 0 auto;
+    }
+    .path-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: stretch;
+      gap: 1.25rem;
+    }
+    .path-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.4rem;
+      background: rgba(243,243,230,0.03);
+      border: 1px solid var(--gold-line);
+      padding: 1.85rem 1.5rem;
+      text-decoration: none;
+      color: var(--gold-pale);
+      transition: border-color 0.2s, transform 0.15s, background 0.2s;
+    }
+    .path-card:hover { border-color: var(--gold); transform: translateY(-3px); background: rgba(243,243,230,0.06); }
+    .path-card--gold { border-color: var(--gold); background: rgba(210,166,60,0.09); }
+    .path-card--gold:hover { background: rgba(210,166,60,0.14); }
+    .path-icon { font-size: 1.9rem; line-height: 1; }
+    .path-title { font-weight: 800; font-size: 1.05rem; color: var(--gold-light); }
+    .path-desc { font-size: 0.85rem; opacity: 0.75; line-height: 1.4; }
+    .path-cta {
+      margin-top: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .path-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold-pale);
+      opacity: 0.4;
+    }
+    .path-chooser-note {
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--gold-pale);
+      opacity: 0.6;
+    }
+    .path-chooser-note a { color: var(--gold-light); }
+
     /* GENERIC SECTION HEAD */
     .section-head { margin-bottom: 2.5rem; }
     .section-head h2 {
@@ -311,25 +383,6 @@
     }
 
     .tier-cta-row { margin-top: 2.5rem; text-align: center; }
-
-    /* MONTHLY GIVING CALLOUT */
-    .monthly-card {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      background: rgba(243,243,230,0.03);
-      border: 1px solid var(--gold-line);
-      padding: 2.5rem 2.5rem;
-    }
-    .monthly-card h3 {
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: var(--gold-light);
-      margin-bottom: 0.5rem;
-    }
-    .monthly-card p { font-size: 1rem; color: var(--gold-pale); opacity: 0.85; max-width: 48ch; line-height: 1.55; }
 
     /* MY 2 CENTS — separate campaign, for rated veterans */
     .two-cents-card {
@@ -455,10 +508,12 @@
       .stat-strip { grid-template-columns: 1fr; }
       .tier-grid { grid-template-columns: repeat(2, 1fr); }
       .model-card { padding: 2rem 1.5rem; }
-      .monthly-card { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; }
       .two-cents-card { padding: 2rem 1.5rem; }
       .two-cents-formula { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
       .hero-cta-row .btn { width: 100%; justify-content: center; }
+      .path-grid { grid-template-columns: 1fr; }
+      .path-fork { display: none; }
+      .path-divider { padding: 0.25rem 0; }
     }
     @media (max-width: 480px) {
       .tier-grid { grid-template-columns: 1fr; }
@@ -479,11 +534,29 @@
       <p class="hero-eyebrow">Support Worth Their Weight</p>
       <h1 id="hero-title">Your gift finds the veterans nobody else is looking for.</h1>
       <p class="hero-subhead">Donors pay so veterans don't. Your gift funds the outreach that finds a veteran and the follow-through that connects them to what they've already earned.</p>
-      <div class="hero-cta-row">
-        <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="btn">Donate Now &rarr;</a>
-        <a href="#ways" class="btn btn--ghost">See Your Impact &rarr;</a>
+
+      <div class="path-chooser reveal">
+        <p class="path-chooser-label">Which one are you?</p>
+        <svg class="path-fork" viewBox="0 0 180 36" aria-hidden="true">
+          <path d="M90 0 V14 M90 14 L20 34 M90 14 L160 34" stroke="var(--gold-line)" stroke-width="2" fill="none" />
+        </svg>
+        <div class="path-grid">
+          <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="path-card">
+            <span class="path-icon" aria-hidden="true">🤝</span>
+            <span class="path-title">Support the Mission</span>
+            <span class="path-desc">One-time or monthly gift, open to anyone</span>
+            <span class="path-cta">Donate Now &rarr;</span>
+          </a>
+          <div class="path-divider" aria-hidden="true">OR</div>
+          <a href="#my-2-cents" class="path-card path-card--gold">
+            <span class="path-icon" aria-hidden="true">🎖️</span>
+            <span class="path-title">I'm a Rated Veteran</span>
+            <span class="path-desc">Give back 2&cent; per $1 of your VA compensation</span>
+            <span class="path-cta">See My 2 Cents &rarr;</span>
+          </a>
+        </div>
+        <p class="path-chooser-note">Not sure yet? <a href="#ways">See your impact &rarr;</a></p>
       </div>
-      <p style="margin-top:1.5rem;font-size:0.9rem;color:var(--gold-pale);opacity:0.7;position:relative;">Already rated by the VA? <a href="#my-2-cents" style="color:var(--gold-light);">See My 2 Cents &rarr;</a></p>
     </section>
 
     <div class="gold-rule" aria-hidden="true"></div>
