@@ -100,12 +100,26 @@ nav {
   padding: 0.4rem 1.1rem;
   border-radius: 999px;
   font-weight: 800;
-  transition: background 0.2s, transform 0.15s;
+  border: 1px solid var(--gold);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
 }
 .nav-links a.nav-btn:hover {
   color: var(--near-black);
   background: var(--gold-light);
   transform: translateY(-1px);
+}
+
+/* Alt variant — same pill shape, a different solid color, so two pills
+   side by side (Shop, Call Now) read as visually distinct */
+.nav-links a.nav-btn--alt {
+  color: var(--near-black);
+  background: var(--gold-pale);
+  border-color: var(--gold-pale);
+}
+.nav-links a.nav-btn--alt:hover {
+  color: var(--near-black);
+  background: #fff;
+  border-color: #fff;
 }
 
 .social-icons {
