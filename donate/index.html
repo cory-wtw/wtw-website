@@ -387,73 +387,7 @@
 
     .tier-cta-row { margin-top: 2.5rem; text-align: center; }
 
-    /* MY 2 CENTS — separate campaign, for rated veterans */
-    .two-cents-card {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 3rem;
-      align-items: start;
-      background: rgba(210,166,60,0.06);
-      border: 2px solid var(--gold);
-      padding: 3rem 2.75rem;
-    }
-    .two-cents-badge {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--near-black);
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.9rem;
-      margin-bottom: 1.5rem;
-    }
-    .two-cents-card h2 {
-      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
-      font-weight: 900;
-      color: var(--gold-light);
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
-      line-height: 1.1;
-    }
-    .two-cents-intro p {
-      font-size: 1.08rem;
-      color: var(--gold-pale);
-      opacity: 0.9;
-      line-height: 1.65;
-      margin-bottom: 1rem;
-    }
-    .two-cents-action { position: sticky; top: 6.5rem; }
-    .two-cents-formula {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-      padding: 1.5rem 1.75rem;
-      background: rgba(29,25,18,0.4);
-      border: 1px solid var(--gold-line);
-    }
-    .two-cents-formula-math {
-      font-size: 1.7rem;
-      font-weight: 900;
-      color: var(--gold);
-      white-space: nowrap;
-    }
-    .two-cents-formula-example {
-      font-size: 0.95rem;
-      color: var(--gold-pale);
-      opacity: 0.75;
-      line-height: 1.5;
-    }
-    .two-cents-closing {
-      font-weight: 700;
-      color: var(--gold-light);
-      margin-top: 1.5rem;
-      margin-bottom: 2rem !important;
-    }
-
-    /* RECOGNITION */
+    /* RECOGNITION / GENERAL'S WALL */
     .recognition-note {
       margin-top: 1.5rem;
       font-size: 1rem;
@@ -463,6 +397,43 @@
     }
     .recognition-note a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid currentColor; }
     .recognition-note a:hover { opacity: 1; }
+
+    .generals-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 2.5rem 0;
+    }
+
+    .general-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--gold-line);
+      background: var(--gold-dim);
+    }
+
+    .generals-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      color: var(--gold);
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.8rem 2rem;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .generals-cta:hover { background: var(--gold); color: var(--near-black); }
 
     /* FAQ */
     .faq-list {
@@ -520,9 +491,6 @@
       .tier-grid { grid-template-columns: repeat(2, 1fr); }
       .model-card { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
       .model-card h2 { margin-bottom: 1rem; }
-      .two-cents-card { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 1.5rem; }
-      .two-cents-action { position: static; }
-      .two-cents-formula { gap: 0.5rem; }
       .hero-cta-row .btn { width: 100%; justify-content: center; }
       .path-grid { grid-template-columns: 1fr; }
       .path-fork { display: none; }
@@ -562,11 +530,11 @@
             <span class="path-cta">Donate Now &rarr;</span>
           </a>
           <div class="path-divider" aria-hidden="true">OR</div>
-          <a href="#my-2-cents" class="path-card path-card--gold">
+          <a href="https://www.zeffy.com/en-US/donation-form/my-2-cents" target="_blank" rel="noopener" class="path-card path-card--gold">
             <span class="path-icon" aria-hidden="true">🎖️</span>
             <span class="path-title">I'm a Rated Veteran</span>
             <span class="path-desc">Give back 2&cent; per $1 of your VA compensation</span>
-            <span class="path-cta">See My 2 Cents &rarr;</span>
+            <span class="path-cta">Start My 2 Cents &rarr;</span>
           </a>
         </div>
         <p class="path-chooser-note">Not sure yet? <a href="#ways">See your impact &rarr;</a></p>
@@ -625,19 +593,19 @@
           <p class="tier-desc">Covers a veteran's ride to a medical appointment.</p>
         </div>
         <div class="tier-card reveal" style="transition-delay:0.05s">
-          <span class="tier-amount">$100</span>
+          <span class="tier-amount">$50</span>
           <span class="tier-label">A phone, connected</span>
-          <p class="tier-desc">Puts a phone and a month of service in a veteran's hand.</p>
+          <p class="tier-desc">Puts a phone and a month of service in a veteran's hand, keeping them connected to us.</p>
         </div>
         <div class="tier-card reveal" style="transition-delay:0.1s">
+          <span class="tier-amount">$250</span>
+          <span class="tier-label">A claim, started</span>
+          <p class="tier-desc">Funds the paperwork and coordination to get a veteran's benefits claim moving with a VSO partner.</p>
+        </div>
+        <div class="tier-card tier-card--gold reveal" style="transition-delay:0.15s">
           <span class="tier-amount">$500</span>
           <span class="tier-label">A week of shelter</span>
           <p class="tier-desc">Covers a week of emergency lodging while we sort out housing.</p>
-        </div>
-        <div class="tier-card tier-card--gold reveal" style="transition-delay:0.15s">
-          <span class="tier-amount">$1,000+</span>
-          <span class="tier-label">First contact to approval</span>
-          <p class="tier-desc">Funds the outreach and follow-through, from the first knock to an approved claim.</p>
         </div>
       </div>
       <div class="tier-cta-row reveal">
@@ -647,41 +615,28 @@
 
     <div class="gold-rule" aria-hidden="true"></div>
 
-    <!-- MY 2 CENTS — separate campaign, for rated veterans -->
-    <section id="my-2-cents" aria-labelledby="two-cents-title">
-      <div class="two-cents-card reveal">
-        <div class="two-cents-intro">
-          <span class="two-cents-badge">A Separate Campaign · For Rated Veterans</span>
-          <h2 id="two-cents-title">My 2 Cents</h2>
-          <p>This isn't a general donation — it's a give-back built just for veterans who already have a VA rating. If that's not you, the giving options above are how you help. If it is you, keep reading.</p>
-          <p>Someone told you about the benefits you'd earned. Maybe it took years. Maybe you almost missed it entirely.</p>
-          <p>There are veterans out there right now who never got that call. The system missed them, and nobody's walking them to the door.</p>
-          <p>My 2 Cents is for veterans who got found, and now want to fund finding the next one. A small piece of what you receive every month goes back into reaching a veteran who hasn't been reached yet.</p>
-        </div>
-
-        <div class="two-cents-action">
-          <div class="two-cents-formula">
-            <span class="two-cents-formula-math">2&cent; per $1</span>
-            <span class="two-cents-formula-example">Two cents for every dollar of your monthly VA compensation, given back as a recurring monthly gift. For example, $2,000/month in compensation becomes a $40/month gift. Set your own amount on the next page — cancel anytime.</span>
-          </div>
-
-          <p class="two-cents-closing">Free for veterans. Always. Your recurring gift is what keeps that promise real.</p>
-
-          <a href="https://www.zeffy.com/en-US/donation-form/my-2-cents" target="_blank" rel="noopener" class="btn">Start My 2 Cents Gift &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="gold-rule" aria-hidden="true"></div>
-
-    <!-- RECOGNITION -->
-    <section aria-labelledby="recognition-title">
+    <!-- RECOGNITION / GENERAL'S WALL -->
+    <section id="generals" aria-labelledby="recognition-title">
       <div class="section-head reveal">
         <span class="section-eyebrow">Recognition</span>
         <h2 id="recognition-title">Join the <em>General's Wall.</em></h2>
       </div>
       <p class="body-copy reveal">Our highest-level individual donors are honored on the Worth Their Weight General's Wall, our way of recognizing the people who carry the weight with us at the deepest level.</p>
-      <p class="recognition-note reveal">See the current wall on our <a href="/#generals">homepage</a>.</p>
+
+      <div class="generals-list reveal">
+        <span class="general-name">Sandra &ldquo;Sunny&rdquo; Gold</span>
+        <span class="general-name">Donald Gold</span>
+        <span class="general-name">Barry Gold</span>
+        <span class="general-name">Edward Gold</span>
+        <span class="general-name">Cory Gold</span>
+        <span class="general-name">Marguerite Gold</span>
+        <span class="general-name">Blossom Gold</span>
+      </div>
+
+      <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="generals-cta reveal">
+        Become a WTW General
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </section>
 
     <div class="gold-rule" aria-hidden="true"></div>
@@ -707,7 +662,7 @@
         </div>
         <div class="faq-item reveal" style="transition-delay:0.15s">
           <h3>What's the difference between a donation and My 2 Cents?</h3>
-          <p>A donation is open to anyone and can be one-time or monthly. <a href="#my-2-cents">My 2 Cents</a> is a separate, recurring campaign only for veterans who already receive VA compensation — it's a way to give back a small share of what you receive each month to fund finding the next veteran.</p>
+          <p>A donation is open to anyone and can be one-time or monthly. <a href="https://www.zeffy.com/en-US/donation-form/my-2-cents" target="_blank" rel="noopener">My 2 Cents</a> is a separate, recurring campaign only for veterans who already receive VA compensation — it's a way to give back a small share of what you receive each month to fund finding the next veteran.</p>
         </div>
       </div>
     </section>

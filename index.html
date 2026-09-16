@@ -213,9 +213,25 @@
     /* INTRO VIDEO */
     .video-section {
       padding: 5rem 2rem 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 900px; height: 500px;
+      max-width: 140vw;
+      background: radial-gradient(ellipse at center, rgba(210,166,60,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .video-inner {
       max-width: 1100px;
       margin: 0 auto;
-      text-align: center;
+      position: relative;
     }
 
     .video-section h2 {
@@ -484,6 +500,7 @@
     /* DONATE */
     .donate-section {
       padding: 7rem 2rem;
+      max-width: none;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -493,9 +510,16 @@
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      width: 800px; height: 400px;
+      width: 1100px; height: 500px;
+      max-width: 150vw;
       background: radial-gradient(ellipse at center, rgba(210,166,60,0.1) 0%, transparent 70%);
       pointer-events: none;
+    }
+
+    .donate-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      position: relative;
     }
 
     .donate-section h2 {
@@ -717,101 +741,31 @@
       line-height: 1.6;
     }
 
-    /* GENERAL'S WALL */
-    .generals-section {
-      padding: 6rem 2rem 5rem;
-      text-align: center;
-      border-top: 1px solid var(--gold-line);
-      position: relative;
-    }
-
-    .generals-section h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 900;
-      color: var(--gold);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.5rem;
-    }
-
-    .generals-subtitle {
-      font-size: 1rem;
-      color: var(--gold-pale);
-      opacity: 0.55;
-      max-width: 480px;
-      margin: 0 auto 3rem;
-      line-height: 1.7;
-    }
-
-    .generals-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      max-width: 800px;
-      margin: 0 auto 3rem;
-    }
-
-    .general-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--gold);
-      padding: 0.75rem 1.5rem;
-      border: 1px solid var(--gold-line);
-      background: var(--gold-dim);
-    }
-
-    .generals-empty {
-      max-width: 400px;
-      margin: 0 auto 2.5rem;
-      padding: 2.5rem 2rem;
-      border: 1px dashed var(--gold-line);
-    }
-
-    .generals-empty p {
-      font-size: 0.95rem;
-      color: var(--gold-pale);
-      opacity: 0.5;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .generals-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: transparent;
-      color: var(--gold);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.8rem 2rem;
-      border: 1px solid var(--gold);
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .generals-cta:hover {
-      background: var(--gold);
-      color: var(--near-black);
-    }
-
-    .generals-star {
-      display: block;
-      margin: 0 auto 1.5rem;
-      width: 32px;
-      height: 32px;
-      opacity: 0.3;
-    }
-
     /* STAY IN TOUCH */
     .signup-section {
-      padding: 5rem 2rem 4rem;
+      padding: 0 2rem 4rem;
+      max-width: none;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .signup-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px; height: 450px;
+      max-width: 140vw;
+      background: radial-gradient(ellipse at center, rgba(210,166,60,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .signup-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      position: relative;
       border-top: 1px solid var(--gold-line);
+      padding-top: 5rem;
     }
 
     .signup-section h2 {
@@ -1163,9 +1117,8 @@
 
       .donation-breakdown { grid-template-columns: repeat(2, 1fr); }
 
-      .generals-section { padding: 4rem 1.25rem 3rem; }
-
-      .signup-section { padding: 4rem 1.25rem 3rem; }
+      .signup-section { padding: 0 1.25rem 3rem; }
+      .signup-inner { padding-top: 4rem; }
 
       .team-section { padding: 4rem 1.25rem; }
     }
@@ -1244,18 +1197,21 @@
 
   <!-- INTRO VIDEO -->
   <section id="watch" class="video-section">
-    <span class="section-eyebrow reveal">Watch</span>
-    <h2 class="reveal" style="transition-delay:0.05s">Meet Worth Their Weight.<br/><em>In his own words.</em></h2>
-    <p class="video-subtitle reveal" style="transition-delay:0.1s">Two minutes with our Executive Director, Cory Gold. He didn't know the benefits he'd earned existed, or who to ask — the same gap every veteran hits, and the one we close.</p>
-    <div class="video-frame reveal" style="transition-delay:0.15s">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/B-HfMsPM1PM?rel=0"
-        title="Worth Their Weight (Intro Video)"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
+    <div class="video-glow" aria-hidden="true"></div>
+    <div class="video-inner">
+      <span class="section-eyebrow reveal">Watch</span>
+      <h2 class="reveal" style="transition-delay:0.05s">Meet Worth Their Weight.<br/><em>In his own words.</em></h2>
+      <p class="video-subtitle reveal" style="transition-delay:0.1s">Two minutes with our Executive Director, Cory Gold. He didn't know the benefits he'd earned existed, or who to ask — the same gap every veteran hits, and the one we close.</p>
+      <div class="video-frame reveal" style="transition-delay:0.15s">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/B-HfMsPM1PM?rel=0"
+          title="Worth Their Weight (Intro Video)"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
   </section>
 
@@ -1413,73 +1369,54 @@
   <!-- DONATE -->
   <section id="donate" class="donate-section">
     <div class="donate-glow"></div>
-    <span class="section-eyebrow reveal">Support the Mission</span>
-    <h2 class="reveal" style="transition-delay:0.1s">One call.<br/><span>Everything it opens.</span></h2>
-    <p class="reveal" style="transition-delay:0.2s">Your donation funds the outreach that finds veterans and the follow-through that connects them to what they have already earned. Donors pay so veterans don't. Every dollar you give means a veteran pays nothing.</p>
+    <div class="donate-inner">
+      <span class="section-eyebrow reveal">Support the Mission</span>
+      <h2 class="reveal" style="transition-delay:0.1s">One call.<br/><span>Everything it opens.</span></h2>
+      <p class="reveal" style="transition-delay:0.2s">Your donation funds the outreach that finds veterans and the follow-through that connects them to what they have already earned. Donors pay so veterans don't. Every dollar you give means a veteran pays nothing.</p>
 
-    <!-- Total raised so far — update this value by hand as donations come in -->
-    <div class="donate-raised reveal" style="transition-delay:0.22s">
-      <span class="donate-raised-label">Total raised so far</span>
-      <span class="donate-raised-value">$58,242.43</span>
+      <!-- Total raised so far — update this value by hand as donations come in -->
+      <div class="donate-raised reveal" style="transition-delay:0.22s">
+        <span class="donate-raised-label">Total raised so far</span>
+        <span class="donate-raised-value">$58,242.43</span>
+      </div>
+
+      <div class="donation-breakdown reveal" style="transition-delay:0.25s">
+        <div class="donation-tier">
+          <span class="donation-amount">$25</span>
+          <span class="donation-label">A ride to care</span>
+          <p class="donation-desc">Covers a veteran's ride to a medical appointment.</p>
+        </div>
+        <div class="donation-tier">
+          <span class="donation-amount">$50</span>
+          <span class="donation-label">A phone, connected</span>
+          <p class="donation-desc">Puts a phone and a month of service in a veteran's hand, keeping them connected to us.</p>
+        </div>
+        <div class="donation-tier">
+          <span class="donation-amount">$250</span>
+          <span class="donation-label">A claim, started</span>
+          <p class="donation-desc">Funds the paperwork and coordination to get a veteran's benefits claim moving with a VSO partner.</p>
+        </div>
+        <div class="donation-tier donation-tier--gold">
+          <span class="donation-amount">$500</span>
+          <span class="donation-label">A week of shelter</span>
+          <p class="donation-desc">Covers a week of emergency lodging while we sort out housing.</p>
+        </div>
+      </div>
+
+      <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="donate-btn reveal" style="transition-delay:0.3s">
+        Donate Now
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#1D1912" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div style="margin-bottom:2rem;"></div>
+      <p class="donate-note reveal" style="transition-delay:0.35s">Worth Their Weight is a 501(c)(3). All donations are tax-deductible.</p>
+      <p class="donate-note reveal" style="transition-delay:0.4s;margin-top:0.5rem;">Questions? Call or text <a href="tel:8339898387" class="tel-link" style="color:var(--gold-pale);opacity:0.6;">833-WTW-VETS (833-989-8387)</a> or <a href="https://calendly.com/cory-worththeirweight/30min" target="_blank" rel="noopener" class="text-link" style="color:var(--gold-pale);opacity:0.6;">schedule a call</a></p>
     </div>
-
-    <div class="donation-breakdown reveal" style="transition-delay:0.25s">
-      <div class="donation-tier">
-        <span class="donation-amount">$25</span>
-        <span class="donation-label">A ride to care</span>
-        <p class="donation-desc">Covers a veteran's ride to a medical appointment.</p>
-      </div>
-      <div class="donation-tier">
-        <span class="donation-amount">$100</span>
-        <span class="donation-label">A phone, connected</span>
-        <p class="donation-desc">Puts a phone and a month of service in a veteran's hand.</p>
-      </div>
-      <div class="donation-tier">
-        <span class="donation-amount">$500</span>
-        <span class="donation-label">A week of shelter</span>
-        <p class="donation-desc">Covers a week of emergency lodging while we sort out housing.</p>
-      </div>
-      <div class="donation-tier donation-tier--gold">
-        <span class="donation-amount">$1,000+</span>
-        <span class="donation-label">First contact to approval</span>
-        <p class="donation-desc">Funds the outreach and follow-through, from the first knock to an approved claim.</p>
-      </div>
-    </div>
-
-    <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="donate-btn reveal" style="transition-delay:0.3s">
-      Donate Now
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#1D1912" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <div style="margin-bottom:2rem;"></div>
-    <p class="donate-note reveal" style="transition-delay:0.35s">Worth Their Weight is a 501(c)(3). All donations are tax-deductible.</p>
-    <p class="donate-note reveal" style="transition-delay:0.4s;margin-top:0.5rem;">Questions? Call or text <a href="tel:8339898387" class="tel-link" style="color:var(--gold-pale);opacity:0.6;">833-WTW-VETS (833-989-8387)</a> or <a href="https://calendly.com/cory-worththeirweight/30min" target="_blank" rel="noopener" class="text-link" style="color:var(--gold-pale);opacity:0.6;">schedule a call</a></p>
-  </section>
-
-  <!-- GENERAL'S WALL -->
-  <section id="generals" class="generals-section">
-    <svg class="generals-star reveal" viewBox="0 0 24 24" fill="var(--gold)" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-    <span class="section-eyebrow reveal" style="transition-delay:0.05s;">Carry the Weight</span>
-    <h2 class="reveal" style="transition-delay:0.1s">The WTW General's Wall</h2>
-    <p class="generals-subtitle reveal" style="transition-delay:0.15s">Our highest-level supporters who carry the weight with us.</p>
-
-    <div class="generals-list reveal" style="transition-delay:0.2s">
-      <span class="general-name">Sandra &ldquo;Sunny&rdquo; Gold</span>
-      <span class="general-name">Donald Gold</span>
-      <span class="general-name">Barry Gold</span>
-      <span class="general-name">Edward Gold</span>
-      <span class="general-name">Cory Gold</span>
-      <span class="general-name">Marguerite Gold</span>
-      <span class="general-name">Blossom Gold</span>
-    </div>
-
-    <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="generals-cta reveal" style="transition-delay:0.25s;">
-      Become a WTW General
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
   </section>
 
   <!-- STAY IN TOUCH -->
   <section id="stay-in-touch" class="signup-section">
+    <div class="signup-glow" aria-hidden="true"></div>
+    <div class="signup-inner">
     <h2 class="reveal">Stay in Touch</h2>
     <p class="signup-subtitle reveal" style="transition-delay:0.1s">Updates from the field. Veterans helped, milestones hit, ways to get involved. No spam.</p>
 
@@ -1501,6 +1438,7 @@
       <button type="submit">Sign Up</button>
     </form>
     <div class="signup-message" id="signup-message" role="status" aria-live="polite"></div>
+    </div>
   </section>
 
   <div data-include="footer"></div>
