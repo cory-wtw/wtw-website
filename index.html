@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/shared/chrome.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -50,135 +51,6 @@
       z-index: 1000;
       opacity: 0.4;
     }
-
-    /* ANNOUNCEMENT BANNER + NAV */
-    .topbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      /* Solid backing so scrolled content never shows through the nav's
-         translucent background. */
-      background: var(--near-black);
-    }
-
-    .promo-banner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 0.55rem;
-      /* Extra top padding fills the notch / status-bar safe area with the
-         banner's red, so nothing shows through above it on scroll. */
-      padding: calc(0.5rem + env(safe-area-inset-top, 0px)) 1.25rem 0.5rem;
-      text-align: center;
-      text-decoration: none;
-      color: var(--gold-pale);
-      font-size: 0.85rem;
-      font-weight: 600;
-      line-height: 1.35;
-      background: linear-gradient(180deg, var(--banner-red) 0%, var(--banner-red-deep) 100%);
-      border-bottom: 1px solid var(--gold-line);
-      box-shadow: inset 0 1px 0 rgba(238,205,92,0.18);
-      transition: filter 0.2s;
-    }
-    .promo-banner:hover { filter: brightness(1.08); }
-    .promo-banner strong { color: var(--gold-light); font-weight: 800; letter-spacing: 0.03em; }
-    .promo-banner .promo-sep { color: var(--gold); opacity: 0.55; }
-    .promo-banner .promo-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      background: var(--gold);
-      color: var(--near-black);
-      padding: 0.2rem 0.75rem;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .promo-banner:hover .promo-cta { background: var(--gold-light); }
-
-    nav {
-      padding: 0.6rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(29,25,18,0.97);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--gold-line);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-    }
-
-    .nav-wordmark {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--gold-pale);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-
-    .nav-links a:hover { opacity: 1; color: var(--gold-light); }
-
-    /* Shop button — stands out from the plain text nav links */
-    .nav-links a.nav-shop {
-      opacity: 1;
-      color: var(--near-black);
-      background: var(--gold);
-      padding: 0.4rem 1.1rem;
-      border-radius: 999px;
-      font-weight: 800;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .nav-links a.nav-shop:hover {
-      color: var(--near-black);
-      background: var(--gold-light);
-      transform: translateY(-1px);
-    }
-
-    .social-icons {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-left: 1.5rem;
-    }
-
-    .social-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.6;
-      transition: opacity 0.2s;
-    }
-
-    .social-icon:hover { opacity: 1; }
-
-    .social-icon svg { width: 20px; height: 20px; }
 
     /* HERO */
     .hero {
@@ -607,26 +479,6 @@
       letter-spacing: 0.12em;
       color: var(--gold-pale);
       opacity: 0.55;
-    }
-
-    /* FOOTER STAMP */
-    .footer-stamp {
-      display: inline-block;
-      padding: 0.35rem 0.75rem;
-      border: 1px solid var(--gold);
-      background: rgba(210,166,60,0.1);
-      color: var(--gold);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 0.85rem;
-    }
-
-    .footer-stamp em {
-      font-style: normal;
-      color: var(--gold-light);
-      font-weight: 900;
     }
 
     /* DONATE */
@@ -1058,70 +910,6 @@
 
     .signup-message.error { color: #E89A8A; }
 
-    footer {
-      border-top: 1px solid var(--gold-line);
-      padding: 2rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .footer-left { display: flex; align-items: center; gap: 1rem; }
-
-    .footer-wordmark {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .footer-tagline {
-      font-size: 0.78rem;
-      color: var(--gold-pale);
-      opacity: 0.4;
-      font-style: italic;
-    }
-
-    .footer-right { display: flex; gap: 2rem; flex-wrap: wrap; }
-
-    .footer-right a {
-      font-size: 0.78rem;
-      color: var(--gold-pale);
-      opacity: 0.45;
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      transition: opacity 0.2s;
-    }
-
-    .footer-right a:hover { opacity: 1; color: var(--gold-light); }
-
-    .footer-disclaimer {
-      width: 100%;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--gold-line);
-      font-size: 0.72rem;
-      color: var(--gold-pale);
-      opacity: 0.4;
-      line-height: 1.5;
-      text-align: center;
-    }
-
-    .footer-seal {
-      display: inline-flex;
-      align-items: center;
-    }
-    .footer-seal img {
-      width: 60px;
-      height: auto;
-      opacity: 0.8;
-      transition: opacity 0.2s ease;
-    }
-    .footer-seal:hover img { opacity: 1; }
-
     /* TRANSPARENCY DASHBOARD */
     .transparency-section {
       padding: 6rem 2rem;
@@ -1345,18 +1133,6 @@
     /* RESPONSIVE */
     @media (max-width: 768px) {
       body { font-size: 16px; }
-      nav { padding: 0.6rem 1.25rem; }
-      /* Hide the text links on mobile, but keep the Shop button visible */
-      .nav-links { display: flex; gap: 0; margin-left: auto; }
-      .nav-links li:not(.nav-shop-li) { display: none; }
-      .nav-links a.nav-shop { font-size: 0.72rem; padding: 0.35rem 0.9rem; }
-      .social-icons { margin-left: 0.75rem; }
-      .social-icon svg { width: 18px; height: 18px; }
-      .nav-wordmark { font-size: 0.7rem; }
-
-      .promo-banner { font-size: 0.78rem; padding: calc(0.45rem + env(safe-area-inset-top, 0px)) 1rem 0.45rem; gap: 0.4rem; }
-      .promo-banner .promo-detail, .promo-banner .promo-sep { display: none; }
-      .promo-banner .promo-cta { font-size: 0.68rem; padding: 0.18rem 0.6rem; }
 
       .hero { padding: 7rem 1.25rem 4rem; }
       .hero h1 { font-size: clamp(2.6rem, 12vw, 4rem); }
@@ -1391,9 +1167,6 @@
       .signup-section { padding: 4rem 1.25rem 3rem; }
 
       .team-section { padding: 4rem 1.25rem; }
-
-      footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.25rem; }
-      .footer-right { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
     }
 
     @media (max-width: 400px) {
@@ -1422,40 +1195,7 @@
 </head>
 <body>
 
-  <!-- TOP BAR: announcement banner + nav -->
-  <div class="topbar">
-
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">
-      <img src="public/WTW Logo Main.png" alt="Worth Their Weight" style="height:36px;width:auto;">
-      <span class="nav-wordmark">Worth Their Weight</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#watch">Watch</a></li>
-      <li><a href="#mission">Mission</a></li>
-      <li><a href="#search-rescue">Search &amp; Rescue</a></li>
-      <li><a href="/partner">Partner With Us</a></li>
-      <!-- Transparency link hidden until dashboard reflects a longer track record -->
-      <!-- <li><a href="#transparency">Transparency</a></li> -->
-      <li><a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a></li>
-      <li class="nav-shop-li"><a href="https://wtw.bonfire.com" target="_blank" rel="noopener" class="nav-shop">Shop</a></li>
-    </ul>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/worththeirweightorg" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#F3F3E6" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="#F3F3E6" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="#F3F3E6"/></svg>
-      </a>
-      <a href="https://www.facebook.com/people/Worth-Their-Weight/61574304388792/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="#F3F3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@worththeirweight" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 3 4 5 4" stroke="#F3F3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </nav>
-
-  </div>
-  <!-- /TOP BAR -->
+  <div data-include="header"></div>
 
   <!-- HERO -->
   <section class="hero">
@@ -1762,49 +1502,9 @@
     <div class="signup-message" id="signup-message" role="status" aria-live="polite"></div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-left">
-      <img src="public/WTW Logo Main.png" alt="Worth Their Weight" style="height:36px;width:auto;">
-      <div>
-        <div class="footer-wordmark">Worth Their Weight</div>
-        <div class="footer-tagline">Connecting Vets to What's Theirs</div>
-      </div>
-    </div>
-    <div class="footer-right">
-      <a href="tel:8339898387">Call or Text 833-WTW-VETS (833-989-8387)</a>
-      <a href="#mission">Mission</a>
-      <a href="#search-rescue">Search &amp; Rescue</a>
-      <a href="/partner">Partner With Us</a>
-      <!-- <a href="#transparency">Transparency</a> -->
-      <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener">Donate</a>
-      <a href="https://wtw.bonfire.com" target="_blank" rel="noopener">Shop</a>
-      <a class="footer-seal" aria-label="Worth Their Weight — Candid Transparency Seal" href="https://app.candid.org/profile/16598268/worth-their-weight-41-5275144/?pkId=8476c21c-5868-432a-b8cc-08addee3e0a6" target="_blank" rel="noopener">
-        <img alt="Candid Transparency Seal" loading="lazy" src="https://widgets.guidestar.org/prod/v1/pdp/transparency-seal/16598268/svg" />
-      </a>
-    </div>
-    <div class="social-icons" style="margin-left:0;width:100%;justify-content:center;padding-top:1rem;">
-      <a href="https://www.instagram.com/worththeirweightorg" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#F3F3E6" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="#F3F3E6" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="#F3F3E6"/></svg>
-      </a>
-      <a href="https://www.facebook.com/people/Worth-Their-Weight/61574304388792/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="#F3F3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@worththeirweight" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 3 4 5 4" stroke="#F3F3E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <div class="footer-disclaimer">
-      <span class="footer-stamp">Free for veterans. <em>Always.</em></span><br/>
-      Worth Their Weight is free to every veteran we serve. No fees, no dues, no catch, ever. Funded by donors, sponsors, and grants.<br/>
-      Worth Their Weight is a 501(c)(3) tax-exempt organization. EIN: 41-5275144. All donations are tax-deductible to the extent allowed by law.<br/>
-      Registered with the Tennessee Secretary of State as required by law. (No. CO54883)<br/>
-      Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs. All claims-related services are performed by VA-accredited attorneys, agents, or Veterans Service Organizations.<br/>
-      <sup>1</sup> <a href="https://nrd.gov" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">National Resource Directory (nrd.gov)</a>, U.S. Departments of Veterans Affairs, Labor, and Defense&ensp;
-      <sup>2</sup> Approximate count of registered 501(c)(19) veterans' organizations, <a href="https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf" target="_blank" rel="noopener" style="color:var(--gold-pale);opacity:0.6;text-decoration:underline;">IRS Exempt Organizations data</a>
-    </div>
-  </footer>
+  <div data-include="footer"></div>
 
+  <script src="/shared/include.js"></script>
   <script>
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {

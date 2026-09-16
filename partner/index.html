@@ -18,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/shared/chrome.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -79,48 +80,6 @@
       text-decoration: none;
     }
     .skip-link:focus { left: 1rem; top: 1rem; }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 0.6rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(29,25,18,0.97);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--gold-line);
-      padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
-    }
-
-    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-
-    .nav-wordmark {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .nav-donate {
-      display: inline-flex;
-      align-items: center;
-      background: var(--gold);
-      color: var(--near-black);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.55rem 1.4rem;
-      border: 1px solid var(--gold);
-      transition: background 0.2s, transform 0.15s;
-    }
-    .nav-donate:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
 
     /* SECTIONS */
     section {
@@ -587,37 +546,6 @@
     .inquiry-confirm p a { color: var(--deep-gold); text-decoration: none; border-bottom: 1px solid currentColor; opacity: 0.85; }
     .inquiry-confirm p a:hover { opacity: 1; }
 
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--gold-line);
-      padding: 2.5rem 2.5rem;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-    .footer-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    .footer-wordmark {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--gold);
-    }
-    .footer-tagline { font-size: 0.78rem; color: var(--gold-pale); opacity: 0.5; font-style: italic; }
-
-    .footer-contact {
-      font-size: 0.9rem; color: var(--gold-pale); opacity: 0.8;
-      margin-bottom: 1.5rem; line-height: 1.6;
-    }
-    .footer-contact a { color: var(--gold-light); text-decoration: none; }
-    .footer-contact a:hover { text-decoration: underline; }
-
-    .footer-legal {
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--gold-line);
-      font-size: 0.78rem;
-      color: var(--gold-pale);
-      opacity: 0.5;
-      line-height: 1.6;
-      max-width: 90ch;
-    }
-
     /* REVEAL */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -627,7 +555,6 @@
     }
 
     @media (max-width: 820px) {
-      nav { padding: 0.6rem 1.25rem; padding-top: calc(0.6rem + env(safe-area-inset-top, 0px)); }
       section { padding: 4rem 1.25rem; }
       .partner-grid, .steps, .stat-strip { grid-template-columns: 1fr; }
       .field-row, .check-grid { grid-template-columns: 1fr; }
@@ -640,14 +567,7 @@
 
   <a href="#inquiry" class="skip-link">Skip to inquiry form</a>
 
-  <!-- 1. HEADER / NAV -->
-  <nav>
-    <a href="/" class="nav-logo">
-      <img src="../public/WTW Logo Main.png" alt="Worth Their Weight home" style="height:36px;width:auto;">
-      <span class="nav-wordmark">Worth Their Weight</span>
-    </a>
-    <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="nav-donate">Donate</a>
-  </nav>
+  <div data-include="header"></div>
 
   <main id="top">
 
@@ -920,23 +840,9 @@
 
   </main>
 
-  <!-- 9. FOOTER -->
-  <footer>
-    <div class="footer-top">
-      <img src="../public/WTW Logo Main.png" alt="Worth Their Weight" style="height:36px;width:auto;">
-      <div>
-        <div class="footer-wordmark">Worth Their Weight</div>
-        <div class="footer-tagline">Connecting Vets to What's Theirs</div>
-      </div>
-    </div>
-    <div class="footer-contact">
-      Partnerships · <a href="mailto:partners@worththeirweight.org">partners@worththeirweight.org</a> · Best way to reach us — call or text <a href="tel:+18339898387">833-WTW-VETS (833-989-8387)</a> · <a href="/">worththeirweight.org</a>
-    </div>
-    <div class="footer-legal">
-      Worth Their Weight is a 501(c)(3) tax-exempt organization. EIN 41-5275144. Registered with the Tennessee Secretary of State (No. CO54883). Donations are tax-deductible to the extent allowed by law. Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs.
-    </div>
-  </footer>
+  <div data-include="footer"></div>
 
+  <script src="/shared/include.js"></script>
   <script>
     // Scroll reveal — matches main site behavior
     const reveals = document.querySelectorAll('.reveal');

@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/shared/chrome.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -54,36 +55,6 @@
       outline-offset: 3px;
       border-radius: 2px;
     }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 0.6rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(29,25,18,0.97);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--gold-line);
-      padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
-    }
-    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-    .nav-wordmark {
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--gold);
-    }
-    .nav-donate {
-      display: inline-flex; align-items: center;
-      background: var(--gold); color: var(--near-black);
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; text-decoration: none;
-      padding: 0.55rem 1.4rem; border: 1px solid var(--gold);
-      transition: background 0.2s, transform 0.15s;
-    }
-    .nav-donate:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-1px); }
 
     main { max-width: 760px; margin: 0 auto; padding: 8rem 2rem 5rem; }
 
@@ -182,15 +153,7 @@
     .inquiry-confirm p a { color: var(--deep-gold); text-decoration: none; border-bottom: 1px solid currentColor; opacity: 0.85; }
     .inquiry-confirm p a:hover { opacity: 1; }
 
-    footer {
-      border-top: 1px solid var(--gold-line);
-      padding: 2.5rem; max-width: 760px; margin: 0 auto;
-      font-size: 0.78rem; color: var(--gold-pale); opacity: 0.55; line-height: 1.6;
-    }
-    footer a { color: var(--gold-light); text-decoration: none; }
-
     @media (max-width: 600px) {
-      nav { padding: 0.6rem 1.25rem; padding-top: calc(0.6rem + env(safe-area-inset-top, 0px)); }
       main { padding: 7rem 1.25rem 4rem; }
       .field-row, .check-grid { grid-template-columns: 1fr; }
       .inquiry-confirm { padding: 2rem 1.5rem; }
@@ -199,14 +162,7 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="/" class="nav-logo">
-      <img src="../../public/WTW Logo Main.png" alt="Worth Their Weight home" style="height:36px;width:auto;">
-      <span class="nav-wordmark">Worth Their Weight</span>
-    </a>
-    <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="nav-donate">Donate</a>
-  </nav>
+  <div data-include="header"></div>
 
   <main>
     <div class="inquiry-intro">
@@ -339,11 +295,9 @@
     </div>
   </main>
 
-  <footer>
-    Partnerships · <a href="mailto:partners@worththeirweight.org">partners@worththeirweight.org</a> · Best way to reach us — call or text <a href="tel:+18339898387">833-WTW-VETS (833-989-8387)</a> · <a href="/">worththeirweight.org</a><br/>
-    Worth Their Weight is a 501(c)(3) tax-exempt organization. EIN 41-5275144. Registered with the Tennessee Secretary of State (No. CO54883). Donations are tax-deductible to the extent allowed by law. Worth Their Weight is not a law firm and does not provide legal representation before the U.S. Department of Veterans Affairs.
-  </footer>
+  <div data-include="footer"></div>
 
+  <script src="/shared/include.js"></script>
   <script>
     function submitInquiry(event) {
       event.preventDefault();

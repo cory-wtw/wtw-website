@@ -1,0 +1,196 @@
+/* ==========================================================================
+   Shared site chrome — header (nav) + footer.
+   Used on every page via /shared/include.js, which fetches
+   /shared/header.html and /shared/footer.html into the
+   [data-include="header"] / [data-include="footer"] placeholders.
+
+   Depends on the brand color variables each page already defines in its
+   own <style> block: --near-black, --gold, --gold-light, --gold-pale,
+   --deep-gold, --gold-dim, --gold-line.
+   ========================================================================== */
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0.6rem 2.5rem;
+  padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(29,25,18,0.97);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--gold-line);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.nav-wordmark {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--gold-pale);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover { opacity: 1; color: var(--gold-light); }
+.nav-links a[aria-current="page"] { opacity: 1; color: var(--gold-light); }
+
+/* Shop button — stands out from the plain text nav links */
+.nav-links a.nav-shop {
+  opacity: 1;
+  color: var(--near-black);
+  background: var(--gold);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-links a.nav-shop:hover {
+  color: var(--near-black);
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1.5rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.social-icon:hover { opacity: 1; }
+
+.social-icon svg { width: 20px; height: 20px; }
+
+@media (max-width: 768px) {
+  nav { padding: 0.6rem 1.25rem; padding-top: calc(0.6rem + env(safe-area-inset-top, 0px)); }
+  .nav-links { display: flex; gap: 0; margin-left: auto; }
+  .nav-links li:not(.nav-shop-li) { display: none; }
+  .nav-links a.nav-shop { font-size: 0.72rem; padding: 0.35rem 0.9rem; }
+  .social-icons { margin-left: 0.75rem; }
+  .social-icon svg { width: 18px; height: 18px; }
+  .nav-wordmark { font-size: 0.7rem; }
+}
+
+/* FOOTER
+   ========================================================================== */
+footer {
+  border-top: 1px solid var(--gold-line);
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-left { display: flex; align-items: center; gap: 1rem; }
+
+.footer-wordmark {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.footer-tagline {
+  font-size: 0.78rem;
+  color: var(--gold-pale);
+  opacity: 0.4;
+  font-style: italic;
+}
+
+.footer-right { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+.footer-right a {
+  font-size: 0.78rem;
+  color: var(--gold-pale);
+  opacity: 0.45;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s;
+}
+
+.footer-right a:hover { opacity: 1; color: var(--gold-light); }
+
+.footer-disclaimer {
+  width: 100%;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gold-line);
+  font-size: 0.72rem;
+  color: var(--gold-pale);
+  opacity: 0.4;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.footer-seal {
+  display: inline-flex;
+  align-items: center;
+}
+.footer-seal img {
+  width: 60px;
+  height: auto;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+.footer-seal:hover img { opacity: 1; }
+
+.footer-stamp {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--gold);
+  background: rgba(210,166,60,0.1);
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.footer-stamp em {
+  font-style: normal;
+  color: var(--gold-light);
+  font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.25rem; }
+  .footer-right { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+}
