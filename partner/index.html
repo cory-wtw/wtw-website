@@ -322,8 +322,9 @@
     /* WAYS TO PARTNER — two cards */
     .partner-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       gap: 1.5rem;
+      max-width: 480px;
     }
 
     .partner-card {
@@ -705,11 +706,10 @@
     <section aria-labelledby="ways-title">
       <div class="section-head reveal">
         <span class="section-eyebrow">Ways to Partner</span>
-        <h2 id="ways-title">Two ways to <em>carry the weight</em></h2>
+        <h2 id="ways-title">Year-round giving circles</h2>
       </div>
       <div class="partner-grid">
         <div class="partner-card reveal">
-          <span class="partner-kicker">Column A</span>
           <h3>Year-Round Giving Circles</h3>
           <ul class="tier-list">
             <li><span class="tier-name">Founders' Circle</span><span class="tier-amount">$25,000+ (by invitation)</span></li>
@@ -717,17 +717,6 @@
             <li><span class="tier-name">Field Officer</span><span class="tier-amount">$5,000</span></li>
             <li><span class="tier-name">Frontline Supporter</span><span class="tier-amount">$1,000</span></li>
             <li><span class="tier-name">Battle Buddy</span><span class="tier-amount">$250 / $25 mo</span></li>
-          </ul>
-        </div>
-        <div class="partner-card reveal" style="transition-delay:0.1s">
-          <span class="partner-kicker">Column B</span>
-          <h3>Carry the Weight Event</h3>
-          <ul class="tier-list">
-            <li><span class="tier-name">Command Sponsor</span><span class="tier-amount">$10,000</span></li>
-            <li><span class="tier-name">Squad Leader</span><span class="tier-amount">$5,000</span></li>
-            <li><span class="tier-name">Ruck Master</span><span class="tier-amount">$2,500</span></li>
-            <li><span class="tier-name">Range Partner</span><span class="tier-amount">$1,000</span></li>
-            <li><span class="tier-name">In-Kind</span><span class="tier-amount">credited at matching cash tier</span></li>
           </ul>
         </div>
       </div>
@@ -876,9 +865,7 @@
         <fieldset class="field">
           <legend class="fieldset-legend">Type of support</legend>
           <div class="check-grid">
-            <label class="check-line"><input type="checkbox" name="type-of-support" value="Carry the Weight event" /> Carry the Weight event</label>
             <label class="check-line"><input type="checkbox" name="type-of-support" value="Year-round partnership" /> Year-round partnership</label>
-            <label class="check-line"><input type="checkbox" name="type-of-support" value="Both" /> Both</label>
             <label class="check-line"><input type="checkbox" name="type-of-support" value="In-kind donation" /> In-kind donation</label>
           </div>
         </fieldset>
