@@ -81,7 +81,7 @@
     /* SECTIONS */
     section {
       padding: 5.5rem 2rem;
-      max-width: 1080px;
+      max-width: 1320px;
       margin: 0 auto;
     }
 
@@ -96,7 +96,7 @@
     }
 
     .gold-rule {
-      max-width: 1080px;
+      max-width: 1320px;
       margin: 0 auto;
       height: 1px;
       background: linear-gradient(to right, transparent, var(--gold-line), transparent);
@@ -326,23 +326,26 @@
 
     /* OUR MODEL — cream callout */
     .model-card {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 2.5rem;
+      align-items: center;
       background: var(--cream);
       color: var(--near-black);
       padding: 3rem 2.75rem;
       border-left: 4px solid var(--gold);
     }
     .model-card h2 {
-      font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+      font-size: clamp(1.7rem, 2.8vw, 2.6rem);
       font-weight: 900;
       color: var(--near-black);
       letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
       line-height: 1.1;
     }
     .model-card p {
       font-size: 1.1rem;
       color: var(--near-black);
-      max-width: 66ch;
+      max-width: 60ch;
       line-height: 1.6;
     }
     .model-card p strong { color: var(--deep-gold); }
@@ -386,6 +389,10 @@
 
     /* MY 2 CENTS — separate campaign, for rated veterans */
     .two-cents-card {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: start;
       background: rgba(210,166,60,0.06);
       border: 2px solid var(--gold);
       padding: 3rem 2.75rem;
@@ -402,27 +409,27 @@
       margin-bottom: 1.5rem;
     }
     .two-cents-card h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
       font-weight: 900;
       color: var(--gold-light);
       letter-spacing: -0.02em;
       margin-bottom: 1.25rem;
       line-height: 1.1;
     }
-    .two-cents-card > p {
+    .two-cents-intro p {
       font-size: 1.08rem;
       color: var(--gold-pale);
       opacity: 0.9;
-      max-width: 66ch;
       line-height: 1.65;
       margin-bottom: 1rem;
     }
+    .two-cents-action { position: sticky; top: 6.5rem; }
     .two-cents-formula {
       display: flex;
-      align-items: center;
-      gap: 1.75rem;
-      flex-wrap: wrap;
-      margin: 2rem 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
       padding: 1.5rem 1.75rem;
       background: rgba(29,25,18,0.4);
       border: 1px solid var(--gold-line);
@@ -458,14 +465,18 @@
     .recognition-note a:hover { opacity: 1; }
 
     /* FAQ */
-    .faq-list { display: grid; gap: 1.75rem; }
+    .faq-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 3rem;
+    }
     .faq-item h3 {
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--gold-light);
       margin-bottom: 0.5rem;
     }
-    .faq-item p { font-size: 1rem; color: var(--gold-pale); opacity: 0.85; line-height: 1.6; max-width: 66ch; }
+    .faq-item p { font-size: 1rem; color: var(--gold-pale); opacity: 0.85; line-height: 1.6; }
     .faq-item p a { color: var(--gold-light); }
 
     /* CTA BAND */
@@ -507,13 +518,16 @@
       section { padding: 4rem 1.25rem; }
       .stat-strip { grid-template-columns: 1fr; }
       .tier-grid { grid-template-columns: repeat(2, 1fr); }
-      .model-card { padding: 2rem 1.5rem; }
-      .two-cents-card { padding: 2rem 1.5rem; }
-      .two-cents-formula { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .model-card { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+      .model-card h2 { margin-bottom: 1rem; }
+      .two-cents-card { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 1.5rem; }
+      .two-cents-action { position: static; }
+      .two-cents-formula { gap: 0.5rem; }
       .hero-cta-row .btn { width: 100%; justify-content: center; }
       .path-grid { grid-template-columns: 1fr; }
       .path-fork { display: none; }
       .path-divider { padding: 0.25rem 0; }
+      .faq-list { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .tier-grid { grid-template-columns: 1fr; }
@@ -636,21 +650,25 @@
     <!-- MY 2 CENTS — separate campaign, for rated veterans -->
     <section id="my-2-cents" aria-labelledby="two-cents-title">
       <div class="two-cents-card reveal">
-        <span class="two-cents-badge">A Separate Campaign · For Rated Veterans</span>
-        <h2 id="two-cents-title">My 2 Cents</h2>
-        <p>This isn't a general donation — it's a give-back built just for veterans who already have a VA rating. If that's not you, the giving options above are how you help. If it is you, keep reading.</p>
-        <p>Someone told you about the benefits you'd earned. Maybe it took years. Maybe you almost missed it entirely.</p>
-        <p>There are veterans out there right now who never got that call. The system missed them, and nobody's walking them to the door.</p>
-        <p>My 2 Cents is for veterans who got found, and now want to fund finding the next one. A small piece of what you receive every month goes back into reaching a veteran who hasn't been reached yet.</p>
-
-        <div class="two-cents-formula">
-          <span class="two-cents-formula-math">2&cent; per $1</span>
-          <span class="two-cents-formula-example">Two cents for every dollar of your monthly VA compensation, given back as a recurring monthly gift. For example, $2,000/month in compensation becomes a $40/month gift. Set your own amount on the next page — cancel anytime.</span>
+        <div class="two-cents-intro">
+          <span class="two-cents-badge">A Separate Campaign · For Rated Veterans</span>
+          <h2 id="two-cents-title">My 2 Cents</h2>
+          <p>This isn't a general donation — it's a give-back built just for veterans who already have a VA rating. If that's not you, the giving options above are how you help. If it is you, keep reading.</p>
+          <p>Someone told you about the benefits you'd earned. Maybe it took years. Maybe you almost missed it entirely.</p>
+          <p>There are veterans out there right now who never got that call. The system missed them, and nobody's walking them to the door.</p>
+          <p>My 2 Cents is for veterans who got found, and now want to fund finding the next one. A small piece of what you receive every month goes back into reaching a veteran who hasn't been reached yet.</p>
         </div>
 
-        <p class="two-cents-closing">Free for veterans. Always. Your recurring gift is what keeps that promise real.</p>
+        <div class="two-cents-action">
+          <div class="two-cents-formula">
+            <span class="two-cents-formula-math">2&cent; per $1</span>
+            <span class="two-cents-formula-example">Two cents for every dollar of your monthly VA compensation, given back as a recurring monthly gift. For example, $2,000/month in compensation becomes a $40/month gift. Set your own amount on the next page — cancel anytime.</span>
+          </div>
 
-        <a href="https://www.zeffy.com/en-US/donation-form/my-2-cents" target="_blank" rel="noopener" class="btn">Start My 2 Cents Gift &rarr;</a>
+          <p class="two-cents-closing">Free for veterans. Always. Your recurring gift is what keeps that promise real.</p>
+
+          <a href="https://www.zeffy.com/en-US/donation-form/my-2-cents" target="_blank" rel="noopener" class="btn">Start My 2 Cents Gift &rarr;</a>
+        </div>
       </div>
     </section>
 

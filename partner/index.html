@@ -84,7 +84,7 @@
     /* SECTIONS */
     section {
       padding: 5.5rem 2rem;
-      max-width: 1080px;
+      max-width: 1320px;
       margin: 0 auto;
     }
 
@@ -99,7 +99,7 @@
     }
 
     .gold-rule {
-      max-width: 1080px;
+      max-width: 1320px;
       margin: 0 auto;
       height: 1px;
       background: linear-gradient(to right, transparent, var(--gold-line), transparent);
@@ -257,23 +257,26 @@
 
     /* OUR MODEL — cream callout */
     .model-card {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 2.5rem;
+      align-items: center;
       background: var(--cream);
       color: var(--near-black);
       padding: 3rem 2.75rem;
       border-left: 4px solid var(--gold);
     }
     .model-card h2 {
-      font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+      font-size: clamp(1.7rem, 2.8vw, 2.6rem);
       font-weight: 900;
       color: var(--near-black);
       letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
       line-height: 1.1;
     }
     .model-card p {
       font-size: 1.1rem;
       color: var(--near-black);
-      max-width: 66ch;
+      max-width: 60ch;
       line-height: 1.6;
     }
     .model-card p strong { color: var(--deep-gold); }
@@ -558,6 +561,8 @@
       section { padding: 4rem 1.25rem; }
       .partner-grid, .steps, .stat-strip { grid-template-columns: 1fr; }
       .field-row, .check-grid { grid-template-columns: 1fr; }
+      .model-card { grid-template-columns: 1fr; }
+      .model-card h2 { margin-bottom: 1rem; }
       .model-card, .inquiry-confirm { padding: 2rem 1.5rem; }
       .hero-cta-row .btn { width: 100%; justify-content: center; }
     }
