@@ -331,6 +331,68 @@
     }
     .monthly-card p { font-size: 1rem; color: var(--gold-pale); opacity: 0.85; max-width: 48ch; line-height: 1.55; }
 
+    /* MY 2 CENTS — separate campaign, for rated veterans */
+    .two-cents-card {
+      background: rgba(210,166,60,0.06);
+      border: 2px solid var(--gold);
+      padding: 3rem 2.75rem;
+    }
+    .two-cents-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--near-black);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .two-cents-card h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: var(--gold-light);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      line-height: 1.1;
+    }
+    .two-cents-card > p {
+      font-size: 1.08rem;
+      color: var(--gold-pale);
+      opacity: 0.9;
+      max-width: 66ch;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .two-cents-formula {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+      padding: 1.5rem 1.75rem;
+      background: rgba(29,25,18,0.4);
+      border: 1px solid var(--gold-line);
+    }
+    .two-cents-formula-math {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .two-cents-formula-example {
+      font-size: 0.95rem;
+      color: var(--gold-pale);
+      opacity: 0.75;
+      line-height: 1.5;
+    }
+    .two-cents-closing {
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-top: 1.5rem;
+      margin-bottom: 2rem !important;
+    }
+
     /* RECOGNITION */
     .recognition-note {
       margin-top: 1.5rem;
@@ -394,6 +456,8 @@
       .tier-grid { grid-template-columns: repeat(2, 1fr); }
       .model-card { padding: 2rem 1.5rem; }
       .monthly-card { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; }
+      .two-cents-card { padding: 2rem 1.5rem; }
+      .two-cents-formula { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
       .hero-cta-row .btn { width: 100%; justify-content: center; }
     }
     @media (max-width: 480px) {
@@ -419,6 +483,7 @@
         <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="btn">Donate Now &rarr;</a>
         <a href="#ways" class="btn btn--ghost">See Your Impact &rarr;</a>
       </div>
+      <p style="margin-top:1.5rem;font-size:0.9rem;color:var(--gold-pale);opacity:0.7;position:relative;">Already rated by the VA? <a href="#my-2-cents" style="color:var(--gold-light);">See My 2 Cents &rarr;</a></p>
     </section>
 
     <div class="gold-rule" aria-hidden="true"></div>
@@ -495,14 +560,24 @@
 
     <div class="gold-rule" aria-hidden="true"></div>
 
-    <!-- MONTHLY GIVING -->
-    <section aria-labelledby="monthly-title">
-      <div class="monthly-card reveal">
-        <div>
-          <h3 id="monthly-title">Want to give every month?</h3>
-          <p>Choose "monthly" at checkout. Recurring gifts let us plan ahead and respond faster the next time a veteran calls.</p>
+    <!-- MY 2 CENTS — separate campaign, for rated veterans -->
+    <section id="my-2-cents" aria-labelledby="two-cents-title">
+      <div class="two-cents-card reveal">
+        <span class="two-cents-badge">A Separate Campaign · For Rated Veterans</span>
+        <h2 id="two-cents-title">My 2 Cents</h2>
+        <p>This isn't a general donation — it's a give-back built just for veterans who already have a VA rating. If that's not you, the giving options above are how you help. If it is you, keep reading.</p>
+        <p>Someone told you about the benefits you'd earned. Maybe it took years. Maybe you almost missed it entirely.</p>
+        <p>There are veterans out there right now who never got that call. The system missed them, and nobody's walking them to the door.</p>
+        <p>My 2 Cents is for veterans who got found, and now want to fund finding the next one. A small piece of what you receive every month goes back into reaching a veteran who hasn't been reached yet.</p>
+
+        <div class="two-cents-formula">
+          <span class="two-cents-formula-math">2&cent; per $1</span>
+          <span class="two-cents-formula-example">Two cents for every dollar of your monthly VA compensation, given back as a recurring monthly gift. For example, $2,000/month in compensation becomes a $40/month gift. Set your own amount on the next page — cancel anytime.</span>
         </div>
-        <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="btn btn--ghost">Give Monthly &rarr;</a>
+
+        <p class="two-cents-closing">Free for veterans. Always. Your recurring gift is what keeps that promise real.</p>
+
+        <a href="https://www.zeffy.com/en-US/donation-form/my-2-cents" target="_blank" rel="noopener" class="btn">Start My 2 Cents Gift &rarr;</a>
       </div>
     </section>
 
@@ -538,6 +613,10 @@
         <div class="faq-item reveal" style="transition-delay:0.1s">
           <h3>Do you take donations other than online giving?</h3>
           <p>Yes — checks, in-kind gifts, and company sponsorships all count. Call or text <a href="tel:8339898387">833-WTW-VETS (833-989-8387)</a> to talk it through.</p>
+        </div>
+        <div class="faq-item reveal" style="transition-delay:0.15s">
+          <h3>What's the difference between a donation and My 2 Cents?</h3>
+          <p>A donation is open to anyone and can be one-time or monthly. <a href="#my-2-cents">My 2 Cents</a> is a separate, recurring campaign only for veterans who already receive VA compensation — it's a way to give back a small share of what you receive each month to fund finding the next veteran.</p>
         </div>
       </div>
     </section>
