@@ -284,46 +284,6 @@
     }
     .body-copy strong { color: var(--gold-light); font-weight: 600; }
 
-    /* STAT STRIP */
-    .stat-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: var(--gold-line);
-      border: 1px solid var(--gold-line);
-      margin-top: 3rem;
-    }
-
-    .stat {
-      background: var(--near-black);
-      padding: 2.25rem 1.5rem;
-      text-align: center;
-    }
-
-    .stat-num {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-
-    .stat-label {
-      margin-top: 0.75rem;
-      font-size: 0.92rem;
-      color: var(--gold-pale);
-      opacity: 0.8;
-      line-height: 1.4;
-    }
-
-    .stat-source {
-      margin-top: 1.25rem;
-      font-size: 0.75rem;
-      color: var(--gold-pale);
-      opacity: 0.45;
-      letter-spacing: 0.02em;
-    }
-
     /* OUR MODEL — cream callout */
     .model-card {
       display: grid;
@@ -386,6 +346,43 @@
     }
 
     .tier-cta-row { margin-top: 2.5rem; text-align: center; }
+
+    .donate-raised {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      width: fit-content;
+      margin: 0 auto 2.5rem;
+      padding: 1.25rem 2.5rem;
+      border: 1px solid var(--gold-line);
+      background: rgba(210,166,60,0.05);
+    }
+    .donate-raised-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-pale);
+      opacity: 0.6;
+    }
+    .donate-raised-value {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    .donate-note {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--gold-pale);
+      opacity: 0.6;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .donate-note a { color: var(--gold-light); }
 
     /* RECOGNITION / GENERAL'S WALL */
     .recognition-note {
@@ -487,7 +484,6 @@
 
     @media (max-width: 820px) {
       section { padding: 4rem 1.25rem; }
-      .stat-strip { grid-template-columns: 1fr; }
       .tier-grid { grid-template-columns: repeat(2, 1fr); }
       .model-card { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
       .model-card h2 { margin-bottom: 1rem; }
@@ -541,35 +537,6 @@
       </div>
     </section>
 
-    <div class="gold-rule" aria-hidden="true"></div>
-
-    <!-- WHY THIS MATTERS -->
-    <section aria-labelledby="why-title">
-      <div class="section-head reveal">
-        <span class="section-eyebrow">Why this matters</span>
-        <h2 id="why-title">The stakes</h2>
-      </div>
-      <p class="body-copy reveal">In Tennessee tonight, an estimated 570 veterans will sleep without a home. Many earned VA disability benefits they've never received, monthly tax-free compensation with an estimated lifetime value around $549,000. No one ever showed them how to claim it. We find them, and connect them to the people who can help.</p>
-
-      <div class="stat-strip reveal">
-        <div class="stat">
-          <div class="stat-num">570</div>
-          <div class="stat-label">unsheltered veterans in Tennessee</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">$3,939</div>
-          <div class="stat-label">max monthly benefit, tax-free</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">$549K</div>
-          <div class="stat-label">estimated lifetime value of an approved claim</div>
-        </div>
-      </div>
-      <p class="stat-source reveal">VA 2024 Point-in-Time Count; 2026 VA compensation rates. Lifetime value based on an observed FY2025 average of approximately $27,461 per year per compensated veteran, projected over twenty years without cost-of-living adjustment. Individual outcomes vary widely by rating and circumstance.</p>
-    </section>
-
-    <div class="gold-rule" aria-hidden="true"></div>
-
     <!-- OUR MODEL -->
     <section aria-labelledby="model-title">
       <div class="model-card reveal">
@@ -586,11 +553,18 @@
         <span class="section-eyebrow">Where It Goes</span>
         <h2 id="ways-title">Every dollar has a job to do</h2>
       </div>
+
+      <!-- Total raised so far — update this value by hand as donations come in -->
+      <div class="donate-raised reveal">
+        <span class="donate-raised-label">Total raised so far</span>
+        <span class="donate-raised-value">$58,242.43</span>
+      </div>
+
       <div class="tier-grid">
         <div class="tier-card reveal">
           <span class="tier-amount">$25</span>
           <span class="tier-label">A ride to care</span>
-          <p class="tier-desc">Covers a veteran's ride to a medical appointment.</p>
+          <p class="tier-desc">Covers a veteran's ride to a medical or VA appointment.</p>
         </div>
         <div class="tier-card reveal" style="transition-delay:0.05s">
           <span class="tier-amount">$50</span>
@@ -611,6 +585,8 @@
       <div class="tier-cta-row reveal">
         <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="btn">Donate Now &rarr;</a>
       </div>
+      <p class="donate-note reveal">Worth Their Weight is a 501(c)(3). All donations are tax-deductible.</p>
+      <p class="donate-note reveal" style="margin-top:0.5rem;">Questions? Call or text <a href="tel:8339898387">833-WTW-VETS (833-989-8387)</a> or <a href="https://calendly.com/cory-worththeirweight/30min" target="_blank" rel="noopener">schedule a call</a></p>
     </section>
 
     <div class="gold-rule" aria-hidden="true"></div>
