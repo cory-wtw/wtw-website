@@ -39,12 +39,44 @@ nav {
   color: var(--gold);
 }
 
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
   gap: 2rem;
   list-style: none;
 }
+
+/* Hamburger toggle — hidden on desktop, shown at the mobile breakpoint */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--gold-pale);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .nav-links a {
   color: var(--gold-pale);
@@ -96,13 +128,44 @@ nav {
 .social-icon svg { width: 20px; height: 20px; }
 
 @media (max-width: 768px) {
-  nav { padding: 0.6rem 1.25rem; padding-top: calc(0.6rem + env(safe-area-inset-top, 0px)); }
-  .nav-links { display: flex; gap: 0; margin-left: auto; }
-  .nav-links li:not(.nav-shop-li) { display: none; }
-  .nav-links a.nav-shop { font-size: 0.72rem; padding: 0.35rem 0.9rem; }
-  .social-icons { margin-left: 0.75rem; }
-  .social-icon svg { width: 18px; height: 18px; }
+  nav {
+    flex-wrap: wrap;
+    padding: 0.6rem 1.25rem;
+    padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
+  }
   .nav-wordmark { font-size: 0.7rem; }
+
+  .nav-toggle { display: flex; margin-left: auto; }
+
+  /* Collapsible panel: full-width row under the logo/toggle, hidden until opened */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .nav-menu.open { display: flex; }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .nav-links li { border-top: 1px solid var(--gold-line); }
+  .nav-links a { display: block; padding: 0.9rem 0.25rem; }
+  .nav-links a.nav-shop {
+    display: inline-flex;
+    margin: 1rem 0.25rem;
+  }
+
+  .social-icons {
+    margin: 0.5rem 0.25rem 0.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gold-line);
+  }
 }
 
 /* FOOTER
