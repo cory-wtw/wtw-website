@@ -23,6 +23,6 @@
 # browser never talks to the Roster directly.
 [[redirects]]
   from = "/api/impact"
-  to = "https://ROSTER_HOST/api/public/impact"
+  to = "https://roster.worththeirweight.org/api/public/impact"
   status = 200
   force = true
