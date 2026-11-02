@@ -42,10 +42,12 @@
     function closeMenu() {
       menu.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
     }
     function openMenu() {
       menu.classList.add('open');
       toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close menu');
     }
 
     toggle.addEventListener('click', function () {
@@ -62,12 +64,28 @@
     // Click outside the nav closes the menu.
     document.addEventListener('click', function (e) {
       if (!menu.classList.contains('open')) return;
-      if (!e.target.closest('nav')) closeMenu();
+      if (!e.target.closest('.site-header')) closeMenu();
     });
 
     // Escape closes the menu.
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeMenu();
     });
+  }
+
+  // Scroll reveal: fade sections in as they enter the screen.
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('visible'); });
   }
 })();

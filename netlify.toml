@@ -17,3 +17,12 @@
   to = "https://worththeirweight.org/:splat"
   status = 301
   force = true
+
+# Live impact numbers. The site calls /api/impact; Netlify fetches the totals
+# from the Roster's public feed (counts and sums only, no names) so the
+# browser never talks to the Roster directly.
+[[redirects]]
+  from = "/api/impact"
+  to = "https://ROSTER_HOST/api/public/impact"
+  status = 200
+  force = true

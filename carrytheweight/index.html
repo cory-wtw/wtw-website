@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="theme-color" content="#faf8f1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Carry the Weight 2026 · Worth Their Weight</title>
   <meta name="description" content="Register free, declare your distance, and get pledged by the mile. Carry the Weight is Worth Their Weight's annual ruck march on the Tennessee Riverwalk in Chattanooga. Saturday, September 12, 2026." />
@@ -21,564 +22,8 @@
   <link rel="apple-touch-icon" href="../public/WTW Logo Main.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;1,8..60,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/shared/chrome.css" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --near-black: #1D1912;
-      --gold: #D2A63C;
-      --gold-light: #EECD5C;
-      --gold-pale: #F3F3E6;
-      --deep-gold: #BB8525;
-      --gold-dim: rgba(210,166,60,0.12);
-      --gold-line: rgba(210,166,60,0.25);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--near-black);
-      color: var(--gold-pale);
-      font-family: 'Source Sans 3', Arial, sans-serif;
-      font-size: 18px;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.4;
-    }
-
-    /* Accessible focus state — visible across the whole page */
-    a:focus-visible,
-    button:focus-visible,
-    summary:focus-visible,
-    iframe:focus-visible {
-      outline: 2px solid var(--gold-light);
-      outline-offset: 3px;
-      border-radius: 2px;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 0;
-      z-index: 2000;
-      background: var(--gold);
-      color: var(--near-black);
-      padding: 0.75rem 1.25rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      text-decoration: none;
-    }
-    .skip-link:focus { left: 1rem; top: 1rem; }
-
-    /* SECTIONS */
-    section {
-      padding: 6rem 2rem;
-      max-width: 1320px;
-      margin: 0 auto;
-    }
-
-    .section-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.25rem;
-      display: block;
-    }
-
-    .gold-rule {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold-line), transparent);
-    }
-
-    /* HERO — Near Black background, Gold Light accent text */
-    .cw-hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 9rem 2rem 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cw-hero-glow {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -55%);
-      width: 760px; height: 760px;
-      max-width: 120vw;
-      background: radial-gradient(ellipse at center, rgba(210,166,60,0.14) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .cw-hero-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 2rem;
-      position: relative;
-    }
-
-    .cw-hero h1 {
-      font-size: clamp(2rem, 5.5vw, 4.4rem);
-      font-weight: 900;
-      line-height: 1.08;
-      letter-spacing: -0.01em;
-      color: var(--gold-pale);
-      max-width: 16ch;
-      margin: 0 auto 1.5rem;
-      position: relative;
-    }
-
-    .cw-hero h1 span { color: var(--gold-light); }
-
-    .cw-hero-subhead {
-      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
-      font-weight: 300;
-      color: var(--gold-light);
-      letter-spacing: 0.02em;
-      max-width: 40ch;
-      margin: 0 auto 2.5rem;
-      position: relative;
-    }
-
-    .cw-hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-bottom: 3rem;
-      position: relative;
-    }
-
-    .cw-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--gold);
-      color: var(--near-black);
-      font-family: 'Source Sans 3', Arial, sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 1rem 2.5rem;
-      border: 1px solid var(--gold);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .cw-btn:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
-
-    .cw-btn--ghost {
-      background: transparent;
-      color: var(--gold-light);
-      border: 1px solid var(--gold);
-    }
-    .cw-btn--ghost:hover { background: var(--gold-dim); color: var(--gold-light); transform: translateY(-2px); }
-
-    /* Event facts row */
-    .cw-facts {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem 1.1rem;
-      max-width: 920px;
-      position: relative;
-      border-top: 1px solid var(--gold-line);
-      border-bottom: 1px solid var(--gold-line);
-      padding: 1.1rem 0.5rem;
-    }
-
-    .cw-fact {
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--gold-pale);
-      opacity: 0.85;
-      white-space: nowrap;
-    }
-
-    .cw-fact.cw-fact--accent { color: var(--gold-light); opacity: 1; }
-
-    .cw-fact-sep {
-      color: var(--gold);
-      opacity: 0.5;
-      font-weight: 700;
-    }
-
-    /* Generic section heading */
-    .cw-section-head { text-align: center; margin-bottom: 3rem; }
-    .cw-section-head h2 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 900;
-      color: var(--gold-pale);
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-    }
-    .cw-section-head h2 em { font-style: normal; color: var(--gold); }
-    .cw-section-head p {
-      font-size: 1.05rem;
-      color: var(--gold-pale);
-      opacity: 0.7;
-      max-width: 620px;
-      margin: 1rem auto 0;
-      line-height: 1.7;
-    }
-
-    /* HOW IT WORKS — cream cards, gold rules */
-    .cw-steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .cw-step {
-      background: var(--gold-pale);
-      color: var(--near-black);
-      padding: 2.5rem 2rem;
-      border-top: 4px solid var(--gold);
-      position: relative;
-    }
-
-    .cw-step-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 3rem;
-      height: 3rem;
-      background: var(--near-black);
-      color: var(--gold-light);
-      font-size: 1.4rem;
-      font-weight: 900;
-      line-height: 1;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-    }
-
-    .cw-step-rule {
-      width: 40px;
-      height: 3px;
-      background: var(--gold);
-      margin-bottom: 1.25rem;
-    }
-
-    .cw-step h3 {
-      font-size: 1.25rem;
-      font-weight: 900;
-      color: var(--near-black);
-      margin-bottom: 0.75rem;
-      letter-spacing: -0.01em;
-    }
-
-    .cw-step p {
-      font-size: 0.98rem;
-      line-height: 1.65;
-      color: var(--near-black);
-      opacity: 0.82;
-    }
-
-    .cw-step p .cw-quote {
-      display: block;
-      margin-top: 0.75rem;
-      padding-left: 0.9rem;
-      border-left: 3px solid var(--gold);
-      font-style: italic;
-      color: var(--near-black);
-      font-weight: 600;
-      opacity: 1;
-    }
-
-    /* START TIMES — gold-pale cards, gold rules (mirrors How It Works) */
-    .cw-times {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-    .cw-time {
-      background: var(--gold-pale);
-      color: var(--near-black);
-      padding: 2.25rem 2rem;
-      border-top: 4px solid var(--gold);
-      text-align: center;
-    }
-    .cw-time-distance {
-      font-size: 1.9rem;
-      font-weight: 900;
-      color: var(--near-black);
-      line-height: 1;
-      letter-spacing: -0.01em;
-      display: block;
-      margin-bottom: 1rem;
-    }
-    .cw-time-rule {
-      width: 40px;
-      height: 3px;
-      background: var(--gold);
-      margin: 0 auto 1rem;
-    }
-    .cw-time-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--near-black);
-      opacity: 0.55;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-    .cw-time-stepoff {
-      font-size: 1.15rem;
-      font-weight: 900;
-      color: var(--deep-gold);
-      letter-spacing: -0.01em;
-    }
-    .cw-finish {
-      margin-top: 1.5rem;
-      padding: 1.75rem 2rem;
-      background: var(--gold-dim);
-      border-left: 3px solid var(--gold);
-      text-align: center;
-    }
-    .cw-finish strong {
-      display: block;
-      font-size: 1.1rem;
-      font-weight: 900;
-      color: var(--gold-light);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.35rem;
-    }
-    .cw-finish span {
-      font-size: 1rem;
-      color: var(--gold-pale);
-      opacity: 0.9;
-    }
-    .cw-times-note {
-      margin-top: 1.5rem;
-      text-align: center;
-      font-size: 0.82rem;
-      color: var(--gold-pale);
-      opacity: 0.55;
-      line-height: 1.6;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* REGISTRATION EMBED */
-    .cw-register {
-      border-top: 1px solid var(--gold-line);
-      border-bottom: 1px solid var(--gold-line);
-    }
-
-    .cw-ph-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    /* Registration CTA — opens the Zeffy campaign (no inline iframe) */
-    .cw-register-cta { text-align: center; }
-    .cw-btn--lg { font-size: 1rem; padding: 1.25rem 3.25rem; }
-    .cw-register-note {
-      margin-top: 1.25rem;
-      font-size: 0.9rem;
-      color: var(--gold-pale);
-      opacity: 0.65;
-    }
-
-    /* RUCK ANYWHERE */
-    .cw-anywhere {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2.25rem 2.25rem;
-      background: var(--gold-dim);
-      border-left: 3px solid var(--gold);
-    }
-    .cw-anywhere h2 {
-      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
-      font-weight: 900;
-      color: var(--gold-light);
-      letter-spacing: -0.01em;
-      margin-bottom: 1rem;
-    }
-    .cw-anywhere p {
-      font-size: 1.08rem;
-      line-height: 1.75;
-      color: var(--gold-pale);
-      opacity: 0.9;
-    }
-
-    /* LIVE PROGRESS */
-    .cw-progress-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      align-items: start;
-    }
-    .cw-progress-card {
-      background: var(--gold-pale);
-      border: 1px solid var(--gold-line);
-      border-top: 3px solid var(--gold);
-      border-radius: 4px;
-      padding: 1.5rem;
-    }
-    .cw-progress-card .cw-ph-label { display: block; margin-bottom: 1rem; color: var(--near-black); }
-    .cw-progress-card iframe { display: block; }
-    .cw-progress-cta { text-align: center; margin-top: 1.75rem; }
-
-    /* SPONSORS */
-    .cw-presenting {
-      background: var(--gold-dim);
-      border: 1px solid var(--gold-line);
-      border-top: 3px solid var(--gold);
-      border-radius: 4px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .cw-slot-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    .cw-slot-hint {
-      font-size: 0.9rem;
-      color: var(--gold-pale);
-      opacity: 0.55;
-    }
-
-    .cw-sponsor-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .cw-sponsor-slot {
-      border: 1px dashed var(--gold-line);
-      border-radius: 4px;
-      min-height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1rem;
-      color: var(--gold-pale);
-      opacity: 0.45;
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .cw-sponsor-cta { text-align: center; }
-
-    /* FAQ */
-    .cw-faq { max-width: 760px; margin: 0 auto; }
-    .cw-faq details {
-      border-bottom: 1px solid var(--gold-line);
-    }
-    .cw-faq summary {
-      cursor: pointer;
-      list-style: none;
-      padding: 1.4rem 2.5rem 1.4rem 0;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--gold-pale);
-      position: relative;
-      transition: color 0.2s;
-    }
-    .cw-faq summary::-webkit-details-marker { display: none; }
-    .cw-faq summary:hover { color: var(--gold-light); }
-    .cw-faq summary::after {
-      content: '+';
-      position: absolute;
-      right: 0.25rem;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--gold);
-      transition: transform 0.2s;
-    }
-    .cw-faq details[open] summary::after { content: '\2212'; }
-    .cw-faq-answer {
-      padding: 0 0 1.5rem;
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--gold-pale);
-      opacity: 0.8;
-      max-width: 64ch;
-    }
-
-    /* SCROLL REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; transition: none; }
-    }
-
-    /* RESPONSIVE — mobile-first traffic */
-    @media (max-width: 900px) {
-      .cw-steps { grid-template-columns: 1fr; }
-      .cw-times { grid-template-columns: 1fr; }
-      .cw-progress-grid { grid-template-columns: 1fr; }
-      .cw-sponsor-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 768px) {
-      body { font-size: 16px; }
-
-      section { padding: 4rem 1.25rem; }
-      .cw-hero { padding: 7.5rem 1.25rem 4rem; min-height: auto; }
-      .cw-hero-cta-row { flex-direction: column; align-items: stretch; }
-      .cw-btn { width: 100%; justify-content: center; padding: 1.1rem 1.5rem; }
-      .cw-facts { flex-direction: column; gap: 0.4rem; }
-      .cw-fact-sep { display: none; }
-      .cw-fact { white-space: normal; }
-
-      .cw-anywhere { padding: 1.75rem 1.5rem; }
-      .cw-btn--lg { width: 100%; justify-content: center; }
-    }
-
-    @media (max-width: 480px) {
-      .cw-sponsor-grid { grid-template-columns: 1fr; }
-    }
-  </style>
 
   <!-- Meta Pixel Code -->
   <script>
@@ -597,163 +42,102 @@
   src="https://www.facebook.com/tr?id=3559884450840257&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+  <style>
+.facts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .fact { background: rgb(243 243 230 / 0.08); border: 1px solid rgb(243 243 230 / 0.16); border-radius: 999px; padding: 0.45rem 0.95rem; font-size: 0.92rem; font-weight: 600; }
+    .fact--gold { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+    .time { display: grid; gap: 0.2rem; }
+    .time-dist { font-weight: 800; font-size: 1.25rem; }
+    .time-at { font-size: 2rem; font-weight: 900; letter-spacing: -0.02em; color: var(--deep-gold); line-height: 1.1; }
+    .say { display: block; margin-top: 0.6rem; font-family: var(--serif); font-style: italic; color: var(--ink); }
+    .embed { border-radius: var(--radius); overflow: hidden; background: var(--card); border: 1px solid var(--line); }
+  </style>
 </head>
 <body>
-
   <a href="#register" class="skip-link">Skip to registration</a>
-
   <div data-include="header"></div>
 
   <main id="top">
-
-    <!-- 1. HERO -->
-    <section class="cw-hero" aria-labelledby="cw-hero-title">
-      <div class="cw-hero-glow" aria-hidden="true"></div>
-      <p class="cw-hero-eyebrow">The First Annual · Carry the Weight 2026</p>
-      <h1 id="cw-hero-title">They carried a ruck. A rifle. Their whole unit.<br/><span>This fall, we carry them.</span></h1>
-      <p class="cw-hero-subhead">Carry the Weight. Worth Their Weight's first annual ruck march on the Tennessee Riverwalk. Be part of it from the start.</p>
-      <div class="cw-hero-cta-row">
-        <a href="#register" class="cw-btn">Register Free</a>
-        <a href="#how" class="cw-btn cw-btn--ghost">How It Works</a>
-      </div>
-      <div class="cw-facts">
-        <span class="cw-fact">Saturday, September 12, 2026</span>
-        <span class="cw-fact-sep" aria-hidden="true">·</span>
-        <span class="cw-fact">8 AM–1 PM</span>
-        <span class="cw-fact-sep" aria-hidden="true">·</span>
-        <span class="cw-fact">Blue Goose Hollow Trailhead, Chattanooga</span>
-        <span class="cw-fact-sep" aria-hidden="true">·</span>
-        <span class="cw-fact">Free registration</span>
-        <span class="cw-fact-sep" aria-hidden="true">·</span>
-        <span class="cw-fact cw-fact--accent">Everyone marches free, we just ask you to fundraise.</span>
-      </div>
-    </section>
-
-    <!-- 2. HOW IT WORKS -->
-    <section id="how" aria-labelledby="cw-how-title">
-      <div class="cw-section-head reveal">
-        <span class="section-eyebrow">How It Works</span>
-        <h2 id="cw-how-title">Three steps to the start line</h2>
-      </div>
-      <div class="cw-steps">
-        <div class="cw-step reveal">
-          <span class="cw-step-number">01</span>
-          <div class="cw-step-rule" aria-hidden="true"></div>
-          <h3>Register free</h3>
-          <p>Sign up in about a minute and declare your distance: 2, 6, or 10 miles, plus a 500-yard Family walk.</p>
+    <section class="section section--ink">
+      <div class="wrap">
+        <span class="eyebrow">The first annual · Carry the Weight 2026</span>
+        <h1 style="margin: 1rem 0; max-width: 18ch;">They carried a ruck, a rifle, their whole unit. <span class="accent">This fall, we carry them.</span></h1>
+        <p class="lead">Worth Their Weight's first annual ruck march on the Tennessee Riverwalk. Be part of it from the start.</p>
+        <div class="row" style="margin-top: 1.75rem;">
+          <a href="#register" class="btn">Register free <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="#how" class="btn btn--line">How it works</a>
         </div>
-        <div class="cw-step reveal" style="transition-delay:0.1s">
-          <span class="cw-step-number">02</span>
-          <div class="cw-step-rule" aria-hidden="true"></div>
-          <h3>Get pledged by the mile</h3>
-          <p>Share your personal page with your people.<span class="cw-quote">"I'm carrying 10 miles. Pledge me $5 a mile."</span></p>
-        </div>
-        <div class="cw-step reveal" style="transition-delay:0.2s">
-          <span class="cw-step-number">03</span>
-          <div class="cw-step-rule" aria-hidden="true"></div>
-          <h3>Carry it</h3>
-          <p>Start times are staggered by distance so we all finish together. Out-and-back from Blue Goose Hollow, turn at your mile marker, finish at base camp around 11 AM. Awards ceremony follows.</p>
+        <div class="facts">
+          <span class="fact">Saturday, September 12, 2026</span>
+          <span class="fact">8 AM–1 PM</span>
+          <span class="fact">Blue Goose Hollow Trailhead, Chattanooga</span>
+          <span class="fact fact--gold">Everyone marches free. We just ask you to fundraise.</span>
         </div>
       </div>
     </section>
 
-    <div class="gold-rule" aria-hidden="true"></div>
-
-    <!-- 2b. START TIMES -->
-    <section id="start-times" aria-labelledby="cw-times-title">
-      <div class="cw-section-head reveal">
-        <span class="section-eyebrow">Start Times</span>
-        <h2 id="cw-times-title">Staggered starts, one <em>finish line</em></h2>
-      </div>
-      <div class="cw-times">
-        <div class="cw-time reveal">
-          <span class="cw-time-distance">10 Miles</span>
-          <div class="cw-time-rule" aria-hidden="true"></div>
-          <span class="cw-time-label">Step off</span>
-          <span class="cw-time-stepoff">8:00 AM</span>
+    <section id="how" class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2>Three steps to the start line</h2>
         </div>
-        <div class="cw-time reveal" style="transition-delay:0.1s">
-          <span class="cw-time-distance">6 Miles</span>
-          <div class="cw-time-rule" aria-hidden="true"></div>
-          <span class="cw-time-label">Step off</span>
-          <span class="cw-time-stepoff">9:30 AM</span>
+        <div class="grid-3 reveal">
+          <div class="card step"><span class="step-num">1</span><div><h3>Register free</h3><p>Sign up in about a minute and declare your distance: 2, 6, or 10 miles, plus a 500-yard family walk.</p></div></div>
+          <div class="card step"><span class="step-num">2</span><div><h3>Get pledged by the mile</h3><p>Share your personal page with your people.<span class="say">&ldquo;I'm carrying 10 miles. Pledge me $5 a mile.&rdquo;</span></p></div></div>
+          <div class="card step"><span class="step-num">3</span><div><h3>Carry it</h3><p>Starts are staggered by distance so we all finish together. Out-and-back from Blue Goose Hollow, turn at your mile marker, finish at base camp around 11 AM. Awards follow.</p></div></div>
         </div>
-        <div class="cw-time reveal" style="transition-delay:0.2s">
-          <span class="cw-time-distance">2 Miles</span>
-          <div class="cw-time-rule" aria-hidden="true"></div>
-          <span class="cw-time-label">Step off</span>
-          <span class="cw-time-stepoff">10:45 AM</span>
-        </div>
-        <div class="cw-time reveal" style="transition-delay:0.3s">
-          <span class="cw-time-distance">Family 500</span>
-          <div class="cw-time-rule" aria-hidden="true"></div>
-          <span class="cw-time-label">Step off</span>
-          <span class="cw-time-stepoff">11:00 AM</span>
-        </div>
-      </div>
-      <p class="cw-times-note reveal">The Family 500 is a 500-yard walk for kids, grandparents, and anyone who wants to be part of it, crossing the finish right as everyone comes together.</p>
-      <div class="cw-finish reveal">
-        <strong>Finish: together at base camp ~11 AM</strong>
-        <span>Awards to follow.</span>
-      </div>
-      <p class="cw-times-note reveal">Staggered starts mean every distance finishes around the same time. We cross together.</p>
-    </section>
-
-    <div class="gold-rule" aria-hidden="true"></div>
-
-    <!-- 3. REGISTRATION EMBED -->
-    <section id="register" class="cw-register" aria-labelledby="cw-register-title">
-      <div class="cw-section-head reveal">
-        <span class="section-eyebrow">Register</span>
-        <h2 id="cw-register-title">Sign up and claim your <em>pledge page</em></h2>
-        <p>Free registration through our Carry the Weight campaign. Declare your distance, get your personal page, and start collecting pledges by the mile.</p>
-      </div>
-
-      <div class="cw-register-cta reveal">
-        <!-- ZEFFY_CAMPAIGN_LINK — opens the Carry the Weight 2026 campaign on Zeffy -->
-        <a href="https://www.zeffy.com/en-US/peer-to-peer/carry-the-weight--2026" target="_blank" rel="noopener" class="cw-btn cw-btn--lg">
-          Register Free
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="#1D1912" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <p class="cw-register-note">Free · about 60 seconds · opens our secure Zeffy campaign in a new tab.</p>
-        <p class="cw-register-note">Walk-ups welcome. Register on-site the morning of.</p>
       </div>
     </section>
 
-    <!-- 4. RUCK ANYWHERE -->
-    <section aria-labelledby="cw-anywhere-title">
-      <div class="cw-anywhere reveal">
-        <h2 id="cw-anywhere-title">Ruck Anywhere</h2>
-        <p>Not in Chattanooga? Register, declare your miles, and ruck them where you are over event weekend, Saturday, September 12 or Sunday, September 13. Share your page, post your finish photo. Same mission, any city.</p>
-        <p style="margin-top:1rem;">Six awards (bronze, silver, and gold) for our top individual and team fundraisers, announced live at the finish.</p>
+    <section id="start-times" class="section section--sand">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Start times</span>
+          <h2>Staggered starts, <span class="accent">one finish line</span></h2>
+        </div>
+        <div class="grid-compact reveal">
+          <div class="card time"><span class="time-dist">10 miles</span><span class="fine">Step off</span><span class="time-at">8:00 AM</span></div>
+          <div class="card time"><span class="time-dist">6 miles</span><span class="fine">Step off</span><span class="time-at">9:30 AM</span></div>
+          <div class="card time"><span class="time-dist">2 miles</span><span class="fine">Step off</span><span class="time-at">10:45 AM</span></div>
+          <div class="card time"><span class="time-dist">Family 500</span><span class="fine">Step off</span><span class="time-at">11:00 AM</span></div>
+        </div>
+        <p class="muted reveal" style="margin-top: 1.25rem; max-width: 46rem;">The Family 500 is a 500-yard walk for kids, grandparents, and anyone who wants to be part of it, crossing the finish right as everyone comes together. <strong style="color: var(--ink);">Finish together at base camp around 11 AM.</strong> Awards to follow.</p>
       </div>
     </section>
 
-    <!-- 4b. TEAMS -->
-    <section aria-labelledby="cw-teams-title">
-      <div class="cw-anywhere reveal">
-        <h2 id="cw-teams-title">Bring a team</h2>
-        <p>Rally your workplace, gym, church group, or family. Start or join a team when you register, fundraise together, and climb the team leaderboard. Top individual and top team fundraisers take home awards on event day.</p>
+    <section id="register" class="section">
+      <div class="wrap">
+        <div class="card card--gold reveal" style="display: grid; gap: 1rem; justify-items: start;">
+          <span class="eyebrow" style="color: var(--gold-text);">Register</span>
+          <h2>Sign up and claim your pledge page</h2>
+          <p style="color: #4a3608; max-width: 40rem;">Free registration through our Carry the Weight campaign. Declare your distance, get your personal page, and start collecting pledges by the mile.</p>
+          <a href="https://www.zeffy.com/en-US/peer-to-peer/carry-the-weight--2026" target="_blank" rel="noopener" class="btn btn--ink">Register free <span class="arrow" aria-hidden="true">→</span></a>
+          <p class="fine" style="color: #4a3608;">Free · about 60 seconds · opens our secure Zeffy campaign in a new tab. Walk-ups welcome: register on-site the morning of.</p>
+        </div>
+        <div class="grid-2" style="margin-top: 1rem;">
+          <div class="card reveal"><h3>Ruck anywhere</h3><p>Not in Chattanooga? Register, declare your miles, and ruck them where you are over event weekend, Saturday, September 12 or Sunday, September 13. Share your page and post your finish photo. Same mission, any city.</p></div>
+          <div class="card reveal"><h3>Bring a team</h3><p>Rally your workplace, gym, church group, or family. Start or join a team when you register and climb the team leaderboard. Six awards (bronze, silver, and gold) go to the top individual and team fundraisers, announced live at the finish.</p></div>
+        </div>
       </div>
     </section>
 
-    <!-- 5. LEADERBOARD -->
-    <section aria-labelledby="cw-leaderboard-title">
-      <div class="cw-section-head reveal">
-        <span class="section-eyebrow">Fundraising</span>
-        <h2 id="cw-leaderboard-title">Top ruckers</h2>
-      </div>
-      <div class="reveal">
-        <!-- ZEFFY_LEADERBOARD_EMBED -->
-        <div style="position:relative;overflow:hidden;width:100%;padding-top:500px;"><iframe title='Donation form powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' src='https://www.zeffy.com/embed/leaderboard/carry-the-weight--2026' allowTransparency="true"></iframe></div>
+    <section class="section section--sand">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Fundraising</span>
+          <h2>Top ruckers</h2>
+        </div>
+        <div class="embed reveal">
+          <div style="position:relative;overflow:hidden;width:100%;padding-top:500px;"><iframe title="Carry the Weight leaderboard, powered by Zeffy" style="position:absolute;border:0;top:0;left:0;bottom:0;right:0;width:100%;height:100%" src="https://www.zeffy.com/embed/leaderboard/carry-the-weight--2026" allowTransparency="true" loading="lazy"></iframe></div>
+        </div>
       </div>
     </section>
 
     <!--
-      Hidden until the event has participants. Keeps the wired-up Zeffy
-      thermometer embed and the sponsor markup ready to bring back later:
-      just remove the surrounding <template> tags (and re-add a divider
-      between sections).
+      Hidden until the event has participants: the live thermometer and the
+      sponsor wall. Remove the <template> tags to bring them back (they use
+      the old class names and will need restyling).
     -->
     <template id="cw-hidden-until-launch">
 
@@ -804,56 +188,25 @@
     </section>
 
     </template>
-    <!-- end hidden-until-launch -->
 
-    <!-- 8. FAQ -->
-    <section aria-labelledby="cw-faq-title">
-      <div class="cw-section-head reveal">
-        <span class="section-eyebrow">FAQ</span>
-        <h2 id="cw-faq-title">Before you lace up</h2>
-      </div>
-      <div class="cw-faq reveal">
-        <details>
-          <summary>What do I carry?</summary>
-          <div class="cw-faq-answer">Any backpack. Weight optional. This is non-competitive.</div>
-        </details>
-        <details>
-          <summary>Where do I park?</summary>
-          <div class="cw-faq-answer">Limited parking at Blue Goose Hollow. Use Ross's Landing or downtown lots, a short walk up the Riverwalk.</div>
-        </details>
-        <details>
-          <summary>Is it really free?</summary>
-          <div class="cw-faq-answer">Yes. Registration is free for everyone. Instead of an entry fee, we ask each participant to fundraise, gathering pledges by the mile from friends and family. Every dollar goes to finding veterans the system missed.</div>
-        </details>
-        <details>
-          <summary>Can we participate as a team?</summary>
-          <div class="cw-faq-answer">Yes. Start or join a team when you register. Families, workplaces, gyms, and veteran groups all fundraise better together, and there's a team leaderboard and team award.</div>
-        </details>
-        <details>
-          <summary>Where does the money go?</summary>
-          <div class="cw-faq-answer">Every dollar helps us find unsheltered veterans and connect them to the benefits they've earned, starting right here in Chattanooga.</div>
-        </details>
+    <section class="section">
+      <div class="wrap" style="max-width: 820px;">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Before you lace up</h2>
+        </div>
+        <div class="faq reveal">
+          <details><summary>What do I carry?</summary><p>Any backpack. Weight optional. This is non-competitive.</p></details>
+          <details><summary>Where do I park?</summary><p>Limited parking at Blue Goose Hollow. Use Ross's Landing or downtown lots, a short walk up the Riverwalk.</p></details>
+          <details><summary>Is it really free?</summary><p>Yes. Registration is free for everyone. Instead of an entry fee, we ask each participant to fundraise, gathering pledges by the mile from friends and family. Every dollar goes to finding veterans the system missed.</p></details>
+          <details><summary>Can we participate as a team?</summary><p>Yes. Start or join a team when you register. Families, workplaces, gyms, and veteran groups all fundraise better together, and there's a team leaderboard and team award.</p></details>
+          <details><summary>Where does the money go?</summary><p>Every dollar helps us find unsheltered veterans and connect them to the benefits they've earned, starting right here in Chattanooga.</p></details>
+        </div>
       </div>
     </section>
-
   </main>
 
   <div data-include="footer"></div>
-
   <script src="/shared/include.js"></script>
-  <script>
-    // Scroll reveal — matches main site behavior
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
-  </script>
-
 </body>
 </html>

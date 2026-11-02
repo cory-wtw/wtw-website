@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="theme-color" content="#faf8f1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Worth Their Weight · Connecting Vets to What's Theirs</title>
-  <meta name="description" content="Thousands of organizations help veterans. Nobody helps a veteran find the right ones. We do. Fifteen minutes on the phone, and a veteran gets the organizations that fit. Free, always." />
+  <meta name="description" content="Thousands of organizations help veterans. Nobody helps a veteran find the right ones. We do. About thirty minutes on the phone, and a veteran gets the organizations that fit. Free, always." />
   <meta property="og:title" content="Worth Their Weight · Connecting Vets to What's Theirs" />
   <meta property="og:description" content="We find the right help for veterans and make the introduction. Housing, health care, work, benefits, legal, and more. Free for veterans, always." />
   <meta property="og:type" content="website" />
@@ -14,957 +15,8 @@
   <link rel="apple-touch-icon" href="public/WTW Logo Main.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;1,8..60,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/shared/chrome.css" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --near-black: #1D1912;
-      --gold: #D2A63C;
-      --gold-light: #EECD5C;
-      --gold-pale: #F3F3E6;
-      --deep-gold: #BB8525;
-      --gold-dim: rgba(210,166,60,0.12);
-      --gold-line: rgba(210,166,60,0.25);
-      --banner-red: #8E2B26;
-      --banner-red-deep: #6F211D;
-    }
-
-    html { scroll-behavior: smooth; scroll-padding-top: 6.5rem; }
-
-    body {
-      background: var(--near-black);
-      color: var(--gold-pale);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 18px;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.4;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 8rem 2rem 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-glow {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -60%);
-      width: 700px; height: 700px;
-      background: radial-gradient(ellipse at center, rgba(210,166,60,0.13) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 0.2s forwards;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 8vw, 7rem);
-      font-weight: 900;
-      line-height: 1;
-      letter-spacing: 0.01em;
-      color: var(--gold-pale);
-      margin-bottom: 0.5rem;
-      opacity: 0;
-      animation: fadeUp 0.9s ease 0.3s forwards;
-    }
-
-    .hero h1 span { color: var(--gold); display: block; }
-
-    .hero-tagline {
-      font-size: clamp(1rem, 2.5vw, 1.35rem);
-      font-weight: 300;
-      color: var(--gold-light);
-      letter-spacing: 0.04em;
-      margin: 1.75rem 0 3rem;
-      opacity: 0;
-      animation: fadeUp 0.9s ease 0.5s forwards;
-    }
-
-    .hero-stat-row {
-      display: flex;
-      gap: 3rem;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 3.5rem;
-      opacity: 0;
-      animation: fadeUp 0.9s ease 0.75s forwards;
-    }
-
-    /* THE STAMP — "Free for veterans. Always." */
-    .hero-stamp {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.55rem;
-      padding: 0.85rem 1.75rem;
-      border: 1.5px solid var(--gold);
-      background: rgba(210,166,60,0.08);
-      margin: 0 0 3rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0;
-      animation: fadeUp 0.9s ease 0.6s forwards;
-    }
-
-    .hero-stamp-line { color: var(--gold-pale); }
-    .hero-stamp-always { color: var(--gold); font-weight: 900; }
-
-    .stamp-inline {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-    }
-
-    .stamp-inline em {
-      font-style: normal;
-      color: var(--gold);
-      font-weight: 900;
-    }
-
-    .hero-stat { text-align: center; }
-
-    .hero-stat-number {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-      display: block;
-    }
-
-    .hero-stat-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold-pale);
-      opacity: 0.55;
-      display: block;
-      margin-top: 0.3rem;
-    }
-
-    .hero-stat-divider {
-      width: 1px;
-      height: 48px;
-      background: var(--gold-line);
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--gold);
-      color: var(--near-black);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 1rem 2.5rem;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      opacity: 0;
-      animation: fadeUp 0.9s ease 0.8s forwards;
-    }
-
-    .hero-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-    /* DIVIDER */
-    .gold-rule {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold-line), transparent);
-    }
-
-    /* INTRO VIDEO */
-    .video-section {
-      padding: 5rem 2rem 6rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .video-glow {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 900px; height: 500px;
-      max-width: 140vw;
-      background: radial-gradient(ellipse at center, rgba(210,166,60,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .video-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .video-section h2 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 900;
-      color: var(--gold-pale);
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 0.75rem;
-    }
-
-    .video-section h2 em { font-style: normal; color: var(--gold); }
-
-    .video-subtitle {
-      font-size: 1.05rem;
-      color: var(--gold-pale);
-      opacity: 0.65;
-      max-width: 560px;
-      margin: 0 auto 2.75rem;
-      line-height: 1.7;
-    }
-
-    .video-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: 1px solid var(--gold-line);
-      background: #000;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(210,166,60,0.08);
-    }
-
-    .video-frame::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      box-shadow: inset 0 1px 0 rgba(238,205,92,0.15);
-    }
-
-    .video-frame iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 6rem 2rem;
-      max-width: 1320px;
-      margin: 0 auto;
-    }
-
-    .section-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.25rem;
-      display: block;
-    }
-
-    /* MISSION */
-    .mission-grid {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .mission-text h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 900;
-      line-height: 1.1;
-      color: var(--gold-pale);
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    .mission-text h2 em { font-style: normal; color: var(--gold); }
-
-    .mission-text p {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: var(--gold-pale);
-      opacity: 0.8;
-      margin-bottom: 1.25rem;
-    }
-
-    .mission-callout {
-      background: var(--gold-dim);
-      border-left: 3px solid var(--gold);
-      padding: 1.5rem 1.75rem;
-      margin-top: 2rem;
-    }
-
-    .mission-callout p {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--gold-light);
-      opacity: 1;
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    /* IMPACT */
-    .impact-section {
-      padding: 5rem 2rem;
-      background: linear-gradient(135deg, rgba(210,166,60,0.06) 0%, transparent 60%);
-      border-top: 1px solid var(--gold-line);
-      border-bottom: 1px solid var(--gold-line);
-    }
-
-    .impact-inner { max-width: 1320px; margin: 0 auto; }
-
-    .impact-header { text-align: center; margin-bottom: 4rem; }
-
-    .impact-header h2 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 900;
-      color: var(--gold-pale);
-      letter-spacing: -0.02em;
-    }
-
-    .impact-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: var(--gold-line);
-    }
-
-    .impact-card {
-      background: var(--near-black);
-      padding: 2.5rem 2rem;
-      text-align: center;
-    }
-
-    .impact-card-number {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .impact-card-label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gold-pale);
-      opacity: 0.55;
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-
-    .impact-card-desc {
-      font-size: 0.95rem;
-      color: var(--gold-pale);
-      opacity: 0.65;
-      line-height: 1.5;
-    }
-
-    /* OPERATION SEARCH & RESCUE */
-    .sar-section {
-      padding: 6rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .sar-section h2 {
-      font-size: clamp(2rem, 4.5vw, 3.4rem);
-      font-weight: 900;
-      color: var(--gold-pale);
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
-    }
-
-    .sar-lead {
-      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-      font-weight: 700;
-      font-style: italic;
-      color: var(--gold-light);
-      max-width: 640px;
-      margin: 0 auto 2.75rem;
-      line-height: 1.4;
-    }
-
-    .sar-body {
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: left;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem 2.5rem;
-    }
-
-    .sar-body p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--gold-pale);
-      opacity: 0.8;
-    }
-
-    .sar-note {
-      font-size: 0.92rem;
-      line-height: 1.7;
-      color: var(--gold-pale);
-      opacity: 0.55;
-      max-width: 640px;
-      margin: 2.75rem auto 0;
-    }
-
-    /* TESTIMONIAL */
-    .testimonial-section {
-      padding: 5.5rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .testimonial-mark {
-      display: block;
-      font-size: 4rem;
-      line-height: 1;
-      font-weight: 900;
-      color: var(--gold);
-      opacity: 0.35;
-      margin-bottom: 0.5rem;
-    }
-
-    .testimonial-quote {
-      font-size: clamp(1.35rem, 3vw, 2.1rem);
-      font-weight: 700;
-      font-style: italic;
-      line-height: 1.4;
-      letter-spacing: -0.01em;
-      color: var(--gold-pale);
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .testimonial-attribution {
-      display: block;
-      margin-top: 1.75rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      font-style: normal;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .testimonial-attribution span {
-      display: block;
-      margin-top: 0.4rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: var(--gold-pale);
-      opacity: 0.55;
-    }
-
-    /* CONTACT CTA LINKS (phone / schedule) */
-    .tel-link { text-decoration: none; }
-    .tel-link:hover { text-decoration: underline; }
-
-    .text-link {
-      text-decoration: none;
-      border-bottom: 1px solid currentColor;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-    .text-link:hover { opacity: 1; }
-
-    /* TEAM */
-    .team-section {
-      padding: 5rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .team-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 3rem;
-      margin-top: 3rem;
-    }
-
-    .team-card {
-      width: 240px;
-      text-align: center;
-    }
-
-    .team-photo {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      margin: 0 auto 1.25rem;
-      border: 2px solid var(--gold-line);
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--gold-dim);
-    }
-
-    .team-photo img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-    }
-
-    .team-photo-initials {
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--gold);
-      letter-spacing: 0.05em;
-    }
-
-    .team-name {
-      font-size: 1.15rem;
-      font-weight: 900;
-      color: var(--gold-pale);
-      margin-bottom: 0.25rem;
-    }
-
-    .team-title {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0.7;
-      margin-bottom: 0.75rem;
-    }
-
-    .team-bio {
-      font-size: 0.88rem;
-      color: var(--gold-pale);
-      opacity: 0.65;
-      line-height: 1.6;
-    }
-
-    /* STAY IN TOUCH */
-    .signup-section {
-      padding: 0 2rem 4rem;
-      max-width: none;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .signup-glow {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 800px; height: 450px;
-      max-width: 140vw;
-      background: radial-gradient(ellipse at center, rgba(210,166,60,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .signup-inner {
-      max-width: 1320px;
-      margin: 0 auto;
-      position: relative;
-      border-top: 1px solid var(--gold-line);
-      padding-top: 5rem;
-    }
-
-    .signup-section h2 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 900;
-      color: var(--gold);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.5rem;
-    }
-
-    .signup-subtitle {
-      font-size: 0.95rem;
-      color: var(--gold-pale);
-      opacity: 0.55;
-      max-width: 460px;
-      margin: 0 auto 2.25rem;
-      line-height: 1.6;
-    }
-
-    .signup-form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      max-width: 380px;
-      margin: 0 auto;
-    }
-
-    .signup-form input[type="text"],
-    .signup-form input[type="email"] {
-      width: 100%;
-      background: transparent;
-      border: 1px solid var(--gold-line);
-      color: var(--gold-pale);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 0.95rem;
-      padding: 0.85rem 1rem;
-      letter-spacing: 0.02em;
-      outline: none;
-      transition: border-color 0.2s, background 0.2s;
-    }
-
-    .signup-form input[type="text"]::placeholder,
-    .signup-form input[type="email"]::placeholder {
-      color: var(--gold-pale);
-      opacity: 0.4;
-    }
-
-    .signup-form input[type="text"]:focus,
-    .signup-form input[type="email"]:focus {
-      border-color: var(--gold);
-      background: var(--gold-dim);
-    }
-
-    .signup-form button {
-      width: 100%;
-      background: var(--gold);
-      color: var(--near-black);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      border: 1px solid var(--gold);
-      padding: 0.95rem 1.75rem;
-      margin-top: 0.25rem;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s, transform 0.15s;
-    }
-
-    .signup-form button:hover {
-      background: var(--gold-light);
-      transform: translateY(-1px);
-    }
-
-    .signup-form button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .signup-honeypot {
-      position: absolute;
-      left: -5000px;
-      width: 1px;
-      height: 1px;
-      opacity: 0;
-    }
-
-    .signup-message {
-      margin-top: 1.25rem;
-      font-size: 0.9rem;
-      color: var(--gold-light);
-      min-height: 1.2rem;
-      letter-spacing: 0.02em;
-    }
-
-    .signup-message.error { color: #E89A8A; }
-
-    /* TRANSPARENCY DASHBOARD */
-    .transparency-section {
-      padding: 6rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .transparency-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-
-    .transparency-header h2 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 900;
-      color: var(--gold-pale);
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .transparency-header h2 em {
-      font-style: normal;
-      color: var(--gold);
-    }
-
-    .transparency-header p {
-      font-size: 1.05rem;
-      color: var(--gold-pale);
-      opacity: 0.65;
-      max-width: 620px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    .dash-stat-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      background: var(--gold-line);
-      margin-bottom: 3.5rem;
-    }
-
-    .dash-stat-card {
-      background: var(--near-black);
-      padding: 2rem 1.75rem;
-      position: relative;
-    }
-
-    .dash-stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--gold);
-      opacity: 0.5;
-    }
-
-    .dash-stat-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold-pale);
-      opacity: 0.55;
-      display: block;
-      margin-bottom: 0.6rem;
-    }
-
-    .dash-stat-value {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 900;
-      color: var(--gold-pale);
-      line-height: 1;
-      display: block;
-    }
-
-    .dash-stat-value.accent {
-      color: var(--gold);
-    }
-
-    .dash-stat-sub {
-      font-size: 0.8rem;
-      color: var(--gold-pale);
-      opacity: 0.5;
-      display: block;
-      margin-top: 0.5rem;
-    }
-
-    .dash-spend {
-      margin-bottom: 3rem;
-    }
-
-    .dash-spend-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--gold-line);
-    }
-
-    .dash-spend-header h3 {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .dash-spend-header .dash-spend-total {
-      font-size: 0.8rem;
-      color: var(--gold-pale);
-      opacity: 0.55;
-    }
-
-    .dash-spend-row {
-      display: grid;
-      grid-template-columns: 220px 1fr 90px;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.85rem 0;
-      border-bottom: 1px solid rgba(210,166,60,0.1);
-    }
-
-    .dash-spend-row:last-child { border-bottom: none; }
-
-    .dash-spend-label {
-      font-size: 0.9rem;
-      color: var(--gold-pale);
-      opacity: 0.85;
-    }
-
-    .dash-bar-track {
-      height: 6px;
-      background: rgba(210,166,60,0.1);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-
-    .dash-bar-fill {
-      height: 100%;
-      background: var(--gold);
-      border-radius: 3px;
-      transition: width 0.8s ease;
-    }
-
-    .dash-spend-amt {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--gold-pale);
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .dash-coming-soon {
-      background: var(--gold-dim);
-      border-left: 3px solid var(--gold);
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 2rem;
-    }
-
-    .dash-coming-soon strong {
-      color: var(--gold);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      font-size: 0.72rem;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .dash-coming-soon p {
-      font-size: 0.95rem;
-      color: var(--gold-pale);
-      opacity: 0.8;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .dash-updated {
-      font-size: 0.72rem;
-      color: var(--gold-pale);
-      opacity: 0.4;
-      letter-spacing: 0.08em;
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 768px) {
-      .transparency-section { padding: 4rem 1.25rem; }
-      .dash-stat-grid { grid-template-columns: 1fr; }
-      .dash-spend-row { grid-template-columns: 1fr 60px; gap: 0.5rem 0.75rem; }
-      .dash-spend-label { grid-column: 1 / -1; font-size: 0.85rem; }
-      .dash-spend-amt { grid-row: 1; grid-column: 2; }
-      .dash-bar-track { grid-column: 1 / -1; }
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes drawStroke {
-      from { stroke-dashoffset: 300; }
-      to   { stroke-dashoffset: 0; }
-    }
-
-    /* SCROLL REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible { opacity: 1; transform: none; }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      body { font-size: 16px; }
-
-      .hero { padding: 7rem 1.25rem 4rem; }
-      .hero h1 { font-size: clamp(2.6rem, 12vw, 4rem); }
-      .hero-tagline { font-size: 1rem; margin: 1.25rem 0 2rem; }
-      .hero-stat-row { gap: 1.25rem; flex-direction: column; align-items: center; }
-      .hero-stat-divider { display: none; }
-      .hero-stat-number { font-size: 2.2rem; }
-      .hero-cta { width: 100%; justify-content: center; padding: 1rem 1.5rem; }
-
-      section { padding: 4rem 1.25rem; }
-      .video-section { padding: 3.5rem 1.25rem 4rem; }
-      .mission-text h2 { font-size: clamp(1.7rem, 7vw, 2.5rem); }
-
-      .impact-section { padding: 4rem 1.25rem; }
-      .impact-cards { grid-template-columns: 1fr; gap: 2px; }
-      .impact-card { padding: 2rem 1.5rem; }
-      .impact-card-number { font-size: 2.8rem; }
-
-      .sar-section { padding: 4rem 1.25rem; }
-      .sar-body { grid-template-columns: 1fr; }
-      .testimonial-section { padding: 3.5rem 1.25rem; }
-
-      .hero-stamp { font-size: 0.78rem; padding: 0.7rem 1.25rem; margin-bottom: 2rem; }
-
-      .signup-section { padding: 0 1.25rem 3rem; }
-      .signup-inner { padding-top: 4rem; }
-
-      .team-section { padding: 4rem 1.25rem; }
-    }
-
-    @media (max-width: 400px) {
-      .hero h1 { font-size: 2.4rem; }
-      .hero-stat-number { font-size: 1.9rem; }
-    }
-  </style>
 
   <!-- Meta Pixel Code -->
   <script>
@@ -983,301 +35,190 @@
   src="https://www.facebook.com/tr?id=3559884450840257&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+  <style>
+.hero { padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(3rem, 7vw, 5rem); }
+    .hero-grid { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
+    .hero h1 { margin: 1.1rem 0 1.1rem; }
+    .hero .row { margin-top: 1.75rem; }
+    .hero-call { margin-top: 1rem; font-size: 0.98rem; color: var(--muted); }
+    .hero-call a { font-weight: 700; color: var(--ink); text-decoration: none; }
+    .impact-card { display: grid; gap: 1.5rem; }
+    .impact-card .stats { display: grid; gap: 1.4rem 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .impact-card .eyebrow { color: var(--gold-light); }
+    .impact-note { font-size: 0.8rem; color: var(--on-ink-muted); }
+    .split { display: grid; gap: clamp(2rem, 5vw, 4rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); align-items: start; }
+    .callout { border-left: 4px solid var(--gold); padding: 0.4rem 0 0.4rem 1.25rem; font-family: var(--serif); font-size: 1.3rem; line-height: 1.4; margin-top: 1.75rem; }
+    .any-vet { margin-top: 1.25rem; font-weight: 800; color: var(--deep-gold); }
+    .help-card { display: grid; gap: 1.25rem; text-align: center; justify-items: center; }
+    .help-phone { font-size: clamp(2rem, 7vw, 3.2rem); font-weight: 900; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; line-height: 1; }
+    .help-phone small { display: block; font-size: 1rem; font-weight: 600; color: var(--muted); margin-top: 0.5rem; letter-spacing: 0; }
+    .signup .form { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); align-items: end; }
+  </style>
 </head>
 <body>
-
+  <a href="#help" class="skip-link">Skip to getting help</a>
   <div data-include="header"></div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-glow"></div>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="pill">Free for veterans. Always.</span>
+          <h1>They earned it.<br/><span class="accent">We help them get to it.</span></h1>
+          <p class="lead">Thousands of organizations help veterans. Nobody helps a veteran find the right ones. We do.</p>
+          <div class="row">
+            <a href="#help" class="btn">I'm a veteran, get help <span class="arrow" aria-hidden="true">→</span></a>
+            <a href="/donate" class="btn btn--line">Support the mission</a>
+          </div>
+          <p class="hero-call">Call or text <a href="tel:8339898387">833-WTW-VETS (833-989-8387)</a></p>
+        </div>
 
-    <img src="public/WTW Logo Main.png" alt="Worth Their Weight" style="height:120px;width:auto;margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s ease 0.1s forwards;">
+        <div class="card card--ink impact-card" data-impact-ready hidden>
+          <span class="eyebrow">Our impact so far</span>
+          <div class="stats">
+            <div class="stat" data-impact-box><span class="stat-value" data-impact="veteransFound" data-impact-min="1">0</span><span class="stat-label">veterans found</span></div>
+            <div class="stat" data-impact-box><span class="stat-value" data-impact="lifetimeBenefits" data-format="usd-compact" data-impact-min="1">$0</span><span class="stat-label">est. lifetime VA benefits unlocked</span></div>
+            <div class="stat" data-impact-box><span class="stat-value"><span class="accent">$</span><span data-impact="benefitsPerDollar" data-impact-min="1">0</span></span><span class="stat-label">in benefits for every $1 we spend</span></div>
+            <div class="stat" data-impact-box><span class="stat-value" data-impact="raised" data-format="usd-compact" data-impact-min="1">$0</span><span class="stat-label">raised to find veterans</span></div>
+          </div>
+          <p class="impact-note">Live from our case system. Totals only, never names.</p>
+        </div>
 
-    <p class="hero-eyebrow">Connecting Vets to What's Theirs</p>
-
-    <h1>Worth Their<br/><span>Weight.</span></h1>
-
-    <p class="hero-tagline">Thousands of organizations help veterans. Nobody helps a veteran find the right ones. We do.</p>
-
-    <div class="hero-stamp" aria-label="Free for veterans. Always.">
-      <span class="hero-stamp-line">Free for veterans.</span>
-      <span class="hero-stamp-always">Always.</span>
-    </div>
-
-    <div class="hero-stat-row">
-      <div class="hero-stat">
-        <span class="hero-stat-number">14,000+</span>
-        <span class="hero-stat-label">Resources in the federal directory<sup>1</sup></span>
-      </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-number">24,700</span>
-        <span class="hero-stat-label">Veterans' organizations nationwide<sup>2</sup></span>
-      </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-number">1</span>
-        <span class="hero-stat-label">Conversation to find the right ones</span>
-      </div>
-    </div>
-
-    <a href="/donate" class="hero-cta">
-      Support the Mission
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#1D1912" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-
-    <p style="margin-top:1.5rem;font-size:0.95rem;color:var(--gold-pale);opacity:0.85;">Call or text to get connected — free, for any veteran.<br/><a href="tel:8339898387" class="tel-link" style="display:inline-block;margin-top:0.4rem;color:var(--gold-light);font-size:1.35em;font-weight:800;">833-WTW-VETS (833-989-8387)</a><br/><a href="https://calendly.com/cory-worththeirweight/30min" target="_blank" rel="noopener" class="text-link" style="display:inline-block;margin-top:0.5rem;color:var(--gold-pale);font-size:0.85em;">or schedule a call</a></p>
-  </section>
-
-  <div class="gold-rule"></div>
-
-  <!-- INTRO VIDEO -->
-  <section id="watch" class="video-section">
-    <div class="video-glow" aria-hidden="true"></div>
-    <div class="video-inner">
-      <span class="section-eyebrow reveal">Watch</span>
-      <h2 class="reveal" style="transition-delay:0.05s">Meet Worth Their Weight.<br/><em>In his own words.</em></h2>
-      <p class="video-subtitle reveal" style="transition-delay:0.1s">Two minutes with our Executive Director, Cory Gold. He didn't know the benefits he'd earned existed, or who to ask — the same gap every veteran hits, and the one we close.</p>
-      <div class="video-frame reveal" style="transition-delay:0.15s">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/B-HfMsPM1PM?rel=0"
-          title="Worth Their Weight (Intro Video)"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-  </section>
-
-  <div class="gold-rule"></div>
-
-  <!-- MISSION -->
-  <section id="mission">
-    <div class="mission-grid">
-      <div class="mission-text reveal">
-        <span class="section-eyebrow">The Mission</span>
-        <h2>They earned it.<br/><em>We help them get to it.</em></h2>
-        <p>A veteran rarely shows up with one problem — housing, a job, an ID, benefits, somewhere to sleep tonight, all at once. Most organizations solve one and hand over a list for the rest. We do the sorting.</p>
-        <p>Tell us what's going on; fifteen minutes is usually enough. We work out what you need — from housing and health care to benefits, work, and legal — then email you the organizations that fit, each with a name and a number. Two weeks later we check in, and if a door didn't open, we find the next one.</p>
-        <p style="font-weight:700;color:var(--gold-light);">Any veteran. Any era. Any discharge. No cost.</p>
-        <p>Call or text to get connected — free, for any veteran.<br/><a href="tel:8339898387" class="tel-link" style="display:inline-block;margin-top:0.4rem;color:var(--gold-light);font-size:1.35em;font-weight:800;">833-WTW-VETS (833-989-8387)</a><br/><a href="https://calendly.com/cory-worththeirweight/30min" target="_blank" rel="noopener" class="text-link" style="display:inline-block;margin-top:0.5rem;color:var(--gold-pale);font-size:0.85em;">or schedule a call</a></p>
-        <div class="mission-callout">
-          <p>"The veterans least likely to ask are the ones who need the most."</p>
+        <div class="card card--ink impact-card" data-impact-fallback>
+          <span class="eyebrow">The problem we solve</span>
+          <div class="stats">
+            <div class="stat"><span class="stat-value">14,000+</span><span class="stat-label">resources in the federal directory<sup>1</sup></span></div>
+            <div class="stat"><span class="stat-value">24,700</span><span class="stat-label">veterans' organizations nationwide<sup>2</sup></span></div>
+          </div>
+          <div class="stat"><span class="stat-value"><span class="accent">1</span></span><span class="stat-label">conversation to find the right ones</span></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="gold-rule"></div>
-
-  <!-- OPERATION SEARCH & RESCUE -->
-  <section id="search-rescue" class="sar-section">
-    <span class="section-eyebrow reveal">In the Field</span>
-    <h2 class="reveal" style="transition-delay:0.05s">Operation Search &amp; Rescue</h2>
-    <p class="sar-lead reveal" style="transition-delay:0.1s">Some veterans are never going to call. So we go find them.</p>
-    <div class="sar-body reveal" style="transition-delay:0.15s">
-      <p>We embed in the community — shelters, local events, and the relationships that lead us to the veterans the system missed. No clipboard, no clinical lens. Real human contact first.</p>
-      <p>Once we find someone, the practical barriers come down before anything else. A ride to an appointment. A phone and a way to get online. A week somewhere safe while things get sorted. Then the work of connecting them begins.</p>
-    </div>
-    <p class="sar-note reveal" style="transition-delay:0.2s">Worth Their Weight prioritizes unsheltered veterans first, the population the desk-based referral model cannot reach. We do not turn away veterans who walk in or are referred to us. Triage is based on need.</p>
-  </section>
-
-
-
-  <!-- ============================================================
-       BY THE NUMBERS / TRANSPARENCY DASHBOARD — TEMPORARILY HIDDEN
-       Hidden until our spend history reflects a longer track record.
-       To restore: un-comment the four blocks below, the gold-rule
-       above this note, and the Transparency nav + footer links.
-       Keep the DASHBOARD data block updated per update-dashboard.md
-       so it's ready to bring back.
-       ============================================================ -->
-
-  <!-- <div class="gold-rule"></div> -->
-
-  <!--
-  <script>
-  const DASHBOARD = {
-    // Manual values (edit by hand)
-    totalDonated:     6350,
-    lastUpdated:      "May 12, 2026",
-
-    // Auto-updated from Statement of Activity by Claude Code
-    totalSpent:       11825,
-    transactionCount: 40,
-
-    // Spend breakdown — Statement of Activity (Jan – Dec 2026)
-    // pct = round((amount / totalSpent) * 100)
-    spend: [
-      { label: "Events & engagement",          amount: "$2,850", pct: 24 },
-      { label: "Legal fees",                   amount: "$1,906", pct: 16 },
-      { label: "Office & admin",               amount: "$1,837", pct: 16 },
-      { label: "Marketing & social media",     amount: "$1,729", pct: 15 },
-      { label: "Supplies & materials",         amount: "$1,307", pct: 11 },
-      { label: "Small tools & equipment",      amount: "$883",   pct: 7  },
-      { label: "Software & apps",              amount: "$555",   pct: 5  },
-      { label: "Payroll expenses",             amount: "$206",   pct: 2  },
-      { label: "Contract & professional",      amount: "$165",   pct: 1  },
-      { label: "Travel",                       amount: "$154",   pct: 1  },
-      { label: "Direct assistance",            amount: "$143",   pct: 1  },
-      { label: "Printing & photocopying",      amount: "$89",    pct: 1  }
-    ]
-  };
-  </script>
-  -->
-
-  <!--
-  <section id="transparency" class="transparency-section">
-    <div class="transparency-header reveal">
-      <span class="section-eyebrow">By The Numbers</span>
-      <h2>Every dollar,<br/><em>publicly tracked.</em></h2>
-      <p>The veterans we serve have already dealt with systems that weren't transparent with them. This one will be. Pulled directly from our books.</p>
-    </div>
-
-    <div class="dash-stat-grid reveal" style="transition-delay:0.1s">
-      <div class="dash-stat-card">
-        <span class="dash-stat-label">Total donated</span>
-        <span class="dash-stat-value accent" id="dash-donated"></span>
-        <span class="dash-stat-sub">From our generous supporters</span>
-      </div>
-      <div class="dash-stat-card">
-        <span class="dash-stat-label">Total spent</span>
-        <span class="dash-stat-value" id="dash-spent"></span>
-        <span class="dash-stat-sub"><span id="dash-txcount"></span> transactions to date</span>
-      </div>
-    </div>
-
-    <div class="dash-spend reveal" style="transition-delay:0.15s">
-      <div class="dash-spend-header">
-        <h3>Where the money goes</h3>
-        <span class="dash-spend-total" id="dash-spend-total"></span>
-      </div>
-      <div id="dash-spend-rows"></div>
-    </div>
-
-    <p class="dash-updated reveal" style="transition-delay:0.25s">Last updated <span id="dash-updated"></span>, pulled from live books</p>
-  </section>
-  -->
-
-  <!--
-  <script>
-    (function() {
-      const d = DASHBOARD;
-      const fmt = n => typeof n === 'number' ? '$' + n.toLocaleString() : n;
-      document.getElementById('dash-donated').textContent = fmt(d.totalDonated);
-      document.getElementById('dash-spent').textContent = fmt(d.totalSpent);
-      document.getElementById('dash-txcount').textContent = d.transactionCount;
-      document.getElementById('dash-spend-total').textContent = fmt(d.totalSpent) + ' total';
-      document.getElementById('dash-updated').textContent = d.lastUpdated;
-      document.getElementById('dash-spend-rows').innerHTML = d.spend.map(s => `
-        <div class="dash-spend-row">
-          <span class="dash-spend-label">${s.label}</span>
-          <div class="dash-bar-track"><div class="dash-bar-fill" style="width:${s.pct}%"></div></div>
-          <span class="dash-spend-amt">${s.amount}</span>
+    <section id="how" class="section section--sand">
+      <div class="wrap split">
+        <div class="section-head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2>One conversation. The right people, by name.</h2>
+          <p class="lead">A veteran rarely shows up with one problem: housing, a job, an ID, benefits, somewhere to sleep tonight, all at once. Most organizations solve one and hand over a list for the rest. We do the sorting.</p>
+          <p class="any-vet">Any veteran. Any era. Any discharge. No cost.</p>
         </div>
-      `).join('');
-    })();
-  </script>
-  -->
+        <div class="steps reveal">
+          <div class="card step"><span class="step-num">1</span><div><h3>Tell us what's going on</h3><p>About 30 minutes on the phone is usually enough. Housing, health care, benefits, work, legal: all of it.</p></div></div>
+          <div class="card step"><span class="step-num">2</span><div><h3>Get the right people, by name</h3><p>We email you the organizations that fit, each with a name and a number. Not a list of hotlines.</p></div></div>
+          <div class="card step"><span class="step-num">3</span><div><h3>We check back in</h3><p>Two weeks later we follow up. If a door didn't open, we find the next one.</p></div></div>
+        </div>
+      </div>
+    </section>
 
-  <div class="gold-rule"></div>
+    <section id="search-rescue" class="section section--ink">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">In the field</span>
+          <h2>Operation Search &amp; Rescue</h2>
+          <p class="lead">Some veterans are never going to call. So we go find them. Shelters, local events, and the relationships that lead us to the veterans the system missed. No clipboard. Real human contact first.</p>
+        </div>
+        <div class="grid-3 reveal">
+          <div class="card card--ink" style="border-color: rgb(243 243 230 / 0.14);">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M6 17l1.5-6h9L18 17M8 11l1-4h6l1 4"/><circle cx="8" cy="18.5" r="1.5"/><circle cx="16" cy="18.5" r="1.5"/></svg></span>
+            <h3>A ride</h3><p>To the appointment that's been missed three times.</p>
+          </div>
+          <div class="card card--ink" style="border-color: rgb(243 243 230 / 0.14);">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg></span>
+            <h3>A phone</h3><p>And a way to get online, so help can actually reach them.</p>
+          </div>
+          <div class="card card--ink" style="border-color: rgb(243 243 230 / 0.14);">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
+            <h3>A safe place</h3><p>A week somewhere safe while the bigger things get sorted.</p>
+          </div>
+        </div>
+        <p class="fine reveal" style="margin-top: 1.75rem; color: var(--on-ink-muted); max-width: 46rem;">We prioritize unsheltered veterans first, the people a desk-based referral model can't reach. We don't turn away veterans who walk in or are referred to us. Triage is based on need.</p>
+      </div>
+    </section>
 
-  <!-- TESTIMONIAL -->
-  <!-- Attribution per written consent on file. Swap to full name if preferred. -->
-  <section id="testimonial" class="testimonial-section">
-    <span class="section-eyebrow reveal">In Their Words</span>
-    <figure class="reveal" style="transition-delay:0.05s;margin:0;">
-      <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
-      <blockquote class="testimonial-quote">
-        Worth Their Weight, they put me in touch with the people I needed to get us what we need to keep our life going.
-      </blockquote>
-      <figcaption class="testimonial-attribution">
-        John L.
-        <span>Veteran &middot; Chattanooga, TN</span>
-      </figcaption>
-    </figure>
-  </section>
+    <section class="section">
+      <div class="wrap split">
+        <figure class="reveal">
+          <span class="eyebrow">In their words</span>
+          <blockquote class="quote" style="margin-top: 1rem;">&ldquo;They put me in touch with the people I needed to get us what we need to keep our life going.&rdquo;</blockquote>
+          <figcaption class="quote-by">John L. · Veteran, Chattanooga, TN</figcaption>
+        </figure>
+        <div class="reveal">
+          <p class="callout">&ldquo;The veterans least likely to ask are the ones who need the most.&rdquo;</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- STAY IN TOUCH -->
-  <section id="stay-in-touch" class="signup-section">
-    <div class="signup-glow" aria-hidden="true"></div>
-    <div class="signup-inner">
-    <h2 class="reveal">Stay in Touch</h2>
-    <p class="signup-subtitle reveal" style="transition-delay:0.1s">Updates from the field. Veterans helped, milestones hit, ways to get involved. No spam.</p>
+    <section id="help" class="section section--tight">
+      <div class="wrap">
+        <div class="card help-card reveal">
+          <span class="pill">Free · any veteran · any discharge</span>
+          <h2>Talk to us. It's free.</h2>
+          <a href="tel:8339898387" class="help-phone">833-WTW-VETS<small>(833) 989-8387 · call or text</small></a>
+          <div class="row" style="justify-content: center;">
+            <a href="tel:8339898387" class="btn">Call now</a>
+            <a href="sms:8339898387" class="btn btn--line">Text us</a>
+            <a href="https://calendly.com/cory-worththeirweight/30min" target="_blank" rel="noopener" class="btn btn--line">Schedule a call</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <form
-      name="stay-in-touch"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      class="signup-form reveal"
-      style="transition-delay:0.15s"
-      onsubmit="return submitSignupForm(event)"
-    >
-      <input type="hidden" name="form-name" value="stay-in-touch" />
-      <label class="signup-honeypot" aria-hidden="true">
-        Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" />
-      </label>
-      <input type="text" name="name" placeholder="Your name" required autocomplete="name" />
-      <input type="email" name="email" placeholder="Your email" required autocomplete="email" />
-      <button type="submit">Sign Up</button>
-    </form>
-    <div class="signup-message" id="signup-message" role="status" aria-live="polite"></div>
-    </div>
-  </section>
+    <section class="section section--tight">
+      <div class="wrap grid-2">
+        <div class="card card--gold reveal">
+          <span class="eyebrow" style="color: var(--gold-text);">Donors pay so veterans don't</span>
+          <h2 style="margin-top: 0.75rem; font-size: clamp(1.6rem, 4vw, 2.2rem);">$100 keeps a veteran connected</h2>
+          <p style="margin: 0.6rem 0 1.25rem; color: #4a3608;">A phone in their hand and a line to us for six months.</p>
+          <a href="/donate" class="btn btn--ink">Donate now <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="card signup reveal" id="stay-in-touch">
+          <span class="eyebrow">Stay in touch</span>
+          <h2 style="margin: 0.75rem 0 0.5rem; font-size: clamp(1.6rem, 4vw, 2.2rem);">Updates from the field</h2>
+          <p class="muted" style="margin-bottom: 1.25rem;">Veterans helped, milestones hit, ways to get involved. No spam.</p>
+          <form name="stay-in-touch" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form" onsubmit="return submitSignupForm(event)">
+            <input type="hidden" name="form-name" value="stay-in-touch" />
+            <p class="honeypot" aria-hidden="true"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+            <div class="field"><label for="su-name">Name</label><input id="su-name" type="text" name="name" required autocomplete="name" /></div>
+            <div class="field"><label for="su-email">Email</label><input id="su-email" type="email" name="email" required autocomplete="email" /></div>
+            <button type="submit" class="btn btn--ink">Sign up</button>
+          </form>
+          <p class="form-status" id="signup-message" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <div data-include="footer"></div>
 
   <script src="/shared/include.js"></script>
+  <script src="/shared/impact.js"></script>
   <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
-
     function submitSignupForm(event) {
       event.preventDefault();
-      const form = event.target;
-      const messageEl = document.getElementById('signup-message');
-      const submitBtn = form.querySelector('button[type="submit"]');
-
+      var form = event.target;
+      var messageEl = document.getElementById('signup-message');
+      var submitBtn = form.querySelector('button[type="submit"]');
       messageEl.classList.remove('error');
       messageEl.textContent = 'Sending…';
       submitBtn.disabled = true;
-
-      const formData = new FormData(form);
-      const body = new URLSearchParams(formData).toString();
-
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body,
+        body: new URLSearchParams(new FormData(form)).toString(),
       })
-        .then((response) => {
+        .then(function (response) {
           if (!response.ok) throw new Error('Network response was not ok');
           messageEl.textContent = 'Thanks for staying in touch.';
           form.reset();
         })
-        .catch(() => {
+        .catch(function () {
           messageEl.classList.add('error');
-          messageEl.textContent = 'Something went wrong. Please call or text 833-WTW-VETS (833-989-8387) instead.';
+          messageEl.textContent = 'Something went wrong. Call or text 833-WTW-VETS (833-989-8387) instead.';
         })
-        .finally(() => {
-          submitBtn.disabled = false;
-        });
-
+        .finally(function () { submitBtn.disabled = false; });
       return false;
     }
   </script>
-
 </body>
 </html>
