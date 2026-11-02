@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="theme-color" content="#faf8f1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>You're Registered · Worth Their Weight</title>
   <meta name="description" content="You're registered for Carry the Weight. Claim your pledge page, declare your distance, and help fund the outreach that finds veterans the system missed." />
@@ -14,208 +15,8 @@
   <link rel="apple-touch-icon" href="../public/WTW Logo Main.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --near-black: #1D1912;
-      --gold: #D2A63C;
-      --gold-light: #EECD5C;
-      --gold-pale: #F3F3E6;
-      --deep-gold: #BB8525;
-      --gold-line: rgba(210,166,60,0.25);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--near-black);
-      color: var(--gold-pale);
-      font-family: 'Source Sans 3', Arial, sans-serif;
-      font-size: 18px;
-      line-height: 1.6;
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.4;
-    }
-
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--gold-light);
-      outline-offset: 3px;
-      border-radius: 2px;
-    }
-
-    /* NAV (reused from main site) */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 0.6rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(29,25,18,0.97);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--gold-line);
-      padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
-    }
-
-    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-
-    .nav-wordmark {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .nav-back {
-      color: var(--gold-pale);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-    .nav-back:hover { opacity: 1; color: var(--gold-light); }
-
-    /* HERO */
-    .ty-hero {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 9rem 2rem 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ty-glow {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -55%);
-      width: 760px; height: 760px;
-      max-width: 120vw;
-      background: radial-gradient(ellipse at center, rgba(210,166,60,0.16) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .ty-mark {
-      width: 84px; height: 84px;
-      margin-bottom: 2rem;
-      position: relative;
-      filter: drop-shadow(0 0 24px rgba(210,166,60,0.35));
-    }
-
-    .ty-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 1.5rem;
-      position: relative;
-    }
-
-    .ty-hero h1 {
-      font-size: clamp(2.2rem, 6vw, 4.2rem);
-      font-weight: 900;
-      line-height: 1.08;
-      letter-spacing: -0.01em;
-      color: var(--gold-pale);
-      max-width: 18ch;
-      margin: 0 auto 1.5rem;
-      position: relative;
-    }
-    .ty-hero h1 span { color: var(--gold-light); display: block; }
-
-    .ty-sub {
-      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
-      font-weight: 300;
-      color: var(--gold-light);
-      letter-spacing: 0.02em;
-      max-width: 46ch;
-      margin: 0 auto 1rem;
-      position: relative;
-    }
-
-    .ty-note {
-      font-size: 0.95rem;
-      color: var(--gold-pale);
-      opacity: 0.7;
-      max-width: 46ch;
-      margin: 0 auto 2.75rem;
-      position: relative;
-    }
-
-    .ty-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      position: relative;
-    }
-
-    .ty-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--gold);
-      color: var(--near-black);
-      padding: 1rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      font-size: 0.95rem;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .ty-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-    .ty-btn--ghost {
-      background: transparent;
-      color: var(--gold-pale);
-      border: 1px solid var(--gold-line);
-    }
-    .ty-btn--ghost:hover { background: rgba(210,166,60,0.08); color: var(--gold-light); }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 2rem 1.5rem;
-      border-top: 1px solid var(--gold-line);
-      font-size: 0.8rem;
-      color: var(--gold-pale);
-      opacity: 0.6;
-      position: relative;
-      z-index: 2;
-    }
-    footer a { color: var(--gold-pale); text-decoration: underline; }
-
-    @media (max-width: 600px) {
-      nav { padding: 0.6rem 1.25rem; padding-top: calc(0.6rem + env(safe-area-inset-top, 0px)); }
-      .ty-hero { padding: 8rem 1.25rem 4rem; }
-      .ty-btn { width: 100%; justify-content: center; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;1,8..60,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/shared/chrome.css" />
 
   <!-- Meta Pixel Code -->
   <script>
@@ -240,41 +41,23 @@
   <!-- End Meta Pixel Code -->
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav>
-    <a href="/" class="nav-logo">
-      <img src="../public/WTW Logo Main.png" alt="Worth Their Weight" style="height:36px;width:auto;">
-      <span class="nav-wordmark">Worth Their Weight</span>
-    </a>
-    <a href="/carrytheweight" class="nav-back">← Carry the Weight</a>
-  </nav>
-
-  <!-- HERO -->
-  <main class="ty-hero">
-    <div class="ty-glow"></div>
-
-    <img src="../public/WTW Circle Avatar Gold.png" alt="Worth Their Weight" class="ty-mark" />
-
-    <span class="ty-eyebrow">You're Registered</span>
-    <h1>You're in. Now let's<br/><span>carry the weight.</span></h1>
-    <p class="ty-sub">Thank you for signing up for Carry the Weight 2026. You're officially part of the ruck.</p>
-    <p class="ty-note">Check your email for your personal pledge page link. Share it with your circle, declare your distance, and get pledged by the mile. Every dollar funds the outreach that finds veterans the system missed.</p>
-
-    <div class="ty-cta-row">
-      <a href="/carrytheweight" class="ty-btn">
-        Back to Carry the Weight
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#1D1912" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="https://www.instagram.com/worththeirweightorg" target="_blank" rel="noopener" class="ty-btn ty-btn--ghost">Follow the mission</a>
+  <div data-include="header"></div>
+  <main class="section">
+    <div class="wrap" style="max-width: 720px;">
+      <div class="card" style="text-align: center; display: grid; gap: 1rem; justify-items: center; padding-block: clamp(2rem, 6vw, 3.5rem);">
+        <img src="/public/WTW Circle Avatar Gold.png" alt="" width="84" height="84" style="width: 84px; border-radius: 50%;" />
+        <span class="pill">You're registered</span>
+        <h1 style="font-size: clamp(2rem, 6vw, 3rem);">You're in. Now let's <span class="accent">carry the weight.</span></h1>
+        <p class="lead" style="margin-inline: auto;">Thank you for signing up for Carry the Weight 2026. You're officially part of the ruck.</p>
+        <p class="fine" style="max-width: 32rem;">Check your email for your personal pledge page link. Share it with your circle, declare your distance, and get pledged by the mile. Every dollar funds the outreach that finds veterans the system missed.</p>
+        <div class="row" style="justify-content: center; margin-top: 0.5rem;">
+          <a href="/carrytheweight" class="btn">Back to Carry the Weight <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="https://www.instagram.com/worththeirweightorg" target="_blank" rel="noopener" class="btn btn--line">Follow the mission</a>
+        </div>
+      </div>
     </div>
   </main>
-
-  <!-- FOOTER -->
-  <footer>
-    Worth Their Weight · Connecting Vets to What's Theirs<br/>
-    Questions? Call or text <a href="tel:8339898387">833-WTW-VETS (833-989-8387)</a>
-  </footer>
-
+  <div data-include="footer"></div>
+  <script src="/shared/include.js"></script>
 </body>
 </html>
