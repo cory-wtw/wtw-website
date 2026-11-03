@@ -52,6 +52,11 @@
     .help-card { display: grid; gap: 1.25rem; text-align: center; justify-items: center; }
     .help-phone { font-size: clamp(2rem, 7vw, 3.2rem); font-weight: 900; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; line-height: 1; }
     .help-phone small { display: block; font-size: 1rem; font-weight: 600; color: var(--muted); margin-top: 0.5rem; letter-spacing: 0; }
+    .goal-card { display: grid; gap: 1.1rem; }
+    .goal-row { display: flex; justify-content: space-between; gap: 1rem; }
+    .goal-track { position: relative; height: 14px; border-radius: 999px; background: var(--sand); overflow: visible; }
+    .goal-fill { height: 100%; width: 0; border-radius: 999px; background: var(--gold); transition: width 1s ease; }
+    .goal-mark { position: absolute; top: -5px; bottom: -5px; left: 95%; width: 3px; border-radius: 2px; background: var(--ink); }
     .signup .form { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); align-items: end; }
   </style>
 </head>
@@ -73,15 +78,18 @@
           <p class="hero-call">Call or text <a href="tel:8339898387">833-WTW-VETS (833-989-8387)</a></p>
         </div>
 
-        <div class="card card--ink impact-card" data-impact-ready hidden>
-          <span class="eyebrow">Our impact so far</span>
-          <div class="stats">
-            <div class="stat" data-impact-box><span class="stat-value" data-impact="veteransFound" data-impact-min="1">0</span><span class="stat-label">veterans found</span></div>
-            <div class="stat" data-impact-box><span class="stat-value" data-impact="lifetimeBenefits" data-format="usd-compact" data-impact-min="1">$0</span><span class="stat-label">est. lifetime VA benefits unlocked</span></div>
-            <div class="stat" data-impact-box><span class="stat-value"><span class="accent">$</span><span data-impact="benefitsPerDollar" data-impact-min="1">0</span></span><span class="stat-label">in benefits for every $1 we spend</span></div>
-            <div class="stat" data-impact-box><span class="stat-value" data-impact="raised" data-format="usd-compact" data-impact-min="1">$0</span><span class="stat-label">raised to find veterans</span></div>
+        <div class="card card--ink impact-card" data-impact-ready="recent" data-impact-hero hidden>
+          <div>
+            <span class="eyebrow">Last 6 months</span>
+            <p class="impact-note" data-impact-range="recent"></p>
           </div>
-          <p class="impact-note">Live from our case system. Totals only, never names.</p>
+          <div class="stats">
+            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.veteransFound" data-impact-min="1">0</span><span class="stat-label">veterans found</span></div>
+            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.veteransConnected" data-impact-min="1">0</span><span class="stat-label">connected to help</span></div>
+            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.lifetimeBenefits" data-format="usd-compact" data-impact-min="1">$0</span><span class="stat-label">est. lifetime VA benefits unlocked</span></div>
+            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.raised" data-format="usd-compact" data-impact-min="1">$0</span><span class="stat-label">raised to find veterans</span></div>
+          </div>
+          <p class="impact-note">Live from our books and case system. Totals only, never names.</p>
         </div>
 
         <div class="card card--ink impact-card" data-impact-fallback>
@@ -133,6 +141,28 @@
           </div>
         </div>
         <p class="fine reveal" style="margin-top: 1.75rem; color: var(--on-ink-muted); max-width: 46rem;">We prioritize unsheltered veterans first, the people a desk-based referral model can't reach. We don't turn away veterans who walk in or are referred to us. Triage is based on need.</p>
+      </div>
+    </section>
+
+    <section id="transparency" class="section" data-impact-ready="recent.programPct" hidden>
+      <div class="wrap split">
+        <div class="section-head">
+          <span class="eyebrow">Open books</span>
+          <h2>Our goal: 95¢ of every dollar goes to veterans.</h2>
+          <p class="lead">That's well above what most charities manage. We'd rather show you exactly where we are than make a promise we can't check, so here it is, live from our books.</p>
+        </div>
+        <div class="card goal-card">
+          <div class="goal-row">
+            <div class="stat"><span class="stat-label">Our goal</span><span class="stat-value">95%</span></div>
+            <div class="stat" style="text-align: right;"><span class="stat-label">Where we are</span><span class="stat-value accent"><span data-impact="recent.programPct">0</span>%</span></div>
+          </div>
+          <div class="goal-track" role="img" aria-label="Share of spending that went to programs, compared with our 95 percent goal">
+            <div class="goal-fill" data-impact-bar="recent.programPct"></div>
+            <span class="goal-mark" aria-hidden="true"></span>
+          </div>
+          <p class="fine">Share of spending that went straight to finding and helping veterans over the last 6 months (<span data-impact-range="recent"></span>). The rest covered things like insurance, filing fees, and accounting.</p>
+          <p class="fine">We're a young organization, so startup costs weigh more right now. As we grow, that share should shrink. We'll keep this number public either way.</p>
+        </div>
       </div>
     </section>
 
