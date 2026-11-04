@@ -26,3 +26,26 @@
   to = "https://roster.worththeirweight.org/api/public/impact"
   status = 200
   force = true
+
+# Image assets were renamed to kebab-case (Nov 2026). Keep the old
+# space-in-name URLs working for hotlinks in Zeffy, Candid, email
+# signatures, and cached social cards. Netlify uses %20 for spaces.
+[[redirects]]
+  from = "/public/WTW%20Logo%20Main.png"
+  to = "/public/wtw-logo-main.png"
+  status = 301
+
+[[redirects]]
+  from = "/public/WTW%20Logo%20Black.png"
+  to = "/public/wtw-logo-black.png"
+  status = 301
+
+[[redirects]]
+  from = "/public/WTW%20Circle%20Avatar%20Gold.png"
+  to = "/public/wtw-circle-avatar-gold.png"
+  status = 301
+
+[[redirects]]
+  from = "/public/WTW%20Circle%20Avatar%20Black.png"
+  to = "/public/wtw-circle-avatar-black.png"
+  status = 301

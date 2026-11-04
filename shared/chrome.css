@@ -269,7 +269,7 @@ input[type="checkbox"] { width: 22px; height: 22px; accent-color: var(--deep-gol
 .social a { color: var(--cream); width: 44px; height: 44px; border-radius: 12px; background: rgb(243 243 230 / 0.08); display: inline-flex; align-items: center; justify-content: center; }
 .social a:hover { background: rgb(243 243 230 / 0.16); }
 .social svg { width: 20px; height: 20px; }
-.footer-seal img { width: 90px; margin-top: 1rem; }
+.footer-seal { display: inline-block; margin-top: 0.75rem; padding: 0.5rem 0; font-size: 0.9rem; color: var(--on-ink-muted); text-decoration: underline; }
 .footer-legal { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgb(243 243 230 / 0.12); font-size: 0.8rem; line-height: 1.6; color: var(--on-ink-muted); display: grid; gap: 0.5rem; }
 .footer-legal a { color: var(--on-ink-muted); }
 .footer-legal strong { color: var(--cream); }
