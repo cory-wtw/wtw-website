@@ -58,7 +58,7 @@
         </div>
 
         <div id="inquiry" class="reveal">
-          <form name="sponsor-inquiry" id="sponsor-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/partner/inquiry/thank-you/" class="card form" onsubmit="return submitInquiry(event)">
+          <form name="sponsor-inquiry" id="sponsor-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/partner/inquiry/thank-you/" class="card form">
             <div>
               <h2 style="font-size: 1.8rem;">Become a sponsor</h2>
               <p class="muted" style="margin-top: 0.4rem;">Tell us a little about your organization. We'll reach out personally, usually within two business days.</p>
@@ -118,37 +118,6 @@
 
   <div data-include="footer"></div>
   <script src="/shared/include.js"></script>
-  <script>
-    // Netlify Forms over fetch, then swap the form for the thank-you note.
-    // Without JS the form posts normally and lands on its action page.
-    function submitInquiry(event) {
-      event.preventDefault();
-      var form = event.target;
-      var errorEl = document.getElementById('inquiry-error');
-      var submitBtn = form.querySelector('button[type="submit"]');
-      errorEl.textContent = '';
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString(),
-      })
-        .then(function (response) {
-          if (!response.ok) throw new Error('Network response was not ok');
-          var confirm = document.getElementById('inquiry-confirm');
-          form.hidden = true;
-          confirm.hidden = false;
-          confirm.focus();
-          confirm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        })
-        .catch(function () {
-          errorEl.textContent = 'Something went wrong. Email partners@worththeirweight.org instead.';
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send my inquiry';
-        });
-      return false;
-    }
-  </script>
+  <script src="/shared/forms.js"></script>
 </body>
 </html>
