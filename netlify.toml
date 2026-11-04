@@ -49,3 +49,28 @@
   from = "/public/WTW%20Circle%20Avatar%20Black.png"
   to = "/public/wtw-circle-avatar-black.png"
   status = 301
+
+# Security headers for every path. The CSP is built from what the pages
+# actually load: our own scripts, styles and images, Google Fonts, and the
+# Zeffy leaderboard/thermometer iframes on /carrytheweight. /api/impact is
+# same-origin via the proxy above. Inline <style> blocks and style=""
+# attributes exist on every page, so style-src keeps 'unsafe-inline'. There
+# are no inline scripts (JSON-LD data blocks don't execute and are exempt).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src https://www.zeffy.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+
+# Images, icons and the prep packet can be cached for a day. /shared/* (the
+# header/footer partials, chrome.css, scripts) and HTML keep Netlify's
+# default (max-age=0, must-revalidate with ETags) so edits show up on the
+# next deploy.
+[[headers]]
+  for = "/public/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
