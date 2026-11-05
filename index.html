@@ -65,10 +65,15 @@
     .hero-call a { font-weight: 700; color: var(--ink); text-decoration: none; }
     .impact-card { display: grid; gap: 1.5rem; }
     .impact-card .stats { display: grid; gap: 1.4rem 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    [data-impact-hero] .stat:first-child { grid-column: 1 / -1; padding-bottom: 1.4rem; border-bottom: 1px solid rgb(243 243 230 / 0.15); }
+    [data-impact-hero] .stat:first-child .stat-value { font-size: clamp(2.8rem, 9vw, 3.8rem); color: var(--gold-light); }
+    [data-impact-hero] .stat:not(:first-child) .stat-value { font-size: 1.7rem; }
     .impact-card .eyebrow { color: var(--gold-light); }
     .impact-note { font-size: 0.8rem; color: var(--on-ink-muted); }
+    .rescue-item { display: grid; grid-template-columns: auto 1fr; gap: 0 0.9rem; align-items: start; padding-top: 1rem; border-top: 1px solid rgb(243 243 230 / 0.14); }
+    .rescue-item .icon-tile { margin: 0; grid-row: span 2; }
+    .rescue-item p { margin-top: 0.2rem; color: var(--on-ink-muted); }
     .split { display: grid; gap: clamp(2rem, 5vw, 4rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); align-items: start; }
-    .callout { border-left: 4px solid var(--gold); padding: 0.4rem 0 0.4rem 1.25rem; font-family: var(--serif); font-size: 1.3rem; line-height: 1.4; margin-top: 1.75rem; }
     .any-vet { margin-top: 1.25rem; font-weight: 800; color: var(--deep-gold); }
     .help-card { display: grid; gap: 1.25rem; text-align: center; justify-items: center; }
     .help-phone { font-size: clamp(2rem, 7vw, 3.2rem); font-weight: 900; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; line-height: 1; }
@@ -105,10 +110,9 @@
             <p class="impact-note" data-impact-range="recent"></p>
           </div>
           <div class="stats">
+            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.monthlyBenefits" data-format="usd" data-impact-min="1">$0</span><span class="stat-label">a month in VA benefits for veterans we connected</span></div>
             <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.veteransFound" data-impact-min="1">0</span><span class="stat-label">veterans found</span></div>
             <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.veteransConnected" data-impact-min="1">0</span><span class="stat-label">connected to help</span></div>
-            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.lifetimeBenefits" data-format="usd-compact" data-impact-min="1">$0</span><span class="stat-label">est. lifetime VA benefits unlocked</span></div>
-            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.raised" data-format="usd-compact" data-impact-min="1">$0</span><span class="stat-label">raised to find veterans</span></div>
           </div>
           <p class="impact-note">Live from our books and case system. Totals only, never names.</p>
         </div>
@@ -135,7 +139,7 @@
         <div class="steps reveal">
           <div class="card step"><span class="step-num">1</span><div><h3>Tell us what's going on</h3><p>About 30 minutes on the phone is usually enough. Housing, health care, benefits, work, legal: all of it.</p></div></div>
           <div class="card step"><span class="step-num">2</span><div><h3>Get the right people, by name</h3><p>We email you the organizations that fit, each with a name and a number. Not a list of hotlines.</p></div></div>
-          <div class="card step"><span class="step-num">3</span><div><h3>We check back in</h3><p>Two weeks later we follow up. If a door didn't open, we find the next one.</p></div></div>
+          <div class="card step"><span class="step-num">3</span><div><h3>We stay with you every step</h3><p>Two weeks later we follow up. If a door didn't open, we find the next one, and we stay until it does.</p></div></div>
         </div>
       </div>
     </section>
@@ -148,15 +152,15 @@
           <p class="lead">Some veterans are never going to call. So we go find them. Shelters, local events, and the relationships that lead us to the veterans the system missed. No clipboard. Real human contact first.</p>
         </div>
         <div class="grid-3 reveal">
-          <div class="card card--ink" style="border-color: rgb(243 243 230 / 0.14);">
+          <div class="rescue-item">
             <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M6 17l1.5-6h9L18 17M8 11l1-4h6l1 4"/><circle cx="8" cy="18.5" r="1.5"/><circle cx="16" cy="18.5" r="1.5"/></svg></span>
             <h3>A ride</h3><p>To the appointment that's been missed three times.</p>
           </div>
-          <div class="card card--ink" style="border-color: rgb(243 243 230 / 0.14);">
+          <div class="rescue-item">
             <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg></span>
             <h3>A phone</h3><p>And a way to get online, so help can actually reach them.</p>
           </div>
-          <div class="card card--ink" style="border-color: rgb(243 243 230 / 0.14);">
+          <div class="rescue-item">
             <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
             <h3>A safe place</h3><p>A week somewhere safe while the bigger things get sorted.</p>
           </div>
@@ -194,9 +198,6 @@
           <blockquote class="quote" style="margin-top: 1rem;">&ldquo;They put me in touch with the people I needed to get us what we need to keep our life going.&rdquo;</blockquote>
           <figcaption class="quote-by">John L. · Veteran, Chattanooga, TN</figcaption>
         </figure>
-        <div class="reveal">
-          <p class="callout">&ldquo;The veterans least likely to ask are the ones who need the most.&rdquo;</p>
-        </div>
       </div>
     </section>
 
@@ -216,13 +217,7 @@
     </section>
 
     <section class="section section--tight">
-      <div class="wrap grid-2">
-        <div class="card card--gold reveal">
-          <span class="eyebrow" style="color: var(--gold-text);">Donors pay so veterans don't</span>
-          <h2 style="margin-top: 0.75rem; font-size: clamp(1.6rem, 4vw, 2.2rem);">$100 keeps a veteran connected</h2>
-          <p style="margin: 0.6rem 0 1.25rem; color: #4a3608;">A phone in their hand and a line to us for six months.</p>
-          <a href="/donate" class="btn btn--ink">Donate now <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
+      <div class="wrap" style="max-width: 820px;">
         <div class="card signup reveal" id="stay-in-touch">
           <span class="eyebrow">Stay in touch</span>
           <h2 style="margin: 0.75rem 0 0.5rem; font-size: clamp(1.6rem, 4vw, 2.2rem);">Updates from the field</h2>
