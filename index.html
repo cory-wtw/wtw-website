@@ -65,9 +65,14 @@
     .hero-call a { font-weight: 700; color: var(--ink); text-decoration: none; }
     .impact-card { display: grid; gap: 1.5rem; }
     .impact-card .stats { display: grid; gap: 1.4rem 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .impact-card .stats .stat:last-child { grid-column: 1 / -1; }
+    [data-impact-hero] .stat:first-child { grid-column: 1 / -1; padding-bottom: 1.4rem; border-bottom: 1px solid rgb(243 243 230 / 0.15); }
+    [data-impact-hero] .stat:first-child .stat-value { font-size: clamp(2.8rem, 9vw, 3.8rem); color: var(--gold-light); }
+    [data-impact-hero] .stat:not(:first-child) .stat-value { font-size: 1.7rem; }
     .impact-card .eyebrow { color: var(--gold-light); }
     .impact-note { font-size: 0.8rem; color: var(--on-ink-muted); }
+    .rescue-item { display: grid; grid-template-columns: auto 1fr; gap: 0 0.9rem; align-items: start; padding-top: 1rem; border-top: 1px solid rgb(243 243 230 / 0.14); }
+    .rescue-item .icon-tile { margin: 0; grid-row: span 2; }
+    .rescue-item p { margin-top: 0.2rem; color: var(--on-ink-muted); }
     .split { display: grid; gap: clamp(2rem, 5vw, 4rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); align-items: start; }
     .any-vet { margin-top: 1.25rem; font-weight: 800; color: var(--deep-gold); }
     .help-card { display: grid; gap: 1.25rem; text-align: center; justify-items: center; }
@@ -105,9 +110,9 @@
             <p class="impact-note" data-impact-range="recent"></p>
           </div>
           <div class="stats">
+            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.monthlyBenefits" data-format="usd" data-impact-min="1">$0</span><span class="stat-label">a month in VA benefits for veterans we connected</span></div>
             <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.veteransFound" data-impact-min="1">0</span><span class="stat-label">veterans found</span></div>
             <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.veteransConnected" data-impact-min="1">0</span><span class="stat-label">connected to help</span></div>
-            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.monthlyBenefits" data-format="usd" data-impact-min="1">$0</span><span class="stat-label">a month in VA benefits for veterans we connected</span></div>
           </div>
           <p class="impact-note">Live from our books and case system. Totals only, never names.</p>
         </div>
@@ -147,15 +152,15 @@
           <p class="lead">Some veterans are never going to call. So we go find them. Shelters, local events, and the relationships that lead us to the veterans the system missed. No clipboard. Real human contact first.</p>
         </div>
         <div class="grid-3 reveal">
-          <div class="card card--ink" style="border-color: rgb(243 243 230 / 0.14);">
+          <div class="rescue-item">
             <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M6 17l1.5-6h9L18 17M8 11l1-4h6l1 4"/><circle cx="8" cy="18.5" r="1.5"/><circle cx="16" cy="18.5" r="1.5"/></svg></span>
             <h3>A ride</h3><p>To the appointment that's been missed three times.</p>
           </div>
-          <div class="card card--ink" style="border-color: rgb(243 243 230 / 0.14);">
+          <div class="rescue-item">
             <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg></span>
             <h3>A phone</h3><p>And a way to get online, so help can actually reach them.</p>
           </div>
-          <div class="card card--ink" style="border-color: rgb(243 243 230 / 0.14);">
+          <div class="rescue-item">
             <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
             <h3>A safe place</h3><p>A week somewhere safe while the bigger things get sorted.</p>
           </div>
