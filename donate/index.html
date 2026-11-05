@@ -25,11 +25,20 @@
   <style>
 .hero { padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2.5rem, 6vw, 4rem); }
     .hero h1 { margin: 1rem 0; max-width: 16ch; }
-    .paths { margin-top: 2rem; }
-    .path h3 { font-size: 1.35rem; }
-    .path .go { margin-top: 1.1rem; font-weight: 800; color: var(--deep-gold); }
-    .card--ink.path .go { color: var(--gold-light); }
     .raised { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+    .give { max-width: 34rem; display: grid; gap: 1.1rem; }
+    .give-hero { font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+    .give .accent { color: var(--gold-light); }
+    .give-sub, .give-note { color: var(--on-ink-muted); }
+    .give-sub { margin-top: -0.6rem; }
+    .give-note { font-size: 0.95rem; }
+    .give-goal { display: grid; gap: 0.5rem; }
+    .give-goal strong { color: var(--gold-light); font-size: 1.3rem; }
+    .give-bar { height: 10px; border-radius: 999px; background: rgb(243 243 230 / 0.15); overflow: hidden; }
+    .give-bar span { display: block; height: 100%; background: var(--gold); border-radius: inherit; }
+    .give-impact { list-style: none; display: grid; gap: 0.5rem; font-size: 0.98rem; }
+    .give-impact strong { color: var(--gold-light); }
+    .give-foot { text-align: center; font-weight: 700; color: var(--gold-light); }
     .tier-amount { font-size: 2.2rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
     .tier h3 { margin-top: 0.6rem; }
     .generals { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
@@ -37,7 +46,7 @@
   </style>
 </head>
 <body>
-  <a href="#ways" class="skip-link">Skip to donation options</a>
+  <a href="#give" class="skip-link">Skip to donation options</a>
   <div data-include="header"></div>
 
   <main id="top">
@@ -47,19 +56,8 @@
         <h1>Your gift finds the veterans nobody else is looking for.</h1>
         <p class="lead">Your gift funds the outreach that finds a veteran and the follow-through that connects them to what they've already earned.</p>
 
-        <div class="grid-2 paths">
-          <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="card path">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
-            <h3>Support the mission</h3>
-            <p>One-time or monthly gift, open to anyone.</p>
-            <p class="go">Donate now →</p>
-          </a>
-          <a href="https://www.zeffy.com/en-US/donation-form/my-2-cents" target="_blank" rel="noopener" class="card card--ink path">
-            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="14" r="6"/><path d="M9 2l3 6 3-6"/></svg></span>
-            <h3>I'm a rated veteran</h3>
-            <p>Give back 2¢ per $1 of your VA compensation to fund finding the next veteran.</p>
-            <p class="go">Start My 2 Cents →</p>
-          </a>
+        <div class="row" style="margin-top: 2rem;">
+          <a href="#give" class="btn">Give monthly →</a>
         </div>
       </div>
     </section>
@@ -71,8 +69,21 @@
             <span class="eyebrow">Where it goes</span>
             <h2>Every dollar has a job to do</h2>
           </div>
-          <div class="card" style="padding: 1rem 1.4rem;">
-            <div class="stat"><span class="stat-label">Total raised so far</span><span class="stat-value" data-impact="raised" data-format="usd">$58,242</span></div>
+          <div id="give" class="card card--ink give">
+            <p class="give-hero"><span class="accent">95¢</span> of every dollar reaches veterans.</p>
+            <p class="give-sub">That's our goal.</p>
+            <div class="give-goal">
+              <p><strong>$2,100</strong> of $3,000 a month</p>
+              <div class="give-bar" role="progressbar" aria-label="Monthly giving goal" aria-valuemin="0" aria-valuemax="3000" aria-valuenow="2100"><span style="width: 70%;"></span></div>
+              <p class="give-note">At $3,000, we double our care packages and connect 10 more veterans.</p>
+            </div>
+            <ul class="give-impact">
+              <li><strong>$10</strong> puts a care package in the hands of an unsheltered neighbor, with a way to reach us inside.</li>
+              <li><strong>$20</strong> pays for an hour of outreach and digging up new resources for veterans.</li>
+              <li><strong>$32</strong> keeps a veteran connected with a working phone.</li>
+            </ul>
+            <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="btn btn--block">Give monthly →</a>
+            <p class="give-foot">Free for veterans. Always.</p>
           </div>
         </div>
         <div class="grid-4">
@@ -82,7 +93,7 @@
           <div class="card card--gold tier reveal"><span class="tier-amount">$500</span><h3>A veteran: sheltered</h3><p>A week of emergency lodging while we sort out housing.</p></div>
         </div>
         <div class="row reveal" style="margin-top: 1.75rem;">
-          <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="btn">Donate now <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="#give" class="btn">Donate now <span class="arrow" aria-hidden="true">→</span></a>
           <p class="fine">501(c)(3). Donations are tax-deductible.</p>
         </div>
       </div>
@@ -107,7 +118,7 @@
             <span class="general">Marguerite Gold</span>
             <span class="general">Blossom Gold</span>
           </div>
-          <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="btn btn--line">Become a WTW General <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="#give" class="btn btn--line">Become a WTW General <span class="arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -122,7 +133,6 @@
           <details><summary>Is my donation tax-deductible?</summary><p>Yes. Worth Their Weight is a 501(c)(3) tax-exempt organization, EIN 41-5275144. Donations are tax-deductible to the extent allowed by law.</p></details>
           <details><summary>Where does my money actually go?</summary><p>Straight to outreach and follow-through: finding veterans, connecting them to the right organizations, and covering the gap while a claim or a placement comes through. Donors pay so veterans never do.</p></details>
           <details><summary>Do you take donations other than online giving?</summary><p>Yes. Checks, in-kind gifts, and company sponsorships all count. Call or text <a href="tel:8339898387">833-WTW-VETS (833-989-8387)</a> to talk it through.</p></details>
-          <details><summary>What's the difference between a donation and My 2 Cents?</summary><p>A donation is open to anyone and can be one-time or monthly. <a href="https://www.zeffy.com/en-US/donation-form/my-2-cents" target="_blank" rel="noopener">My 2 Cents</a> is a recurring campaign only for veterans who already receive VA compensation: a way to give back a small share each month to fund finding the next veteran.</p></details>
         </div>
       </div>
     </section>
@@ -131,7 +141,7 @@
       <div class="wrap section-head section-head--center" style="margin-bottom: 0;">
         <h2>Ready to help a veteran tonight?</h2>
         <div class="row" style="justify-content: center; margin-top: 1rem;">
-          <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="btn">Donate now <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="#give" class="btn">Donate now <span class="arrow" aria-hidden="true">→</span></a>
           <a href="tel:8339898387" class="btn btn--line">Call or text us</a>
         </div>
       </div>
@@ -140,6 +150,5 @@
 
   <div data-include="footer"></div>
   <script src="/shared/include.js"></script>
-  <script src="/shared/impact.js"></script>
 </body>
 </html>
