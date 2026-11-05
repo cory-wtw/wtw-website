@@ -30,6 +30,24 @@
     .path .go { margin-top: 1.1rem; font-weight: 800; color: var(--deep-gold); }
     .card--ink.path .go { color: var(--gold-light); }
     .raised { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+    .give { max-width: 34rem; display: grid; gap: 1.1rem; }
+    .give-hero { font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+    .give .accent { color: var(--gold-light); }
+    .give-sub, .give-note { color: var(--on-ink-muted); }
+    .give-sub { margin-top: -0.6rem; }
+    .give-note { font-size: 0.95rem; }
+    .give-goal { display: grid; gap: 0.5rem; }
+    .give-goal strong { color: var(--gold-light); font-size: 1.3rem; }
+    .give-bar { height: 10px; border-radius: 999px; background: rgb(243 243 230 / 0.15); overflow: hidden; }
+    .give-bar span { display: block; height: 100%; background: var(--gold); border-radius: inherit; }
+    .give-impact { list-style: none; display: grid; gap: 0.5rem; font-size: 0.98rem; }
+    .give-impact strong { color: var(--gold-light); }
+    .give-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem; padding: 0.25rem; border-radius: 999px; background: rgb(243 243 230 / 0.1); }
+    .give-amounts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+    .give button { min-height: 44px; border-radius: 999px; border: 1px solid rgb(243 243 230 / 0.25); background: transparent; color: var(--cream); font: inherit; font-weight: 700; cursor: pointer; }
+    .give-toggle button { border-color: transparent; }
+    .give button[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+    .give-foot { text-align: center; font-weight: 700; color: var(--gold-light); }
     .tier-amount { font-size: 2.2rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
     .tier h3 { margin-top: 0.6rem; }
     .generals { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
@@ -71,8 +89,32 @@
             <span class="eyebrow">Where it goes</span>
             <h2>Every dollar has a job to do</h2>
           </div>
-          <div class="card" style="padding: 1rem 1.4rem;">
-            <div class="stat"><span class="stat-label">Total raised so far</span><span class="stat-value" data-impact="raised" data-format="usd">$58,242</span></div>
+          <div class="card card--ink give">
+            <p class="give-hero"><span class="accent">95¢</span> of every dollar reaches veterans.</p>
+            <p class="give-sub">That's our goal. Most charities aim for 65 to 75¢.</p>
+            <div class="give-goal">
+              <p><strong>$2,100</strong> of $3,000 a month</p>
+              <div class="give-bar" role="progressbar" aria-label="Monthly giving goal" aria-valuemin="0" aria-valuemax="3000" aria-valuenow="2100"><span style="width: 70%;"></span></div>
+              <p class="give-note">At $3,000, we double our care packages and connect 10 more veterans.</p>
+            </div>
+            <ul class="give-impact">
+              <li><strong>$10</strong> puts a care package in the hands of an unsheltered neighbor, with a way to reach us inside.</li>
+              <li><strong>$20</strong> pays for an hour of outreach and digging up new resources for veterans.</li>
+              <li><strong>$32</strong> keeps a veteran connected with a working phone.</li>
+              <li><strong>$220</strong> funds a full week of outreach.</li>
+            </ul>
+            <div class="give-toggle" role="group" aria-label="How often">
+              <button type="button" data-freq="monthly" aria-pressed="true">Monthly</button>
+              <button type="button" data-freq="once" aria-pressed="false">One time</button>
+            </div>
+            <div class="give-amounts" role="group" aria-label="Amount">
+              <button type="button" data-amount="10" aria-pressed="false">$10</button>
+              <button type="button" data-amount="20" aria-pressed="false">$20</button>
+              <button type="button" data-amount="32" aria-pressed="true">$32</button>
+              <button type="button" data-amount="" aria-pressed="false">Other</button>
+            </div>
+            <a href="https://www.zeffy.com/en-US/donation-form/support-worth-their-weight" target="_blank" rel="noopener" class="btn btn--block"><span id="give-cta">Give $32 a month</span> <span class="arrow" aria-hidden="true">→</span></a>
+            <p class="give-foot">Free for veterans. Always.</p>
           </div>
         </div>
         <div class="grid-4">
@@ -140,6 +182,6 @@
 
   <div data-include="footer"></div>
   <script src="/shared/include.js"></script>
-  <script src="/shared/impact.js"></script>
+  <script src="/donate/donate.js"></script>
 </body>
 </html>
