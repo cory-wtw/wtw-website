@@ -12,6 +12,9 @@
 //   Keys can reach into the feed: data-impact="recent.programPct".
 //   data-impact-range="recent" → "May 2026 – Nov 2026" from that block's from/to.
 //   data-impact-bar="recent.programPct" → sets the element's width to that %.
+//     Add data-impact-bar-max="10000" when the number is dollars toward a goal,
+//     not a percent: the width becomes value / max.
+//   data-format="dec1" → one decimal, e.g. 91.7 (the markup adds the % sign).
 (function () {
   var nodes = document.querySelectorAll('[data-impact]');
   var ready = document.querySelectorAll('[data-impact-ready]');
@@ -25,6 +28,7 @@
     if (kind === 'usd') return usd.format(value);
     if (kind === 'usd-compact') return usdCompact.format(value);
     if (kind === 'pct') return Math.round(value) + '%';
+    if (kind === 'dec1') return value.toFixed(1);
     return num.format(value);
   }
 
@@ -54,7 +58,17 @@
       });
       document.querySelectorAll('[data-impact-bar]').forEach(function (el) {
         var pct = get(data, el.getAttribute('data-impact-bar'));
-        if (typeof pct === 'number') el.style.width = Math.max(0, Math.min(100, pct)) + '%';
+        if (typeof pct !== 'number') return;
+        var max = Number(el.getAttribute('data-impact-bar-max'));
+        var bar = el.closest('[role="progressbar"]');
+        if (max > 0) {
+          if (bar) {
+            bar.setAttribute('aria-valuenow', pct);
+            bar.setAttribute('aria-valuetext', usd.format(pct) + ' of ' + usd.format(max) + ' a month');
+          }
+          pct = (pct / max) * 100;
+        }
+        el.style.width = Math.max(0, Math.min(100, pct)) + '%';
       });
       var shown = false;
       ready.forEach(function (el) {
