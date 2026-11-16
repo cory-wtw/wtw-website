@@ -14,6 +14,8 @@
 //   data-impact-bar="recent.programPct" → sets the element's width to that %.
 //     Add data-impact-bar-max="10000" when the number is dollars toward a goal,
 //     not a percent: the width becomes value / max.
+//   data-impact-times="12" → multiplies the number before showing it, e.g. a
+//     monthly benefit total shown as a yearly one.
 //   data-format="dec1" → one decimal, e.g. 91.7 (the markup adds the % sign).
 (function () {
   var nodes = document.querySelectorAll('[data-impact]');
@@ -50,7 +52,8 @@
         var box = el.closest('[data-impact-box]') || el;
         if (typeof value !== 'number') { if (min !== null) box.hidden = true; return; }
         if (min !== null && value < Number(min)) { box.hidden = true; return; }
-        el.textContent = format(value, el.getAttribute('data-format'));
+        var times = Number(el.getAttribute('data-impact-times')) || 1;
+        el.textContent = format(value * times, el.getAttribute('data-format'));
       });
       document.querySelectorAll('[data-impact-range]').forEach(function (el) {
         var text = range(get(data, el.getAttribute('data-impact-range')));
