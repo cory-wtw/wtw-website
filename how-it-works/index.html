@@ -29,9 +29,10 @@
     .hero-call a { font-weight: 700; color: var(--ink); text-decoration: none; }
     .impact-card { display: grid; gap: 1.5rem; }
     .impact-card .stats { display: grid; gap: 1.4rem 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    [data-impact-hero] .stat:first-child { grid-column: 1 / -1; padding-bottom: 1.4rem; border-bottom: 1px solid rgb(243 243 230 / 0.15); }
-    [data-impact-hero] .stat:first-child .stat-value { font-size: clamp(2.8rem, 9vw, 3.8rem); color: var(--gold-light); }
-    [data-impact-hero] .stat:not(:first-child) .stat-value { font-size: 1.7rem; }
+    .impact-year { padding-top: 1.4rem; border-top: 1px solid rgb(243 243 230 / 0.15); }
+    .impact-year .stat-value { font-size: clamp(2.8rem, 9vw, 3.8rem); color: var(--gold-light); }
+    .impact-card .quote-by { color: var(--on-ink-muted); }
+    .impact-note strong { color: var(--cream); }
     .impact-card .eyebrow { color: var(--gold-light); }
     .impact-note { font-size: 0.8rem; color: var(--on-ink-muted); }
     .rescue-item { display: grid; grid-template-columns: auto 1fr; gap: 0 0.9rem; align-items: start; padding-top: 1rem; border-top: 1px solid rgb(243 243 230 / 0.14); }
@@ -65,17 +66,13 @@
           </div>
         </div>
 
-        <div class="card card--ink impact-card" data-impact-ready="recent" data-impact-hero hidden>
-          <div>
-            <span class="eyebrow">Last 6 months</span>
-            <p class="impact-note" data-impact-range="recent"></p>
-          </div>
-          <div class="stats">
-            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.monthlyBenefits" data-format="usd" data-impact-min="1">$0</span><span class="stat-label">a month in VA benefits for veterans we connected</span></div>
-            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.veteransFound" data-impact-min="1">0</span><span class="stat-label">veterans found</span></div>
-            <div class="stat" data-impact-box><span class="stat-value" data-impact="recent.veteransConnected" data-impact-min="1">0</span><span class="stat-label">connected to help</span></div>
-          </div>
-          <p class="impact-note">Live from our books and case system. Totals only, never names.</p>
+        <div class="card card--ink impact-card" data-impact-ready data-impact-hero hidden>
+          <figure>
+            <blockquote class="quote">&ldquo;They put me in touch with the people I needed to get us what we need to keep our life going.&rdquo;</blockquote>
+            <figcaption class="quote-by">John L. · Veteran, Chattanooga, TN</figcaption>
+          </figure>
+          <div class="stat impact-year" data-impact-box><span class="stat-value" data-impact="monthlyBenefits" data-impact-times="12" data-format="usd" data-impact-min="1">$0</span><span class="stat-label">a year in VA benefits now going to veterans we connected. Every year.</span></div>
+          <p class="impact-note"><span data-impact-box><strong><span data-impact="veteransConnected" data-impact-min="1">0</span> veterans connected so far.</strong> </span>Live from our books and case system. Totals only, never names.</p>
         </div>
 
         <div class="card card--ink impact-card" data-impact-fallback>
@@ -143,16 +140,6 @@
           <p class="fine">Share of spending that went straight to finding and helping veterans over the last 6 months (<span data-impact-range="recent"></span>). The rest covered things like insurance, filing fees, and accounting.</p>
           <p class="fine">We're a young organization, so startup costs weigh more right now. As we grow, that share should shrink. We'll keep this number public either way.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap split">
-        <figure class="reveal">
-          <span class="eyebrow">In their words</span>
-          <blockquote class="quote" style="margin-top: 1rem;">&ldquo;They put me in touch with the people I needed to get us what we need to keep our life going.&rdquo;</blockquote>
-          <figcaption class="quote-by">John L. · Veteran, Chattanooga, TN</figcaption>
-        </figure>
       </div>
     </section>
 
