@@ -27,6 +27,18 @@
   status = 200
   force = true
 
+# The partner page was retired (Nov 2026). Sponsors call us; old links go
+# to the donate page, which says so.
+[[redirects]]
+  from = "/partner/*"
+  to = "/donate/"
+  status = 301
+
+[[redirects]]
+  from = "/partner"
+  to = "/donate/"
+  status = 301
+
 # Image assets were renamed to kebab-case (Nov 2026). Keep the old
 # space-in-name URLs working for hotlinks in Zeffy, Candid, email
 # signatures, and cached social cards. Netlify uses %20 for spaces.
