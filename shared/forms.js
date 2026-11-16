@@ -35,31 +35,4 @@
         .finally(function () { submitBtn.disabled = false; });
     });
   }
-
-  // Sponsor inquiry (partner page and /partner/inquiry): swap the form for
-  // the thank-you note.
-  var inquiry = document.getElementById('sponsor-inquiry');
-  if (inquiry) {
-    inquiry.addEventListener('submit', function (event) {
-      event.preventDefault();
-      var errorEl = document.getElementById('inquiry-error');
-      var submitBtn = inquiry.querySelector('button[type="submit"]');
-      errorEl.textContent = '';
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-      postForm(inquiry)
-        .then(function () {
-          var confirm = document.getElementById('inquiry-confirm');
-          inquiry.hidden = true;
-          confirm.hidden = false;
-          confirm.focus();
-          confirm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        })
-        .catch(function () {
-          errorEl.textContent = 'Something went wrong. Email partners@worththeirweight.org instead.';
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send my inquiry';
-        });
-    });
-  }
 })();
