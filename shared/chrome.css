@@ -226,7 +226,11 @@ input[type="checkbox"] { width: 22px; height: 22px; accent-color: var(--deep-gol
 .nav-toggle svg { width: 22px; height: 22px; }
 .nav-menu { display: flex; align-items: center; gap: 1rem; }
 
-@media (max-width: 900px) {
+@media (max-width: 380px) {
+  .nav-toggle span { display: none; }
+}
+.nav-call { white-space: nowrap; }
+@media (max-width: 980px) {
   .nav-toggle { display: inline-flex; }
   .nav-menu {
     display: none; position: absolute; left: 0; right: 0; top: 100%;
@@ -236,7 +240,7 @@ input[type="checkbox"] { width: 22px; height: 22px; accent-color: var(--deep-gol
   .nav-menu.open { display: flex; }
   .nav-links { flex-direction: column; align-items: stretch; gap: 0.25rem; }
   .nav-links a:not(.btn) { min-height: 64px; font-size: 1.3rem; padding: 0 1rem; border-radius: 14px; }
-  .nav-menu .btn { width: 100%; }
+  .nav-menu .btn { width: 100%; min-height: 64px; font-size: 1.3rem; }
 }
 
 /* ---------- Sticky phone CTA ---------- */
