@@ -58,13 +58,14 @@
 
   <style>
     .hero { padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(3rem, 7vw, 5rem); }
-    .home { display: grid; gap: 1.5rem; justify-items: center; text-align: center; }
-    .home-phone { white-space: nowrap; font-size: clamp(2.2rem, 10.5vw, 5rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1; color: var(--ink); text-decoration: none; font-variant-numeric: tabular-nums; }
-    .home-phone small { display: block; margin-top: 0.6rem; font-size: 1.15rem; font-weight: 600; letter-spacing: 0; color: var(--muted); }
+    .home { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; justify-items: center; text-align: center; }
+    .home-phone { white-space: nowrap; font-size: min(5rem, 10vw); font-weight: 900; letter-spacing: -0.02em; line-height: 1; color: var(--ink); text-decoration: none; font-variant-numeric: tabular-nums; }
+    .home-phone small { white-space: normal; display: block; margin-top: 0.6rem; font-size: 1.15rem; font-weight: 600; letter-spacing: 0; color: var(--muted); }
     .home .lead { font-size: clamp(1.25rem, 3vw, 1.5rem); color: var(--ink-soft); }
     .home-call { min-height: 80px; padding-inline: 3rem; font-size: 1.6rem; }
     .home .row { justify-content: center; }
     .home-crisis { font-size: 1.1rem; }
+    .home-family { font-size: clamp(1.25rem, 4vw, 1.5rem); font-weight: 700; color: var(--ink); }
   </style>
 </head>
 <body>
@@ -76,7 +77,8 @@
       <div class="wrap home">
         <h1>Veteran? Call us.<br/><span class="accent">It's free.</span></h1>
         <a href="tel:8339898387" class="home-phone">833-989-8387<small>833-WTW-VETS · call or text</small></a>
-        <p class="lead">We find the right help and give you a real name to call. Family members can call too.</p>
+        <p class="lead">We find the right help and give you a real name to call.</p>
+        <p class="home-family">Lost a veteran? Spouses and family can call too. Free.</p>
         <a href="tel:8339898387" class="btn home-call">Call now</a>
         <div class="row" id="care-packs">
           <a href="/how-it-works/" class="btn btn--line">How it works</a>
