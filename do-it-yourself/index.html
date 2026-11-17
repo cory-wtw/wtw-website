@@ -39,6 +39,7 @@
     .numbers td span { display: block; font-size: 1.15rem; color: var(--ink); font-weight: 400; }
     .numbers td:last-child { text-align: right; font-weight: 800; white-space: nowrap; padding-left: 1rem; }
     .numbers a { color: var(--ink); }
+    @media (max-width: 420px) { .numbers td:last-child { white-space: normal; } }
     .help { margin-top: 2rem; text-align: center; }
     .help .big { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; margin: 0.25rem 0; }
     .help .big a { color: var(--ink); }
@@ -55,18 +56,13 @@
         <h1>File your VA disability claim yourself.</h1>
         <p class="lead">You can file a VA disability claim on your own. Here's how, one step at a time. Most links go to the VA's own free pages. Family members can use them too.</p>
         <p class="call">Rather talk to someone? Call or text <a href="tel:8339898387">833-989-8387</a></p>
+        <p class="paper"><strong>Widow or widower of a veteran?</strong> Survivors may have their own VA benefits. Call us and we'll help.</p>
         <p class="paper">Prefer paper? <a href="/public/VSO-Prep-Packet.pdf">Get our free prep packet</a>, or call and we'll mail you one.</p>
       </div>
     </section>
 
     <section class="section section--tight diy" style="padding-bottom: 0;">
       <div class="wrap" style="max-width: 820px;">
-        <aside class="card option">
-          <h2>Rather have someone do it with you?</h2>
-          <p>That's fine too. A VSO is a helper the VA has accredited. Their help is free, and they can file the claim with you. The VA's search also lists lawyers and claims agents, who may charge. A VSO is the free choice.</p>
-          <a class="btn btn--line" href="https://www.va.gov/get-help-from-accredited-representative/find-rep/">Find a VSO near you</a>
-          <p class="small">Or call us at <a href="tel:8339898387">833-989-8387</a> and we'll help you find one.</p>
-        </aside>
         <h2 class="path">Filing it yourself? Here are the steps.</h2>
       </div>
     </section>
@@ -92,9 +88,12 @@
 
           <div class="card step"><span class="step-num">3</span><div>
             <h2>Get your DD-214</h2>
-            <p>Your DD-214 is your discharge paper. Ask for the long form, called Member Copy 4. It is free. Never pay a website for your records.</p>
+            <p>Your DD-214 is your discharge paper. Ask for the long form, called Member Copy 4. It is the full copy, and it shows the type of discharge the VA asks about. It is free. Never pay a website for your records.</p>
             <p>First check your own papers and your county clerk. No luck? Mail or fax a form called the SF-180 to the National Archives. Call us and we'll mail you one. You can also request it online.</p>
-            <a class="btn btn--line" href="https://www.archives.gov/veterans/military-service-records">Read the National Archives page</a>
+            <div class="row">
+              <a class="btn btn--line" href="https://www.va.gov/find-forms/about-form-sf180/">Get the SF-180 form</a>
+              <a class="btn btn--line" href="https://vetrecs.archives.gov/">Request it online</a>
+            </div>
           </div></div>
 
           <div class="card step"><span class="step-num">4</span><div>
@@ -113,7 +112,10 @@
               <li>Any medical records you have</li>
               <li>A list of your medicines</li>
             </ul>
-            <a class="btn btn--line" href="https://www.va.gov/disability/how-to-file-claim/">Read the VA's how to file page</a>
+            <div class="row">
+              <a class="btn btn--line" href="https://www.va.gov/find-forms/about-form-21-526ez/">Get VA Form 21-526EZ</a>
+              <a class="btn btn--line" href="https://www.va.gov/disability/how-to-file-claim/">Read the VA's how to file page</a>
+            </div>
             <p>Rather use the phone? Call the VA at <a href="tel:18008271000"><strong>800-827-1000</strong></a> and ask them to mail you the form.</p>
           </div></div>
 
@@ -126,6 +128,12 @@
           </div></div>
         </div>
 
+        <aside class="card option" style="margin-top: 1.5rem;">
+          <h2>Rather have someone do it with you?</h2>
+          <p>That's fine too. A VSO is a helper the VA has accredited. Their help is free, and they can file the claim with you. The VA's search also lists lawyers and claims agents, who may charge. A VSO is the free choice.</p>
+          <a class="btn btn--line" href="https://www.va.gov/get-help-from-accredited-representative/find-rep/">Find a VSO near you</a>
+          <p class="small">Or call us at <a href="tel:8339898387">833-989-8387</a> and we'll help you find one.</p>
+        </aside>
         <div class="card" style="margin-top: 1.5rem;">
           <h2>Numbers worth keeping</h2>
           <table class="numbers" aria-label="Phone numbers worth keeping">
