@@ -41,7 +41,9 @@
     .give-foot { text-align: center; font-weight: 700; color: var(--gold-light); }
     .impact-card { display: grid; gap: 1.5rem; }
     .impact-year .stat-value { font-size: clamp(2.8rem, 9vw, 3.8rem); color: var(--gold-light); }
-    .impact-note { font-size: 0.95rem; color: var(--on-ink-muted); }
+    .impact-note { font-size: 1.15rem; color: var(--cream); }
+    .impact-parts { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; font-size: 1.2rem; color: var(--cream); }
+    .impact-parts strong { color: var(--gold-light); }
     .impact-note strong { color: var(--cream); }
     .rescue-item { display: grid; grid-template-columns: auto 1fr; gap: 0 0.9rem; align-items: start; padding-top: 1rem; border-top: 1px solid rgb(243 243 230 / 0.14); }
     .rescue-item .icon-tile { margin: 0; grid-row: span 2; }
@@ -99,12 +101,18 @@
       </div>
     </section>
 
-    <section class="section" data-impact-ready="veteransConnected" hidden>
+    <section class="section" data-impact-ready="estimatedValue" hidden>
       <div class="wrap" style="max-width: 820px;">
         <div class="card card--ink impact-card">
-          <span class="eyebrow" style="color: var(--gold-light);">What your gifts have done</span>
-          <div class="stat impact-year" data-impact-box><span class="stat-value" data-impact="monthlyBenefits" data-impact-times="12" data-format="usd" data-impact-min="1">$0</span><span class="stat-label" style="color: var(--on-ink-muted);">a year in VA benefits now going to veterans we connected. Every year.</span></div>
-          <p class="impact-note"><span data-impact-box><strong><span data-impact="veteransConnected" data-impact-min="1">0</span> veterans connected so far.</strong> </span>Live from our books and case system. Totals only, never names.</p>
+          <span class="eyebrow" style="color: var(--gold-light);">What veterans got with our help</span>
+          <div class="stat impact-year" data-impact-box><span class="stat-value" data-impact="estimatedValue" data-format="usd" data-impact-min="1">$0</span><span class="stat-label" style="color: var(--on-ink-muted);">in benefits and help from other agencies, for veterans we connected. This is an estimate for the first year.</span></div>
+          <ul class="impact-parts" role="list">
+            <li data-impact-box><strong data-impact="monthlyBenefits" data-impact-times="12" data-format="usd" data-impact-min="1">$0</strong> a year in VA benefits</li>
+            <li data-impact-box><strong data-impact="winValue" data-format="usd" data-impact-min="1">$0</strong> in other help, like housing and food</li>
+            <li data-impact-box><strong data-impact="jobs" data-impact-min="1">0</strong> veterans got a job</li>
+            <li data-impact-box><strong data-impact="veteransConnected" data-impact-min="1">0</strong> veterans connected so far</li>
+          </ul>
+          <p class="impact-note"><strong>How we count.</strong> Other agencies pay these benefits. We help veterans reach them. We use the real amount when we know it. When we don't, we use a low national average from a public source. Jobs count as jobs, not dollars. These numbers update as we help more veterans. We never share names.</p>
         </div>
       </div>
     </section>
