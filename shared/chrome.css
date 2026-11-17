@@ -258,6 +258,10 @@ input[type="checkbox"] { width: 22px; height: 22px; accent-color: var(--deep-gol
   .mobile-cta { display: flex; }
   body { padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
 }
+@media (max-width: 380px) {
+  .mobile-cta .btn { min-height: 52px; }
+  body { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+}
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--ink); color: var(--cream); padding-block: 3.5rem 2.5rem; }
