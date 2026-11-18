@@ -14,6 +14,10 @@
 //   data-impact-bar="recent.programPct" → sets the element's width to that %.
 //     Add data-impact-bar-max="10000" when the number is dollars toward a goal,
 //     not a percent: the width becomes value / max.
+//     Add data-impact-bar-max-key="monthlyGoal" to read that max from the feed;
+//     the written max stays as the fallback.
+//   data-impact-floor="1" → keeps the written fallback when the number is
+//     below it, for a number that would make no sense as "$0" mid-sentence.
 //   data-impact-times="12" → multiplies the number before showing it, e.g. a
 //     monthly benefit total shown as a yearly one.
 //   data-format="dec1" → one decimal, e.g. 91.7 (the markup adds the % sign).
@@ -52,6 +56,8 @@
         var box = el.closest('[data-impact-box]') || el;
         if (typeof value !== 'number') { if (min !== null) box.hidden = true; return; }
         if (min !== null && value < Number(min)) { box.hidden = true; return; }
+        var floor = el.getAttribute('data-impact-floor');
+        if (floor !== null && value < Number(floor)) return;
         var times = Number(el.getAttribute('data-impact-times')) || 1;
         el.textContent = format(value * times, el.getAttribute('data-format'));
       });
@@ -63,10 +69,13 @@
         var pct = get(data, el.getAttribute('data-impact-bar'));
         if (typeof pct !== 'number') return;
         var max = Number(el.getAttribute('data-impact-bar-max'));
+        var liveMax = get(data, el.getAttribute('data-impact-bar-max-key') || '');
+        if (typeof liveMax === 'number' && liveMax > 0) max = liveMax;
         var bar = el.closest('[role="progressbar"]');
         if (max > 0) {
           if (bar) {
             bar.setAttribute('aria-valuenow', pct);
+            bar.setAttribute('aria-valuemax', max);
             bar.setAttribute('aria-valuetext', usd.format(pct) + ' of ' + usd.format(max) + ' a month');
           }
           pct = (pct / max) * 100;
