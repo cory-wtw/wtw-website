@@ -13,6 +13,7 @@
         if (name === 'header') {
           markCurrentNavLink();
           initNavToggle();
+          showSaleBanner();
         }
         document.dispatchEvent(new CustomEvent('chrome:' + name + '-loaded'));
       })
@@ -20,6 +21,20 @@
         console.error('Failed to load shared ' + name, err);
       });
   });
+
+  // Temporary banner for the Leaving Chattanooga sale. Hides itself after
+  // the sale ends (Dec 2, 2026) and on the sale page itself.
+  function showSaleBanner() {
+    if (new Date() >= new Date('2026-12-03T00:00:00-05:00')) return;
+    if (location.pathname.indexOf('/sale') === 0) return;
+    var header = document.querySelector('.site-header');
+    if (!header) return;
+    var bar = document.createElement('a');
+    bar.className = 'sale-banner';
+    bar.href = '/sale/';
+    bar.innerHTML = 'Our moving sale is on through December 2. Every dollar goes to veterans. <span aria-hidden="true">→</span>';
+    header.parentNode.insertBefore(bar, header);
+  }
 
   // Marks the nav link matching the current page so it reads as "active".
   // Skips in-page anchor links (e.g. /#mission) — those aren't separate pages.
