@@ -32,7 +32,7 @@
     var bar = document.createElement('a');
     bar.className = 'sale-banner';
     bar.href = '/sale/';
-    bar.innerHTML = 'Our moving sale is on through December 2. Every dollar goes to veterans. <span aria-hidden="true">→</span>';
+    bar.innerHTML = '<span class="sale-banner-tag">Moving sale</span> <span>Ends December 2. Every dollar goes to veterans. <u>See what\'s for sale</u> <span aria-hidden="true">→</span></span>';
     header.parentNode.insertBefore(bar, header);
   }
 
